@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:get/utils.dart';
+import 'package:ps_welness/modules_view/sign_in/sigin_screen.dart';
 
-import '../login_view/login_views.dart';
 import 'onboarding_models.dart';
 
 class OnboardingController extends GetxController {
@@ -23,7 +23,8 @@ class OnboardingController extends GetxController {
 
   forwardAct() {
     if (isLastPage)
-      Get.to(() => LoginPage());
+      Get.to(() => SignInScreen());
+    //LoginPage());
     else
       pageController.nextPage(duration: 300.milliseconds, curve: Curves.ease);
   }

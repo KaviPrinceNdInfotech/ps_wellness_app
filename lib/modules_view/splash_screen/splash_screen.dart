@@ -71,13 +71,13 @@ class SplashScreen extends StatelessWidget {
                     height: size.height * 0.12,
                     width: size.width * 0.24,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.transparent,
                         borderRadius: BorderRadius.circular(20),
                         // shape: BoxShape.circle,
                         image: DecorationImage(
-                            image:
-                                AssetImage('lib/assets/image/ps_welness2.png'),
-                            fit: BoxFit.fill)),
+                          image: AssetImage('lib/assets/image/logo1.png'),
+                          fit: BoxFit.fill,
+                        )),
                     //
                     // child: Image.asset(
                     //   'lib/assets/image/ps_welness2.png',

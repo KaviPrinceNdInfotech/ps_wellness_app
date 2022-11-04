@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:lottie/lottie.dart';
+import 'package:ps_welness/modules_view/sign_in/sigin_screen.dart';
 
-import '../login_view/login_views.dart';
 import 'onboarding_controllers.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -169,7 +169,7 @@ class OnboardingPage extends StatelessWidget {
                         backgroundColor: Colors.transparent,
                         elevation: 0,
                         onPressed: () {
-                          Get.to(() => LoginPage());
+                          Get.to(() => SignInScreen());
                         },
                         child: Text(
                           'SKIP',
