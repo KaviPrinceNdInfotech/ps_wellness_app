@@ -5,11 +5,12 @@ class AppColors {
       //Color(0xff25D366);
       //Color(0xff9bbb4c);
       Color(0xff0abab5);
+  static var primaryColor = Color(0xff023382);
 
   static var golden = Color(0xffDDB37B);
 
   static var background = Color(0xffECF0F1);
-  static var primaryColor = Color(0xff3847a6);
+  //static var primaryColor = Color(0xff023382);
   static var textfieldColor = Color(0xff8f98d0);
 
   static Map<int, Color> primaryColorMap = {

@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/modules_view/sign_in/components/social.dart';
 
 import 'components/credentials.dart';
 import 'components/head_text.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+class HospitalSignup1 extends StatelessWidget {
+  const HospitalSignup1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +27,15 @@ class SignInScreen extends StatelessWidget {
             clipBehavior: Clip.none,
             children: [
               Positioned(
-                bottom: -size.height * 0.38,
+                top: size.height * 0.025,
+                //bottom: size.height * 0.64,
                 //left: -30,
-                right: -size.width * 0.28,
+                right: -size.width * 0.006,
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
-                    height: size.height * 0.50,
-                    width: size.width,
+                    height: size.height * 0.230,
+                    width: size.width * 0.45,
                     decoration: BoxDecoration(
                         //color: Colors.,
                         borderRadius: BorderRadius.only(
@@ -43,7 +43,7 @@ class SignInScreen extends StatelessWidget {
                         ),
                         image: DecorationImage(
                             image: AssetImage(
-                              'lib/assets/image/1.png',
+                              'lib/assets/background_stack_png/hospitall.png',
                             ),
                             fit: BoxFit.cover)),
                   ),
@@ -52,9 +52,9 @@ class SignInScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  HeadText(),
-                  Credentials(),
-                  Social(),
+                  Hospital1HeadText(),
+                  Hospital1Credentials(),
+                  //HospitalSocial(),
                   //Spacer(),
                 ],
               ),

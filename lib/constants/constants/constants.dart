@@ -14,3 +14,5 @@ const Color darkShadow = Color(0xff0abab5);
 const Color lightShadow = Color(0xff11f2ec);
 
 const double appPadding = 30;
+
+const Color textheading = Color(0xff023382);
