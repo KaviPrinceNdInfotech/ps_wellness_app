@@ -21,44 +21,93 @@ class SignInScreen extends StatelessWidget {
             lightPrimary,
             darkPrimary,
           ])),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
-          child: Stack(
-            clipBehavior: Clip.none,
-            children: [
-              Positioned(
-                bottom: -size.height * 0.38,
-                //left: -30,
-                right: -size.width * 0.28,
-                child: Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: Container(
-                    height: size.height * 0.50,
-                    width: size.width,
-                    decoration: BoxDecoration(
-                        //color: Colors.,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(20),
-                        ),
-                        image: DecorationImage(
-                            image: AssetImage(
-                              'lib/assets/image/1.png',
-                            ),
-                            fit: BoxFit.cover)),
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Positioned(
+                  bottom: -size.height * 0.48,
+                  //left: -30,
+                  right: size.width * 0.16,
+                  child: Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Container(
+                      height: size.height * 0.406,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                          //color: Colors.,
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                          ),
+                          image: DecorationImage(
+                              image: AssetImage(
+                                'lib/assets/background_stack_png/welcome1backgrnd.png',
+                              ),
+                              fit: BoxFit.cover)),
+                    ),
                   ),
                 ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  HeadText(),
-                  Credentials(),
-                  Social(),
-                  //Spacer(),
-                ],
-              ),
-            ],
+                Positioned(
+                  bottom: -size.height * 0.332,
+                  //left: -30,
+                  right: -size.width * 0.29,
+                  child: Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Container(
+                      height: size.height * 0.406,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                          //color: Colors.,
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                          ),
+                          image: DecorationImage(
+                              image: AssetImage(
+                                'lib/assets/image/1.png',
+                              ),
+                              fit: BoxFit.cover)),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: size.height * 0.383,
+                  //left: -30,
+                  left: size.width * 0.30,
+                  child: Padding(
+                    padding: const EdgeInsets.all(0.0),
+                    child: Container(
+                      height: size.height * 0.365,
+                      width: size.width * 0.8,
+                      decoration: BoxDecoration(
+                          //color: Colors.,
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                          ),
+                          image: DecorationImage(
+                              image: AssetImage(
+                                'lib/assets/background_stack_png/welcome2_login.png',
+                              ),
+                              fit: BoxFit.cover)),
+                    ),
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    HeadText(),
+                    SizedBox(
+                      height: size.height * 0.02,
+                    ),
+                    Credentials(),
+                    Social(),
+                    //Spacer(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

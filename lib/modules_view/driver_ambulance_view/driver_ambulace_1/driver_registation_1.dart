@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 
-import 'components/credentials.dart';
-import 'components/head_text.dart';
+import 'driver_components/credentials.dart';
+import 'driver_components/head_text.dart';
 
-class HospitalSignup1 extends StatelessWidget {
-  const HospitalSignup1({Key? key}) : super(key: key);
+class DriverSignup1 extends StatelessWidget {
+  const DriverSignup1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class HospitalSignup1 extends StatelessWidget {
                   top: size.height * 0.029,
                   //bottom: size.height * 0.64,
                   //left: -30,
-                  right: -size.width * 0.006,
+                  right: size.width * 0.08,
                   child: Padding(
                     padding: const EdgeInsets.all(2.0),
                     child: Container(
@@ -44,17 +45,47 @@ class HospitalSignup1 extends StatelessWidget {
                           ),
                           image: DecorationImage(
                               image: AssetImage(
-                                'lib/assets/background_stack_png/hospitall.png',
+                                'lib/assets/background_stack_png/read.png',
                               ),
                               fit: BoxFit.cover)),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: size.height * 0.036,
+                  //bottom: size.height * 0.64,
+                  //left: -30,
+                  right: size.width * 0.11,
+                  child: Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Container(
+                      // color: Colors.blueGrey,
+                      height: size.height * 0.120,
+                      width: size.width * 0.4,
+                      child: Lottie.asset(
+                        "lib/assets/image/83028-ambulance.zip",
+                        fit: BoxFit.cover,
+                        repeat: true,
+                      ),
+
+                      // decoration: BoxDecoration(
+                      //     //color: Colors.,
+                      //     borderRadius: BorderRadius.only(
+                      //       topRight: Radius.circular(20),
+                      //     ),
+                      //     image: DecorationImage(
+                      //         image: Lottie.asset("assets/transaction-completed.json"),(
+                      //           'lib/assets/background_stack_png/ambulance3.png',
+                      //         ),
+                      //         fit: BoxFit.cover)),
                     ),
                   ),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Hospital1HeadText(),
-                    Hospital1Credentials(),
+                    Driver1HeadText(),
+                    Driver1Credentials(),
                     //HospitalSocial(),
                     //Spacer(),
                   ],

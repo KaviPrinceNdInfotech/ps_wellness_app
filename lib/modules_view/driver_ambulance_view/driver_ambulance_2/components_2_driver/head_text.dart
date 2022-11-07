@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 
-class Hospital2HeadText extends StatelessWidget {
-  const Hospital2HeadText({Key? key}) : super(key: key);
+class Driver2HeadText extends StatelessWidget {
+  const Driver2HeadText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class Hospital2HeadText extends StatelessWidget {
           //   ),
           // ),
           Text(
-            'HOSPITAL!',
+            'DRIVER!',
             style: GoogleFonts.alatsi(
                 fontSize: 32,
                 fontWeight: FontWeight.w600,

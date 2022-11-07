@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 
-import 'components/credentials.dart';
-import 'components/head_text.dart';
+import 'components_2_driver/credentials.dart';
+import 'components_2_driver/head_text.dart';
 
-class HospitalSignup2 extends StatelessWidget {
-  const HospitalSignup2({Key? key}) : super(key: key);
+class DriverSignup2 extends StatelessWidget {
+  const DriverSignup2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +27,15 @@ class HospitalSignup2 extends StatelessWidget {
             clipBehavior: Clip.none,
             children: [
               Positioned(
-                top: size.height * 0.015,
+                top: size.height * 0.00,
                 //bottom: size.height * 0.64,
                 //left: -30,
-                right: -size.width * 0.006,
+                right: size.width * 0.07,
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
-                    height: size.height * 0.230,
-                    width: size.width * 0.58,
+                    height: size.height * 0.210,
+                    width: size.width * 0.45,
                     decoration: BoxDecoration(
                         //color: Colors.,
                         borderRadius: BorderRadius.only(
@@ -43,7 +43,7 @@ class HospitalSignup2 extends StatelessWidget {
                         ),
                         image: DecorationImage(
                             image: AssetImage(
-                              'lib/assets/background_stack_png/hospital3.png',
+                              'lib/assets/background_stack_png/ambulance1.png',
                             ),
                             fit: BoxFit.cover)),
                   ),
@@ -52,8 +52,8 @@ class HospitalSignup2 extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Hospital2HeadText(),
-                  Hospital2Credentials(),
+                  Driver2HeadText(),
+                  Driver2Credentials(),
                   //HospitalSocial(),
                   //Spacer(),
                 ],

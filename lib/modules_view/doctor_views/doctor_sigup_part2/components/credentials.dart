@@ -2,18 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/controllers/hospital2_controller/hospital2_sighup_controller.dart';
+import 'package:ps_welness/controllers/doctor_controllers/doctor_controller_2.dart';
 import 'package:ps_welness/modules_view/sign_up_list/sign_up_list.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
-class Hospital2Credentials extends StatelessWidget {
-  Hospital2Credentials({Key? key}) : super(key: key);
+class Doctor2Credentials extends StatelessWidget {
+  Doctor2Credentials({Key? key}) : super(key: key);
 
-  Hospital_2_Controller _hospital_2_controller =
-      Get.put(Hospital_2_Controller());
+  Doctor_2_Controller _doctor_2_controller = Get.put(Doctor_2_Controller());
 
   var items = [
     'Item 1',
@@ -33,7 +31,7 @@ class Hospital2Credentials extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Form(
-        key: _hospital_2_controller.hospital2formkey,
+        key: _doctor_2_controller.doctor2formkey,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         child: Padding(
           padding: EdgeInsets.all(30),
@@ -48,12 +46,12 @@ class Hospital2Credentials extends StatelessWidget {
               NeumorphicTextFieldContainer(
                 child: TextFormField(
                   autofillHints: [AutofillHints.telephoneNumber],
-                  controller: _hospital_2_controller.mobileController,
+                  controller: _doctor_2_controller.mobileController,
                   onSaved: (value) {
-                    _hospital_2_controller.mobile = value!;
+                    _doctor_2_controller.mobile = value!;
                   },
                   validator: (value) {
-                    return _hospital_2_controller.validPhone(value!);
+                    return _doctor_2_controller.validPhone(value!);
                   },
                   cursorColor: Colors.black,
                   obscureText: false,
@@ -73,6 +71,39 @@ class Hospital2Credentials extends StatelessWidget {
                 ),
               ),
 
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+
+              ///TODO: Pin.......................
+              NeumorphicTextFieldContainer(
+                child: TextFormField(
+                  autofillHints: [AutofillHints.name],
+                  controller: _doctor_2_controller.clinicnameController,
+                  onSaved: (value) {
+                    _doctor_2_controller.clinic_name = value!;
+                  },
+                  validator: (value) {
+                    return _doctor_2_controller.validClinicname(value!);
+                  },
+                  cursorColor: Colors.black,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    hintText: 'Clinic Name',
+                    helperStyle: TextStyle(
+                      color: black.withOpacity(0.7),
+                      fontSize: 18,
+                    ),
+                    prefixIcon: Icon(
+                      Icons.home_work,
+                      color: black.withOpacity(0.7),
+                      size: 20,
+                    ),
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+
               ///Todo: state............................
               SizedBox(
                 height: size.height * 0.01,
@@ -83,7 +114,7 @@ class Hospital2Credentials extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
                   child: Obx(
                     () => DropdownButtonFormField(
-                        value: _hospital_2_controller.selectedState.value,
+                        value: _doctor_2_controller.selectedState.value,
                         decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.real_estate_agent,
@@ -106,8 +137,7 @@ class Hospital2Credentials extends StatelessWidget {
                           );
                         }).toList(),
                         onChanged: (String? newValue) {
-                          _hospital_2_controller.selectedState.value =
-                              newValue!;
+                          _doctor_2_controller.selectedState.value = newValue!;
                           // _hospital_2_controller.states.value =
                           //     newValue! as List<String>;
                           // _hospital_2_controller.selectedCity.value = null;
@@ -131,7 +161,7 @@ class Hospital2Credentials extends StatelessWidget {
                   child: Obx(
                     () => DropdownButtonFormField(
                         //icon: Icon(Icons.location_city),
-                        value: _hospital_2_controller.selectedCity.value,
+                        value: _doctor_2_controller.selectedCity.value,
                         decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.location_city,
@@ -154,7 +184,7 @@ class Hospital2Credentials extends StatelessWidget {
                           );
                         }).toList(),
                         onChanged: (String? newValue) {
-                          _hospital_2_controller.selectedCity.value = newValue!;
+                          _doctor_2_controller.selectedCity.value = newValue!;
                           // _hospital_2_controller.states.value =
                           //     newValue! as List<String>;
                           // _hospital_2_controller.selectedCity.value = null;
@@ -188,76 +218,44 @@ class Hospital2Credentials extends StatelessWidget {
               //       _hospital_2_controller.cities
               //           .addAll(stateCityMap[newvalue]!);
               //     })),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
-
-              ///TODO: Pin.......................
-              NeumorphicTextFieldContainer(
-                child: TextFormField(
-                  autofillHints: [AutofillHints.name],
-                  controller: _hospital_2_controller.pinController,
-                  onSaved: (value) {
-                    _hospital_2_controller.pin = value!;
-                  },
-                  validator: (value) {
-                    return _hospital_2_controller.validPin(value!);
-                  },
-                  cursorColor: Colors.black,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    hintText: 'Pin',
-                    helperStyle: TextStyle(
-                      color: black.withOpacity(0.7),
-                      fontSize: 18,
-                    ),
-                    prefixIcon: Icon(
-                      Icons.pin,
-                      color: black.withOpacity(0.7),
-                      size: 20,
-                    ),
-                    border: InputBorder.none,
-                  ),
-                ),
-              ),
 
               SizedBox(
                 height: size.height * 0.018,
                 //appPadding / 2,
               ),
 
-              GetBuilder<Hospital_2_Controller>(
-                // specify type as Controller
-                init: Hospital_2_Controller(), // intialize with the Controller
-                builder: (value) => InkWell(
-                  onTap: () {
-                    _hospital_2_controller.getImage(ImageSource.gallery);
-                  },
-                  child: NeumorphicTextFieldContainer(
-                    child: Container(
-                      height: size.height * 0.07,
-                      //width: size.width * 0.5,
-                      child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: size.width * 0.1),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Authorise Letter Image',
-                              style: TextStyle(
-                                fontSize: size.width * 0.03,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                            Icon(Icons.camera),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // GetBuilder<Hospital_2_Controller>(
+              //   // specify type as Controller
+              //   init: Hospital_2_Controller(), // intialize with the Controller
+              //   builder: (value) => InkWell(
+              //     onTap: () {
+              //       _doctor_2_controller.getImage(ImageSource.gallery);
+              //     },
+              //     child: NeumorphicTextFieldContainer(
+              //       child: Container(
+              //         height: size.height * 0.07,
+              //         //width: size.width * 0.5,
+              //         child: Padding(
+              //           padding:
+              //               EdgeInsets.symmetric(horizontal: size.width * 0.1),
+              //           child: Row(
+              //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //             children: [
+              //               Text(
+              //                 'Authorise Letter Image',
+              //                 style: TextStyle(
+              //                   fontSize: size.width * 0.03,
+              //                   fontWeight: FontWeight.w700,
+              //                 ),
+              //               ),
+              //               Icon(Icons.camera),
+              //             ],
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
 
               RectangularButton(
                   text: 'SUBMIT',

@@ -22,7 +22,8 @@ class Credentials extends StatelessWidget {
       key: _loginpasswordController.loginpasswordformkey,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       child: Padding(
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.symmetric(
+            horizontal: size.width * 0.09, vertical: size.height * 0.02),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

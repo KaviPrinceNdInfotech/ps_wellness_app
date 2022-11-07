@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 
-class Hospital2HeadText extends StatelessWidget {
-  const Hospital2HeadText({Key? key}) : super(key: key);
+class Doctor1HeadText extends StatelessWidget {
+  const Doctor1HeadText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class Hospital2HeadText extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: appPadding,
-        vertical: appPadding / 3,
+        vertical: appPadding / 2,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +31,7 @@ class Hospital2HeadText extends StatelessWidget {
                   ),
                 ),
                 TextSpan(
-                  text: ' Step 2',
+                  text: ' Step 1',
                   style: GoogleFonts.alatsi(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
@@ -51,7 +51,7 @@ class Hospital2HeadText extends StatelessWidget {
           //   ),
           // ),
           Text(
-            'HOSPITAL!',
+            'DOCTOR!',
             style: GoogleFonts.alatsi(
                 fontSize: 32,
                 fontWeight: FontWeight.w600,

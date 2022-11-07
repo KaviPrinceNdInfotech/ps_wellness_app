@@ -5,8 +5,8 @@ import 'package:ps_welness/constants/constants/constants.dart';
 import 'components/credentials.dart';
 import 'components/head_text.dart';
 
-class HospitalSignup2 extends StatelessWidget {
-  const HospitalSignup2({Key? key}) : super(key: key);
+class DoctorSignup2 extends StatelessWidget {
+  const DoctorSignup2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +27,15 @@ class HospitalSignup2 extends StatelessWidget {
             clipBehavior: Clip.none,
             children: [
               Positioned(
-                top: size.height * 0.015,
+                top: size.height * 0.1,
                 //bottom: size.height * 0.64,
                 //left: -30,
-                right: -size.width * 0.006,
+                right: -size.width * 0.035,
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
-                    height: size.height * 0.230,
-                    width: size.width * 0.58,
+                    height: size.height * 0.200,
+                    width: size.width * 0.52,
                     decoration: BoxDecoration(
                         //color: Colors.,
                         borderRadius: BorderRadius.only(
@@ -43,7 +43,30 @@ class HospitalSignup2 extends StatelessWidget {
                         ),
                         image: DecorationImage(
                             image: AssetImage(
-                              'lib/assets/background_stack_png/hospital3.png',
+                              'lib/assets/background_stack_png/doctor21.png',
+                            ),
+                            fit: BoxFit.cover)),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: size.height * 0.002,
+                //bottom: size.height * 0.64,
+                //left: -30,
+                right: -size.width * 0.02,
+                child: Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: Container(
+                    height: size.height * 0.30,
+                    width: size.width * 0.50,
+                    decoration: BoxDecoration(
+                        //color: Colors.,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(20),
+                        ),
+                        image: DecorationImage(
+                            image: AssetImage(
+                              'lib/assets/background_stack_png/doctor20.png',
                             ),
                             fit: BoxFit.cover)),
                   ),
@@ -52,8 +75,8 @@ class HospitalSignup2 extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Hospital2HeadText(),
-                  Hospital2Credentials(),
+                  Doctor2HeadText(),
+                  Doctor2Credentials(),
                   //HospitalSocial(),
                   //Spacer(),
                 ],

@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/doctor_views/doctor_signup_1/doctor_signup_part1.dart';
+import 'package:ps_welness/modules_view/driver_ambulance_view/driver_ambulace_1/driver_registation_1.dart';
 import 'package:ps_welness/modules_view/hospital_view/hospital_signup_part_1/hospital_signup_view_part1.dart';
 
 class SignUpList extends StatelessWidget {
@@ -16,7 +18,7 @@ class SignUpList extends StatelessWidget {
     final List<String> productname = [
       '  HOSPITAL',
       '  DOCTOR  ',
-      '  DRIVER  ',
+      '  DRIVER/AMBULANCE    ',
       '  USER    ',
       '  NURSE   ',
       '  RWA     ',
@@ -48,12 +50,12 @@ class SignUpList extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: size.height * 0.02,
+                height: size.height * 0.0007,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: appPadding / 4,
-                  // vertical: appPadding / 60,
+                  horizontal: appPadding / 3,
+                  //vertical: appPadding / 60,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,16 +82,16 @@ class SignUpList extends StatelessWidget {
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(height: size.height * 0.00),
                         Container(
                             // height: size.height * 0.1,
                             //width: size.width * 0.5,
                             child: Center(
                           child: Padding(
-                            padding: const EdgeInsets.all(0.0),
+                            padding: EdgeInsets.all(0.0),
                             child: Container(
-                              height: size.height * 0.24,
+                              height: size.height * 0.23,
                               width: size.width * 0.63,
                               decoration: BoxDecoration(
                                   //color: Colors.,
@@ -127,9 +129,6 @@ class SignUpList extends StatelessWidget {
               //     fontSize: size.height * 0.02,
               //   ),
               // ),
-              SizedBox(
-                height: size.height * 0.00,
-              ),
               // Spacer(),
               Expanded(
                 child: ListView.builder(
@@ -144,9 +143,9 @@ class SignUpList extends StatelessWidget {
                               if (index == 0) {
                                 Get.to(() => HospitalSignup1());
                               } else if (index == 1) {
-                                // Get.to(() => AddTechnician());
+                                Get.to(() => DoctorSignup1());
                               } else if (index == 2) {
-                                //Get.to(() => Profoile());
+                                Get.to(() => DriverSignup1());
                               } else if (index == 3) {
                                 // whatsAppOpen();
                                 // _launchWhatsapp();
@@ -342,7 +341,7 @@ class SignUpList extends StatelessWidget {
                                   children: [
                                     Container(
                                       height: size.height * 0.08,
-                                      width: size.width * 0.16,
+                                      width: size.width * 0.15,
                                       padding: EdgeInsets.all(8),
                                       child: Image.asset(
                                         productimage[index],
@@ -382,7 +381,7 @@ class SignUpList extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(100),
                                       child: Container(
                                         height: size.height * 0.06,
-                                        width: size.width * 0.13,
+                                        width: size.width * 0.123,
                                         decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             image: DecorationImage(

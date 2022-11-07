@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 
 class HeadText extends StatelessWidget {
@@ -12,7 +11,7 @@ class HeadText extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: appPadding,
-        vertical: appPadding / 2,
+        vertical: appPadding / 3,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,19 +41,20 @@ class HeadText extends StatelessWidget {
             children: [
               SizedBox(height: size.height * 0.05),
               Container(
-                  // height: size.height * 0.1,
-                  //width: size.width * 0.5,
+                  height: size.height * 0.16,
+                  width: size.width * 0.5,
                   child: Center(
-                      child: Lottie.asset(
-                'lib/assets/image/114223-chat-wirth-doctor.zip',
-                fit: BoxFit.fitHeight,
-                //_controller.onboardingPages[index].imageAsset,
-                height: 130.0,
-                //width: 150.0,
-                repeat: true,
-                reverse: true,
-                animate: true,
-              ))),
+                      //         child: Lottie.asset(
+                      //   'lib/assets/image/114223-chat-wirth-doctor.zip',
+                      //   fit: BoxFit.fitHeight,
+                      //   //_controller.onboardingPages[index].imageAsset,
+                      //   height: 130.0,
+                      //   //width: 150.0,
+                      //   repeat: true,
+                      //   reverse: true,
+                      //   animate: true,
+                      // )
+                      )),
             ],
           ),
         ],

@@ -10,13 +10,14 @@ class RectangularButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: press,
       child: Padding(
         padding: const EdgeInsets.only(top: appPadding, bottom: appPadding / 2),
         child: Container(
           width: double.infinity,
-          height: 65,
+          height: size.height * 0.075,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               gradient: LinearGradient(
@@ -44,7 +45,7 @@ class RectangularButton extends StatelessWidget {
             child: Text(
               text,
               style: TextStyle(
-                fontSize: 20,
+                fontSize: size.width * 0.049,
                 fontWeight: FontWeight.w800,
               ),
             ),
