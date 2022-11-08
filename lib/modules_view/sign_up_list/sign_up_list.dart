@@ -7,6 +7,8 @@ import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/doctor_views/doctor_signup_1/doctor_signup_part1.dart';
 import 'package:ps_welness/modules_view/driver_ambulance_view/driver_ambulace_1/driver_registation_1.dart';
 import 'package:ps_welness/modules_view/hospital_view/hospital_signup_part_1/hospital_signup_view_part1.dart';
+import 'package:ps_welness/modules_view/nurses_view/nurses_signup1/nurses_signup1.dart';
+import 'package:ps_welness/modules_view/user_views/user_sign_up.dart';
 
 class SignUpList extends StatelessWidget {
   const SignUpList({Key? key}) : super(key: key);
@@ -16,10 +18,10 @@ class SignUpList extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     final List<String> productname = [
+      '  USER    ',
       '  HOSPITAL',
       '  DOCTOR  ',
       '  DRIVER/AMBULANCE    ',
-      '  USER    ',
       '  NURSE   ',
       '  RWA     ',
       '  CHEMIST ',
@@ -29,10 +31,10 @@ class SignUpList extends StatelessWidget {
     ];
 
     final List<String> productimage = [
+      'lib/assets/image/icons8-user-64.png',
       'lib/assets/image/icons8-hospital-64.png',
       'lib/assets/image/icons8-doctor-64.png',
       'lib/assets/image/icons8-driver-58.png',
-      'lib/assets/image/icons8-user-64.png',
       'lib/assets/image/icons8-nurse-94.png',
       'lib/assets/image/icons8-raw-materials-64.png',
       'lib/assets/icons/chemisticon.png',
@@ -84,6 +86,9 @@ class SignUpList extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
+                        SizedBox(
+                          height: size.height * 0.02,
+                        ),
                         Container(
                             // height: size.height * 0.1,
                             //width: size.width * 0.5,
@@ -91,8 +96,8 @@ class SignUpList extends StatelessWidget {
                           child: Padding(
                             padding: EdgeInsets.all(0.0),
                             child: Container(
-                              height: size.height * 0.23,
-                              width: size.width * 0.63,
+                              height: size.height * 0.18,
+                              width: size.width * 0.53,
                               decoration: BoxDecoration(
                                   //color: Colors.,
                                   borderRadius: BorderRadius.only(
@@ -100,6 +105,7 @@ class SignUpList extends StatelessWidget {
                                   ),
                                   image: DecorationImage(
                                       image: AssetImage(
+                                        //'lib/assets/background_stack_png/grouop_doctor.png',
                                         'lib/assets/image/7.png',
                                       ),
                                       fit: BoxFit.cover)),
@@ -141,18 +147,20 @@ class SignUpList extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               if (index == 0) {
-                                Get.to(() => HospitalSignup1());
+                                Get.to(() => UserSignup1());
                               } else if (index == 1) {
-                                Get.to(() => DoctorSignup1());
+                                Get.to(() => HospitalSignup1());
                               } else if (index == 2) {
-                                Get.to(() => DriverSignup1());
+                                Get.to(() => DoctorSignup1());
                               } else if (index == 3) {
+                                Get.to(() => DriverSignup1());
                                 // whatsAppOpen();
                                 // _launchWhatsapp();
 
                                 //Get.to(() => ComplainList());
 
                               } else if (index == 4) {
+                                Get.to(() => NursesSignup1());
                                 // launch('tel:+1 888888888888');
                                 //_launchWhatsapp();
                                 print('okcasll');

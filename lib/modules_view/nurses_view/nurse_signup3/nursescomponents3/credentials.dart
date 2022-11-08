@@ -2,83 +2,85 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/controllers/login_email/login_email_controller.dart';
-import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
+import 'package:ps_welness/controllers/nurses_controllers/nurse_controller3.dart';
 import 'package:ps_welness/modules_view/sign_up_list/sign_up_list.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
-class Credentials extends StatelessWidget {
-  Credentials({Key? key}) : super(key: key);
+class Nurses3Credentials extends StatelessWidget {
+  Nurses3Credentials({Key? key}) : super(key: key);
 
-  LoginpasswordController _loginpasswordController =
-      Get.put(LoginpasswordController());
+  Nurses_3_controller _nurses_3_controller = Get.put(Nurses_3_controller());
+
+  // LoginpasswordController _loginpasswordController =
+  //     Get.put(LoginpasswordController());
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Form(
-      key: _loginpasswordController.loginpasswordformkey,
+      key: _nurses_3_controller.nursesformkey3,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       child: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.09, vertical: size.height * 0.02),
+        padding: EdgeInsets.all(30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            ///TODO: day.......................
             NeumorphicTextFieldContainer(
               child: TextFormField(
-                controller: _loginpasswordController.emailController,
+                keyboardType: TextInputType.number,
+                autofillHints: [AutofillHints.transactionAmount],
+                controller: _nurses_3_controller.dayController,
                 onSaved: (value) {
-                  _loginpasswordController.email = value!;
+                  _nurses_3_controller.day = value!;
                 },
                 validator: (value) {
-                  return _loginpasswordController.validEmail(value!);
+                  return _nurses_3_controller.validDay(value!);
                 },
                 cursorColor: Colors.black,
                 obscureText: false,
                 decoration: InputDecoration(
-                  hintText: 'Email',
+                  hintText: 'Fee/Day',
                   helperStyle: TextStyle(
                     color: black.withOpacity(0.7),
                     fontSize: 18,
                   ),
                   prefixIcon: Icon(
-                    Icons.email,
+                    Icons.currency_rupee,
                     color: black.withOpacity(0.7),
                     size: 20,
                   ),
                   border: InputBorder.none,
                 ),
-                keyboardType: TextInputType.visiblePassword,
-                //obscureText: true,
-                //controller: _loginpasswordController.mobileController,
               ),
             ),
             SizedBox(
               height: size.height * 0.02,
             ),
+
+            ///Todo: location.....................
             NeumorphicTextFieldContainer(
               child: TextFormField(
-                controller: _loginpasswordController.passwordController,
+                autofillHints: [AutofillHints.name],
+                controller: _nurses_3_controller.locationController,
                 onSaved: (value) {
-                  _loginpasswordController.password = value!;
+                  _nurses_3_controller.location = value!;
                 },
                 validator: (value) {
-                  return _loginpasswordController.validPassword(value!);
+                  return _nurses_3_controller.validLocation(value!);
                 },
                 cursorColor: Colors.black,
                 obscureText: false,
                 decoration: InputDecoration(
-                  hintText: 'Password',
+                  hintText: 'Enter Location',
                   helperStyle: TextStyle(
                     color: black.withOpacity(0.7),
                     fontSize: 18,
                   ),
                   prefixIcon: Icon(
-                    Icons.lock,
+                    Icons.location_on,
                     color: black.withOpacity(0.7),
                     size: 20,
                   ),
@@ -86,6 +88,10 @@ class Credentials extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+
             // RectangularInputField(
             //   hintText: 'Password',
             //   icon: Icons.lock,
@@ -95,23 +101,25 @@ class Credentials extends StatelessWidget {
               height: size.height * 0.00,
               //appPadding / 2,
             ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: InkWell(
-                onTap: () {
-                  Get.to(() => ForgotPassword());
-                },
-                child: Text(
-                  'Forget Password?',
-                  style: GoogleFonts.alegreya(
-                    fontWeight: FontWeight.w500,
-                    fontSize: size.width * 0.035,
-                  ),
-                ),
-              ),
+
+            SizedBox(
+              height: size.height * 0.01,
             ),
+            // Align(
+            //   alignment: Alignment.centerLeft,
+            //   child: InkWell(
+            //     onTap: () {},
+            //     child: Text(
+            //       'Forget Password?',
+            //       style: GoogleFonts.alegreya(
+            //         fontWeight: FontWeight.w500,
+            //         fontSize: size.width * 0.035,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             RectangularButton(
-                text: 'Sign In',
+                text: 'SUBMIT',
                 press: () {
                   Get.to(SignUpList());
                   //_loginpasswordController.checkLoginpassword();

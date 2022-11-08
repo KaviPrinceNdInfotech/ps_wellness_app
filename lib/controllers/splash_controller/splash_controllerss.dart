@@ -38,8 +38,9 @@ class SplashScreenViewModel extends GetxController
 
   @override
   void dispose() {
-    animationInitilization();
     SplashScreenViewModel();
+    animationInitilization();
+
     super.dispose();
   }
 }

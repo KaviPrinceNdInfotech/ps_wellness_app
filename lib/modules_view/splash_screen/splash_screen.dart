@@ -66,17 +66,42 @@ class SplashScreen extends StatelessWidget {
                 ),
                 Positioned(
                   top: size.height * 0.03,
-                  left: size.width * 0.37,
+                  left: size.width * 0.30,
                   child: Container(
-                    height: size.height * 0.12,
-                    width: size.width * 0.24,
+                    height: size.height * 0.18,
+                    width: size.width * 0.41,
                     decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: BorderRadius.circular(20),
                         // shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: AssetImage('lib/assets/image/logo1.png'),
+                          image: AssetImage(
+                              'lib/assets/background_stack_png/logoioo.png'),
                           fit: BoxFit.fill,
+                        )),
+                    //
+                    // child: Image.asset(
+                    //   'lib/assets/image/ps_welness2.png',
+                    //   width: controller.animation.value * 100,
+                    //   height: controller.animation.value * 100,
+                    //   // color: Colors.white30,
+                    // ),
+                  ),
+                ),
+                Positioned(
+                  bottom: -size.height * 0.06,
+                  left: size.width * 0.0,
+                  child: Container(
+                    height: size.height * 0.50,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(20),
+                        // shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: AssetImage(
+                              'lib/assets/background_stack_png/splash4.png'),
+                          fit: BoxFit.cover,
                         )),
                     //
                     // child: Image.asset(

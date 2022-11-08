@@ -50,7 +50,7 @@ class DoctorSignup2 extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: size.height * 0.002,
+                top: size.height * 0.013,
                 //bottom: size.height * 0.64,
                 //left: -30,
                 right: -size.width * 0.02,
