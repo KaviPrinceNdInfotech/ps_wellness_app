@@ -68,8 +68,8 @@ class SplashScreen extends StatelessWidget {
                   top: size.height * 0.03,
                   left: size.width * 0.30,
                   child: Container(
-                    height: size.height * 0.18,
-                    width: size.width * 0.41,
+                    height: size.height * 0.17,
+                    width: size.width * 0.42,
                     decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: BorderRadius.circular(20),

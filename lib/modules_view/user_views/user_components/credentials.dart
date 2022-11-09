@@ -204,8 +204,8 @@ class User1Credentials extends StatelessWidget {
             // ),
 
             SizedBox(
-                //height: size.height * 0.02,
-                ),
+              height: size.height * 0.02,
+            ),
 
             ///todo: address value..........
             NeumorphicTextFieldContainer(
@@ -238,7 +238,7 @@ class User1Credentials extends StatelessWidget {
 
             ///Todo: state............................
             SizedBox(
-              height: size.height * 0.01,
+              height: size.height * 0.02,
             ),
 
             NeumorphicTextFieldContainer(

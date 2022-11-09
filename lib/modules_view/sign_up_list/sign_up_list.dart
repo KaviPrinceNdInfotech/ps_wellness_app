@@ -4,10 +4,12 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/chemist_view/chemist_signup1/chemist_signup1.dart';
 import 'package:ps_welness/modules_view/doctor_views/doctor_signup_1/doctor_signup_part1.dart';
 import 'package:ps_welness/modules_view/driver_ambulance_view/driver_ambulace_1/driver_registation_1.dart';
 import 'package:ps_welness/modules_view/hospital_view/hospital_signup_part_1/hospital_signup_view_part1.dart';
 import 'package:ps_welness/modules_view/nurses_view/nurses_signup1/nurses_signup1.dart';
+import 'package:ps_welness/modules_view/rwa_view/rwa_signup1/rwa_signup1.dart';
 import 'package:ps_welness/modules_view/user_views/user_sign_up.dart';
 
 class SignUpList extends StatelessWidget {
@@ -166,6 +168,7 @@ class SignUpList extends StatelessWidget {
                                 print('okcasll');
                                 //Get.to(() => AssociatePage());
                               } else if (index == 5) {
+                                Get.to(() => RwaSignup1());
                                 // Get.defaultDialog(
                                 //     barrierDismissible: true,
                                 //     backgroundColor: MyTheme.t1containercolor,
@@ -307,6 +310,7 @@ class SignUpList extends StatelessWidget {
                                 ///
                                 //Get.to(() => ServicesPage());
                               } else if (index == 6) {
+                                Get.to(() => ChemistSignup1());
                                 //Get.to(() => MyHolidayPage());
                               } else if (index == 7) {
                                 //Get.to(() => TermsMemberPage());
