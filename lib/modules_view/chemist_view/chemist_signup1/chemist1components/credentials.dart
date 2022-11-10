@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/controllers/chemist_controllers/chemist_controller1.dart';
-import 'package:ps_welness/modules_view/rwa_view/rwa_signup2/rwa_signup2.dart';
+import 'package:ps_welness/modules_view/chemist_view/chemist_signup2/chemist_signup2.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
@@ -393,7 +393,7 @@ class Chemist1Credentials extends StatelessWidget {
             RectangularButton(
                 text: 'Go Next >',
                 press: () {
-                  Get.to(RwaSignup2());
+                  Get.to(ChemistSignup2());
                   //_loginpasswordController.checkLoginpassword();
                 })
           ],

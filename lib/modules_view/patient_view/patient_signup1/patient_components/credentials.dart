@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/controllers/user_controller/user_controller_1.dart';
-import 'package:ps_welness/modules_view/home_page_view/home_page.dart';
+import 'package:ps_welness/controllers/patient_controller/patient_controller_1.dart';
+import 'package:ps_welness/modules_view/sign_up_list/sign_up_list.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
-class User1Credentials extends StatelessWidget {
-  User1Credentials({Key? key}) : super(key: key);
+class Patient1Credentials extends StatelessWidget {
+  Patient1Credentials({Key? key}) : super(key: key);
 
   // Hospital_1_Controller _hospital_1_controller =
   //     Get.put(Hospital_1_Controller());
 
-  User_1_Controller _user_1_controller = Get.put(User_1_Controller());
+  Patient_1_Controller _patient_1_controller = Get.put(Patient_1_Controller());
 
   var items = [
     'Item 1',
@@ -33,7 +33,7 @@ class User1Credentials extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Form(
-      key: _user_1_controller.user1formkey,
+      key: _patient_1_controller.patient1formkey,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       child: Padding(
         padding: EdgeInsets.all(30),
@@ -44,12 +44,12 @@ class User1Credentials extends StatelessWidget {
             NeumorphicTextFieldContainer(
               child: TextFormField(
                 autofillHints: [AutofillHints.name],
-                controller: _user_1_controller.nameController,
+                controller: _patient_1_controller.nameController,
                 onSaved: (value) {
-                  _user_1_controller.name = value!;
+                  _patient_1_controller.name = value!;
                 },
                 validator: (value) {
-                  return _user_1_controller.validName(value!);
+                  return _patient_1_controller.validName(value!);
                 },
                 cursorColor: Colors.black,
                 obscureText: false,
@@ -76,12 +76,12 @@ class User1Credentials extends StatelessWidget {
             NeumorphicTextFieldContainer(
               child: TextFormField(
                 autofillHints: [AutofillHints.email],
-                controller: _user_1_controller.emailController,
+                controller: _patient_1_controller.emailController,
                 onSaved: (value) {
-                  _user_1_controller.email = value!;
+                  _patient_1_controller.email = value!;
                 },
                 validator: (value) {
-                  return _user_1_controller.validEmail(value!);
+                  return _patient_1_controller.validEmail(value!);
                 },
                 cursorColor: Colors.black,
                 obscureText: false,
@@ -107,12 +107,12 @@ class User1Credentials extends StatelessWidget {
             ///Todo: password..............
             NeumorphicTextFieldContainer(
               child: TextFormField(
-                controller: _user_1_controller.passwordController,
+                controller: _patient_1_controller.passwordController,
                 onSaved: (value) {
-                  _user_1_controller.password = value!;
+                  _patient_1_controller.password = value!;
                 },
                 validator: (value) {
-                  return _user_1_controller.validPassword(value!);
+                  return _patient_1_controller.validPassword(value!);
                 },
                 cursorColor: Colors.black,
                 obscureText: false,
@@ -138,12 +138,12 @@ class User1Credentials extends StatelessWidget {
             ///Todo: confirm password...........
             NeumorphicTextFieldContainer(
               child: TextFormField(
-                controller: _user_1_controller.confirmpasswordController,
+                controller: _patient_1_controller.confirmpasswordController,
                 onSaved: (value) {
-                  _user_1_controller.confirmpassword = value!;
+                  _patient_1_controller.confirmpassword = value!;
                 },
                 validator: (value) {
-                  return _user_1_controller.validConfirmPassword(value!);
+                  return _patient_1_controller.validConfirmPassword(value!);
                 },
                 cursorColor: Colors.black,
                 obscureText: false,
@@ -173,12 +173,12 @@ class User1Credentials extends StatelessWidget {
             NeumorphicTextFieldContainer(
               child: TextFormField(
                 autofillHints: [AutofillHints.telephoneNumber],
-                controller: _user_1_controller.mobileController,
+                controller: _patient_1_controller.mobileController,
                 onSaved: (value) {
-                  _user_1_controller.mobile = value!;
+                  _patient_1_controller.mobile = value!;
                 },
                 validator: (value) {
-                  return _user_1_controller.validPhone(value!);
+                  return _patient_1_controller.validPhone(value!);
                 },
                 cursorColor: Colors.black,
                 obscureText: false,
@@ -211,12 +211,12 @@ class User1Credentials extends StatelessWidget {
             NeumorphicTextFieldContainer(
               child: TextFormField(
                 autofillHints: [AutofillHints.addressCityAndState],
-                controller: _user_1_controller.addressController,
+                controller: _patient_1_controller.addressController,
                 onSaved: (value) {
-                  _user_1_controller.address = value!;
+                  _patient_1_controller.address = value!;
                 },
                 validator: (value) {
-                  return _user_1_controller.validAddress(value!);
+                  return _patient_1_controller.validAddress(value!);
                 },
                 cursorColor: Colors.black,
                 obscureText: false,
@@ -246,7 +246,7 @@ class User1Credentials extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
                 child: Obx(
                   () => DropdownButtonFormField(
-                      value: _user_1_controller.selectedState.value,
+                      value: _patient_1_controller.selectedState.value,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.real_estate_agent,
@@ -269,7 +269,7 @@ class User1Credentials extends StatelessWidget {
                         );
                       }).toList(),
                       onChanged: (String? newValue) {
-                        _user_1_controller.selectedState.value = newValue!;
+                        _patient_1_controller.selectedState.value = newValue!;
                         // _hospital_2_controller.states.value =
                         //     newValue! as List<String>;
                         // _hospital_2_controller.selectedCity.value = null;
@@ -293,7 +293,7 @@ class User1Credentials extends StatelessWidget {
                 child: Obx(
                   () => DropdownButtonFormField(
                       //icon: Icon(Icons.location_city),
-                      value: _user_1_controller.selectedCity.value,
+                      value: _patient_1_controller.selectedCity.value,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.location_city,
@@ -316,7 +316,7 @@ class User1Credentials extends StatelessWidget {
                         );
                       }).toList(),
                       onChanged: (String? newValue) {
-                        _user_1_controller.selectedCity.value = newValue!;
+                        _patient_1_controller.selectedCity.value = newValue!;
                         // _hospital_2_controller.states.value =
                         //     newValue! as List<String>;
                         // _hospital_2_controller.selectedCity.value = null;
@@ -358,12 +358,12 @@ class User1Credentials extends StatelessWidget {
             NeumorphicTextFieldContainer(
               child: TextFormField(
                 autofillHints: [AutofillHints.password],
-                controller: _user_1_controller.pinController,
+                controller: _patient_1_controller.pinController,
                 onSaved: (value) {
-                  _user_1_controller.pin = value!;
+                  _patient_1_controller.pin = value!;
                 },
                 validator: (value) {
-                  return _user_1_controller.validPin(value!);
+                  return _patient_1_controller.validPin(value!);
                 },
                 cursorColor: Colors.black,
                 obscureText: false,
@@ -408,7 +408,7 @@ class User1Credentials extends StatelessWidget {
             RectangularButton(
                 text: 'Submit',
                 press: () {
-                  Get.to(HomePage());
+                  Get.to(SignUpList());
                   //_loginpasswordController.checkLoginpassword();
                 })
           ],

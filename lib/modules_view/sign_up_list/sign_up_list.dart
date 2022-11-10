@@ -9,6 +9,7 @@ import 'package:ps_welness/modules_view/doctor_views/doctor_signup_1/doctor_sign
 import 'package:ps_welness/modules_view/driver_ambulance_view/driver_ambulace_1/driver_registation_1.dart';
 import 'package:ps_welness/modules_view/hospital_view/hospital_signup_part_1/hospital_signup_view_part1.dart';
 import 'package:ps_welness/modules_view/nurses_view/nurses_signup1/nurses_signup1.dart';
+import 'package:ps_welness/modules_view/patient_view/patient_sign_up.dart';
 import 'package:ps_welness/modules_view/rwa_view/rwa_signup1/rwa_signup1.dart';
 import 'package:ps_welness/modules_view/user_views/user_sign_up.dart';
 
@@ -313,7 +314,7 @@ class SignUpList extends StatelessWidget {
                                 Get.to(() => ChemistSignup1());
                                 //Get.to(() => MyHolidayPage());
                               } else if (index == 7) {
-                                //Get.to(() => TermsMemberPage());
+                                Get.to(() => PatientSignup1());
                               }
                             },
                             child: Container(

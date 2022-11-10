@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
+import 'package:ps_welness/modules_view/patient_view/patient_signup1/patient_components/credentials.dart';
+import 'package:ps_welness/modules_view/patient_view/patient_signup1/patient_components/head_text.dart';
 
-import 'chemist1components/credentials.dart';
-import 'chemist1components/head_text.dart';
-
-class ChemistSignup1 extends StatelessWidget {
-  const ChemistSignup1({Key? key}) : super(key: key);
+class PatientSignup1 extends StatelessWidget {
+  const PatientSignup1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +30,12 @@ class ChemistSignup1 extends StatelessWidget {
                   top: -size.height * 0.02,
                   //bottom: size.height * 0.64,
                   //left: -30,
-                  right: -size.width * 0.0,
+                  right: -size.width * 0.04,
                   child: Padding(
                     padding: const EdgeInsets.all(2.0),
                     child: Container(
-                      height: size.height * 0.30,
-                      width: size.width * 0.55,
+                      height: size.height * 0.280,
+                      width: size.width * 0.60,
                       decoration: BoxDecoration(
                           //color: Colors.,
                           borderRadius: BorderRadius.only(
@@ -44,8 +43,7 @@ class ChemistSignup1 extends StatelessWidget {
                           ),
                           image: DecorationImage(
                               image: AssetImage(
-                                'lib/assets/background_stack_png/chemist2.png',
-                                // 'lib/assets/background_stack_png/hospitall.png',
+                                'lib/assets/background_stack_png/patient4.png',
                               ),
                               fit: BoxFit.cover)),
                     ),
@@ -54,9 +52,8 @@ class ChemistSignup1 extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Chemist1HeadText(),
-                    Chemist1Credentials(),
-
+                    Patient1HeadText(),
+                    Patient1Credentials(),
                     //HospitalSocial(),
                     //Spacer(),
                   ],
