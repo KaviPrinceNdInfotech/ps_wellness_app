@@ -15,6 +15,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+
+      // getPages: [
+      //   GetPage(name: TodoScreen.id, page: () => TodoScreen()),
+      //   GetPage(name: AddSkilsScreen.id, page: () => AddSkilsScreen()),
+      // ],
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -29,6 +34,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: SplashScreen(),
+      //initialRoute: AddSkilsScreen.id,
     );
   }
 }

@@ -14,6 +14,10 @@ const double appPadding = 30;
 class MyTheme {
   static Color ThemeColors = Color(0xff0abab5);
   static Color loginbuttonColor = Color(0xff9bbb4c);
+  static Color textcolor = Color(0xfffd4f3ec);
+  static Color blueww = Color(0xff023382);
+
+  static Color text1 = Color(0xffd3ecda);
   static Color signUpButtonColor = Colors.grey.shade400;
   // static Color loginPageBoxColor = Color(0xffccccff);
   static Color loginPageBoxColor = Colors.grey.shade300;
