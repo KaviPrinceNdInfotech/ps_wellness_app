@@ -20,7 +20,7 @@ class TodoEdit extends StatelessWidget {
               child: TextField(
                 // textAlign: TextAlign.center,
                 decoration: const InputDecoration(
-                  hintText: "What do you want to accomplish?",
+                  hintText: "Add Your Skils",
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -44,6 +44,7 @@ class TodoEdit extends StatelessWidget {
                   onPressed: () {
                     Get.back();
                   },
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                 ),
                 // ignore: deprecated_member_use
                 Expanded(
@@ -58,6 +59,8 @@ class TodoEdit extends StatelessWidget {
                       todoController.todos[index!] = editing;
                       Get.back();
                     },
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.red),
                   ),
                 )
               ],

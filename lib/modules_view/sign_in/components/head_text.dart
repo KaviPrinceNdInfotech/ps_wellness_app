@@ -10,7 +10,7 @@ class HeadText extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: appPadding,
+        horizontal: appPadding / 1,
         vertical: appPadding / 3,
       ),
       child: Row(
@@ -42,7 +42,7 @@ class HeadText extends StatelessWidget {
               SizedBox(height: size.height * 0.05),
               Container(
                   height: size.height * 0.16,
-                  width: size.width * 0.5,
+                  //width: size.width * 0.45,
                   child: Center(
                       //         child: Lottie.asset(
                       //   'lib/assets/image/114223-chat-wirth-doctor.zip',

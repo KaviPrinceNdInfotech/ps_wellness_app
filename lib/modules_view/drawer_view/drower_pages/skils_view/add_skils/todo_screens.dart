@@ -23,7 +23,7 @@ class TodoScreen extends StatelessWidget {
               child: TextField(
                 // textAlign: TextAlign.center,
                 decoration: const InputDecoration(
-                  hintText: "What do you want to accomplish?",
+                  hintText: "Add your skils",
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -47,6 +47,7 @@ class TodoScreen extends StatelessWidget {
                   onPressed: () {
                     Get.back();
                   },
+                  style: ElevatedButton.styleFrom(primary: Colors.red),
                 ),
                 // ignore: deprecated_member_use
                 ElevatedButton(
@@ -61,6 +62,7 @@ class TodoScreen extends StatelessWidget {
                     );
                     Get.back();
                   },
+                  style: ElevatedButton.styleFrom(primary: Colors.red),
                 ),
               ],
             )

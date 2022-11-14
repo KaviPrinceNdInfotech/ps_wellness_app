@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
 import 'package:ps_welness/modules_view/drawer_view/drower_pages/supports/support_view.dart';
+import 'package:ps_welness/modules_view/drawer_view/patient_lists/patient_list.dart';
 
 import 'drower_pages/skils_view/add_skils/add_skils_todo.dart';
 
@@ -152,14 +153,14 @@ class MainDrawer extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     color: MyTheme.blueww),
               ),
-              tileColor: Get.currentRoute == '/AboutUs'
+              tileColor: Get.currentRoute == '/PatientList'
                   ? Colors.grey[300]
                   : Colors.transparent,
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                // Get.to(() => AboutUs());
-                Get.offNamed('/AboutUs');
+                Get.to(() => PatientList());
+                Get.offNamed('/PatientList');
               },
             ),
 

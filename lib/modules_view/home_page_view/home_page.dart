@@ -25,6 +25,14 @@ class HomePage extends StatelessWidget {
       // 'service 8',
     ];
 
+    List<Color> colors = [
+      Color(0xff11eae0),
+      Color(0xffe68cf7),
+      Colors.yellow,
+      Colors.lightGreenAccent,
+      Colors.lightGreen
+    ];
+
     final List<String> productimage = [
       'lib/assets/icons/calendar.png',
       'lib/assets/icons/report3.png',
@@ -81,7 +89,7 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(3.0),
             child: Container(
-              height: size.height * 0.595,
+              height: size.height * 0.585,
               decoration: BoxDecoration(
                   // color: Colors.white,
                   ),
@@ -101,14 +109,15 @@ class HomePage extends StatelessWidget {
                       margin:
                           EdgeInsets.symmetric(vertical: size.width * 0.0 / 03),
                       decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [
-                                Color(0xffffffff),
-                                Color(0xffffffff)
-                                //darkPrimary,
-                              ]),
+                          color: colors[index],
+                          // gradient: LinearGradient(
+                          //     begin: Alignment.centerLeft,
+                          //     end: Alignment.centerRight,
+                          //     colors: [
+                          //       Color(0xffffffff),
+                          //       Color(0xffffffff)
+                          //       //darkPrimary,
+                          //     ]),
                           borderRadius: BorderRadius.circular(12),
                           boxShadow: [
                             BoxShadow(
@@ -143,14 +152,14 @@ class HomePage extends StatelessWidget {
                                   boxShadow: [
                                     const BoxShadow(
                                       color: Color(0xFFBEBEBE),
-                                      offset: Offset(5, 5),
-                                      blurRadius: 10,
+                                      offset: Offset(03, 03),
+                                      blurRadius: 1,
                                       spreadRadius: 1,
                                     ),
                                     const BoxShadow(
                                       color: Colors.white,
-                                      offset: Offset(-5, -5),
-                                      blurRadius: 10,
+                                      offset: Offset(-02, -02),
+                                      blurRadius: 1,
                                       spreadRadius: 1,
                                     ),
                                   ]),
