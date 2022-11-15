@@ -2,12 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:flutter_carousel_slider/carousel_slider_indicators.dart';
 import 'package:flutter_carousel_slider/carousel_slider_transforms.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/drawer_view/drawerpage.dart';
 
+import '../../controllers/appointment_history_controller/appointment_history_controllers.dart';
+import '../practice_delete_after_completion/test_date_picker.dart';
+
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+
+  AppointmentController _appointmentController =
+      Get.put(AppointmentController());
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +95,8 @@ class HomePage extends StatelessWidget {
             height: size.height * 0.005,
           ),
           Padding(
-            padding: const EdgeInsets.all(3.0),
+            padding: EdgeInsets.symmetric(
+                vertical: size.height * 0.001, horizontal: size.width * 0.01),
             child: Container(
               height: size.height * 0.585,
               decoration: BoxDecoration(
@@ -98,16 +107,17 @@ class HomePage extends StatelessWidget {
                     maxCrossAxisExtent: size.height * 0.25,
                     mainAxisExtent: size.height * 0.188,
                     childAspectRatio: 4 / 3,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 4,
+                    mainAxisSpacing: 8,
                   ),
                   itemCount: productname.length,
                   itemBuilder: (BuildContext ctx, index) {
                     return Container(
                       height: size.height * 0.08,
                       //width: double.,
-                      margin:
-                          EdgeInsets.symmetric(vertical: size.width * 0.0 / 03),
+                      margin: EdgeInsets.symmetric(
+                          vertical: size.height * 0.00131,
+                          horizontal: size.width * 0.01),
                       decoration: BoxDecoration(
                           color: colors[index],
                           // gradient: LinearGradient(
@@ -138,31 +148,152 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              height: size.height * 0.11,
-                              width: size.width * 0.23,
-                              padding: EdgeInsets.all(7),
-                              child: Image.asset(
-                                productimage[index],
-                                // "lib/assets/image/icons8-hospital-64.png",
+                            InkWell(
+                              onTap: () {
+                                Get.defaultDialog(
+                                    backgroundColor: MyTheme.ThemeColors,
+                                    title: '',
+                                    content: Column(
+                                      //mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        // NeumorphicTextFieldContainer(
+                                        //   child: Obx(
+                                        //     () => (_appointmentController
+                                        //             .isLoading.value)
+                                        //         ? Center(
+                                        //             child:
+                                        //                 CircularProgressIndicator())
+                                        //         : TextFormField(
+                                        //             // initialValue: DateFormat(
+                                        //             //         'DD-MM-yyyy')
+                                        //             //     .format(
+                                        //             //         _appointmentController
+                                        //             //             .selectedDate
+                                        //             //             .value)
+                                        //             //     .toString(),
+                                        //             controller:
+                                        //                 _appointmentController
+                                        //                     .appointmentController,
+                                        //             onTap: () {
+                                        //               _appointmentController
+                                        //                   .chooseDate()
+                                        //                   .toString();
+                                        //               // .format(
+                                        //               //     _appointmentController
+                                        //               //         .selectedDate
+                                        //               //         .value)
+                                        //               // .toString();
+                                        //             },
+                                        //
+                                        //             // onSaved: (value) {
+                                        //             //   _chemist_1_controller.confirmpassword = value!;
+                                        //             // },
+                                        //             // validator: (value) {
+                                        //             //   return _chemist_1_controller.validConfirmPassword(value!);
+                                        //             // },
+                                        //             cursorColor: Colors.black,
+                                        //             obscureText: false,
+                                        //             decoration: InputDecoration(
+                                        //               hintText: 'Select date',
+                                        //               helperStyle: TextStyle(
+                                        //                 color: black
+                                        //                     .withOpacity(0.7),
+                                        //                 fontSize: 18,
+                                        //               ),
+                                        //               prefixIcon: Icon(
+                                        //                 Icons
+                                        //                     .calendar_today_outlined,
+                                        //                 color: black
+                                        //                     .withOpacity(0.7),
+                                        //                 size: 20,
+                                        //               ),
+                                        //               border: InputBorder.none,
+                                        //             ),
+                                        //             keyboardType:
+                                        //                 TextInputType.multiline,
+                                        //             maxLines: 1,
+                                        //             autofocus: true,
+                                        //             //obscureText: true,
+                                        //             //controller: _loginpasswordController.mobileController,
+                                        //           ),
+                                        //   ),
+                                        // ),
+
+                                        SizedBox(
+                                            height: size.height * 0.05,
+                                            child: TestPickerWidget()),
+                                        // Obx(
+                                        //   () => Text(
+                                        //     DateFormat("dd-MM-yyyy")
+                                        //         .format(_appointmentController
+                                        //             .selectedDate.value)
+                                        //         .toString(),
+                                        //     style: TextStyle(fontSize: 25),
+                                        //   ),
+                                        // ),
+                                        // ElevatedButton(
+                                        //   onPressed: () {
+                                        //     _appointmentController
+                                        //         .chooseDate()
+                                        //         .toString();
+                                        //   },
+                                        //   child: Text('Select Date'),
+                                        // ),
+                                        SizedBox(
+                                          height: 30.0,
+                                        ),
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            primary: Colors.red, // background
+                                            onPrimary:
+                                                Colors.yellow, // foreground
+                                          ),
+                                          onPressed: () {
+                                            // todoController.todos.add(
+                                            //   Todo(
+                                            //     text: textEditingController.text,
+                                            //   ),
+                                            // );
+                                            Get.back();
+                                          },
+                                          child: Text(
+                                            'Appointment History',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 16.0),
+                                          ),
+                                          //color: Colors.redAccent,
+                                        )
+                                      ],
+                                    ),
+                                    radius: 10.0);
+                              },
+                              child: Container(
+                                height: size.height * 0.11,
+                                width: size.width * 0.23,
+                                padding: EdgeInsets.all(7),
+                                child: Image.asset(
+                                  productimage[index],
+                                  // "lib/assets/image/icons8-hospital-64.png",
+                                ),
+                                decoration: BoxDecoration(
+                                    color: Colors.grey[300],
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      const BoxShadow(
+                                        color: Color(0xFFBEBEBE),
+                                        offset: Offset(03, 03),
+                                        blurRadius: 1,
+                                        spreadRadius: 1,
+                                      ),
+                                      const BoxShadow(
+                                        color: Colors.white,
+                                        offset: Offset(-02, -02),
+                                        blurRadius: 1,
+                                        spreadRadius: 1,
+                                      ),
+                                    ]),
                               ),
-                              decoration: BoxDecoration(
-                                  color: Colors.grey[300],
-                                  borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
-                                    const BoxShadow(
-                                      color: Color(0xFFBEBEBE),
-                                      offset: Offset(03, 03),
-                                      blurRadius: 1,
-                                      spreadRadius: 1,
-                                    ),
-                                    const BoxShadow(
-                                      color: Colors.white,
-                                      offset: Offset(-02, -02),
-                                      blurRadius: 1,
-                                      spreadRadius: 1,
-                                    ),
-                                  ]),
                             ),
                             SizedBox(
                               height: size.height * 0.013,
@@ -297,3 +428,6 @@ class Mycrusial extends StatelessWidget {
     );
   }
 }
+
+///...........
+///
