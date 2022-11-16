@@ -5,11 +5,13 @@ import 'package:flutter_carousel_slider/carousel_slider_transforms.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/appointment_history_view/appointment_history_view.dart';
 import 'package:ps_welness/modules_view/drawer_view/drawerpage.dart';
+import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 
 import '../../controllers/appointment_history_controller/appointment_history_controllers.dart';
-import '../practice_delete_after_completion/test_date_picker.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -77,251 +79,420 @@ class HomePage extends StatelessWidget {
         // leading: Icon(Icons.read_more_outlined),
       ),
       drawer: MainDrawer(),
-      body: Column(
-        children: [
-          Container(
-            height: size.height * 0.28,
-            width: size.width,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey)),
-            child: Padding(
-              padding: const EdgeInsets.all(2),
-              child: Mycrusial(),
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.005,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-                vertical: size.height * 0.001, horizontal: size.width * 0.01),
-            child: Container(
-              height: size.height * 0.585,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: size.height * 0.28,
+              width: size.width,
               decoration: BoxDecoration(
-                  // color: Colors.white,
-                  ),
-              child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: size.height * 0.25,
-                    mainAxisExtent: size.height * 0.188,
-                    childAspectRatio: 4 / 3,
-                    crossAxisSpacing: 4,
-                    mainAxisSpacing: 8,
-                  ),
-                  itemCount: productname.length,
-                  itemBuilder: (BuildContext ctx, index) {
-                    return Container(
-                      height: size.height * 0.08,
-                      //width: double.,
-                      margin: EdgeInsets.symmetric(
-                          vertical: size.height * 0.00131,
-                          horizontal: size.width * 0.01),
-                      decoration: BoxDecoration(
-                          color: colors[index],
-                          // gradient: LinearGradient(
-                          //     begin: Alignment.centerLeft,
-                          //     end: Alignment.centerRight,
-                          //     colors: [
-                          //       Color(0xffffffff),
-                          //       Color(0xffffffff)
-                          //       //darkPrimary,
-                          //     ]),
-                          borderRadius: BorderRadius.circular(12),
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(-1, -1),
-                              spreadRadius: 1,
-                              blurRadius: 0,
-                              color: Colors.grey.shade100,
-                            ),
-                            BoxShadow(
-                              offset: Offset(1, 1),
-                              spreadRadius: 1,
-                              blurRadius: 2,
-                              color: Colors.grey.shade100,
-                            ),
-                          ]),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Get.defaultDialog(
-                                    backgroundColor: MyTheme.ThemeColors,
-                                    title: '',
-                                    content: Column(
-                                      //mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        // NeumorphicTextFieldContainer(
-                                        //   child: Obx(
-                                        //     () => (_appointmentController
-                                        //             .isLoading.value)
-                                        //         ? Center(
-                                        //             child:
-                                        //                 CircularProgressIndicator())
-                                        //         : TextFormField(
-                                        //             // initialValue: DateFormat(
-                                        //             //         'DD-MM-yyyy')
-                                        //             //     .format(
-                                        //             //         _appointmentController
-                                        //             //             .selectedDate
-                                        //             //             .value)
-                                        //             //     .toString(),
-                                        //             controller:
-                                        //                 _appointmentController
-                                        //                     .appointmentController,
-                                        //             onTap: () {
-                                        //               _appointmentController
-                                        //                   .chooseDate()
-                                        //                   .toString();
-                                        //               // .format(
-                                        //               //     _appointmentController
-                                        //               //         .selectedDate
-                                        //               //         .value)
-                                        //               // .toString();
-                                        //             },
-                                        //
-                                        //             // onSaved: (value) {
-                                        //             //   _chemist_1_controller.confirmpassword = value!;
-                                        //             // },
-                                        //             // validator: (value) {
-                                        //             //   return _chemist_1_controller.validConfirmPassword(value!);
-                                        //             // },
-                                        //             cursorColor: Colors.black,
-                                        //             obscureText: false,
-                                        //             decoration: InputDecoration(
-                                        //               hintText: 'Select date',
-                                        //               helperStyle: TextStyle(
-                                        //                 color: black
-                                        //                     .withOpacity(0.7),
-                                        //                 fontSize: 18,
-                                        //               ),
-                                        //               prefixIcon: Icon(
-                                        //                 Icons
-                                        //                     .calendar_today_outlined,
-                                        //                 color: black
-                                        //                     .withOpacity(0.7),
-                                        //                 size: 20,
-                                        //               ),
-                                        //               border: InputBorder.none,
-                                        //             ),
-                                        //             keyboardType:
-                                        //                 TextInputType.multiline,
-                                        //             maxLines: 1,
-                                        //             autofocus: true,
-                                        //             //obscureText: true,
-                                        //             //controller: _loginpasswordController.mobileController,
-                                        //           ),
-                                        //   ),
-                                        // ),
-
-                                        SizedBox(
-                                            height: size.height * 0.05,
-                                            child: TestPickerWidget()),
-                                        // Obx(
-                                        //   () => Text(
-                                        //     DateFormat("dd-MM-yyyy")
-                                        //         .format(_appointmentController
-                                        //             .selectedDate.value)
-                                        //         .toString(),
-                                        //     style: TextStyle(fontSize: 25),
-                                        //   ),
-                                        // ),
-                                        // ElevatedButton(
-                                        //   onPressed: () {
-                                        //     _appointmentController
-                                        //         .chooseDate()
-                                        //         .toString();
-                                        //   },
-                                        //   child: Text('Select Date'),
-                                        // ),
-                                        SizedBox(
-                                          height: 30.0,
-                                        ),
-                                        ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            primary: Colors.red, // background
-                                            onPrimary:
-                                                Colors.yellow, // foreground
-                                          ),
-                                          onPressed: () {
-                                            // todoController.todos.add(
-                                            //   Todo(
-                                            //     text: textEditingController.text,
-                                            //   ),
-                                            // );
-                                            Get.back();
-                                          },
-                                          child: Text(
-                                            'Appointment History',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 16.0),
-                                          ),
-                                          //color: Colors.redAccent,
-                                        )
-                                      ],
-                                    ),
-                                    radius: 10.0);
-                              },
-                              child: Container(
-                                height: size.height * 0.11,
-                                width: size.width * 0.23,
-                                padding: EdgeInsets.all(7),
-                                child: Image.asset(
-                                  productimage[index],
-                                  // "lib/assets/image/icons8-hospital-64.png",
-                                ),
-                                decoration: BoxDecoration(
-                                    color: Colors.grey[300],
-                                    borderRadius: BorderRadius.circular(10),
-                                    boxShadow: [
-                                      const BoxShadow(
-                                        color: Color(0xFFBEBEBE),
-                                        offset: Offset(03, 03),
-                                        blurRadius: 1,
-                                        spreadRadius: 1,
-                                      ),
-                                      const BoxShadow(
-                                        color: Colors.white,
-                                        offset: Offset(-02, -02),
-                                        blurRadius: 1,
-                                        spreadRadius: 1,
-                                      ),
-                                    ]),
-                              ),
-                            ),
-                            SizedBox(
-                              height: size.height * 0.013,
-                            ),
-                            Text(
-                              productname[index],
-                              style: GoogleFonts.abhayaLibre(
-                                fontSize: size.width * 0.037,
-                                fontWeight: FontWeight.w800,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      // child: child,
-                    );
-                    //   Container(
-                    //   alignment: Alignment.center,
-                    //   decoration: BoxDecoration(
-                    //       color: Colors.amber,
-                    //       borderRadius: BorderRadius.circular(15)),
-                    //   child: Text(productname[index]),
-                    // );
-                  }),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.grey)),
+              child: Padding(
+                padding: const EdgeInsets.all(2),
+                child: Mycrusial(),
+              ),
             ),
-          )
-        ],
+            SizedBox(
+              height: size.height * 0.005,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  vertical: size.height * 0.001, horizontal: size.width * 0.01),
+              child: Container(
+                height: size.height * 0.585,
+                decoration: BoxDecoration(
+                    // color: Colors.white,
+                    ),
+                child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: size.height * 0.25,
+                      mainAxisExtent: size.height * 0.188,
+                      childAspectRatio: 4 / 3,
+                      crossAxisSpacing: 4,
+                      mainAxisSpacing: 8,
+                    ),
+                    itemCount: productname.length,
+                    itemBuilder: (BuildContext ctx, index) {
+                      return Container(
+                        height: size.height * 0.08,
+                        //width: double.,
+                        margin: EdgeInsets.symmetric(
+                            vertical: size.height * 0.00131,
+                            horizontal: size.width * 0.01),
+                        decoration: BoxDecoration(
+                            color: Color(0xff11eae0),
+                            //colors[index],
+                            // gradient: LinearGradient(
+                            //     begin: Alignment.centerLeft,
+                            //     end: Alignment.centerRight,
+                            //     colors: [
+                            //       Color(0xffffffff),
+                            //       Color(0xffffffff)
+                            //       //darkPrimary,
+                            //     ]),
+                            borderRadius: BorderRadius.circular(12),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(-1, -1),
+                                spreadRadius: 1,
+                                blurRadius: 0,
+                                color: Colors.grey.shade100,
+                              ),
+                              BoxShadow(
+                                offset: Offset(1, 1),
+                                spreadRadius: 1,
+                                blurRadius: 2,
+                                color: Colors.grey.shade100,
+                              ),
+                            ]),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: size.height * 0.01),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  if (index == 0) {
+                                    //Get.to(() => PdfPage());
+                                  } else if (index == 1) {
+                                    //Get.to(() => AddTechnician());
+                                  } else if (index == 2) {
+                                    //Get.to(() => Profoile());
+                                  } else if (index == 3) {
+                                    Get.defaultDialog(
+                                        backgroundColor: MyTheme.ThemeColors,
+                                        title: '',
+                                        content: SingleChildScrollView(
+                                          child: Column(
+                                            //mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              NeumorphicTextFieldContainer(
+                                                child: Obx(
+                                                  () => (_appointmentController
+                                                          .isLoading.value)
+                                                      ? Center(
+                                                          child:
+                                                              CircularProgressIndicator())
+                                                      : TextFormField(
+                                                          controller:
+                                                              _appointmentController
+                                                                  .appointmentController,
+                                                          onTap: () {
+                                                            _appointmentController
+                                                                .chooseDate();
+                                                          },
+
+                                                          cursorColor:
+                                                              Colors.black,
+                                                          obscureText: false,
+                                                          decoration:
+                                                              InputDecoration(
+                                                            hintText:
+                                                                'Select date',
+                                                            helperStyle:
+                                                                TextStyle(
+                                                              color: black
+                                                                  .withOpacity(
+                                                                      0.7),
+                                                              fontSize: 18,
+                                                            ),
+                                                            prefixIcon: Icon(
+                                                              Icons
+                                                                  .calendar_today_outlined,
+                                                              color: black
+                                                                  .withOpacity(
+                                                                      0.7),
+                                                              size: 20,
+                                                            ),
+                                                            border: InputBorder
+                                                                .none,
+                                                          ),
+                                                          keyboardType:
+                                                              TextInputType
+                                                                  .multiline,
+                                                          maxLines: 1,
+                                                          autofocus: true,
+                                                          //obscureText: true,
+                                                          //controller: _loginpasswordController.mobileController,
+                                                        ),
+                                                ),
+                                              ),
+
+                                              // SizedBox(
+                                              //     height: size.height * 0.05,
+                                              //     child: TestPickerWidget()),
+                                              ///..................
+                                              // Obx(
+                                              //   () => Text(
+                                              //     DateFormat("dd-MM-yyyy")
+                                              //         .format(_appointmentController
+                                              //             .selectedDate.value)
+                                              //         .toString(),
+                                              //     style: TextStyle(fontSize: 25),
+                                              //   ),
+                                              // ),
+                                              // ElevatedButton(
+                                              //   onPressed: () {
+                                              //     _appointmentController
+                                              //         .chooseDate()
+                                              //         .toString();
+                                              //   },
+                                              //   child: Text('Select Date'),
+                                              // ),
+                                              SizedBox(
+                                                height: 30.0,
+                                              ),
+                                              ElevatedButton(
+                                                style: ElevatedButton.styleFrom(
+                                                  foregroundColor:
+                                                      Colors.yellow,
+                                                  backgroundColor:
+                                                      Colors.red, // foreground
+                                                ),
+                                                onPressed: () {
+                                                  Get.back();
+                                                  Get.to(() =>
+                                                      AppointmentHistory());
+                                                  // todoController.todos.add(
+                                                  //   Todo(
+                                                  //     text: textEditingController.text,
+                                                  //   ),
+                                                  // );
+                                                  //Get.back();
+                                                },
+                                                child: Text(
+                                                  'Appointment History',
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 16.0),
+                                                ),
+                                                //color: Colors.redAccent,
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        radius: 10.0);
+                                    // whatsAppOpen();
+                                    // _launchWhatsapp();
+
+                                    //Get.to(() => ComplainList());
+
+                                    ///Todo this is showing dark and white mode
+                                    ///
+                                    //Get.to(() => TheJwelleryStore());
+
+                                    //Get.to(() => CarouselDemo());
+                                  } else if (index == 4) {
+                                    //Get.defaultDialog(
+                                    //barrierDismissible: true,
+
+                                  } else if (index == 5) {
+                                    // Get.defaultDialog(
+                                    //     barrierDismissible: true,
+                                    //     backgroundColor: MyTheme.t1containercolor,
+                                    //     title: '',
+                                    //     content: Column(
+                                    //       mainAxisSize: MainAxisSize.min,
+                                    //       children: [
+                                    //         Directionality(
+                                    //           textDirection: TextDirection.ltr,
+                                    //           child: Center(
+                                    //             child: Padding(
+                                    //               padding:
+                                    //                   const EdgeInsets.all(0.0),
+                                    //               child: TextFormField(
+                                    //                 decoration: InputDecoration(
+                                    //                   filled: true,
+                                    //
+                                    //                   fillColor: MyTheme
+                                    //                       .t1bacgroundcolors1,
+                                    //                   hintText:
+                                    //                       'Enter Service Name',
+                                    //                   contentPadding:
+                                    //                       const EdgeInsets.only(
+                                    //                           left: 14.0,
+                                    //                           bottom: 4.0,
+                                    //                           top: 16.0),
+                                    //                   focusedBorder:
+                                    //                       OutlineInputBorder(
+                                    //                     borderSide: new BorderSide(
+                                    //                         color: Colors.green),
+                                    //                     borderRadius:
+                                    //                         new BorderRadius
+                                    //                             .circular(10),
+                                    //                   ),
+                                    //                   enabledBorder:
+                                    //                       UnderlineInputBorder(
+                                    //                     borderSide: new BorderSide(
+                                    //                         color:
+                                    //                             Colors.transparent),
+                                    //                     borderRadius:
+                                    //                         new BorderRadius
+                                    //                             .circular(10.0),
+                                    //                   ),
+                                    //                   //focusedBorder: InputBorder.none,
+                                    //                   //enabledBorder: InputBorder.none,
+                                    //                   // errorBorder: InputBorder.none,
+                                    //                   // border: InputBorder.none,
+                                    //
+                                    //                   border: OutlineInputBorder(
+                                    //                     borderSide: BorderSide(
+                                    //                         color: Colors.red,
+                                    //                         width: 2.0),
+                                    //                     borderRadius:
+                                    //                         BorderRadius.circular(
+                                    //                             10),
+                                    //                   ),
+                                    //                   // labelText: "Password",
+                                    //                   prefixIcon: Padding(
+                                    //                     padding:
+                                    //                         EdgeInsets.symmetric(
+                                    //                             vertical:
+                                    //                                 size.height *
+                                    //                                     0.012,
+                                    //                             horizontal:
+                                    //                                 size.width *
+                                    //                                     0.02),
+                                    //                     child: Image.asset(
+                                    //                       'lib/assets/images/profile.png',
+                                    //                       color:
+                                    //                           MyTheme.t1Iconcolor,
+                                    //                       height: 10,
+                                    //                       width: 10,
+                                    //                     ),
+                                    //                   ),
+                                    //                 ),
+                                    //                 keyboardType: TextInputType
+                                    //                     .visiblePassword,
+                                    //                 //obscureText: true,
+                                    //                 // controller:
+                                    //                 // _registerComplainController.nameController,
+                                    //                 // onSaved: (value) {
+                                    //                 //   _registerComplainController.name = value!;
+                                    //                 // },
+                                    //                 // validator: (value) {
+                                    //                 //   return _registerComplainController
+                                    //                 //       .validateName(value!);
+                                    //                 // },
+                                    //               ),
+                                    //             ),
+                                    //           ),
+                                    //         ),
+                                    //         // TextField(
+                                    //         //   //controller: settingsScreenController.categoryNameController,
+                                    //         //   keyboardType: TextInputType.text,
+                                    //         //   maxLines: 1,
+                                    //         //   decoration: InputDecoration(
+                                    //         //       labelText: 'Service name',
+                                    //         //       hintMaxLines: 1,
+                                    //         //       border: OutlineInputBorder(
+                                    //         //           borderSide: BorderSide(
+                                    //         //               color: Colors.green,
+                                    //         //               width: 4.0))),
+                                    //         // ),
+                                    //         SizedBox(
+                                    //           height: 30.0,
+                                    //         ),
+                                    //         PhysicalModel(
+                                    //           color: Colors.white,
+                                    //           shadowColor: Colors.grey,
+                                    //           elevation: 4,
+                                    //           borderRadius:
+                                    //               BorderRadius.circular(10),
+                                    //           child: Padding(
+                                    //             padding: const EdgeInsets.all(3.0),
+                                    //             child: Container(
+                                    //               height: size.height * 0.04,
+                                    //               width: size.width * 0.4,
+                                    //               decoration: BoxDecoration(
+                                    //                 color: MyTheme.t1Iconcolor,
+                                    //                 borderRadius:
+                                    //                     BorderRadius.circular(10),
+                                    //               ),
+                                    //               child: Center(
+                                    //                 child: Text(
+                                    //                   'ADD SERVICE',
+                                    //                   style: TextStyle(
+                                    //                       color: Colors.white,
+                                    //                       fontSize: 14.0,
+                                    //                       fontWeight:
+                                    //                           FontWeight.w600),
+                                    //                 ),
+                                    //               ),
+                                    //             ),
+                                    //           ),
+                                    //         ),
+                                    //       ],
+                                    //     ),
+                                    //     radius: 10.0);
+                                    ///
+                                    //Get.to(() => ServicesPage());
+                                  } else if (index == 6) {
+                                    //Get.to(() => MyHolidayPage());
+                                  } else if (index == 7) {
+                                    //Get.to(() => TermsMemberPage());
+                                  }
+                                },
+                                child: Container(
+                                  height: size.height * 0.11,
+                                  width: size.width * 0.23,
+                                  padding: EdgeInsets.all(7),
+                                  child: Image.asset(
+                                    productimage[index],
+                                    // "lib/assets/image/icons8-hospital-64.png",
+                                  ),
+                                  decoration: BoxDecoration(
+                                      color: Colors.grey[300],
+                                      borderRadius: BorderRadius.circular(10),
+                                      boxShadow: [
+                                        const BoxShadow(
+                                          color: Color(0xFFBEBEBE),
+                                          offset: Offset(03, 03),
+                                          blurRadius: 1,
+                                          spreadRadius: 1,
+                                        ),
+                                        const BoxShadow(
+                                          color: Colors.white,
+                                          offset: Offset(-02, -02),
+                                          blurRadius: 1,
+                                          spreadRadius: 1,
+                                        ),
+                                      ]),
+                                ),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.014,
+                              ),
+                              Center(
+                                child: Text(
+                                  productname[index],
+                                  style: GoogleFonts.abhayaLibre(
+                                    fontSize: size.height * 0.018,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        // child: child,
+                      );
+                      //   Container(
+                      //   alignment: Alignment.center,
+                      //   decoration: BoxDecoration(
+                      //       color: Colors.amber,
+                      //       borderRadius: BorderRadius.circular(15)),
+                      //   child: Text(productname[index]),
+                      // );
+                    }),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

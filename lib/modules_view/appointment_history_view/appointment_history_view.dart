@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 
-class PatientList extends StatelessWidget {
-  const PatientList({Key? key}) : super(key: key);
+class AppointmentHistory extends StatelessWidget {
+  const AppointmentHistory({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class PatientList extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        title: Text('Patient List'),
+        title: Text('Appintment History'),
         backgroundColor: MyTheme.ThemeColors,
       ),
       body: Stack(
@@ -25,7 +25,7 @@ class PatientList extends StatelessWidget {
               height: size.height,
               child: ListView.builder(
                   shrinkWrap: true,
-                  itemCount: 5,
+                  itemCount: 2,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
                       padding: EdgeInsets.symmetric(
@@ -58,11 +58,11 @@ class PatientList extends StatelessWidget {
                               ),
                             ],
                             image: DecorationImage(
-                                image: NetworkImage(
-                                    'https://images.unsplash.com/photo-1626624340240-aadc087844fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Ymx1ciUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'),
+                                image: AssetImage(
+                                    'lib/assets/background_stack_png/appointment6.png'),
                                 fit: BoxFit.cover)),
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(6.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -127,44 +127,44 @@ class PatientList extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Kavi Raj',
+                                    'Kishor Kumar',
                                     style: GoogleFonts.raleway(
-                                        color: Colors.grey.shade800,
+                                        color: Colors.cyanAccent,
                                         fontWeight: FontWeight.w700,
                                         fontSize: size.width * 0.035),
                                   ),
                                   Text(
-                                    '8977889999',
+                                    '9977889999',
                                     style: GoogleFonts.raleway(
-                                        color: Colors.grey.shade800,
+                                        color: Colors.cyanAccent,
                                         fontWeight: FontWeight.w700,
                                         fontSize: size.width * 0.035),
                                   ),
                                   Text(
-                                    'kavi@gmail.com',
+                                    'ksk@gmail.com',
                                     style: GoogleFonts.raleway(
-                                        color: Colors.grey.shade800,
+                                        color: Colors.cyanAccent,
                                         fontWeight: FontWeight.w700,
                                         fontSize: size.width * 0.035),
                                   ),
                                   Text(
-                                    'Sector 2, C 53',
+                                    'Sector 12, C 59',
                                     style: GoogleFonts.raleway(
-                                        color: Colors.grey.shade800,
+                                        color: Colors.cyanAccent,
                                         fontWeight: FontWeight.w700,
                                         fontSize: size.width * 0.035),
                                   ),
                                   Text(
-                                    'Noida',
+                                    'Lakhnaw',
                                     style: GoogleFonts.raleway(
-                                        color: Colors.grey.shade800,
+                                        color: Colors.cyanAccent,
                                         fontWeight: FontWeight.w700,
                                         fontSize: size.width * 0.035),
                                   ),
                                   Text(
                                     'UP',
                                     style: GoogleFonts.raleway(
-                                        color: Colors.grey.shade800,
+                                        color: Colors.cyanAccent,
                                         fontWeight: FontWeight.w700,
                                         fontSize: size.width * 0.035),
                                   ),

@@ -7,6 +7,7 @@ class AppointmentController extends GetxController {
   var selectedTime = TimeOfDay.now().obs;
   var selectedDate = DateTime.now().obs;
   RxInt selectedIndex = 0.obs;
+  var newpickedDate = DateTime.now().obs;
   RxBool isLoading = false.obs;
 
   late TextEditingController appointmentController;
@@ -30,7 +31,7 @@ class AppointmentController extends GetxController {
     //TextEditingController.dispose();
   }
   chooseDate() async {
-    DateTime? pickedDate = await showDatePicker(
+    DateTime? newpickedDate = await showDatePicker(
       context: Get.context!,
       initialDate: selectedDate.value,
       firstDate: DateTime(2018),
@@ -44,14 +45,22 @@ class AppointmentController extends GetxController {
 
       errorInvalidText: 'Enter valid date range',
       fieldLabelText: 'DOB',
-      fieldHintText: 'Month/Date/Year',
+      //fieldHintText: 'Month/Date/Year',
       //selectableDayPredicate: disableDate,
     );
-    if (pickedDate != null && pickedDate != selectedDate) {
-      selectedDate.value = pickedDate;
-      appointmentController.text =
-          DateFormat('DD-MM-yyyy').format(selectedDate.value).toString();
+    if (newpickedDate != null) {
+      selectedDate.value = newpickedDate;
+      appointmentController
+        ..text = DateFormat.yMMMd().format(selectedDate.value).toString()
+        ..selection = TextSelection.fromPosition(TextPosition(
+            offset: appointmentController.text.length,
+            affinity: TextAffinity.upstream));
     }
+    // if (pickedDate != null && pickedDate != selectedDate) {
+    //   selectedDate.value = pickedDate;
+    //   appointmentController.text =
+    //       DateFormat('DD-MM-yyyy').format(selectedDate.value).toString();
+    // }
   }
 
   //bool disableDate(DateTime day) {
