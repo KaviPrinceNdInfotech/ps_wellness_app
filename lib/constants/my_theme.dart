@@ -12,6 +12,8 @@ import 'package:google_fonts/google_fonts.dart';
 const double appPadding = 30;
 
 class MyTheme {
+  static Color white = Color(0xffffffff);
+  static Color ThemeColors1 = Color(0xff00caf7);
   static Color ThemeColors = Color(0xff0abab5);
   static Color loginbuttonColor = Color(0xff9bbb4c);
   static Color textcolor = Color(0xfffd4f3ec);

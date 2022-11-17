@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/appointment_history_view/appointment_history_view.dart';
+import 'package:ps_welness/modules_view/doctor_appointment_details/doctor_catagary/doctor_catagary.dart';
 import 'package:ps_welness/modules_view/drawer_view/drawerpage.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 
@@ -156,7 +157,7 @@ class HomePage extends StatelessWidget {
                               InkWell(
                                 onTap: () {
                                   if (index == 0) {
-                                    //Get.to(() => PdfPage());
+                                    Get.to(() => AppointmentDetails());
                                   } else if (index == 1) {
                                     //Get.to(() => AddTechnician());
                                   } else if (index == 2) {
