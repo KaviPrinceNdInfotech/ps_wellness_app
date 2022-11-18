@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/controllers/user_controller/user_controller_1.dart';
-import 'package:ps_welness/modules_view/home_page_view/home_page.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/home_page_user_view/user_home_page.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
@@ -408,7 +408,7 @@ class User1Credentials extends StatelessWidget {
             RectangularButton(
                 text: 'Submit',
                 press: () {
-                  Get.to(HomePage());
+                  Get.to(UserHomePage());
                   //_loginpasswordController.checkLoginpassword();
                 })
           ],

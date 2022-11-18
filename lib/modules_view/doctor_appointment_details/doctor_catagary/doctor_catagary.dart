@@ -79,9 +79,9 @@ class AppointmentDetails extends StatelessWidget {
                           Get.back();
                         },
                         child: Icon(
-                          Icons.arrow_back_ios_outlined,
+                          Icons.arrow_back,
                           color: MyTheme.blueww,
-                          size: size.height * 0.027,
+                          size: size.height * 0.028,
                         ),
                       ),
                       SizedBox(

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/controllers/doctor_controllers/doctor_controller_2.dart';
-import 'package:ps_welness/modules_view/sign_up_list/sign_up_list.dart';
+import 'package:ps_welness/modules_view/home_page_view/home_page.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
@@ -260,7 +260,7 @@ class Doctor2Credentials extends StatelessWidget {
               RectangularButton(
                   text: 'SUBMIT',
                   press: () {
-                    Get.to(SignUpList());
+                    Get.to(HomePage());
                     //_loginpasswordController.checkLoginpassword();
                   })
             ],
