@@ -201,9 +201,9 @@ class UserHomePage extends StatelessWidget {
                                 InkWell(
                                   onTap: () {
                                     if (index == 0) {
-                                      Get.to(() => CatagaryDetails());
+                                      //Get.to(() => CatagaryDetails());
                                     } else if (index == 1) {
-                                      //Get.to(() => AddTechnician());
+                                      Get.to(() => CatagaryDetails());
                                     } else if (index == 2) {
                                       //Get.to(() => Profoile());
                                     } else if (index == 3) {

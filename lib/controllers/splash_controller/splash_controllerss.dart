@@ -17,7 +17,7 @@ class SplashScreenViewModel extends GetxController
     super.onInit();
 
     Timer(
-      const Duration(seconds: 4),
+      const Duration(seconds: 3),
       () => Get.off(
         OnboardingPage(),
         // WelcomeScreen(),
@@ -27,9 +27,9 @@ class SplashScreenViewModel extends GetxController
 
   animationInitilization() {
     animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 4));
+        AnimationController(vsync: this, duration: const Duration(seconds: 3));
     animation =
-        CurvedAnimation(parent: animationController, curve: Curves.bounceInOut)
+        CurvedAnimation(parent: animationController, curve: Curves.decelerate)
             .obs
             .value;
     animation.addListener(() => update());

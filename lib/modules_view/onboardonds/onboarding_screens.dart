@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:lottie/lottie.dart';
+import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/sign_in/sigin_screen.dart';
 
 import 'onboarding_controllers.dart';
@@ -13,8 +14,7 @@ class OnboardingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      //backgroundColor: MyTheme.ThemeColors,
-
+      backgroundColor: MyTheme.ThemeColors,
       body: SafeArea(
         child: Container(
           height: double.infinity,
