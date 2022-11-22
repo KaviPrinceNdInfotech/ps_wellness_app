@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/my_theme.dart';
-import 'package:ps_welness/modules_view/1_user_section_views/appointment_checkout/appointment_checkout.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/doctorss/appointment_checkout/appointment_checkout.dart';
+//import 'package:ps_welness/modules_view/1_user_section_views/appointment_checkout/appointment_checkout.dart';
 
 class DetailsSchedulePage extends StatelessWidget {
   DetailsSchedulePage({Key? key, this.bevel = 2.0}) : super(key: key);

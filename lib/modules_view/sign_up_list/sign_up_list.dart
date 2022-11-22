@@ -24,10 +24,10 @@ class SignUpList extends StatelessWidget {
       '  FRANCHISE ',
       //'  HOSPITAL',
       '  DOCTOR  ',
-      '  DRIVER/AMBULANCE',
+      'DRIVER/AMBULANCE OPERATOR',
       '  NURSE   ',
       '  RWA     ',
-      '  CHEMIST ',
+      '  CHEMIST/PHARMACIST ',
       //'  PATIENT ',
       // 'service 7',
       // 'service 8',
@@ -390,7 +390,7 @@ class SignUpList extends StatelessWidget {
                                     Text(
                                       productname[index],
                                       style: GoogleFonts.roboto(
-                                        fontSize: size.width * 0.042,
+                                        fontSize: size.width * 0.04,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.red,
                                       ),

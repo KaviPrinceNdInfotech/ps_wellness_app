@@ -28,14 +28,14 @@ class SplashScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                     image: AssetImage(
-                        'lib/assets/background_stack_png/welcome2.png'),
+                        'lib/assets/background_stack_png/welcomwe001.png'),
                     fit: BoxFit.fill,
                   )),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       SizedBox(
-                        height: size.height * 0.16,
+                        height: size.height * 0.04,
                       ),
                       // Container(
                       //   height: size.height * 0.39,
@@ -69,10 +69,12 @@ class SplashScreen extends StatelessWidget {
                       //   ),
                       // ),
                       Image.asset(
-                        'lib/assets/background_stack_png/logoioo.png',
+                        'lib/assets/background_stack_png/welcome002.png',
+                        fit: BoxFit.fill,
+                        //'lib/assets/background_stack_png/logoioo.png',
                         //'lib/assets/image/ps_welness2.png',
-                        width: controller.animation.value * 250,
-                        height: controller.animation.value * 230,
+                        width: controller.animation.value * 750,
+                        height: controller.animation.value * 620,
                       ),
                     ],
                   ),

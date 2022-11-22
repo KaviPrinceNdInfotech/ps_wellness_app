@@ -293,7 +293,7 @@ class Driver2Credentials extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'DL Image 3',
+                              'Aadhaar Image 1',
                               style: TextStyle(
                                 fontSize: size.width * 0.03,
                                 fontWeight: FontWeight.w700,
@@ -333,7 +333,7 @@ class Driver2Credentials extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'DL Image 4',
+                              'Aadhaar Image 2',
                               style: TextStyle(
                                 fontSize: size.width * 0.03,
                                 fontWeight: FontWeight.w700,

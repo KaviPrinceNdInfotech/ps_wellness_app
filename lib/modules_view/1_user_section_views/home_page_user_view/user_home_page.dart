@@ -7,7 +7,9 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
-import 'package:ps_welness/modules_view/1_user_section_views/appointment_section/catagary/choose_catagary.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/doctorss/appointment_section/catagary/choose_catagary.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/lab/choose_lab/choose_lab.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/nursess/book_nurse_appointment1/nurse_booking_1.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/user_drawer.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
@@ -201,12 +203,13 @@ class UserHomePage extends StatelessWidget {
                                 InkWell(
                                   onTap: () {
                                     if (index == 0) {
-                                      //Get.to(() => CatagaryDetails());
+                                      Get.to(() => NurseBoooking1());
                                     } else if (index == 1) {
                                       Get.to(() => CatagaryDetails());
                                     } else if (index == 2) {
                                       //Get.to(() => Profoile());
                                     } else if (index == 3) {
+                                      Get.to(() => ChooseLab());
                                       // Get.defaultDialog(
                                       //     backgroundColor: MyTheme.ThemeColors,
                                       //     title: '',
