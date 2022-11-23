@@ -13,6 +13,7 @@ import 'package:ps_welness/modules_view/1_user_section_views/nursess/book_nurse_
 import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/user_drawer.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
+import '../medicine_view/search_section/search_medicine.dart';
 
 //import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/user_drawHomePage({Key? key}) : super(key: key);
 
@@ -330,7 +331,6 @@ class UserHomePage extends StatelessWidget {
 
                                       //Get.to(() => ComplainList());
 
-                                      ///Todo this is showing dark and white mode
                                       ///
                                       //Get.to(() => TheJwelleryStore());
 
@@ -340,6 +340,7 @@ class UserHomePage extends StatelessWidget {
                                       //barrierDismissible: true,
 
                                     } else if (index == 5) {
+                                      Get.to(() => SearchMedicine());
                                       // Get.defaultDialog(
                                       //     barrierDismissible: true,
                                       //     backgroundColor: MyTheme.t1containercolor,
@@ -481,7 +482,6 @@ class UserHomePage extends StatelessWidget {
                                       ///
                                       //Get.to(() => ServicesPage());
                                     } else if (index == 6) {
-                                      //Get.to(() => MyHolidayPage());
                                     } else if (index == 7) {
                                       //Get.to(() => TermsMemberPage());
                                     }

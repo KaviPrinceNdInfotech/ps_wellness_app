@@ -8,6 +8,7 @@ import 'package:ps_welness/modules_view/chemist_view/chemist_signup1/chemist_sig
 import 'package:ps_welness/modules_view/doctor_views/doctor_signup_1/doctor_signup_part1.dart';
 import 'package:ps_welness/modules_view/driver_ambulance_view/driver_ambulace_1/driver_registation_1.dart';
 import 'package:ps_welness/modules_view/franchies_view/franchies_1_view/franchies_signup_part1.dart';
+import 'package:ps_welness/modules_view/lab_center/lab_signup1/lab_center.dart';
 import 'package:ps_welness/modules_view/nurses_view/nurses_signup1/nurses_signup1.dart';
 import 'package:ps_welness/modules_view/rwa_view/rwa_signup1/rwa_signup1.dart';
 import 'package:ps_welness/modules_view/user_views/user_sign_up.dart';
@@ -22,6 +23,7 @@ class SignUpList extends StatelessWidget {
     final List<String> productname = [
       '  USER    ',
       '  FRANCHISE ',
+      '  DIAGNOSTIC CENTRE',
       //'  HOSPITAL',
       '  DOCTOR  ',
       'DRIVER/AMBULANCE OPERATOR',
@@ -36,6 +38,7 @@ class SignUpList extends StatelessWidget {
     final List<String> productimage = [
       'lib/assets/image/icons8-user-64.png',
       'lib/assets/icons/franchise1.png',
+      'lib/assets/icons/diagnostic.png',
       //'lib/assets/image/icons8-hospital-64.png',
       'lib/assets/image/icons8-doctor-64.png',
       'lib/assets/image/icons8-driver-58.png',
@@ -155,9 +158,10 @@ class SignUpList extends StatelessWidget {
                               } else if (index == 1) {
                                 Get.to(() => FranchiesSignup1());
                               } else if (index == 2) {
-                                Get.to(() => DoctorSignup1());
+                                Get.to(() => LabSignup1());
                               } else if (index == 3) {
-                                Get.to(() => DriverSignup1());
+                                Get.to(() => DoctorSignup1());
+                                // Get.to(() => DriverSignup1());
 
                                 // whatsAppOpen();
                                 // _launchWhatsapp();
@@ -165,14 +169,18 @@ class SignUpList extends StatelessWidget {
                                 //Get.to(() => ComplainList());
 
                               } else if (index == 4) {
-                                Get.to(() => NursesSignup1());
+                                Get.to(() => DriverSignup1());
+
+                                //Get.to(() => NursesSignup1());
 
                                 // launch('tel:+1 888888888888');
                                 //_launchWhatsapp();
                                 print('okcasll');
                                 //Get.to(() => AssociatePage());
                               } else if (index == 5) {
-                                Get.to(() => RwaSignup1());
+                                Get.to(() => NursesSignup1());
+
+                                //Get.to(() => RwaSignup1());
 
                                 // Get.defaultDialog(
                                 //     barrierDismissible: true,
@@ -315,9 +323,13 @@ class SignUpList extends StatelessWidget {
                                 ///
                                 //Get.to(() => ServicesPage());
                               } else if (index == 6) {
-                                Get.to(() => ChemistSignup1());
+                                Get.to(() => RwaSignup1());
+
+                                //Get.to(() => ChemistSignup1());
 
                                 //Get.to(() => MyHolidayPage());
+                              } else if (index == 7) {
+                                Get.to(() => ChemistSignup1());
                               }
                               // else if (index == 7) {
                               //   Get.to(() => ChemistSignup1());
