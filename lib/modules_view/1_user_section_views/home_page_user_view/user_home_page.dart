@@ -7,12 +7,13 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
-import 'package:ps_welness/modules_view/1_user_section_views/doctorss/appointment_section/catagary/choose_catagary.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/lab/choose_lab/choose_lab.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/nursess/book_nurse_appointment1/nurse_booking_1.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/user_drawer.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
+import '../doctorss/doctor_address/doctor_address.dart';
+import '../health_checkup/health_checkup_addresss/health_checkupp_address.dart';
 import '../medicine_view/search_section/search_medicine.dart';
 
 //import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/user_drawHomePage({Key? key}) : super(key: key);
@@ -206,7 +207,8 @@ class UserHomePage extends StatelessWidget {
                                     if (index == 0) {
                                       Get.to(() => NurseBoooking1());
                                     } else if (index == 1) {
-                                      Get.to(() => CatagaryDetails());
+                                      Get.to(() => DoctorAddress());
+                                      //Get.to(() => CatagaryDetails());
                                     } else if (index == 2) {
                                       //Get.to(() => Profoile());
                                     } else if (index == 3) {
@@ -336,6 +338,7 @@ class UserHomePage extends StatelessWidget {
 
                                       //Get.to(() => CarouselDemo());
                                     } else if (index == 4) {
+                                      Get.to(() => HealthCheckup1());
                                       //Get.defaultDialog(
                                       //barrierDismissible: true,
 
