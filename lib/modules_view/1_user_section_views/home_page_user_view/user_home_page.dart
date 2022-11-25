@@ -10,6 +10,7 @@ import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/lab/choose_lab/choose_lab.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/nursess/book_nurse_appointment1/nurse_booking_1.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/user_drawer.dart';
+import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
 import '../doctorss/doctor_address/doctor_address.dart';
@@ -210,128 +211,340 @@ class UserHomePage extends StatelessWidget {
                                       Get.to(() => DoctorAddress());
                                       //Get.to(() => CatagaryDetails());
                                     } else if (index == 2) {
+                                      Get.defaultDialog(
+                                          backgroundColor: MyTheme.ThemeColors,
+                                          title: 'Select ambulance Type',
+                                          content: SingleChildScrollView(
+                                            child: Column(
+                                              //mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                InkWell(
+                                                  child:
+                                                      NeumorphicTextFieldContainer(
+                                                    child: Container(
+                                                        height:
+                                                            size.height * 0.05,
+                                                        width: size.width,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white70,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text(
+                                                            'Regular',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize:
+                                                                  size.height *
+                                                                      0.02,
+                                                            ),
+                                                          ),
+                                                        )
+                                                        // ElevatedButton(
+                                                        //   onPressed: () {},
+                                                        //   child: Text(
+                                                        //     'Select Date',
+                                                        //     style: TextStyle(
+                                                        //       color: Colors.black,
+                                                        //     ),
+                                                        //   ),
+                                                        //   style: ButtonStyle(
+                                                        //     backgroundColor:
+                                                        //         MaterialStateProperty
+                                                        //             .all(Colors
+                                                        //                 .white70),
+                                                        //     padding:
+                                                        //         MaterialStateProperty
+                                                        //             .all(EdgeInsets
+                                                        //                 .all(50)),
+                                                        //     textStyle:
+                                                        //         MaterialStateProperty
+                                                        //             .all(TextStyle(
+                                                        //                 fontSize:
+                                                        //                     30,
+                                                        //                 color: Colors
+                                                        //                     .black)),
+                                                        //   ),
+                                                        // ),
+                                                        // TextFormField(
+                                                        //   controller:
+                                                        //       _appointmentUserController
+                                                        //           .appointmentController,
+                                                        //   onTap: () {
+                                                        //     _appointmentUserController
+                                                        //         .chooseDate();
+                                                        //   },
+                                                        //
+                                                        //   cursorColor: Colors.black,
+                                                        //   obscureText: false,
+                                                        //   decoration: InputDecoration(
+                                                        //     hintText: 'Select date',
+                                                        //     helperStyle: TextStyle(
+                                                        //       color: black
+                                                        //           .withOpacity(0.7),
+                                                        //       fontSize: 18,
+                                                        //     ),
+                                                        //     prefixIcon: Icon(
+                                                        //       Icons
+                                                        //           .calendar_today_outlined,
+                                                        //       color: black
+                                                        //           .withOpacity(0.7),
+                                                        //       size: 20,
+                                                        //     ),
+                                                        //     border: InputBorder.none,
+                                                        //   ),
+                                                        //   keyboardType:
+                                                        //       TextInputType.multiline,
+                                                        //   maxLines: 1,
+                                                        //   autofocus: true,
+                                                        //   //obscureText: true,
+                                                        //   //controller: _loginpasswordController.mobileController,
+                                                        // ),
+                                                        ),
+                                                  ),
+                                                ),
+                                                InkWell(
+                                                  child:
+                                                      NeumorphicTextFieldContainer(
+                                                    child: Container(
+                                                        height:
+                                                            size.height * 0.05,
+                                                        width: size.width,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white70,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text(
+                                                            'Road Accident',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize:
+                                                                  size.height *
+                                                                      0.02,
+                                                            ),
+                                                          ),
+                                                        )
+                                                        // ElevatedButton(
+                                                        //   onPressed: () {},
+                                                        //   child: Text(
+                                                        //     'Select Date',
+                                                        //     style: TextStyle(
+                                                        //       color: Colors.black,
+                                                        //     ),
+                                                        //   ),
+                                                        //   style: ButtonStyle(
+                                                        //     backgroundColor:
+                                                        //         MaterialStateProperty
+                                                        //             .all(Colors
+                                                        //                 .white70),
+                                                        //     padding:
+                                                        //         MaterialStateProperty
+                                                        //             .all(EdgeInsets
+                                                        //                 .all(50)),
+                                                        //     textStyle:
+                                                        //         MaterialStateProperty
+                                                        //             .all(TextStyle(
+                                                        //                 fontSize:
+                                                        //                     30,
+                                                        //                 color: Colors
+                                                        //                     .black)),
+                                                        //   ),
+                                                        // ),
+                                                        // TextFormField(
+                                                        //   controller:
+                                                        //       _appointmentUserController
+                                                        //           .appointmentController,
+                                                        //   onTap: () {
+                                                        //     _appointmentUserController
+                                                        //         .chooseDate();
+                                                        //   },
+                                                        //
+                                                        //   cursorColor: Colors.black,
+                                                        //   obscureText: false,
+                                                        //   decoration: InputDecoration(
+                                                        //     hintText: 'Select date',
+                                                        //     helperStyle: TextStyle(
+                                                        //       color: black
+                                                        //           .withOpacity(0.7),
+                                                        //       fontSize: 18,
+                                                        //     ),
+                                                        //     prefixIcon: Icon(
+                                                        //       Icons
+                                                        //           .calendar_today_outlined,
+                                                        //       color: black
+                                                        //           .withOpacity(0.7),
+                                                        //       size: 20,
+                                                        //     ),
+                                                        //     border: InputBorder.none,
+                                                        //   ),
+                                                        //   keyboardType:
+                                                        //       TextInputType.multiline,
+                                                        //   maxLines: 1,
+                                                        //   autofocus: true,
+                                                        //   //obscureText: true,
+                                                        //   //controller: _loginpasswordController.mobileController,
+                                                        // ),
+                                                        ),
+                                                  ),
+                                                ),
+                                                InkWell(
+                                                  child:
+                                                      NeumorphicTextFieldContainer(
+                                                    child: Container(
+                                                        height:
+                                                            size.height * 0.05,
+                                                        width: size.width,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white70,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text(
+                                                            'Funeral/Mortuary Service',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize:
+                                                                  size.height *
+                                                                      0.02,
+                                                            ),
+                                                          ),
+                                                        )
+                                                        // ElevatedButton(
+                                                        //   onPressed: () {},
+                                                        //   child: Text(
+                                                        //     'Select Date',
+                                                        //     style: TextStyle(
+                                                        //       color: Colors.black,
+                                                        //     ),
+                                                        //   ),
+                                                        //   style: ButtonStyle(
+                                                        //     backgroundColor:
+                                                        //         MaterialStateProperty
+                                                        //             .all(Colors
+                                                        //                 .white70),
+                                                        //     padding:
+                                                        //         MaterialStateProperty
+                                                        //             .all(EdgeInsets
+                                                        //                 .all(50)),
+                                                        //     textStyle:
+                                                        //         MaterialStateProperty
+                                                        //             .all(TextStyle(
+                                                        //                 fontSize:
+                                                        //                     30,
+                                                        //                 color: Colors
+                                                        //                     .black)),
+                                                        //   ),
+                                                        // ),
+                                                        // TextFormField(
+                                                        //   controller:
+                                                        //       _appointmentUserController
+                                                        //           .appointmentController,
+                                                        //   onTap: () {
+                                                        //     _appointmentUserController
+                                                        //         .chooseDate();
+                                                        //   },
+                                                        //
+                                                        //   cursorColor: Colors.black,
+                                                        //   obscureText: false,
+                                                        //   decoration: InputDecoration(
+                                                        //     hintText: 'Select date',
+                                                        //     helperStyle: TextStyle(
+                                                        //       color: black
+                                                        //           .withOpacity(0.7),
+                                                        //       fontSize: 18,
+                                                        //     ),
+                                                        //     prefixIcon: Icon(
+                                                        //       Icons
+                                                        //           .calendar_today_outlined,
+                                                        //       color: black
+                                                        //           .withOpacity(0.7),
+                                                        //       size: 20,
+                                                        //     ),
+                                                        //     border: InputBorder.none,
+                                                        //   ),
+                                                        //   keyboardType:
+                                                        //       TextInputType.multiline,
+                                                        //   maxLines: 1,
+                                                        //   autofocus: true,
+                                                        //   //obscureText: true,
+                                                        //   //controller: _loginpasswordController.mobileController,
+                                                        // ),
+                                                        ),
+                                                  ),
+                                                ),
+
+                                                // SizedBox(
+                                                //     height: size.height * 0.05,
+                                                //     child: TestPickerWidget()),
+                                                ///..................
+                                                // Obx(
+                                                //   () => Text(
+                                                //     DateFormat("dd-MM-yyyy")
+                                                //         .format(_appointmentController
+                                                //             .selectedDate.value)
+                                                //         .toString(),
+                                                //     style: TextStyle(fontSize: 25),
+                                                //   ),
+                                                // ),
+
+                                                // SizedBox(
+                                                //   height: 30.0,
+                                                // ),
+                                                // ElevatedButton(
+                                                //   style:
+                                                //       ElevatedButton.styleFrom(
+                                                //     foregroundColor:
+                                                //         Colors.yellow,
+                                                //     backgroundColor: Colors
+                                                //         .red, // foreground
+                                                //   ),
+                                                //   onPressed: () {
+                                                //     Get.back();
+                                                //     // Get.to(() =>
+                                                //     //     AppointmentHistory()
+                                                //     // );
+                                                //     // todoController.todos.add(
+                                                //     //   Todo(
+                                                //     //     text: textEditingController.text,
+                                                //     //   ),
+                                                //     // );
+                                                //     //Get.back();
+                                                //   },
+                                                //   child: Text(
+                                                //     'Appointment History',
+                                                //     style: TextStyle(
+                                                //         color: Colors.white,
+                                                //         fontSize: 16.0),
+                                                //   ),
+                                                //   //color: Colors.redAccent,
+                                                // )
+                                              ],
+                                            ),
+                                          ),
+                                          radius: 10.0);
+                                      //whatsAppOpen();
+                                      // _launchWhatsapp();
+
+                                      // Get.to(() => ComplainList());
                                       //Get.to(() => Profoile());
                                     } else if (index == 3) {
                                       Get.to(() => ChooseLab());
-                                      // Get.defaultDialog(
-                                      //     backgroundColor: MyTheme.ThemeColors,
-                                      //     title: '',
-                                      //     content: SingleChildScrollView(
-                                      //       child: Column(
-                                      //         //mainAxisSize: MainAxisSize.min,
-                                      //         children: [
-                                      //           NeumorphicTextFieldContainer(
-                                      //             child: Obx(
-                                      //               () => (_appointmentUserController
-                                      //                       .isLoading.value)
-                                      //                   ? Center(
-                                      //                       child:
-                                      //                           CircularProgressIndicator())
-                                      //                   : TextFormField(
-                                      //                       controller:
-                                      //                           _appointmentUserController
-                                      //                               .appointmentController,
-                                      //                       onTap: () {
-                                      //                         _appointmentUserController
-                                      //                             .chooseDate();
-                                      //                       },
-                                      //
-                                      //                       cursorColor:
-                                      //                           Colors.black,
-                                      //                       obscureText: false,
-                                      //                       decoration:
-                                      //                           InputDecoration(
-                                      //                         hintText:
-                                      //                             'Select date',
-                                      //                         helperStyle:
-                                      //                             TextStyle(
-                                      //                           color: black
-                                      //                               .withOpacity(
-                                      //                                   0.7),
-                                      //                           fontSize: 18,
-                                      //                         ),
-                                      //                         prefixIcon: Icon(
-                                      //                           Icons
-                                      //                               .calendar_today_outlined,
-                                      //                           color: black
-                                      //                               .withOpacity(
-                                      //                                   0.7),
-                                      //                           size: 20,
-                                      //                         ),
-                                      //                         border:
-                                      //                             InputBorder
-                                      //                                 .none,
-                                      //                       ),
-                                      //                       keyboardType:
-                                      //                           TextInputType
-                                      //                               .multiline,
-                                      //                       maxLines: 1,
-                                      //                       autofocus: true,
-                                      //                       //obscureText: true,
-                                      //                       //controller: _loginpasswordController.mobileController,
-                                      //                     ),
-                                      //             ),
-                                      //           ),
-                                      //
-                                      //           // SizedBox(
-                                      //           //     height: size.height * 0.05,
-                                      //           //     child: TestPickerWidget()),
-                                      //           ///..................
-                                      //           // Obx(
-                                      //           //   () => Text(
-                                      //           //     DateFormat("dd-MM-yyyy")
-                                      //           //         .format(_appointmentController
-                                      //           //             .selectedDate.value)
-                                      //           //         .toString(),
-                                      //           //     style: TextStyle(fontSize: 25),
-                                      //           //   ),
-                                      //           // ),
-                                      //           // ElevatedButton(
-                                      //           //   onPressed: () {
-                                      //           //     _appointmentController
-                                      //           //         .chooseDate()
-                                      //           //         .toString();
-                                      //           //   },
-                                      //           //   child: Text('Select Date'),
-                                      //           // ),
-                                      //           SizedBox(
-                                      //             height: 30.0,
-                                      //           ),
-                                      //           ElevatedButton(
-                                      //             style:
-                                      //                 ElevatedButton.styleFrom(
-                                      //               foregroundColor:
-                                      //                   Colors.yellow,
-                                      //               backgroundColor: Colors
-                                      //                   .red, // foreground
-                                      //             ),
-                                      //             onPressed: () {
-                                      //               Get.back();
-                                      //               Get.to(() =>
-                                      //                   AppointmentHistory());
-                                      //               // todoController.todos.add(
-                                      //               //   Todo(
-                                      //               //     text: textEditingController.text,
-                                      //               //   ),
-                                      //               // );
-                                      //               //Get.back();
-                                      //             },
-                                      //             child: Text(
-                                      //               'Appointment History',
-                                      //               style: TextStyle(
-                                      //                   color: Colors.white,
-                                      //                   fontSize: 16.0),
-                                      //             ),
-                                      //             //color: Colors.redAccent,
-                                      //           )
-                                      //         ],
-                                      //       ),
-                                      //     ),
-                                      //     radius: 10.0);
-                                      // whatsAppOpen();
-                                      // _launchWhatsapp();
-
-                                      //Get.to(() => ComplainList());
 
                                       ///
                                       //Get.to(() => TheJwelleryStore());

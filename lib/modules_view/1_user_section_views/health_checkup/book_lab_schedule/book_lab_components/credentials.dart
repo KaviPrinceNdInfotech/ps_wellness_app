@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/constants/my_theme.dart';
 
-import '../../../../../controllers/1_user_view_controller/health_checkup_controller/health_checkup_lab_controller/book_lab_schedule_controller.dart';
+import '../../../../../constants/my_theme.dart';
+import '../../../../../controllers/1_user_view_controller/lab_controller/lab_bboking_scedule/lab_booking_schedule_controller.dart';
 
 class LabScheduleCredentials extends StatelessWidget {
   LabScheduleCredentials({Key? key, this.bevel = 2.0}) : super(key: key);
   final double bevel;
 
-  book_lab_Controller _book_lab_controller = Get.put(book_lab_Controller());
+  book_lab_schedule_Controller _book_lab_book_schedule_controller =
+      Get.put(book_lab_schedule_Controller());
 
   var items = [
     'Item 1',
@@ -31,7 +32,7 @@ class LabScheduleCredentials extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Form(
-        key: _book_lab_controller.booklabformkey,
+        key: _book_lab_book_schedule_controller.booklabscheduleformkey,
         //autovalidateMode: AutovalidateMode.onUserInteraction,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
@@ -153,23 +154,23 @@ class LabScheduleCredentials extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: size.height * 0.0,
+                    height: size.height * 0.02,
                   ),
 
                   ///todo:selected date starting...
-                  //
-                  // Text(
-                  //   'Choose Starting Date:',
-                  //   style: TextStyle(
-                  //     fontSize: size.height * 0.016,
-                  //     fontWeight: FontWeight.bold,
-                  //     color: MyTheme.blueww,
-                  //   ),
-                  // ),
+
+                  Text(
+                    'Choose Date:',
+                    style: TextStyle(
+                      fontSize: size.height * 0.016,
+                      fontWeight: FontWeight.bold,
+                      color: MyTheme.blueww,
+                    ),
+                  ),
 
                   Container(
                     width: double.infinity,
-                    margin: EdgeInsets.symmetric(vertical: 30 / 2),
+                    margin: EdgeInsets.symmetric(vertical: 30 / 3),
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                             begin: Alignment.centerLeft,
@@ -194,13 +195,13 @@ class LabScheduleCredentials extends StatelessWidget {
                           ),
                         ]),
                     child: Obx(
-                      () => (_book_lab_controller.isLoading.value)
+                      () => (_book_lab_book_schedule_controller.isLoading.value)
                           ? Center(child: CircularProgressIndicator())
                           : TextFormField(
-                              controller:
-                                  _book_lab_controller.appointmentController1,
+                              controller: _book_lab_book_schedule_controller
+                                  .appointmentController1,
                               onTap: () {
-                                _book_lab_controller.chooseDate();
+                                _book_lab_book_schedule_controller.chooseDate();
                               },
 
                               cursorColor: Colors.black,
@@ -227,84 +228,149 @@ class LabScheduleCredentials extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                      //height: size.height * 0.02,
-                      ),
+                    height: size.height * 0.01,
+                  ),
 
-                  ///todo:starting time.........................
-
-                  Container(
-                    width: double.infinity,
-                    margin: EdgeInsets.symmetric(vertical: 30 / 2),
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                            colors: [
-                              lightPrimary,
-                              darkPrimary,
-                            ]),
-                        borderRadius: BorderRadius.circular(12),
-                        boxShadow: [
-                          BoxShadow(
-                            offset: Offset(-0, -0),
-                            spreadRadius: 0,
-                            blurRadius: 0,
-                            color: darkShadow,
-                          ),
-                          BoxShadow(
-                            offset: Offset(2, 2),
-                            spreadRadius: 1,
-                            blurRadius: 0,
-                            color: lightShadow,
-                          ),
-                        ]),
-                    child: Obx(
-                      () => InkWell(
-                        onTap: () {
-                          _book_lab_controller.chooseTime();
-                        },
-                        child: Container(
-                          height: size.height * 0.06,
-                          child: Center(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: size.width * 0.1),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Choose Starting Time:',
-                                    style: TextStyle(
-                                      fontSize: size.height * 0.017,
-                                      fontWeight: FontWeight.bold,
-                                      color: MyTheme.blueww,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: size.width * 0.03,
-                                  ),
-                                  //Spacer(),
-                                  Text(
-                                    "${_book_lab_controller.selectedTime.value.hour}:${_book_lab_controller.selectedTime.value.minute}",
-                                    style: TextStyle(
-                                      fontSize: size.height * 0.026,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Book a Time:',
+                      style: TextStyle(
+                        fontSize: size.height * 0.016,
+                        fontWeight: FontWeight.bold,
+                        color: MyTheme.blueww,
+                        //color: Colors.red.shade300,
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: size.height * 0.01,
+                  ),
+                  SizedBox(
+                    height: size.height * 0.06,
+                    width: size.width,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 32,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: Ink(
+                              child: PhysicalModel(
+                                color: MyTheme.white,
+                                borderRadius: BorderRadius.circular(5),
+                                elevation: 20,
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: size.width * 0.01,
+                                      vertical: size.height * 0.004),
+                                  child: Container(
+                                    //height: size.height * 0.025,
+                                    width: size.width * 0.17,
+                                    decoration: BoxDecoration(
+                                      color: MyTheme.ThemeColors,
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          '10:00',
+                                          style: TextStyle(
+                                            fontSize: size.height * 0.015,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
+                  ),
+
+                  ///todo:starting time.........................
+                  ///
+                  /// time picker...........
+
+                  // Container(
+                  //   width: double.infinity,
+                  //   margin: EdgeInsets.symmetric(vertical: 30 / 2),
+                  //   decoration: BoxDecoration(
+                  //       gradient: LinearGradient(
+                  //           begin: Alignment.centerLeft,
+                  //           end: Alignment.centerRight,
+                  //           colors: [
+                  //             lightPrimary,
+                  //             darkPrimary,
+                  //           ]),
+                  //       borderRadius: BorderRadius.circular(12),
+                  //       boxShadow: [
+                  //         BoxShadow(
+                  //           offset: Offset(-0, -0),
+                  //           spreadRadius: 0,
+                  //           blurRadius: 0,
+                  //           color: darkShadow,
+                  //         ),
+                  //         BoxShadow(
+                  //           offset: Offset(2, 2),
+                  //           spreadRadius: 1,
+                  //           blurRadius: 0,
+                  //           color: lightShadow,
+                  //         ),
+                  //       ]),
+                  //   child: Obx(
+                  //     () => InkWell(
+                  //       onTap: () {
+                  //         _book_lab_book_schedule_controller.chooseTime();
+                  //       },
+                  //       child: Container(
+                  //         height: size.height * 0.06,
+                  //         child: Center(
+                  //           child: Padding(
+                  //             padding: EdgeInsets.symmetric(
+                  //                 horizontal: size.width * 0.1),
+                  //             child: Row(
+                  //               mainAxisAlignment:
+                  //                   MainAxisAlignment.spaceBetween,
+                  //               children: [
+                  //                 Text(
+                  //                   'Choose Starting Time:',
+                  //                   style: TextStyle(
+                  //                     fontSize: size.height * 0.017,
+                  //                     fontWeight: FontWeight.bold,
+                  //                     color: MyTheme.blueww,
+                  //                   ),
+                  //                 ),
+                  //                 SizedBox(
+                  //                   width: size.width * 0.03,
+                  //                 ),
+                  //                 //Spacer(),
+                  //                 Text(
+                  //                   "${_book_lab_book_schedule_controller.selectedTime.value.hour}:${_book_lab_book_schedule_controller.selectedTime.value.minute}",
+                  //                   style: TextStyle(
+                  //                     fontSize: size.height * 0.026,
+                  //                   ),
+                  //                 ),
+                  //               ],
+                  //             ),
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
 
                   SizedBox(
                     height: size.height * 0.0,
                   ),
 
-                  // ///todo:selected time ending...
+                  ///todo:selected time ending...
                   //
                   // NeumorphicTextFieldContainer(
                   //   child: Obx(
