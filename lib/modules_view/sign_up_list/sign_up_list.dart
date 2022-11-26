@@ -409,12 +409,12 @@ class SignUpList extends StatelessWidget {
                                     ),
                                     Material(
                                       elevation: 2,
-                                      color: Colors.black12,
+                                      color: Colors.white,
                                       shadowColor: Colors.grey,
                                       borderRadius: BorderRadius.circular(100),
                                       child: Container(
                                         height: size.height * 0.06,
-                                        width: size.width * 0.123,
+                                        width: size.width * 0.10,
                                         decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             image: DecorationImage(

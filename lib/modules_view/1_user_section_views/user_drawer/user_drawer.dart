@@ -7,11 +7,15 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/home_page_user_view/user_home_page.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/drawer_pages_user/doctor_history/doctor_history_user.dart';
 import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
 import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_page.dart';
 import 'package:ps_welness/modules_view/drawer_view/drower_pages/patient_lists/patient_list.dart';
 import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_view.dart';
 import 'package:ps_welness/modules_view/drawer_view/drower_pages/supports/support_view.dart';
+
+import 'drawer_pages_user/medicine_history/medicine_history_page.dart';
+import 'drawer_pages_user/walet_user/wallet_user.dart';
 
 class UserMainDrawer extends StatelessWidget {
   @override
@@ -121,14 +125,14 @@ class UserMainDrawer extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     color: MyTheme.blueww),
               ),
-              tileColor: Get.currentRoute == '/UserHomePage'
+              tileColor: Get.currentRoute == '/WolletUser'
                   ? Colors.grey[00]
                   : Colors.transparent,
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                Get.to(() => UserHomePage());
-                Get.offNamed('/UserHomePage');
+                Get.to(() => WolletUser());
+                Get.offNamed('/WolletUser');
               },
             ),
 
@@ -187,14 +191,14 @@ class UserMainDrawer extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     color: MyTheme.blueww),
               ),
-              tileColor: Get.currentRoute == '/UserHomePage'
+              tileColor: Get.currentRoute == '/DoctorHistoryUser'
                   ? Colors.grey[00]
                   : Colors.transparent,
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                //Get.to(() => UserHomePage());
-                Get.offNamed('/UserHomePage');
+                Get.to(() => DoctorHistoryUser());
+                Get.offNamed('/DoctorHistoryUser');
               },
             ),
 
@@ -220,14 +224,14 @@ class UserMainDrawer extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     color: MyTheme.blueww),
               ),
-              tileColor: Get.currentRoute == '/UserHomePage'
+              tileColor: Get.currentRoute == '/MedicinrHistoryUser'
                   ? Colors.grey[00]
                   : Colors.transparent,
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                Get.to(() => UserHomePage());
-                Get.offNamed('/UserHomePage');
+                Get.to(() => MedicinrHistoryUser());
+                Get.offNamed('/MedicinrHistoryUser');
               },
             ),
 
