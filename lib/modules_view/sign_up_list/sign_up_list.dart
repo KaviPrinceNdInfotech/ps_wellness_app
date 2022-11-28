@@ -409,12 +409,12 @@ class SignUpList extends StatelessWidget {
                                     ),
                                     Material(
                                       elevation: 2,
-                                      color: Colors.white,
+                                      color: Colors.black12,
                                       shadowColor: Colors.grey,
                                       borderRadius: BorderRadius.circular(100),
                                       child: Container(
                                         height: size.height * 0.06,
-                                        width: size.width * 0.10,
+                                        width: size.width * 0.13,
                                         decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             image: DecorationImage(
@@ -424,6 +424,23 @@ class SignUpList extends StatelessWidget {
                                         // child: Image.asset('lib/assets/images/right-arrow.gif')
                                       ),
                                     ),
+                                    // Material(
+                                    //   elevation: 2,
+                                    //   color: Colors.white,
+                                    //   shadowColor: Colors.grey,
+                                    //   borderRadius: BorderRadius.circular(100),
+                                    //   child: Container(
+                                    //     height: size.height * 0.06,
+                                    //     width: size.width * 0.13,
+                                    //     decoration: BoxDecoration(
+                                    //         shape: BoxShape.circle,
+                                    //         image: DecorationImage(
+                                    //             image: AssetImage(
+                                    //                 'lib/assets/image/right-arrow.gif'),
+                                    //             fit: BoxFit.fitWidth)),
+                                    //     // child: Image.asset('lib/assets/images/right-arrow.gif')
+                                    //   ),
+                                    // ),
                                   ],
                                 ),
                               ),
