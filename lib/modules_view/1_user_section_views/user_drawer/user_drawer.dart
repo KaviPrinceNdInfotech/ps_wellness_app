@@ -8,16 +8,21 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/home_page_user_view/user_home_page.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/drawer_pages_user/doctor_history/doctor_history_user.dart';
-import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/reports_section/report_section_list.dart';
-import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
-import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_page.dart';
-import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_view.dart';
-import 'package:ps_welness/modules_view/drawer_view/drower_pages/supports/support_view.dart';
-import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/reports_section/report_section_list.dart'; //import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
 
+//import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_page.dart';
+//import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_view.dart';
+//import 'package:ps_welness/modules_view/drawer_view/drower_pages/supports/support_view.dart';
+//import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
+
+import '../../9_doctor_section_view/drawer_view/drower_pages/about_us/about_us.dart';
+import '../../9_doctor_section_view/drawer_view/drower_pages/complaint_page/complaint_page.dart';
+import '../../9_doctor_section_view/drawer_view/drower_pages/supports/support_view.dart';
+import '../../forget_password_view/forget_password_view.dart';
 import 'drawer_pages_user/lab_appointment_history/lab_history.dart';
 import 'drawer_pages_user/medicine_history/medicine_history_page.dart';
 import 'drawer_pages_user/nurse_history/nurse_history_page.dart';
+import 'drawer_pages_user/profile_page_view/profile_view.dart';
 import 'drawer_pages_user/walet_user/wallet_user.dart';
 
 class UserMainDrawer extends StatelessWidget {
