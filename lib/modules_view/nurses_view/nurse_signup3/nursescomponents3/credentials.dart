@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/controllers/nurses_controllers/nurse_controller3.dart';
-import 'package:ps_welness/modules_view/sign_up_list/sign_up_list.dart';
-import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
+//import 'package:ps_welness/controllers/nurses_controllers/nurse_controller3container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
+
+import '../../../../controllers/nurses_controllers/nurse_controller3.dart';
+import '../../../../widgets/widgets/neumorphic_text_field_container.dart';
+import '../../../4_nurse_section_view/nurse_home/nurse_home_page.dart';
 
 class Nurses3Credentials extends StatelessWidget {
   Nurses3Credentials({Key? key}) : super(key: key);
@@ -121,7 +123,7 @@ class Nurses3Credentials extends StatelessWidget {
             RectangularButton(
                 text: 'SUBMIT',
                 press: () {
-                  Get.to(SignUpList());
+                  Get.to(NurseHomePage());
                   //_loginpasswordController.checkLoginpassword();
                 })
           ],

@@ -84,6 +84,23 @@ class MyTheme {
     end: Alignment.centerRight,
   );
 
+  static LinearGradient gradient10 = const LinearGradient(
+    colors: <Color>[
+      Color(0xff31ccb0),
+      Color(0xff2c90c4),
+
+      // Color(0xff0b806b),
+      // Color(0xff6ec481),
+      // Color(0xff37c97e),
+      // Color(0xff47bd82),
+      // Color(0xff209c87),
+      // Color(0xff0b806b),
+    ],
+    tileMode: TileMode.mirror,
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+
   static SweepGradient sweepGradient1 = SweepGradient(
     colors: [
       Colors.blue.shade400,
