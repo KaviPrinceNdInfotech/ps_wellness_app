@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/modules_view/lab_center/lab_signup1/lab_components/credentials.dart';
-import 'package:ps_welness/modules_view/lab_center/lab_signup1/lab_components/head_text.dart';
+
+import 'lab_components/credentials.dart';
+import 'lab_components/head_text.dart';
+//import 'package:ps_welness/modules_view/lab_center/lab_signup1/lab_components/credentials.dart';
+//import 'package:ps_welness/modules_view/lab_center/lab_signup1/lab_components/head_text.dart';
 
 class LabSignup1 extends StatelessWidget {
   const LabSignup1({Key? key}) : super(key: key);

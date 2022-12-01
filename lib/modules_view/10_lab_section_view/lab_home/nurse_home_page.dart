@@ -10,9 +10,6 @@ import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drawerpage.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
-import '../nurse_appointment_details/nurse_appointment_details.dart';
-import '../nurse_appointment_history_view/appointment_history_view.dart';
-import '../nurse_payment_history/nurse_payment_history.dart';
 
 //import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/user_drawHomePage({Key? key}) : super(key: key);
 
@@ -21,8 +18,8 @@ AppointmentUserController _appointmentUserController =
 
 // AppointmentController _appointmentController =
 //     Get.put(AppointmentController());
-class NurseHomePage extends StatelessWidget {
-  const NurseHomePage({Key? key}) : super(key: key);
+class LabHomePage extends StatelessWidget {
+  const LabHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,11 +57,11 @@ class NurseHomePage extends StatelessWidget {
     ];
 
     final List<String> productimage = [
-      'lib/assets/user_assets/appointment_detailsss.png',
-      'lib/assets/user_assets/upload_report.png',
-      'lib/assets/user_assets/transaction.png',
-      'lib/assets/user_assets/apointment_his.png',
-      'lib/assets/user_assets/view_reportts.png',
+      'lib/assets/image/lab_appointment.png',
+      'lib/assets/image/lab_report_upload.png',
+      'lib/assets/image/history_payment_lab.png',
+      'lib/assets/image/appoinment_his_lab.png',
+      'lib/assets/image/lab_report_view.png',
       // 'service 7',
       // 'service 8',
     ];
@@ -85,9 +82,11 @@ class NurseHomePage extends StatelessWidget {
           title: Row(
             children: [
               Container(
-                  height: size.height * 0.035,
-                  width: size.width * 0.09,
-                  child: Image.asset('lib/assets/icons/dash_nurse.png')),
+                  height: size.height * 0.09,
+                  width: size.width * 0.15,
+                  child: Image.asset(
+                      //'lib/assets/user_assets/12lab.png'
+                      'lib/assets/background_stack_png/lab_equi1.png')),
               RichText(
                 text: TextSpan(
                   children: <TextSpan>[
@@ -101,7 +100,7 @@ class NurseHomePage extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: ' NURSE',
+                      text: ' LAB',
                       style: GoogleFonts.alatsi(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
@@ -229,12 +228,12 @@ class NurseHomePage extends StatelessWidget {
                                 InkWell(
                                   onTap: () {
                                     if (index == 0) {
-                                      Get.to(() => NurseeAppointmentDetail());
+                                      // Get.to(() => NurseeAppointmentDetail());
                                     } else if (index == 1) {
                                       //Get.to(() => DoctorAddress());
                                       //Get.to(() => CatagaryDetails());
                                     } else if (index == 2) {
-                                      Get.to(() => NursePaymentHistory());
+                                      //Get.to(() => NursePaymentHistory());
                                       // Get.defaultDialog(
                                       //     backgroundColor: MyTheme.ThemeColors,
                                       //     title: 'Select ambulance Type',
@@ -568,7 +567,7 @@ class NurseHomePage extends StatelessWidget {
                                       // Get.to(() => ComplainList());
                                       //Get.to(() => Profoile());
                                     } else if (index == 3) {
-                                      Get.to(() => NurseeAppointmentHistory());
+                                      // Get.to(() => NurseeAppointmentHistory());
 
                                       ///
                                       //Get.to(() => TheJwelleryStore());
@@ -819,13 +818,19 @@ class Mycrusial extends StatelessWidget {
   ];
 
   final List<String> images = [
-    'https://images.unsplash.com/photo-1578307986144-d248cb7434db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTF8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjB8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1613758947307-f3b8f5d80711?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTl8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1612277795163-49a1a64e8f34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTB8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1587556930720-58ec521056a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG51cnNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1590611936760-eeb9bc598548?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG51cnNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1592671748854-2e0ed15b0441?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bnVyc2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    'https://images.unsplash.com/photo-1630959305790-4c956ce6c0b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODB8fGxhYm9yYXRvcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    'https://images.unsplash.com/photo-1595500381751-d940898d13a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fGxhYm9yYXRvcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    'https://images.unsplash.com/photo-1666214280391-c9ef08d09da8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MzZ8fGxhYm9yYXRvcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    'https://images.unsplash.com/photo-1518152006812-edab29b069ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGxhYm9yYXRvcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    'https://images.unsplash.com/photo-1666214275172-ccc3b98e5519?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8OHx8bGFib3JhdG9yeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+    'https://images.unsplash.com/photo-1572884267966-02340ebc90ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bGFib3JhdG9yeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+    'https://images.unsplash.com/photo-1666214278812-83371e46279f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8bGFib3JhdG9yeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjB8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1613758947307-f3b8f5d80711?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTl8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1612277795163-49a1a64e8f34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTB8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1587556930720-58ec521056a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG51cnNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1590611936760-eeb9bc598548?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG51cnNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1592671748854-2e0ed15b0441?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bnVyc2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
 
     // "https://plus.unsplash.com/premium_photo-1661776255948-7a76baa9d7b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80",
     //"https://images.unsplash.com/photo-1601841162542-956af38ba052?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",

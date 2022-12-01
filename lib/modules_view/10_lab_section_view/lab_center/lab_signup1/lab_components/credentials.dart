@@ -4,7 +4,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/controllers/lab_controller/lab_controller1/lab_controller_1.dart';
-import 'package:ps_welness/modules_view/lab_center/lab_signup2/lab_signup_2.dart';
+import 'package:ps_welness/modules_view/10_lab_section_view/lab_center/lab_signup2/lab_signup_2.dart';
+//import 'package:ps_welness/modules_view/lab_center/lab_signup2/lab_signup_2.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 

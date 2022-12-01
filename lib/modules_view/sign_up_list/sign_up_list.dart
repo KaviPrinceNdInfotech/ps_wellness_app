@@ -8,11 +8,12 @@ import 'package:ps_welness/modules_view/chemist_view/chemist_signup1/chemist_sig
 //import 'package:ps_welness/modules_view/doctor_views/doctor_signup_1/doctor_signup_part1.dart';
 import 'package:ps_welness/modules_view/driver_ambulance_view/driver_ambulace_1/driver_registation_1.dart';
 import 'package:ps_welness/modules_view/franchies_view/franchies_1_view/franchies_signup_part1.dart';
-import 'package:ps_welness/modules_view/lab_center/lab_signup1/lab_center.dart';
+//import 'package:ps_welness/modules_view/lab_center/lab_signup1/lab_center.dart';
 import 'package:ps_welness/modules_view/nurses_view/nurses_signup1/nurses_signup1.dart';
 import 'package:ps_welness/modules_view/rwa_view/rwa_signup1/rwa_signup1.dart';
 import 'package:ps_welness/modules_view/user_views/user_sign_up.dart';
 
+import '../10_lab_section_view/lab_center/lab_signup1/lab_center.dart';
 import '../9_doctor_section_view/doctor_views/doctor_signup_1/doctor_signup_part1.dart';
 
 class SignUpList extends StatelessWidget {

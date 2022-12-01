@@ -132,6 +132,22 @@ class MyTheme {
     end: Alignment.centerRight,
   );
 
+  static LinearGradient gradient33 = const LinearGradient(
+    colors: <Color>[
+      Color(0xffc1e3ff),
+      Color(0xffabc7ff),
+      // Color(0xff209c87),
+      //Color(0xff6ec481),
+      // Color(0xff37c97e),
+      // Color(0xff47bd82),
+      // Color(0xff209c87),
+      //Color(0xff0b806b),
+    ],
+    tileMode: TileMode.mirror,
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+
   static LinearGradient gradient4 =
       const LinearGradient(colors: [Colors.green, Colors.blue]);
 
@@ -177,6 +193,8 @@ class MyTheme {
 
   static LinearGradient gradient8 =
       const LinearGradient(colors: [Color(0xff402565), Color(0xff30BE96)]);
+  static LinearGradient gradient81 =
+      const LinearGradient(colors: [Color(0xff30BE96), Color(0xff402565)]);
 
   static LinearGradient gradient9 = const LinearGradient(
     colors: [

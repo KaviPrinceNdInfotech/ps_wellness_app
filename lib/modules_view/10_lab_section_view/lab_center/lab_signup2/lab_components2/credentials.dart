@@ -7,7 +7,7 @@ import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/controllers/hospital2_controller/hospital2_sighup_controller.dart';
 import 'package:ps_welness/controllers/lab_controller/lab_zcontroller2/lab_controller_2.dart';
-import 'package:ps_welness/modules_view/1_user_section_views/home_page_user_view/user_home_page.dart';
+import 'package:ps_welness/modules_view/10_lab_section_view/lab_home/nurse_home_page.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
@@ -354,7 +354,7 @@ class Lab2Credentials extends StatelessWidget {
               RectangularButton(
                   text: 'SUBMIT',
                   press: () {
-                    Get.to(UserHomePage());
+                    Get.to(LabHomePage());
                     //_loginpasswordController.checkLoginpassword();
                   })
             ],
