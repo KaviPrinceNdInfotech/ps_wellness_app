@@ -7,9 +7,12 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
-import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drawerpage.dart';
+import 'package:ps_welness/modules_view/10_lab_section_view/lab_drawer_view/drawerpage.dart';
+import 'package:ps_welness/modules_view/10_lab_section_view/lab_payment_history/lab_payment_history.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
+import '../lab_appointment_details/lab_appointment_details.dart';
+import '../lab_appointment_history_view/appointment_history_view.dart';
 
 //import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/user_drawHomePage({Key? key}) : super(key: key);
 
@@ -135,7 +138,7 @@ class LabHomePage extends StatelessWidget {
           ),
           // leading: Icon(Icons.read_more_outlined),
         ),
-        drawer: NurseMainDrawer(),
+        drawer: LabMainDrawer(),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -228,11 +231,12 @@ class LabHomePage extends StatelessWidget {
                                 InkWell(
                                   onTap: () {
                                     if (index == 0) {
-                                      // Get.to(() => NurseeAppointmentDetail());
+                                      Get.to(() => LabAppointmentDetail());
                                     } else if (index == 1) {
                                       //Get.to(() => DoctorAddress());
                                       //Get.to(() => CatagaryDetails());
                                     } else if (index == 2) {
+                                      Get.to(() => LabPaymentHistory());
                                       //Get.to(() => NursePaymentHistory());
                                       // Get.defaultDialog(
                                       //     backgroundColor: MyTheme.ThemeColors,
@@ -567,7 +571,7 @@ class LabHomePage extends StatelessWidget {
                                       // Get.to(() => ComplainList());
                                       //Get.to(() => Profoile());
                                     } else if (index == 3) {
-                                      // Get.to(() => NurseeAppointmentHistory());
+                                      Get.to(() => LabAppointmentHistory());
 
                                       ///
                                       //Get.to(() => TheJwelleryStore());

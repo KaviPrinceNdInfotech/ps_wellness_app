@@ -148,6 +148,9 @@ class MyTheme {
     end: Alignment.centerRight,
   );
 
+  static LinearGradient gradient35 =
+      const LinearGradient(colors: [Color(0xff1ca9c9), Color(0xff2ee8bb)]);
+
   static LinearGradient gradient4 =
       const LinearGradient(colors: [Colors.green, Colors.blue]);
 
