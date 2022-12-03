@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/controllers/chemist_controllers/chemist_controller_2.dart';
 import 'package:ps_welness/controllers/hospital2_controller/hospital2_sighup_controller.dart';
-import 'package:ps_welness/modules_view/sign_up_list/sign_up_list.dart';
+import 'package:ps_welness/modules_view/6_chemist_section_view/chemist_home/chemist_home_page.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
@@ -328,7 +328,7 @@ class Chemist2Credentials extends StatelessWidget {
               RectangularButton(
                   text: 'SUBMIT',
                   press: () {
-                    Get.to(SignUpList());
+                    Get.to(ChemistHomePage());
                     //_loginpasswordController.checkLoginpassword();
                   }),
             ],

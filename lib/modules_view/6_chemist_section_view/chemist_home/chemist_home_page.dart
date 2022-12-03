@@ -7,12 +7,13 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
-import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drawerpage.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
-import '../nurse_appointment_details/nurse_appointment_details.dart';
-import '../nurse_appointment_history_view/appointment_history_view.dart';
-import '../nurse_payment_history/nurse_payment_history.dart';
+import '../chemist_appointment_history_view/chemist_order_history.dart';
+import '../chemist_drawer_view/drawerpage.dart';
+import '../chemist_profile_page_view/profile_view.dart';
+//import '../lab_appointment_details/lab_appointment_details.dart';
+//import '../lab_appointment_history_view/appointment_history_view.dart';
 
 //import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/user_drawHomePage({Key? key}) : super(key: key);
 
@@ -21,8 +22,8 @@ AppointmentUserController _appointmentUserController =
 
 // AppointmentController _appointmentController =
 //     Get.put(AppointmentController());
-class NurseHomePage extends StatelessWidget {
-  const NurseHomePage({Key? key}) : super(key: key);
+class ChemistHomePage extends StatelessWidget {
+  const ChemistHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +31,12 @@ class NurseHomePage extends StatelessWidget {
     GlobalKey<ScaffoldState> _key = GlobalKey();
 
     final List<String> productname = [
-      'Appointment Detail',
-      'Upload Report',
-      'Payment History',
-      'Appointment History',
-      'Report view',
-      'Contact Us',
+      'Manage Profile',
+      'Update Bank Details',
+      'Order History',
+      'My Payment History',
+      'My Payout history',
+      'Contact Us'
 
       // 'service 7',
       // 'service 8',
@@ -62,11 +63,11 @@ class NurseHomePage extends StatelessWidget {
     ];
 
     final List<String> productimage = [
-      'lib/assets/user_assets/appointment_detailsss.png',
-      'lib/assets/user_assets/upload_report.png',
-      'lib/assets/user_assets/transaction.png',
-      'lib/assets/user_assets/apointment_his.png',
-      'lib/assets/user_assets/view_reportts.png',
+      'lib/assets/icons/profile_chemiist.png',
+      'lib/assets/icons/bank_update.png',
+      'lib/assets/icons/order_history3.png',
+      'lib/assets/icons/paymenthisd.png',
+      'lib/assets/icons/payout.png',
       'lib/assets/icons/contact1.png',
       // 'service 7',
       // 'service 8',
@@ -88,9 +89,11 @@ class NurseHomePage extends StatelessWidget {
           title: Row(
             children: [
               Container(
-                  height: size.height * 0.035,
-                  width: size.width * 0.09,
-                  child: Image.asset('lib/assets/icons/dash_nurse.png')),
+                  height: size.height * 0.045,
+                  width: size.width * 0.11,
+                  child: Image.asset(
+                      //'lib/assets/user_assets/12lab.png'
+                      'lib/assets/icons/chemist22.png')),
               RichText(
                 text: TextSpan(
                   children: <TextSpan>[
@@ -104,7 +107,7 @@ class NurseHomePage extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: ' NURSE',
+                      text: ' CHEMIST',
                       style: GoogleFonts.alatsi(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
@@ -139,7 +142,7 @@ class NurseHomePage extends StatelessWidget {
           ),
           // leading: Icon(Icons.read_more_outlined),
         ),
-        drawer: NurseMainDrawer(),
+        drawer: ChemistMainDrawer(),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -232,12 +235,13 @@ class NurseHomePage extends StatelessWidget {
                                 InkWell(
                                   onTap: () {
                                     if (index == 0) {
-                                      Get.to(() => NurseeAppointmentDetail());
+                                      Get.to(() => ChemistProfilePage());
                                     } else if (index == 1) {
                                       //Get.to(() => DoctorAddress());
                                       //Get.to(() => CatagaryDetails());
                                     } else if (index == 2) {
-                                      Get.to(() => NursePaymentHistory());
+                                      Get.to(() => ChemistOrderHistory());
+                                      //Get.to(() => NursePaymentHistory());
                                       // Get.defaultDialog(
                                       //     backgroundColor: MyTheme.ThemeColors,
                                       //     title: 'Select ambulance Type',
@@ -571,7 +575,7 @@ class NurseHomePage extends StatelessWidget {
                                       // Get.to(() => ComplainList());
                                       //Get.to(() => Profoile());
                                     } else if (index == 3) {
-                                      Get.to(() => NurseeAppointmentHistory());
+                                      //Get.to(() => LabAppointmentHistory());
 
                                       ///
                                       //Get.to(() => TheJwelleryStore());
@@ -822,13 +826,19 @@ class Mycrusial extends StatelessWidget {
   ];
 
   final List<String> images = [
-    'https://images.unsplash.com/photo-1578307986144-d248cb7434db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTF8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjB8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1613758947307-f3b8f5d80711?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTl8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1612277795163-49a1a64e8f34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTB8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1587556930720-58ec521056a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG51cnNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1590611936760-eeb9bc598548?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG51cnNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1592671748854-2e0ed15b0441?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bnVyc2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    'https://images.unsplash.com/photo-1523299174285-a59d80640155?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
+    'https://images.unsplash.com/photo-1576765608866-5b51046452be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2078&q=80',
+    'https://images.unsplash.com/photo-1576089235406-0612d7bb033e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60',
+    'https://images.unsplash.com/photo-1563213126-a4273aed2016?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60',
+    'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGhhcm1hY3l8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60',
+    'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBoYXJtYWN5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
+    //'https://images.unsplash.com/photo-1666214278812-83371e46279f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8bGFib3JhdG9yeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjB8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1613758947307-f3b8f5d80711?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTl8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1612277795163-49a1a64e8f34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTB8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1587556930720-58ec521056a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG51cnNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1590611936760-eeb9bc598548?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG51cnNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    // 'https://images.unsplash.com/photo-1592671748854-2e0ed15b0441?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bnVyc2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
 
     // "https://plus.unsplash.com/premium_photo-1661776255948-7a76baa9d7b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80",
     //"https://images.unsplash.com/photo-1601841162542-956af38ba052?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",

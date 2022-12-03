@@ -40,12 +40,14 @@ class UserHomePage extends StatelessWidget {
       'Complete Health Checkup',
       'Buy Medicine',
       'Funeral Service',
+      'Contact US',
 
       // 'service 7',
       // 'service 8',
     ];
 
     final List<String> underprocess = [
+      '',
       '',
       '',
       '',
@@ -73,6 +75,7 @@ class UserHomePage extends StatelessWidget {
       'lib/assets/user_assets/11lab.png',
       'lib/assets/user_assets/16checkup.png',
       'lib/assets/user_assets/18medicine.png',
+      'lib/assets/icons/contact44.png',
       'lib/assets/user_assets/20funeral.png',
       // 'service 7',
       // 'service 8',

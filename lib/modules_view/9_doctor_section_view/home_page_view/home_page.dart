@@ -31,6 +31,7 @@ class HomePage extends StatelessWidget {
       'Payment History',
       'Apoointment History',
       'Report view',
+      'Contact Us',
 
       // 'service 7',
       // 'service 8',
@@ -50,6 +51,7 @@ class HomePage extends StatelessWidget {
       'lib/assets/icons/history.png',
       'lib/assets/icons/date.png',
       'lib/assets/icons/report2.png',
+      'lib/assets/icons/contact33.png',
       // 'service 7',
       // 'service 8',
     ];
