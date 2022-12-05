@@ -67,7 +67,7 @@ class NurseHomePage extends StatelessWidget {
       'lib/assets/user_assets/transaction.png',
       'lib/assets/user_assets/apointment_his.png',
       'lib/assets/user_assets/view_reportts.png',
-      'lib/assets/icons/contact1.png',
+      'lib/assets/icons/contact2.png',
       // 'service 7',
       // 'service 8',
     ];

@@ -7,11 +7,17 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/6_chemist_section_view/chemist_payment_history/chemist_payment_history.dart';
+import 'package:ps_welness/modules_view/6_chemist_section_view/chemist_payout_history/chemist_payout_histories.dart';
+import 'package:ps_welness/modules_view/6_chemist_section_view/chemist_update_bank_details/bank_update_view.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
+//import '../../10_lab_section_view/lab_drawer_view/drower_pages/supports/support_view.dart';
+import '../../10_lab_section_view/lab_drawer_view/drower_pages/supports/support_view.dart';
 import '../chemist_appointment_history_view/chemist_order_history.dart';
 import '../chemist_drawer_view/drawerpage.dart';
 import '../chemist_profile_page_view/profile_view.dart';
+//import 'drower_pages/supports/support_view.dart';
 //import '../lab_appointment_details/lab_appointment_details.dart';
 //import '../lab_appointment_history_view/appointment_history_view.dart';
 
@@ -237,6 +243,7 @@ class ChemistHomePage extends StatelessWidget {
                                     if (index == 0) {
                                       Get.to(() => ChemistProfilePage());
                                     } else if (index == 1) {
+                                      Get.to(() => UpdateBankDetail());
                                       //Get.to(() => DoctorAddress());
                                       //Get.to(() => CatagaryDetails());
                                     } else if (index == 2) {
@@ -575,159 +582,19 @@ class ChemistHomePage extends StatelessWidget {
                                       // Get.to(() => ComplainList());
                                       //Get.to(() => Profoile());
                                     } else if (index == 3) {
-                                      //Get.to(() => LabAppointmentHistory());
+                                      Get.to(() => ChemistPaymentHistory());
 
                                       ///
                                       //Get.to(() => TheJwelleryStore());
 
                                       //Get.to(() => CarouselDemo());
                                     } else if (index == 4) {
-                                      //Get.to(() => HealthCheckup1());
+                                      Get.to(() => ChemistPayoutHistory());
                                       //Get.defaultDialog(
                                       //barrierDismissible: true,
 
                                     } else if (index == 5) {
-                                      //Get.to(() => SearchMedicine());
-                                      // Get.defaultDialog(
-                                      //     barrierDismissible: true,
-                                      //     backgroundColor: MyTheme.t1containercolor,
-                                      //     title: '',
-                                      //     content: Column(
-                                      //       mainAxisSize: MainAxisSize.min,
-                                      //       children: [
-                                      //         Directionality(
-                                      //           textDirection: TextDirection.ltr,
-                                      //           child: Center(
-                                      //             child: Padding(
-                                      //               padding:
-                                      //                   const EdgeInsets.all(0.0),
-                                      //               child: TextFormField(
-                                      //                 decoration: InputDecoration(
-                                      //                   filled: true,
-                                      //
-                                      //                   fillColor: MyTheme
-                                      //                       .t1bacgroundcolors1,
-                                      //                   hintText:
-                                      //                       'Enter Service Name',
-                                      //                   contentPadding:
-                                      //                       const EdgeInsets.only(
-                                      //                           left: 14.0,
-                                      //                           bottom: 4.0,
-                                      //                           top: 16.0),
-                                      //                   focusedBorder:
-                                      //                       OutlineInputBorder(
-                                      //                     borderSide: new BorderSide(
-                                      //                         color: Colors.green),
-                                      //                     borderRadius:
-                                      //                         new BorderRadius
-                                      //                             .circular(10),
-                                      //                   ),
-                                      //                   enabledBorder:
-                                      //                       UnderlineInputBorder(
-                                      //                     borderSide: new BorderSide(
-                                      //                         color:
-                                      //                             Colors.transparent),
-                                      //                     borderRadius:
-                                      //                         new BorderRadius
-                                      //                             .circular(10.0),
-                                      //                   ),
-                                      //                   //focusedBorder: InputBorder.none,
-                                      //                   //enabledBorder: InputBorder.none,
-                                      //                   // errorBorder: InputBorder.none,
-                                      //                   // border: InputBorder.none,
-                                      //
-                                      //                   border: OutlineInputBorder(
-                                      //                     borderSide: BorderSide(
-                                      //                         color: Colors.red,
-                                      //                         width: 2.0),
-                                      //                     borderRadius:
-                                      //                         BorderRadius.circular(
-                                      //                             10),
-                                      //                   ),
-                                      //                   // labelText: "Password",
-                                      //                   prefixIcon: Padding(
-                                      //                     padding:
-                                      //                         EdgeInsets.symmetric(
-                                      //                             vertical:
-                                      //                                 size.height *
-                                      //                                     0.012,
-                                      //                             horizontal:
-                                      //                                 size.width *
-                                      //                                     0.02),
-                                      //                     child: Image.asset(
-                                      //                       'lib/assets/images/profile.png',
-                                      //                       color:
-                                      //                           MyTheme.t1Iconcolor,
-                                      //                       height: 10,
-                                      //                       width: 10,
-                                      //                     ),
-                                      //                   ),
-                                      //                 ),
-                                      //                 keyboardType: TextInputType
-                                      //                     .visiblePassword,
-                                      //                 //obscureText: true,
-                                      //                 // controller:
-                                      //                 // _registerComplainController.nameController,
-                                      //                 // onSaved: (value) {
-                                      //                 //   _registerComplainController.name = value!;
-                                      //                 // },
-                                      //                 // validator: (value) {
-                                      //                 //   return _registerComplainController
-                                      //                 //       .validateName(value!);
-                                      //                 // },
-                                      //               ),
-                                      //             ),
-                                      //           ),
-                                      //         ),
-                                      //         // TextField(
-                                      //         //   //controller: settingsScreenController.categoryNameController,
-                                      //         //   keyboardType: TextInputType.text,
-                                      //         //   maxLines: 1,
-                                      //         //   decoration: InputDecoration(
-                                      //         //       labelText: 'Service name',
-                                      //         //       hintMaxLines: 1,
-                                      //         //       border: OutlineInputBorder(
-                                      //         //           borderSide: BorderSide(
-                                      //         //               color: Colors.green,
-                                      //         //               width: 4.0))),
-                                      //         // ),
-                                      //         SizedBox(
-                                      //           height: 30.0,
-                                      //         ),
-                                      //         PhysicalModel(
-                                      //           color: Colors.white,
-                                      //           shadowColor: Colors.grey,
-                                      //           elevation: 4,
-                                      //           borderRadius:
-                                      //               BorderRadius.circular(10),
-                                      //           child: Padding(
-                                      //             padding: const EdgeInsets.all(3.0),
-                                      //             child: Container(
-                                      //               height: size.height * 0.04,
-                                      //               width: size.width * 0.4,
-                                      //               decoration: BoxDecoration(
-                                      //                 color: MyTheme.t1Iconcolor,
-                                      //                 borderRadius:
-                                      //                     BorderRadius.circular(10),
-                                      //               ),
-                                      //               child: Center(
-                                      //                 child: Text(
-                                      //                   'ADD SERVICE',
-                                      //                   style: TextStyle(
-                                      //                       color: Colors.white,
-                                      //                       fontSize: 14.0,
-                                      //                       fontWeight:
-                                      //                           FontWeight.w600),
-                                      //                 ),
-                                      //               ),
-                                      //             ),
-                                      //           ),
-                                      //         ),
-                                      //       ],
-                                      //     ),
-                                      //     radius: 10.0);
-                                      ///
-                                      //Get.to(() => ServicesPage());
+                                      Get.to(() => SupportView());
                                     } else if (index == 6) {
                                     } else if (index == 7) {
                                       //Get.to(() => TermsMemberPage());
