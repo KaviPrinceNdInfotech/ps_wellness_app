@@ -194,6 +194,17 @@ class MyTheme {
     tileMode: TileMode.clamp,
   );
 
+  static LinearGradient gradient71 = LinearGradient(
+    colors: [
+      Color(0xFF60efff),
+      Color(0xFF0061ff),
+    ],
+    begin: const FractionalOffset(0.0, 0.0),
+    end: const FractionalOffset(1.0, 0.0),
+    stops: [0.0, 1.0],
+    tileMode: TileMode.clamp,
+  );
+
   static LinearGradient gradient8 =
       const LinearGradient(colors: [Color(0xff402565), Color(0xff30BE96)]);
   static LinearGradient gradient81 =

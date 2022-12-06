@@ -9,7 +9,7 @@ final Uri _url = Uri.parse('http://pswellness.in/');
 final Uri _url2 = Uri.parse('info@pswellness.in/');
 final Uri _url3 = Uri.parse('https://twitter.com/');
 
-final Uri emailLaunchUri = Uri.parse('info@pswellness.in');
+final Uri emailLaunchUri = Uri.parse('info@pswellness.in/');
 //   scheme: 'mailto',
 //   path: 'smith@example.com',
 //   query: encodeQueryParameters(<String, String>{

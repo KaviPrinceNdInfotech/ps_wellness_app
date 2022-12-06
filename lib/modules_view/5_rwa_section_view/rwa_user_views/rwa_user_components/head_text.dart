@@ -4,8 +4,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 
-class User1HeadText extends StatelessWidget {
-  const User1HeadText({Key? key}) : super(key: key);
+class Rwa1HeadText extends StatelessWidget {
+  const Rwa1HeadText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class User1HeadText extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: 30,
-        vertical: 15,
+        vertical: 30 / 2,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,11 +40,12 @@ class User1HeadText extends StatelessWidget {
             ),
           ),
           SizedBox(height: size.height * 0.01),
+
           RichText(
             text: TextSpan(
               children: <TextSpan>[
                 TextSpan(
-                  text: 'Sign Up',
+                  text: 'ADD +',
                   style: GoogleFonts.poppins(
                     fontSize: 23,
                     color: Colors.black87,
@@ -64,6 +65,7 @@ class User1HeadText extends StatelessWidget {
               ],
             ),
           ),
+
           // Text(
           //   'Sign Up',
           //   style: TextStyle(
@@ -72,8 +74,9 @@ class User1HeadText extends StatelessWidget {
           //     //color: Color(0xff023382)
           //   ),
           // ),
+
           Text(
-            'USER!',
+            'PATIENT!',
             style: GoogleFonts.alatsi(
                 fontSize: 32,
                 fontWeight: FontWeight.w600,

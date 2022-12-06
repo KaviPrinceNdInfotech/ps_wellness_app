@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
       'Appointment Detail',
       'Upload Report',
       'Payment History',
-      'Apoointment History',
+      'Appointment History',
       'Report view',
       'Contact Us',
 
