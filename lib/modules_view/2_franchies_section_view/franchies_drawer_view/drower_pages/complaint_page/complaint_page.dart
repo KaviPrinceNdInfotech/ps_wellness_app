@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_profile_page_view/profile_components/credentials.dart';
-import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_profile_page_view/profile_components/head_text.dart';
-//import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
-//import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
 
-class RwaProfilePage extends StatelessWidget {
-  const RwaProfilePage({Key? key}) : super(key: key);
+import 'complaint_components/credentials.dart';
+import 'complaint_components/head_text.dart';
+//import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_components/credentials.dart';
+//import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_components/head_text.dart';
+
+class ComplaintPage extends StatelessWidget {
+  const ComplaintPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,7 @@ class RwaProfilePage extends StatelessWidget {
                           ),
                           image: DecorationImage(
                               image: AssetImage(
-                                'lib/assets/background_stack_png/useraccount1.png',
+                                'lib/assets/background_stack_png/useraccount.png',
                               ),
                               fit: BoxFit.cover)),
                     ),
@@ -58,8 +59,8 @@ class RwaProfilePage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    RwaProfileHeadText(),
-                    RwaProfileCredentials(),
+                    ComplaintHeadText(),
+                    ComplaintCredentials(),
                     //HospitalSocial(),
                     //Spacer(),
                   ],

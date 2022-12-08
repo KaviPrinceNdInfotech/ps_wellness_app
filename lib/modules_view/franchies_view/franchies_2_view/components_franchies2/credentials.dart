@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/controllers/franchies_controller/franchies2_controller.dart';
-import 'package:ps_welness/modules_view/sign_up_list/sign_up_list.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_home/franchises_home_page.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
@@ -309,7 +309,7 @@ class Franchies2Credentials extends StatelessWidget {
               RectangularButton(
                   text: 'SUBMIT',
                   press: () {
-                    Get.to(SignUpList());
+                    Get.to(FranchiesHomePage());
                     //_loginpasswordController.checkLoginpassword();
                   })
             ],

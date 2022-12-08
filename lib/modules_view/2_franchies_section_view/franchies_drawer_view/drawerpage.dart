@@ -6,19 +6,12 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
-import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_profile_page_view/profile_view.dart';
 import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
 
-//import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
-//import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_page.dart';
-//import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_view.dart';
-//import 'package:ps_welness/modules_view/drawer_view/drower_pages/supports/support_view.dart';
-
-import 'drower_pages/about_us/about_us.dart';
-import 'drower_pages/complaint_page/complaint_page.dart';
+import '../../10_lab_section_view/lab_drawer_view/drower_pages/complaint_page/complaint_page.dart';
 import 'drower_pages/supports/support_view.dart';
 
-class RwaMainDrawer extends StatelessWidget {
+class FranchiesisMainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -54,14 +47,14 @@ class RwaMainDrawer extends StatelessWidget {
                       height: size.height * 0.01,
                     ),
                     Text(
-                      'Ps Foundation',
+                      'Ps Franchises',
                       style: GoogleFonts.roboto(
                           fontSize: size.height * 0.023,
                           fontWeight: FontWeight.w700,
                           color: MyTheme.blueww),
                     ),
                     Text(
-                      'ps@gmail.com',
+                      'psf@gmail.com',
                       style: GoogleFonts.roboto(
                           fontSize: size.height * 0.020,
                           fontWeight: FontWeight.w700,
@@ -120,20 +113,20 @@ class RwaMainDrawer extends StatelessWidget {
               dense: true,
               visualDensity: VisualDensity(horizontal: 0, vertical: -2),
               title: Text(
-                'RWA Profile',
+                'Franchises Profile',
                 style: TextStyle(
                     fontSize: size.height * 0.017,
                     fontWeight: FontWeight.w600,
                     color: MyTheme.blueww),
               ),
-              tileColor: Get.currentRoute == '/RwaProfilePage'
+              tileColor: Get.currentRoute == '/NurseProfilePage'
                   ? Colors.grey[300]
                   : Colors.transparent,
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                Get.to(() => RwaProfilePage());
-                Get.offNamed('/RwaProfilePage');
+                //Get.to(() => NurseProfilePage());
+                Get.offNamed('/NurseProfilePage');
               },
             ),
 
@@ -252,7 +245,7 @@ class RwaMainDrawer extends StatelessWidget {
               dense: true,
               visualDensity: VisualDensity(horizontal: 0, vertical: -2),
               title: Text(
-                'About RWA',
+                'About Franchises',
                 style: TextStyle(
                     fontSize: size.height * 0.017,
                     fontWeight: FontWeight.w600,
@@ -264,7 +257,7 @@ class RwaMainDrawer extends StatelessWidget {
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                Get.to(() => AboutUsView());
+                // Get.to(() => AboutUsView());
                 Get.offNamed('/AboutUsView');
               },
             ),

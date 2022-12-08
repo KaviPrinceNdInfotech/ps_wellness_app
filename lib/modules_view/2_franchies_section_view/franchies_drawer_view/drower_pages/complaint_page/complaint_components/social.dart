@@ -4,8 +4,8 @@ import 'package:ps_welness/modules_view/sign_in/sigin_screen.dart';
 import 'package:ps_welness/widgets/widgets/account_check.dart';
 import 'package:ps_welness/widgets/widgets/rounded_button.dart';
 
-class RwaProfileSocial extends StatelessWidget {
-  const RwaProfileSocial({Key? key}) : super(key: key);
+class ComplaintSocial extends StatelessWidget {
+  const ComplaintSocial({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

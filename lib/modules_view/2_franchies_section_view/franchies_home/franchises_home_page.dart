@@ -7,16 +7,9 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
-import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_drawer_view/drawerpage.dart';
-import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_patient_list/rwa_patient_list.dart';
-import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_payment_history/rwa_payment_history.dart';
-import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_profile_page_view/profile_view.dart';
-//import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_patient_list/rwa_payment_history.dart';
-import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_update_bank_details/bank_update_view.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drawerpage.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
-import '../rwa_payout_history/rwa_payout_histories.dart';
-import '../rwa_user_views/rwa_user_sign_up.dart';
 
 //import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/user_drawHomePage({Key? key}) : super(key: key);
 
@@ -25,8 +18,8 @@ AppointmentUserController _appointmentUserController =
 
 // AppointmentController _appointmentController =
 //     Get.put(AppointmentController());
-class RwaHomePage extends StatelessWidget {
-  const RwaHomePage({Key? key}) : super(key: key);
+class FranchiesHomePage extends StatelessWidget {
+  const FranchiesHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +27,25 @@ class RwaHomePage extends StatelessWidget {
     GlobalKey<ScaffoldState> _key = GlobalKey();
 
     final List<String> productname = [
-      'Add Patient',
-      'Update Bank Details',
-      'Patient List',
+      'Edit Profile',
+      'Update Bank Detail',
+      'Vehicle Allotment',
+      'Gallery',
+      'Add Gallery',
+      'Add Test',
+
+      'Add Spec & Dept',
+      'Add Vehicle Type',
+      'View Spe & Dpt',
+      'View Dept & Spec',
+      'Registration',
+      'Registration Details',
+
+      'My Y/M/W/D Report',
       'My Payment Report',
+      'My Commission Report',
       'My Payout Report',
-      'Manage Profile'
+      'My TDS Report',
 
       // 'service 7',
       // 'service 8',
@@ -47,6 +53,19 @@ class RwaHomePage extends StatelessWidget {
 
     final List<String> underprocess = [
       '',
+      '',
+      '',
+      '',
+      '',
+      '',
+
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+
       '',
       '',
       '',
@@ -66,12 +85,28 @@ class RwaHomePage extends StatelessWidget {
     ];
 
     final List<String> productimage = [
-      'lib/assets/icons/rwa_patient.png',
-      'lib/assets/icons/rwabank2.png',
-      'lib/assets/icons/rwapatientlist.png',
-      'lib/assets/icons/rwapayreport.png',
-      'lib/assets/icons/rwapyout.png',
-      'lib/assets/icons/rwauser.png',
+      'lib/assets/icons/freditprofile.png',
+      'lib/assets/icons/frbank1.png',
+      'lib/assets/icons/frgalary1.png',
+      'lib/assets/icons/fraddgalary.png',
+      'lib/assets/icons/frvehicle.png',
+      // 'lib/assets/icons/frspaclist.png',
+      // 'lib/assets/icons/fraddcar.png',
+      'lib/assets/icons/frtest.png',
+
+      'lib/assets/icons/frspaclist.png',
+      'lib/assets/icons/fraddgalary.png',
+      'lib/assets/icons/frtest.png',
+      'lib/assets/icons/frspaclist.png',
+      'lib/assets/icons/frregister.png',
+      'lib/assets/icons/frregisterdetail.png',
+
+      'lib/assets/icons/fryreport.png',
+      'lib/assets/icons/frpayment.png',
+      'lib/assets/icons/frcommission.png',
+      'lib/assets/icons/frpayout.png',
+      'lib/assets/icons/frtds.png',
+
       // 'service 7',
       // 'service 8',
     ];
@@ -96,7 +131,7 @@ class RwaHomePage extends StatelessWidget {
                   width: size.width * 0.11,
                   child: Image.asset(
                       //'lib/assets/user_assets/12lab.png'
-                      'lib/assets/icons/rwa.png')),
+                      'lib/assets/icons/fr1.png')),
               RichText(
                 text: TextSpan(
                   children: <TextSpan>[
@@ -110,7 +145,7 @@ class RwaHomePage extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: ' RWA',
+                      text: ' Franchises',
                       style: GoogleFonts.alatsi(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
@@ -145,7 +180,7 @@ class RwaHomePage extends StatelessWidget {
           ),
           // leading: Icon(Icons.read_more_outlined),
         ),
-        drawer: RwaMainDrawer(),
+        drawer: FranchiesisMainDrawer(),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -238,13 +273,13 @@ class RwaHomePage extends StatelessWidget {
                                 InkWell(
                                   onTap: () {
                                     if (index == 0) {
-                                      Get.to(() => RwaUserSignup1());
+                                      //Get.to(() => RwaUserSignup1());
                                     } else if (index == 1) {
-                                      Get.to(() => UpdateRwaBankDetail());
+                                      //Get.to(() => UpdateRwaBankDetail());
                                       //Get.to(() => DoctorAddress());
                                       //Get.to(() => CatagaryDetails());
                                     } else if (index == 2) {
-                                      Get.to(() => RwaPatientList());
+                                      // Get.to(() => RwaPatientList());
                                       // Get.to(() => ChemistOrderHistory());
                                       //Get.to(() => NursePaymentHistory());
                                       // Get.defaultDialog(
@@ -580,19 +615,19 @@ class RwaHomePage extends StatelessWidget {
                                       // Get.to(() => ComplainList());
                                       //Get.to(() => Profoile());
                                     } else if (index == 3) {
-                                      Get.to(() => RwaPaymentHistory());
+                                      //Get.to(() => RwaPaymentHistory());
 
                                       ///
                                       //Get.to(() => TheJwelleryStore());
 
                                       //Get.to(() => CarouselDemo());
                                     } else if (index == 4) {
-                                      Get.to(() => RwaPayoutHistory());
+                                      // Get.to(() => RwaPayoutHistory());
                                       //Get.defaultDialog(
                                       //barrierDismissible: true,
 
                                     } else if (index == 5) {
-                                      Get.to(() => RwaProfilePage());
+                                      //Get.to(() => RwaProfilePage());
                                     } else if (index == 6) {
                                     } else if (index == 7) {
                                       //Get.to(() => TermsMemberPage());

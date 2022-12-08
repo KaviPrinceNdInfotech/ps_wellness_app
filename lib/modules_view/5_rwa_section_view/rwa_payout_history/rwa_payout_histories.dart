@@ -21,6 +21,7 @@ class RwaPayoutHistory extends StatelessWidget {
       width: size.width,
       child: Scaffold(
         backgroundColor: Colors.transparent,
+
         // backgroundColor: MyTheme.ThemeColors,
         // appBar: AppBar(
         //   centerTitle: true,
@@ -28,6 +29,7 @@ class RwaPayoutHistory extends StatelessWidget {
         //   title: Text('Patient List'),
         //   backgroundColor: MyTheme.ThemeColors,
         // ),
+
         body: SafeArea(
           child: Stack(
             clipBehavior: Clip.none,

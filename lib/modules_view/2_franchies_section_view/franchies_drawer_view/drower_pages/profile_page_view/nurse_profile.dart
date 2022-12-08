@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_profile_page_view/profile_components/credentials.dart';
-import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_profile_page_view/profile_components/head_text.dart';
+import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
+import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
 
-class RwaProfilePage extends StatelessWidget {
-  const RwaProfilePage({Key? key}) : super(key: key);
+class NurseProfilePage extends StatelessWidget {
+  const NurseProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class RwaProfilePage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(2.0),
                     child: Container(
-                      height: size.height * 0.220,
+                      height: size.height * 0.240,
                       width: size.width * 0.50,
                       decoration: BoxDecoration(
                           //color: Colors.,
@@ -49,7 +49,7 @@ class RwaProfilePage extends StatelessWidget {
                           ),
                           image: DecorationImage(
                               image: AssetImage(
-                                'lib/assets/background_stack_png/useraccount1.png',
+                                'lib/assets/user_assets/nurse_profile.png',
                               ),
                               fit: BoxFit.cover)),
                     ),
@@ -58,8 +58,8 @@ class RwaProfilePage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    RwaProfileHeadText(),
-                    RwaProfileCredentials(),
+                    NurseProfileHeadText(),
+                    NurseProfileCredentials(),
                     //HospitalSocial(),
                     //Spacer(),
                   ],

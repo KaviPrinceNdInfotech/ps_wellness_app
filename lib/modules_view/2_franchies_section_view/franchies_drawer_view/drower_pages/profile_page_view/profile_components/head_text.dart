@@ -4,8 +4,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 
-class RwaProfileHeadText extends StatelessWidget {
-  const RwaProfileHeadText({Key? key}) : super(key: key);
+class NurseProfileHeadText extends StatelessWidget {
+  const NurseProfileHeadText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +30,10 @@ class RwaProfileHeadText extends StatelessWidget {
                 width: size.width * 0.03,
               ),
               Text(
-                'Update Rwa Profile',
+                'Update Nurse Profile',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: size.width * 0.05,
+                  fontSize: size.width * 0.04,
                   fontWeight: FontWeight.w700,
                 ),
               )
@@ -41,7 +41,7 @@ class RwaProfileHeadText extends StatelessWidget {
           ),
           SizedBox(height: size.height * 0.05),
           Text(
-            'PS foundation',
+            'Mrs AK Singh',
             style: GoogleFonts.alatsi(
                 fontSize: 32,
                 fontWeight: FontWeight.w600,
@@ -51,7 +51,7 @@ class RwaProfileHeadText extends StatelessWidget {
             text: TextSpan(
               children: <TextSpan>[
                 TextSpan(
-                  text: 'ps@gmail.com',
+                  text: 'ak@gmail.com',
                   style: GoogleFonts.poppins(
                     fontSize: 23,
                     color: Colors.black87,
