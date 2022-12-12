@@ -60,36 +60,36 @@ class Driver1Credentials extends StatelessWidget {
             ),
 
             ///Todo: email.....................
-            NeumorphicTextFieldContainer(
-              child: TextFormField(
-                autofillHints: [AutofillHints.email],
-                controller: _driver_1_controller.emailController,
-                onSaved: (value) {
-                  _driver_1_controller.email = value!;
-                },
-                validator: (value) {
-                  return _driver_1_controller.validEmail(value!);
-                },
-                cursorColor: Colors.black,
-                obscureText: false,
-                decoration: InputDecoration(
-                  hintText: 'Email',
-                  helperStyle: TextStyle(
-                    color: black.withOpacity(0.7),
-                    fontSize: 18,
-                  ),
-                  prefixIcon: Icon(
-                    Icons.email,
-                    color: black.withOpacity(0.7),
-                    size: 20,
-                  ),
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
+            // NeumorphicTextFieldContainer(
+            //   child: TextFormField(
+            //     autofillHints: [AutofillHints.email],
+            //     controller: _driver_1_controller.emailController,
+            //     onSaved: (value) {
+            //       _driver_1_controller.email = value!;
+            //     },
+            //     validator: (value) {
+            //       return _driver_1_controller.validEmail(value!);
+            //     },
+            //     cursorColor: Colors.black,
+            //     obscureText: false,
+            //     decoration: InputDecoration(
+            //       hintText: 'Email',
+            //       helperStyle: TextStyle(
+            //         color: black.withOpacity(0.7),
+            //         fontSize: 18,
+            //       ),
+            //       prefixIcon: Icon(
+            //         Icons.email,
+            //         color: black.withOpacity(0.7),
+            //         size: 20,
+            //       ),
+            //       border: InputBorder.none,
+            //     ),
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: size.height * 0.02,
+            // ),
 
             ///Todo: password..............
             NeumorphicTextFieldContainer(
@@ -189,10 +189,12 @@ class Driver1Credentials extends StatelessWidget {
             //   icon: Icons.lock,
             //   obscureText: true,
             // ),
+
             SizedBox(
               height: size.height * 0.00,
               //appPadding / 2,
             ),
+
             // Align(
             //   alignment: Alignment.centerLeft,
             //   child: InkWell(
@@ -206,6 +208,7 @@ class Driver1Credentials extends StatelessWidget {
             //     ),
             //   ),
             // ),
+
             RectangularButton(
                 text: 'Go Next >',
                 press: () {
