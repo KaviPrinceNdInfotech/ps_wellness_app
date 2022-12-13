@@ -3,25 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/modules_view/2_franchies_section_view/add_dept_spec_page_view/list_dept_spec/list_dept_specialist.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/all_dept_section/all_dept.dart';
 
-import '../../../../controllers/2_franchises_controller/add_department_and_spealist_controller/add_dept_specialist_view.dart';
+import '../../../../controllers/2_franchises_controller/add_department_and_spealist_controller/add_department_single.dart';
 
-class AdddeptSpecialCredentials extends StatelessWidget {
-  AdddeptSpecialCredentials({Key? key}) : super(key: key);
+class AddSingleDeptCredentials extends StatelessWidget {
+  AddSingleDeptCredentials({Key? key}) : super(key: key);
 
   // Hospital_1_Controller _hospital_1_controller =
   //     Get.put(Hospital_1_Controller());
 
-  AdddepartmentController _adddepartmentController =
-      Get.put(AdddepartmentController());
+  AddSingleDepartmentController _addsingledepartmentController =
+      Get.put(AddSingleDepartmentController());
 
   var items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
+    'Advance Life Support Ambulance',
+    'Basic Life Support Ambulance',
+    'Patient Transport Ambulance',
   ];
 
   get newvalue => null!;
@@ -33,58 +31,27 @@ class AdddeptSpecialCredentials extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Form(
-      key: _adddepartmentController.adddepartmentformkey,
+      key: _addsingledepartmentController.addsingledepartmentformkey,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       child: Padding(
         padding: EdgeInsets.all(7),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // ///Todo: email.....................
-            // NeumorphicTextFieldContainer(
-            //   child: TextFormField(
-            //     autofillHints: [AutofillHints.email],
-            //     controller: _profileController.emailController,
-            //     onSaved: (value) {
-            //       _profileController.email = value!;
-            //     },
-            //     validator: (value) {
-            //       return _profileController.validEmail(value!);
-            //     },
-            //     cursorColor: Colors.black,
-            //     obscureText: false,
-            //     decoration: InputDecoration(
-            //       hintText: 'Email',
-            //       helperStyle: TextStyle(
-            //         color: black.withOpacity(0.7),
-            //         fontSize: 18,
-            //       ),
-            //       prefixIcon: Icon(
-            //         Icons.email,
-            //         color: black.withOpacity(0.7),
-            //         size: 20,
-            //       ),
-            //       border: InputBorder.none,
-            //     ),
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: size.height * 0.02,
-            // ),
-
             SizedBox(
               height: size.height * 0.05,
             ),
             Container(
               height: size.height * 0.06,
               width: size.width * 0.2,
-              margin: EdgeInsets.symmetric(vertical: appPadding / 3),
+              margin: EdgeInsets.symmetric(vertical: 30 / 3),
               decoration: BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                       colors: [
-                        lightPrimary2,
+                        Colors.red,
+                        // lightPrimary1,
                         darkPrimary,
                       ]),
                   borderRadius: BorderRadius.circular(12),
@@ -104,7 +71,7 @@ class AdddeptSpecialCredentials extends StatelessWidget {
                   ]),
               child: InkWell(
                 onTap: () {
-                  Get.to(() => DeptSpecList());
+                  Get.to(() => AllDeptlistView());
                 },
                 child: Container(
                   height: size.height * 0.06,
@@ -113,8 +80,9 @@ class AdddeptSpecialCredentials extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: size.width * 0.0),
                     child: Center(
                       child: Text(
-                        'View List',
+                        'Show All',
                         style: TextStyle(
+                          color: Colors.white,
                           fontSize: size.width * 0.03,
                           fontWeight: FontWeight.w700,
                         ),
@@ -124,8 +92,12 @@ class AdddeptSpecialCredentials extends StatelessWidget {
                 ),
               ),
             ),
+
             SizedBox(
-              height: size.height * 0.05,
+              height: size.height * 0.03,
+            ),
+            SizedBox(
+              height: size.height * 0.0,
             ),
 
             ///todo:  name..........
@@ -159,19 +131,19 @@ class AdddeptSpecialCredentials extends StatelessWidget {
               child: TextFormField(
                 keyboardType: TextInputType.name,
                 autofillHints: [AutofillHints.telephoneNumber],
-                controller: _adddepartmentController.nameController,
+                controller: _addsingledepartmentController.nameController,
                 onSaved: (value) {
-                  _adddepartmentController.name = value!;
+                  _addsingledepartmentController.name = value!;
                 },
                 validator: (value) {
-                  return _adddepartmentController.validName(value!);
+                  return _addsingledepartmentController.validName(value!);
                 },
                 cursorColor: Colors.black,
                 obscureText: false,
                 decoration: InputDecoration(
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: size.width * 0.02),
-                  hintText: 'Dept Name',
+                  hintText: 'Enter Department',
                   helperStyle: TextStyle(
                     color: black.withOpacity(0.7),
                     fontSize: 12,
@@ -188,77 +160,77 @@ class AdddeptSpecialCredentials extends StatelessWidget {
             SizedBox(
               height: size.height * 0.05,
             ),
-            Container(
-              height: size.height * 0.07,
-              //width: size.width * 0.37,
-              //margin: EdgeInsets.symmetric(vertical: appPadding / 3),
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                      colors: [
-                        lightPrimary,
-                        darkPrimary,
-                      ]),
-                  borderRadius: BorderRadius.circular(12),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(-2, -2),
-                      spreadRadius: 1,
-                      blurRadius: 4,
-                      color: darkShadow,
-                    ),
-                    BoxShadow(
-                      offset: Offset(2, 2),
-                      spreadRadius: 1,
-                      blurRadius: 4,
-                      color: lightShadow,
-                    ),
-                  ]),
-              child: TextFormField(
-                keyboardType: TextInputType.name,
-                autofillHints: [AutofillHints.telephoneNumber],
-                controller: _adddepartmentController.branchController,
-                onSaved: (value) {
-                  _adddepartmentController.branch = value!;
-                },
-                validator: (value) {
-                  return _adddepartmentController.validDept(value!);
-                },
-                cursorColor: Colors.black,
-                obscureText: false,
-                decoration: InputDecoration(
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: size.width * 0.02),
-                  hintText: 'Enter service',
-                  helperStyle: TextStyle(
-                    color: black.withOpacity(0.7),
-                    fontSize: 12,
-                  ),
-                  // prefixIcon: Icon(
-                  //   Icons.account_box,
-                  //   color: black.withOpacity(0.7),
-                  //   size: 20,
-                  // ),
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
+            // Container(
+            //   height: size.height * 0.07,
+            //   //width: size.width * 0.37,
+            //   //margin: EdgeInsets.symmetric(vertical: appPadding / 3),
+            //   decoration: BoxDecoration(
+            //       gradient: LinearGradient(
+            //           begin: Alignment.centerLeft,
+            //           end: Alignment.centerRight,
+            //           colors: [
+            //             lightPrimary,
+            //             darkPrimary,
+            //           ]),
+            //       borderRadius: BorderRadius.circular(12),
+            //       boxShadow: [
+            //         BoxShadow(
+            //           offset: Offset(-2, -2),
+            //           spreadRadius: 1,
+            //           blurRadius: 4,
+            //           color: darkShadow,
+            //         ),
+            //         BoxShadow(
+            //           offset: Offset(2, 2),
+            //           spreadRadius: 1,
+            //           blurRadius: 4,
+            //           color: lightShadow,
+            //         ),
+            //       ]),
+            //   child: TextFormField(
+            //     keyboardType: TextInputType.name,
+            //     autofillHints: [AutofillHints.telephoneNumber],
+            //     controller: _addVehicleController.branchController,
+            //     onSaved: (value) {
+            //       _addVehicleController.branch = value!;
+            //     },
+            //     validator: (value) {
+            //       return _addVehicleController.validDept(value!);
+            //     },
+            //     cursorColor: Colors.black,
+            //     obscureText: false,
+            //     decoration: InputDecoration(
+            //       contentPadding:
+            //           EdgeInsets.symmetric(horizontal: size.width * 0.02),
+            //       hintText: 'Enter service',
+            //       helperStyle: TextStyle(
+            //         color: black.withOpacity(0.7),
+            //         fontSize: 12,
+            //       ),
+            //       // prefixIcon: Icon(
+            //       //   Icons.account_box,
+            //       //   color: black.withOpacity(0.7),
+            //       //   size: 20,
+            //       // ),
+            //       border: InputBorder.none,
+            //     ),
+            //   ),
+            // ),
 
-            SizedBox(
-              height: size.height * 0.05,
-            ),
+            // SizedBox(
+            //   height: size.height * 0.05,
+            // ),
             Container(
               height: size.height * 0.06,
-              width: size.width * 0.2,
-              margin: EdgeInsets.symmetric(vertical: appPadding / 3),
+              width: size.width * 0.99,
+              margin: EdgeInsets.symmetric(vertical: 30 / 9),
               decoration: BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                       colors: [
-                        lightPrimary1,
-                        darkPrimary2,
+                        Colors.red.shade300,
+                        Colors.cyan,
                       ]),
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
@@ -284,7 +256,8 @@ class AdddeptSpecialCredentials extends StatelessWidget {
                     child: Text(
                       'SAVE',
                       style: TextStyle(
-                        fontSize: size.width * 0.03,
+                        color: Colors.white,
+                        fontSize: size.width * 0.04,
                         fontWeight: FontWeight.w700,
                       ),
                     ),

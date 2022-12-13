@@ -9,6 +9,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/add_dept_spec_page_view/add_dept_spe.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/add_dept_spec_page_view/list_dept_spec/list_dept_specialist.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/add_vehicle/add_vechile_type.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drawerpage.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchises_bank_profile_page_view/bank_profile_view.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchises_galary_page_view/gallary_view.dart';
@@ -17,6 +19,7 @@ import 'package:ps_welness/modules_view/2_franchies_section_view/franchises_oldd
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchises_profile_page_view/profile_view.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/galerry_view/gallary_views.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/test_name_list/test_name_list.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/view_dept_specialist_view/view_dept_special_list.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
@@ -1024,7 +1027,15 @@ class FranchiesHomePage extends StatelessWidget {
                                     } else if (index == 6) {
                                       Get.to(() => AdddeptSpecPage());
                                     } else if (index == 7) {
-                                      //Get.to(() => TermsMemberPage());
+                                      Get.to(() => AddVehiclePage());
+                                    } else if (index == 8) {
+                                      Get.to(() => DeptSpecList());
+                                    } else if (index == 9) {
+                                      Get.to(() => DeptAndSpecialistView());
+                                    } else if (index == 10) {
+                                      //Get.to(() => DeptSpecList());
+                                    } else if (index == 11) {
+                                      //Get.to(() => DeptSpecList());
                                     }
                                   },
                                   child: Container(
