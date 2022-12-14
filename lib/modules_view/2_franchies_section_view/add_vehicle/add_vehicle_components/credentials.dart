@@ -145,7 +145,7 @@ class AddVehicleCredentials extends StatelessWidget {
                         enabledBorder: InputBorder.none,
                         border: InputBorder.none,
                       ),
-                      hint: Text('Select Vehicle Catagary'),
+                      hint: Text('Select Vehicle Category'),
                       items: items.map((String items) {
                         return DropdownMenuItem(
                           value: items,
