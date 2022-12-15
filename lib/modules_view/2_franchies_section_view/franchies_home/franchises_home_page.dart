@@ -23,6 +23,8 @@ import 'package:ps_welness/modules_view/2_franchies_section_view/view_dept_speci
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
+import '../registration_view_part/fr_doctor_views/doctor_signup_1/fr_doctor_signup_part1.dart';
+import '../registration_view_part/fr_driver_registration_view/fr_driver_ambulace_1/fr_driver_registation_1.dart';
 import '../registration_view_part/fr_vehicle_views/fr_vehicle_sign_up.dart';
 import '../registration_view_part/franchise_chemist_view/franchises_chemist_signup1/franchies_chemist_signup1.dart';
 import '../registration_view_part/patient_registration/patient_views/patient_sign_up.dart';
@@ -1102,7 +1104,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 ///Driver registration
                                                 InkWell(
                                                   onTap: () {
-                                                    //Get.to(() => NewDriverView());
+                                                    Get.to(() =>
+                                                        FrDriverSignup1());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(
@@ -1217,7 +1220,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 ///Doctor registration
                                                 InkWell(
                                                   onTap: () {
-                                                    //Get.to(() => NewDriverView());
+                                                    Get.to(() =>
+                                                        FrDoctorSignup1());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(

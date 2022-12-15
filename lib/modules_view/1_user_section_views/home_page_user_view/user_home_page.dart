@@ -417,6 +417,96 @@ class UserHomePage extends StatelessWidget {
                                                         ),
                                                         child: Center(
                                                           child: Text(
+                                                            'Air Ambulance',
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize:
+                                                                  size.height *
+                                                                      0.02,
+                                                            ),
+                                                          ),
+                                                        )
+                                                        // ElevatedButton(
+                                                        //   onPressed: () {},
+                                                        //   child: Text(
+                                                        //     'Select Date',
+                                                        //     style: TextStyle(
+                                                        //       color: Colors.black,
+                                                        //     ),
+                                                        //   ),
+                                                        //   style: ButtonStyle(
+                                                        //     backgroundColor:
+                                                        //         MaterialStateProperty
+                                                        //             .all(Colors
+                                                        //                 .white70),
+                                                        //     padding:
+                                                        //         MaterialStateProperty
+                                                        //             .all(EdgeInsets
+                                                        //                 .all(50)),
+                                                        //     textStyle:
+                                                        //         MaterialStateProperty
+                                                        //             .all(TextStyle(
+                                                        //                 fontSize:
+                                                        //                     30,
+                                                        //                 color: Colors
+                                                        //                     .black)),
+                                                        //   ),
+                                                        // ),
+                                                        // TextFormField(
+                                                        //   controller:
+                                                        //       _appointmentUserController
+                                                        //           .appointmentController,
+                                                        //   onTap: () {
+                                                        //     _appointmentUserController
+                                                        //         .chooseDate();
+                                                        //   },
+                                                        //
+                                                        //   cursorColor: Colors.black,
+                                                        //   obscureText: false,
+                                                        //   decoration: InputDecoration(
+                                                        //     hintText: 'Select date',
+                                                        //     helperStyle: TextStyle(
+                                                        //       color: black
+                                                        //           .withOpacity(0.7),
+                                                        //       fontSize: 18,
+                                                        //     ),
+                                                        //     prefixIcon: Icon(
+                                                        //       Icons
+                                                        //           .calendar_today_outlined,
+                                                        //       color: black
+                                                        //           .withOpacity(0.7),
+                                                        //       size: 20,
+                                                        //     ),
+                                                        //     border: InputBorder.none,
+                                                        //   ),
+                                                        //   keyboardType:
+                                                        //       TextInputType.multiline,
+                                                        //   maxLines: 1,
+                                                        //   autofocus: true,
+                                                        //   //obscureText: true,
+                                                        //   //controller: _loginpasswordController.mobileController,
+                                                        // ),
+                                                        ),
+                                                  ),
+                                                ),
+                                                InkWell(
+                                                  child:
+                                                      NeumorphicTextFieldContainer(
+                                                    child: Container(
+                                                        height:
+                                                            size.height * 0.05,
+                                                        width: size.width,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white70,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text(
                                                             'Funeral/Mortuary Service',
                                                             style: TextStyle(
                                                               fontWeight:

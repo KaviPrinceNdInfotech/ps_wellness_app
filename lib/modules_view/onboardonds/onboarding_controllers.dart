@@ -30,11 +30,15 @@ class OnboardingController extends GetxController {
   }
 
   List<OnboardingInfo> onboardingPages = [
-    OnboardingInfo('lib/assets/image/24867-online-doctor-app.zip',
-        'Our Services', 'You can see our service anytime same.'),
-    OnboardingInfo('lib/assets/image/92309-online-doctor.zip',
-        'Safe & Reliable Services', 'We send original item '),
+    OnboardingInfo(
+        'lib/assets/image/24867-online-doctor-app.zip',
+        'Get Healthcare Online',
+        'We deliver high quality, affordable online healthcare services in all over india.'),
+    OnboardingInfo(
+        'lib/assets/image/92309-online-doctor.zip',
+        'Consult to expert ',
+        'Find the right health specialist from our list of experienced doctors.'),
     OnboardingInfo('lib/assets/image/83028-ambulance.zip', 'Quick Availability',
-        'Ambulance Availability in 20 minutes.'),
+        'Ambulance Availability in 30 minutes.'),
   ];
 }
