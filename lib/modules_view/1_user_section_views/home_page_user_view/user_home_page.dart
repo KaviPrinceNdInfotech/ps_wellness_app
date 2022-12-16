@@ -39,8 +39,8 @@ class UserHomePage extends StatelessWidget {
       'Lab',
       'Complete Health Checkup',
       'Buy Medicine',
-      'Funeral Service',
       'Contact US',
+      'Funeral Service',
 
       // 'service 7',
       // 'service 8',

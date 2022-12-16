@@ -27,8 +27,10 @@ class SplashScreen extends StatelessWidget {
                   width: size.width,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                    image: AssetImage(
-                        'lib/assets/background_stack_png/welcomwe001.png'),
+                    image: AssetImage('lib/assets/icons/welcome1.gif'
+
+                        //'lib/assets/background_stack_png/welcomwe001.png'
+                        ),
                     fit: BoxFit.fill,
                   )),
                   child: Column(
@@ -68,14 +70,15 @@ class SplashScreen extends StatelessWidget {
                       //     ),
                       //   ),
                       // ),
-                      Image.asset(
-                        'lib/assets/background_stack_png/welcome002.png',
-                        fit: BoxFit.fill,
-                        //'lib/assets/background_stack_png/logoioo.png',
-                        //'lib/assets/image/ps_welness2.png',
-                        width: controller.animation.value * 750,
-                        height: controller.animation.value * 620,
-                      ),
+                      ///
+                      // Image.asset(
+                      //   'lib/assets/background_stack_png/welcome002.png',
+                      //   fit: BoxFit.fill,
+                      //   //'lib/assets/background_stack_png/logoioo.png',
+                      //   //'lib/assets/image/ps_welness2.png',
+                      //   width: controller.animation.value * 750,
+                      //   height: controller.animation.value * 620,
+                      // ),
                     ],
                   ),
                 ),
