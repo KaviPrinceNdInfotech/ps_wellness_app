@@ -174,7 +174,7 @@ class SupportView extends StatelessWidget {
                       ),
                       Text(
                         '278B, 1ST FLOOR, LEELA RAM MARKET MASJID MOTH,'
-                        'SOUTH EX. PAPER-2, Masjid Moth Village, South Extension '
+                        'SOUTH EX. PAER-2, Masjid Moth Village, South Extension '
                         'II, New Delhi, Delhi 110049.',
                         style: GoogleFonts.roboto(
                             color: MyTheme.blueww,
@@ -195,7 +195,8 @@ class SupportView extends StatelessWidget {
                         height: size.height * 0.005,
                       ),
                       Text(
-                        'No. 224, 1st Floor, Humayunpur, Safdasrjang Enclav,Humayunpur, Safadarjung Enclave, New Delhi, Delhi 110029.',
+                        'No. 224, 1st Floor, Humayunpur, Safdarjung Enclave,Humayunpur, Safdarjung'
+                        ' Enclave, New Delhi, Delhi 110029.',
                         style: GoogleFonts.roboto(
                             color: MyTheme.blueww,
                             fontSize: size.width * 0.037,

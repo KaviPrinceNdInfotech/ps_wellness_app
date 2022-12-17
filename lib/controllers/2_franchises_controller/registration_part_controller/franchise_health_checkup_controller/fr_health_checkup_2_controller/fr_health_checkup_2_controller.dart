@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-class Fr_Chemist_2_Controller extends GetxController {
-  final GlobalKey<FormState> frchemist2formkey = GlobalKey<FormState>();
+class Fr_CheckUp_2_Controller extends GetxController {
+  final GlobalKey<FormState> frhealthcheckup2formkey = GlobalKey<FormState>();
 
+  ///TODO: image picker.................
+  ///
   var selectedTime = TimeOfDay.now().obs;
   var selectedTime2 = TimeOfDay.now().obs;
 
@@ -240,11 +242,11 @@ class Fr_Chemist_2_Controller extends GetxController {
   }
 
   void checkchemist2() {
-    final isValid = frchemist2formkey.currentState!.validate();
+    final isValid = frhealthcheckup2formkey.currentState!.validate();
     if (!isValid) {
       return;
     }
-    frchemist2formkey.currentState!.save();
+    frhealthcheckup2formkey.currentState!.save();
     //Get.to(() => HomePage());
   }
 }
