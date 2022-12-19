@@ -25,6 +25,10 @@ import 'package:ps_welness/modules_view/2_franchies_section_view/view_dept_speci
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
+import '../fr_registration_detailsss/fr_registration_detail_chemist/fr_registration_chemist_detailss.dart';
+import '../fr_registration_detailsss/fr_registration_detail_doctor/fr_registration_doctor_detailss.dart';
+import '../fr_registration_detailsss/fr_registration_detail_driver/fr_registration_driver_detailss.dart';
+import '../fr_registration_detailsss/fr_registration_detail_patient/fr_registration_patient_detailss.dart';
 import '../fr_registration_detailsss/fr_registration_detail_vehicle/fr_registration_vehicle_detailss.dart';
 import '../registration_view_part/fr_doctor_views/doctor_signup_1/fr_doctor_signup_part1.dart';
 import '../registration_view_part/fr_driver_registration_view/fr_driver_ambulace_1/fr_driver_registation_1.dart';
@@ -2141,7 +2145,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 ///Driver registration
                                                 InkWell(
                                                   onTap: () {
-                                                    // Get.to(() => FrDriverSignup1());
+                                                    Get.to(() =>
+                                                        ResitrationDriverDetails());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(
@@ -2256,7 +2261,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 ///Doctor registration
                                                 InkWell(
                                                   onTap: () {
-                                                    // Get.to(() => FrDoctorSignup1());
+                                                    Get.to(() =>
+                                                        ResitrationDoctorDetails());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(
@@ -2372,7 +2378,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 InkWell(
                                                   onTap: () {
                                                     Get.back();
-                                                    // Get.to(() => PatientSignup());
+                                                    Get.to(() =>
+                                                        ResitrationPatientDetails());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(
@@ -2488,7 +2495,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 InkWell(
                                                   onTap: () {
                                                     Get.back();
-                                                    // Get.to(() => franchiesChemistSignup1());
+                                                    Get.to(() =>
+                                                        ResitrationChemistDetails());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(
