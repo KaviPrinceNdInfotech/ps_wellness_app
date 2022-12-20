@@ -28,7 +28,11 @@ import '../../../controllers/1_user_view_controller/user_appointment_controller/
 import '../fr_registration_detailsss/fr_registration_detail_chemist/fr_registration_chemist_detailss.dart';
 import '../fr_registration_detailsss/fr_registration_detail_doctor/fr_registration_doctor_detailss.dart';
 import '../fr_registration_detailsss/fr_registration_detail_driver/fr_registration_driver_detailss.dart';
+import '../fr_registration_detailsss/fr_registration_detail_helsthcheckup/fr_registration_healthcheckup_detailss.dart';
+import '../fr_registration_detailsss/fr_registration_detail_lab/fr_registration_lab_detailss.dart';
+import '../fr_registration_detailsss/fr_registration_detail_nurse/fr_registration_nurse_detailss.dart';
 import '../fr_registration_detailsss/fr_registration_detail_patient/fr_registration_patient_detailss.dart';
+import '../fr_registration_detailsss/fr_registration_detail_rwa/fr_registration_rwa_detailss.dart';
 import '../fr_registration_detailsss/fr_registration_detail_vehicle/fr_registration_vehicle_detailss.dart';
 import '../registration_view_part/fr_doctor_views/doctor_signup_1/fr_doctor_signup_part1.dart';
 import '../registration_view_part/fr_driver_registration_view/fr_driver_ambulace_1/fr_driver_registation_1.dart';
@@ -2550,7 +2554,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 ///Nurse registration
                                                 InkWell(
                                                   onTap: () {
-                                                    //Get.to(() => FrNursesSignup1());
+                                                    Get.to(() =>
+                                                        ResitrationNurseDetails());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(
@@ -2665,7 +2670,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 ///lab registration
                                                 InkWell(
                                                   onTap: () {
-                                                    //Get.to(() => FrLabSignup1());
+                                                    Get.to(() =>
+                                                        ResitrationLabDetails());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(
@@ -2780,7 +2786,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 ///health checkup registration
                                                 InkWell(
                                                   onTap: () {
-                                                    //Get.to(() => franchiesHealthcheckupSignup1());
+                                                    Get.to(() =>
+                                                        ResitrationHealthCheckupDetails());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(
@@ -2895,7 +2902,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 ///health Rwa registration
                                                 InkWell(
                                                   onTap: () {
-                                                    //Get.to(() => FrRwaSignup1());
+                                                    Get.to(() =>
+                                                        ResitrationRwaDetails());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(
