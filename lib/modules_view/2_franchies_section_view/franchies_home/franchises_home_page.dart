@@ -34,6 +34,10 @@ import '../fr_registration_detailsss/fr_registration_detail_nurse/fr_registratio
 import '../fr_registration_detailsss/fr_registration_detail_patient/fr_registration_patient_detailss.dart';
 import '../fr_registration_detailsss/fr_registration_detail_rwa/fr_registration_rwa_detailss.dart';
 import '../fr_registration_detailsss/fr_registration_detail_vehicle/fr_registration_vehicle_detailss.dart';
+import '../my_y_m_w_d_reports_view_all/my_ymwd_doctor_report/my_ymwd_doctor_details/my_ymwd_vehicle_report.dart';
+import '../my_y_m_w_d_reports_view_all/my_ymwd_lab_details/lab_detail.dart';
+import '../my_y_m_w_d_reports_view_all/my_ymwd_nurse_details/nursees_detail.dart';
+import '../my_y_m_w_d_reports_view_all/my_ymwd_vehicle_report/my_ymwd_vehicle_details/vehicle_detail.dart';
 import '../registration_view_part/fr_doctor_views/doctor_signup_1/fr_doctor_signup_part1.dart';
 import '../registration_view_part/fr_driver_registration_view/fr_driver_ambulace_1/fr_driver_registation_1.dart';
 import '../registration_view_part/fr_nurses_view/nurses_signup1/nurses_signup1.dart';
@@ -2197,68 +2201,7 @@ class FranchiesHomePage extends StatelessWidget {
                                                               ),
                                                             ],
                                                           ),
-                                                        )
-                                                        // ElevatedButton(
-                                                        //   onPressed: () {},
-                                                        //   child: Text(
-                                                        //     'Select Date',
-                                                        //     style: TextStyle(
-                                                        //       color: Colors.black,
-                                                        //     ),
-                                                        //   ),
-                                                        //   style: ButtonStyle(
-                                                        //     backgroundColor:
-                                                        //         MaterialStateProperty
-                                                        //             .all(Colors
-                                                        //                 .white70),
-                                                        //     padding:
-                                                        //         MaterialStateProperty
-                                                        //             .all(EdgeInsets
-                                                        //                 .all(50)),
-                                                        //     textStyle:
-                                                        //         MaterialStateProperty
-                                                        //             .all(TextStyle(
-                                                        //                 fontSize:
-                                                        //                     30,
-                                                        //                 color: Colors
-                                                        //                     .black)),
-                                                        //   ),
-                                                        // ),
-                                                        // TextFormField(
-                                                        //   controller:
-                                                        //       _appointmentUserController
-                                                        //           .appointmentController,
-                                                        //   onTap: () {
-                                                        //     _appointmentUserController
-                                                        //         .chooseDate();
-                                                        //   },
-                                                        //
-                                                        //   cursorColor: Colors.black,
-                                                        //   obscureText: false,
-                                                        //   decoration: InputDecoration(
-                                                        //     hintText: 'Select date',
-                                                        //     helperStyle: TextStyle(
-                                                        //       color: black
-                                                        //           .withOpacity(0.7),
-                                                        //       fontSize: 18,
-                                                        //     ),
-                                                        //     prefixIcon: Icon(
-                                                        //       Icons
-                                                        //           .calendar_today_outlined,
-                                                        //       color: black
-                                                        //           .withOpacity(0.7),
-                                                        //       size: 20,
-                                                        //     ),
-                                                        //     border: InputBorder.none,
-                                                        //   ),
-                                                        //   keyboardType:
-                                                        //       TextInputType.multiline,
-                                                        //   maxLines: 1,
-                                                        //   autofocus: true,
-                                                        //   //obscureText: true,
-                                                        //   //controller: _loginpasswordController.mobileController,
-                                                        // ),
-                                                        ),
+                                                        )),
                                                   ),
                                                 ),
 
@@ -2313,68 +2256,7 @@ class FranchiesHomePage extends StatelessWidget {
                                                               ),
                                                             ],
                                                           ),
-                                                        )
-                                                        // ElevatedButton(
-                                                        //   onPressed: () {},
-                                                        //   child: Text(
-                                                        //     'Select Date',
-                                                        //     style: TextStyle(
-                                                        //       color: Colors.black,
-                                                        //     ),
-                                                        //   ),
-                                                        //   style: ButtonStyle(
-                                                        //     backgroundColor:
-                                                        //         MaterialStateProperty
-                                                        //             .all(Colors
-                                                        //                 .white70),
-                                                        //     padding:
-                                                        //         MaterialStateProperty
-                                                        //             .all(EdgeInsets
-                                                        //                 .all(50)),
-                                                        //     textStyle:
-                                                        //         MaterialStateProperty
-                                                        //             .all(TextStyle(
-                                                        //                 fontSize:
-                                                        //                     30,
-                                                        //                 color: Colors
-                                                        //                     .black)),
-                                                        //   ),
-                                                        // ),
-                                                        // TextFormField(
-                                                        //   controller:
-                                                        //       _appointmentUserController
-                                                        //           .appointmentController,
-                                                        //   onTap: () {
-                                                        //     _appointmentUserController
-                                                        //         .chooseDate();
-                                                        //   },
-                                                        //
-                                                        //   cursorColor: Colors.black,
-                                                        //   obscureText: false,
-                                                        //   decoration: InputDecoration(
-                                                        //     hintText: 'Select date',
-                                                        //     helperStyle: TextStyle(
-                                                        //       color: black
-                                                        //           .withOpacity(0.7),
-                                                        //       fontSize: 18,
-                                                        //     ),
-                                                        //     prefixIcon: Icon(
-                                                        //       Icons
-                                                        //           .calendar_today_outlined,
-                                                        //       color: black
-                                                        //           .withOpacity(0.7),
-                                                        //       size: 20,
-                                                        //     ),
-                                                        //     border: InputBorder.none,
-                                                        //   ),
-                                                        //   keyboardType:
-                                                        //       TextInputType.multiline,
-                                                        //   maxLines: 1,
-                                                        //   autofocus: true,
-                                                        //   //obscureText: true,
-                                                        //   //controller: _loginpasswordController.mobileController,
-                                                        // ),
-                                                        ),
+                                                        )),
                                                   ),
                                                 ),
 
@@ -2430,68 +2312,7 @@ class FranchiesHomePage extends StatelessWidget {
                                                               ),
                                                             ],
                                                           ),
-                                                        )
-                                                        // ElevatedButton(
-                                                        //   onPressed: () {},
-                                                        //   child: Text(
-                                                        //     'Select Date',
-                                                        //     style: TextStyle(
-                                                        //       color: Colors.black,
-                                                        //     ),
-                                                        //   ),
-                                                        //   style: ButtonStyle(
-                                                        //     backgroundColor:
-                                                        //         MaterialStateProperty
-                                                        //             .all(Colors
-                                                        //                 .white70),
-                                                        //     padding:
-                                                        //         MaterialStateProperty
-                                                        //             .all(EdgeInsets
-                                                        //                 .all(50)),
-                                                        //     textStyle:
-                                                        //         MaterialStateProperty
-                                                        //             .all(TextStyle(
-                                                        //                 fontSize:
-                                                        //                     30,
-                                                        //                 color: Colors
-                                                        //                     .black)),
-                                                        //   ),
-                                                        // ),
-                                                        // TextFormField(
-                                                        //   controller:
-                                                        //       _appointmentUserController
-                                                        //           .appointmentController,
-                                                        //   onTap: () {
-                                                        //     _appointmentUserController
-                                                        //         .chooseDate();
-                                                        //   },
-                                                        //
-                                                        //   cursorColor: Colors.black,
-                                                        //   obscureText: false,
-                                                        //   decoration: InputDecoration(
-                                                        //     hintText: 'Select date',
-                                                        //     helperStyle: TextStyle(
-                                                        //       color: black
-                                                        //           .withOpacity(0.7),
-                                                        //       fontSize: 18,
-                                                        //     ),
-                                                        //     prefixIcon: Icon(
-                                                        //       Icons
-                                                        //           .calendar_today_outlined,
-                                                        //       color: black
-                                                        //           .withOpacity(0.7),
-                                                        //       size: 20,
-                                                        //     ),
-                                                        //     border: InputBorder.none,
-                                                        //   ),
-                                                        //   keyboardType:
-                                                        //       TextInputType.multiline,
-                                                        //   maxLines: 1,
-                                                        //   autofocus: true,
-                                                        //   //obscureText: true,
-                                                        //   //controller: _loginpasswordController.mobileController,
-                                                        // ),
-                                                        ),
+                                                        )),
                                                   ),
                                                 ),
 
@@ -2602,68 +2423,7 @@ class FranchiesHomePage extends StatelessWidget {
                                                               ),
                                                             ],
                                                           ),
-                                                        )
-                                                        // ElevatedButton(
-                                                        //   onPressed: () {},
-                                                        //   child: Text(
-                                                        //     'Select Date',
-                                                        //     style: TextStyle(
-                                                        //       color: Colors.black,
-                                                        //     ),
-                                                        //   ),
-                                                        //   style: ButtonStyle(
-                                                        //     backgroundColor:
-                                                        //         MaterialStateProperty
-                                                        //             .all(Colors
-                                                        //                 .white70),
-                                                        //     padding:
-                                                        //         MaterialStateProperty
-                                                        //             .all(EdgeInsets
-                                                        //                 .all(50)),
-                                                        //     textStyle:
-                                                        //         MaterialStateProperty
-                                                        //             .all(TextStyle(
-                                                        //                 fontSize:
-                                                        //                     30,
-                                                        //                 color: Colors
-                                                        //                     .black)),
-                                                        //   ),
-                                                        // ),
-                                                        // TextFormField(
-                                                        //   controller:
-                                                        //       _appointmentUserController
-                                                        //           .appointmentController,
-                                                        //   onTap: () {
-                                                        //     _appointmentUserController
-                                                        //         .chooseDate();
-                                                        //   },
-                                                        //
-                                                        //   cursorColor: Colors.black,
-                                                        //   obscureText: false,
-                                                        //   decoration: InputDecoration(
-                                                        //     hintText: 'Select date',
-                                                        //     helperStyle: TextStyle(
-                                                        //       color: black
-                                                        //           .withOpacity(0.7),
-                                                        //       fontSize: 18,
-                                                        //     ),
-                                                        //     prefixIcon: Icon(
-                                                        //       Icons
-                                                        //           .calendar_today_outlined,
-                                                        //       color: black
-                                                        //           .withOpacity(0.7),
-                                                        //       size: 20,
-                                                        //     ),
-                                                        //     border: InputBorder.none,
-                                                        //   ),
-                                                        //   keyboardType:
-                                                        //       TextInputType.multiline,
-                                                        //   maxLines: 1,
-                                                        //   autofocus: true,
-                                                        //   //obscureText: true,
-                                                        //   //controller: _loginpasswordController.mobileController,
-                                                        // ),
-                                                        ),
+                                                        )),
                                                   ),
                                                 ),
 
@@ -2834,68 +2594,7 @@ class FranchiesHomePage extends StatelessWidget {
                                                               ),
                                                             ],
                                                           ),
-                                                        )
-                                                        // ElevatedButton(
-                                                        //   onPressed: () {},
-                                                        //   child: Text(
-                                                        //     'Select Date',
-                                                        //     style: TextStyle(
-                                                        //       color: Colors.black,
-                                                        //     ),
-                                                        //   ),
-                                                        //   style: ButtonStyle(
-                                                        //     backgroundColor:
-                                                        //         MaterialStateProperty
-                                                        //             .all(Colors
-                                                        //                 .white70),
-                                                        //     padding:
-                                                        //         MaterialStateProperty
-                                                        //             .all(EdgeInsets
-                                                        //                 .all(50)),
-                                                        //     textStyle:
-                                                        //         MaterialStateProperty
-                                                        //             .all(TextStyle(
-                                                        //                 fontSize:
-                                                        //                     30,
-                                                        //                 color: Colors
-                                                        //                     .black)),
-                                                        //   ),
-                                                        // ),
-                                                        // TextFormField(
-                                                        //   controller:
-                                                        //       _appointmentUserController
-                                                        //           .appointmentController,
-                                                        //   onTap: () {
-                                                        //     _appointmentUserController
-                                                        //         .chooseDate();
-                                                        //   },
-                                                        //
-                                                        //   cursorColor: Colors.black,
-                                                        //   obscureText: false,
-                                                        //   decoration: InputDecoration(
-                                                        //     hintText: 'Select date',
-                                                        //     helperStyle: TextStyle(
-                                                        //       color: black
-                                                        //           .withOpacity(0.7),
-                                                        //       fontSize: 18,
-                                                        //     ),
-                                                        //     prefixIcon: Icon(
-                                                        //       Icons
-                                                        //           .calendar_today_outlined,
-                                                        //       color: black
-                                                        //           .withOpacity(0.7),
-                                                        //       size: 20,
-                                                        //     ),
-                                                        //     border: InputBorder.none,
-                                                        //   ),
-                                                        //   keyboardType:
-                                                        //       TextInputType.multiline,
-                                                        //   maxLines: 1,
-                                                        //   autofocus: true,
-                                                        //   //obscureText: true,
-                                                        //   //controller: _loginpasswordController.mobileController,
-                                                        // ),
-                                                        ),
+                                                        )),
                                                   ),
                                                 ),
 
@@ -3012,6 +2711,446 @@ class FranchiesHomePage extends StatelessWidget {
                                                         //   //controller: _loginpasswordController.mobileController,
                                                         // ),
                                                         ),
+                                                  ),
+                                                ),
+
+                                                InkWell(
+                                                  onTap: () {
+                                                    Get.back();
+                                                    // Get.to(
+                                                    //     () => OldDriverView());
+                                                  },
+                                                  child: Align(
+                                                    alignment:
+                                                        Alignment.centerRight,
+                                                    child: Container(
+                                                        height:
+                                                            size.height * 0.03,
+                                                        width:
+                                                            size.width * 0.07,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white70,
+                                                          shape:
+                                                              BoxShape.circle,
+                                                          // borderRadius:
+                                                          //     BorderRadius
+                                                          //         .circular(10),
+                                                        ),
+                                                        child: Center(
+                                                            child: Icon(
+                                                          Icons.close,
+                                                        ))
+                                                        // ElevatedButton(
+                                                        //   onPressed: () {},
+                                                        //   child: Text(
+                                                        //     'Select Date',
+                                                        //     style: TextStyle(
+                                                        //       color: Colors.black,
+                                                        //     ),
+                                                        //   ),
+                                                        //   style: ButtonStyle(
+                                                        //     backgroundColor:
+                                                        //         MaterialStateProperty
+                                                        //             .all(Colors
+                                                        //                 .white70),
+                                                        //     padding:
+                                                        //         MaterialStateProperty
+                                                        //             .all(EdgeInsets
+                                                        //                 .all(50)),
+                                                        //     textStyle:
+                                                        //         MaterialStateProperty
+                                                        //             .all(TextStyle(
+                                                        //                 fontSize:
+                                                        //                     30,
+                                                        //                 color: Colors
+                                                        //                     .black)),
+                                                        //   ),
+                                                        // ),
+                                                        // TextFormField(
+                                                        //   controller:
+                                                        //       _appointmentUserController
+                                                        //           .appointmentController,
+                                                        //   onTap: () {
+                                                        //     _appointmentUserController
+                                                        //         .chooseDate();
+                                                        //   },
+                                                        //
+                                                        //   cursorColor: Colors.black,
+                                                        //   obscureText: false,
+                                                        //   decoration: InputDecoration(
+                                                        //     hintText: 'Select date',
+                                                        //     helperStyle: TextStyle(
+                                                        //       color: black
+                                                        //           .withOpacity(0.7),
+                                                        //       fontSize: 18,
+                                                        //     ),
+                                                        //     prefixIcon: Icon(
+                                                        //       Icons
+                                                        //           .calendar_today_outlined,
+                                                        //       color: black
+                                                        //           .withOpacity(0.7),
+                                                        //       size: 20,
+                                                        //     ),
+                                                        //     border: InputBorder.none,
+                                                        //   ),
+                                                        //   keyboardType:
+                                                        //       TextInputType.multiline,
+                                                        //   maxLines: 1,
+                                                        //   autofocus: true,
+                                                        //   //obscureText: true,
+                                                        //   //controller: _loginpasswordController.mobileController,
+                                                        // ),
+                                                        ),
+                                                  ),
+                                                ),
+
+                                                ///
+
+                                                ///..................
+                                              ],
+                                            ),
+                                          ),
+                                          radius: 10.0);
+                                      //Get.to(() => DeptSpecList());
+                                    } else if (index == 12) {
+                                      Get.defaultDialog(
+                                          backgroundColor: MyTheme.ThemeColors,
+                                          title: 'My Y/M/W/D Report',
+                                          content: SingleChildScrollView(
+                                            child: Column(
+                                              //mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                ///for doctor
+                                                InkWell(
+                                                  onTap: () {
+                                                    Get.back();
+                                                    Get.to(() =>
+                                                        Ymwdreportdoctor());
+                                                  },
+                                                  child:
+                                                      NeumorphicTextFieldContainer(
+                                                    child: Container(
+                                                        height:
+                                                            size.height * 0.04,
+                                                        width: size.width,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white70,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                        ),
+                                                        child: Center(
+                                                          child: Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                FontAwesomeIcons
+                                                                    .peopleGroup,
+                                                                size:
+                                                                    size.height *
+                                                                        0.03,
+                                                              ),
+                                                              SizedBox(
+                                                                width:
+                                                                    size.width *
+                                                                        0.08,
+                                                              ),
+                                                              Text(
+                                                                'For Doctor',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontSize:
+                                                                      size.height *
+                                                                          0.02,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        )),
+                                                  ),
+                                                ),
+
+                                                ///for vehicle
+                                                InkWell(
+                                                  onTap: () {
+                                                    Get.to(() =>
+                                                        Ymwdreportvehicle());
+                                                  },
+                                                  child:
+                                                      NeumorphicTextFieldContainer(
+                                                    child: Container(
+                                                        height:
+                                                            size.height * 0.04,
+                                                        width: size.width,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white70,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                        ),
+                                                        child: Center(
+                                                          child: Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                FontAwesomeIcons
+                                                                    .car,
+                                                                size:
+                                                                    size.height *
+                                                                        0.03,
+                                                              ),
+                                                              SizedBox(
+                                                                width:
+                                                                    size.width *
+                                                                        0.07,
+                                                              ),
+                                                              Text(
+                                                                'For Vehicle',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontSize:
+                                                                      size.height *
+                                                                          0.02,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        )),
+                                                  ),
+                                                ),
+
+                                                ///lab
+                                                InkWell(
+                                                  onTap: () {
+                                                    Get.to(
+                                                        () => YmwdreportLab());
+                                                  },
+                                                  child:
+                                                      NeumorphicTextFieldContainer(
+                                                    child: Container(
+                                                        height:
+                                                            size.height * 0.04,
+                                                        width: size.width,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white70,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                        ),
+                                                        child: Center(
+                                                          child: Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                FontAwesomeIcons
+                                                                    .bookMedical,
+                                                                size:
+                                                                    size.height *
+                                                                        0.03,
+                                                              ),
+                                                              SizedBox(
+                                                                width:
+                                                                    size.width *
+                                                                        0.11,
+                                                              ),
+                                                              Text(
+                                                                'For Lab',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontSize:
+                                                                      size.height *
+                                                                          0.02,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        )),
+                                                  ),
+                                                ),
+
+                                                ///for nurse
+                                                InkWell(
+                                                  onTap: () {
+                                                    Get.back();
+                                                    Get.to(() =>
+                                                        YmwdreportNurses());
+                                                  },
+                                                  child:
+                                                      NeumorphicTextFieldContainer(
+                                                    child: Container(
+                                                        height:
+                                                            size.height * 0.04,
+                                                        width: size.width,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white70,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                        ),
+                                                        child: Center(
+                                                          child: Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                FontAwesomeIcons
+                                                                    .user,
+                                                                size:
+                                                                    size.height *
+                                                                        0.03,
+                                                              ),
+                                                              SizedBox(
+                                                                width:
+                                                                    size.width *
+                                                                        0.11,
+                                                              ),
+                                                              Text(
+                                                                'For Nurse',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontSize:
+                                                                      size.height *
+                                                                          0.02,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        )),
+                                                  ),
+                                                ),
+
+                                                ///for Chemist
+                                                InkWell(
+                                                  onTap: () {
+                                                    Get.back();
+                                                    //Get.to(() =>
+                                                    //ResitrationChemistDetails());
+                                                  },
+                                                  child:
+                                                      NeumorphicTextFieldContainer(
+                                                    child: Container(
+                                                        height:
+                                                            size.height * 0.04,
+                                                        width: size.width,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white70,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                        ),
+                                                        child: Center(
+                                                          child: Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                FontAwesomeIcons
+                                                                    .bookMedical,
+                                                                size:
+                                                                    size.height *
+                                                                        0.03,
+                                                              ),
+                                                              SizedBox(
+                                                                width:
+                                                                    size.width *
+                                                                        0.12,
+                                                              ),
+                                                              Text(
+                                                                'For Chemist',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontSize:
+                                                                      size.height *
+                                                                          0.02,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        )),
+                                                  ),
+                                                ),
+
+                                                ///health checkup registration
+                                                InkWell(
+                                                  onTap: () {
+                                                    // Get.to(() =>
+                                                    //ResitrationHealthCheckupDetails());
+                                                  },
+                                                  child:
+                                                      NeumorphicTextFieldContainer(
+                                                    child: Container(
+                                                        height:
+                                                            size.height * 0.04,
+                                                        width: size.width,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white70,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(10),
+                                                        ),
+                                                        child: Center(
+                                                          child: Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                FontAwesomeIcons
+                                                                    .checkToSlot,
+                                                                size:
+                                                                    size.height *
+                                                                        0.03,
+                                                              ),
+                                                              SizedBox(
+                                                                width:
+                                                                    size.width *
+                                                                        0.03,
+                                                              ),
+                                                              Text(
+                                                                'For Health Checkup',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontSize:
+                                                                      size.height *
+                                                                          0.02,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        )),
                                                   ),
                                                 ),
 

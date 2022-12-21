@@ -21,15 +21,6 @@ class ResitrationLabDetails extends StatelessWidget {
         width: size.width,
         child: Scaffold(
           backgroundColor: Colors.transparent,
-
-          // backgroundColor: MyTheme.ThemeColors,
-          // appBar: AppBar(
-          //   centerTitle: true,
-          //   elevation: 0,
-          //   title: Text('Patient List'),
-          //   backgroundColor: MyTheme.ThemeColors,
-          // ),
-
           body: SingleChildScrollView(
             child: SafeArea(
               child: Stack(
