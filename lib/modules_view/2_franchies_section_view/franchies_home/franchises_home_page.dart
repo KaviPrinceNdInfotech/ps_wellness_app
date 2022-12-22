@@ -12,6 +12,8 @@ import 'package:ps_welness/modules_view/2_franchies_section_view/add_dept_spec_p
 import 'package:ps_welness/modules_view/2_franchies_section_view/add_dept_spec_page_view/list_dept_spec/list_dept_specialist.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/add_vehicle/add_vechile_type.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drawerpage.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchise_commission_report/franchise_commission_report.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchise_payment_report/franchise_payment_report.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchises_bank_profile_page_view/bank_profile_view.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchises_galary_page_view/gallary_view.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchises_newdrivre_update/new_driver_view.dart';
@@ -34,7 +36,10 @@ import '../fr_registration_detailsss/fr_registration_detail_nurse/fr_registratio
 import '../fr_registration_detailsss/fr_registration_detail_patient/fr_registration_patient_detailss.dart';
 import '../fr_registration_detailsss/fr_registration_detail_rwa/fr_registration_rwa_detailss.dart';
 import '../fr_registration_detailsss/fr_registration_detail_vehicle/fr_registration_vehicle_detailss.dart';
+import '../franchise_payout_report/franchise_payout_report.dart';
+import '../my_y_m_w_d_reports_view_all/my_ymwd_chemist_details/chemist_detail.dart';
 import '../my_y_m_w_d_reports_view_all/my_ymwd_doctor_report/my_ymwd_doctor_details/my_ymwd_vehicle_report.dart';
+import '../my_y_m_w_d_reports_view_all/my_ymwd_healthchkpsss_details/hlthchkps_detail.dart';
 import '../my_y_m_w_d_reports_view_all/my_ymwd_lab_details/lab_detail.dart';
 import '../my_y_m_w_d_reports_view_all/my_ymwd_nurse_details/nursees_detail.dart';
 import '../my_y_m_w_d_reports_view_all/my_ymwd_vehicle_report/my_ymwd_vehicle_details/vehicle_detail.dart';
@@ -3047,8 +3052,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 InkWell(
                                                   onTap: () {
                                                     Get.back();
-                                                    //Get.to(() =>
-                                                    //ResitrationChemistDetails());
+                                                    Get.to(() =>
+                                                        YmwdreportChemist());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(
@@ -3102,8 +3107,8 @@ class FranchiesHomePage extends StatelessWidget {
                                                 ///health checkup registration
                                                 InkWell(
                                                   onTap: () {
-                                                    // Get.to(() =>
-                                                    //ResitrationHealthCheckupDetails());
+                                                    Get.to(() =>
+                                                        YmwdreportHlthChkup());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(
@@ -3253,6 +3258,12 @@ class FranchiesHomePage extends StatelessWidget {
                                           ),
                                           radius: 10.0);
                                       //Get.to(() => DeptSpecList());
+                                    } else if (index == 13) {
+                                      Get.to(() => FranchisePaymentReport());
+                                    } else if (index == 14) {
+                                      Get.to(() => FranchiseCommissionReport());
+                                    } else if (index == 15) {
+                                      Get.to(() => FranchisePayoutReport());
                                     }
                                   },
                                   child: Container(
