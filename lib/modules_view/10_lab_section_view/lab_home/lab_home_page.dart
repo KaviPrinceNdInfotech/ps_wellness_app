@@ -35,12 +35,14 @@ class LabHomePage extends StatelessWidget {
       'Payment History',
       'Appointment History',
       'Report view',
+      'Contact Support',
 
       // 'service 7',
       // 'service 8',
     ];
 
     final List<String> underprocess = [
+      '',
       '',
       '',
       '',
@@ -65,6 +67,7 @@ class LabHomePage extends StatelessWidget {
       'lib/assets/image/history_payment_lab.png',
       'lib/assets/image/appoinment_his_lab.png',
       'lib/assets/image/lab_report_view.png',
+      'lib/assets/icons/contact33.png',
       // 'service 7',
       // 'service 8',
     ];

@@ -14,6 +14,7 @@ import 'package:ps_welness/modules_view/2_franchies_section_view/add_vehicle/add
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drawerpage.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchise_commission_report/franchise_commission_report.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchise_payment_report/franchise_payment_report.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchise_tds_report/franchise_tds_historyy_report.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchises_bank_profile_page_view/bank_profile_view.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchises_galary_page_view/gallary_view.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchises_newdrivre_update/new_driver_view.dart';
@@ -27,6 +28,7 @@ import 'package:ps_welness/modules_view/2_franchies_section_view/view_dept_speci
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
+import '../../10_lab_section_view/lab_drawer_view/drower_pages/supports/support_view.dart';
 import '../fr_registration_detailsss/fr_registration_detail_chemist/fr_registration_chemist_detailss.dart';
 import '../fr_registration_detailsss/fr_registration_detail_doctor/fr_registration_doctor_detailss.dart';
 import '../fr_registration_detailsss/fr_registration_detail_driver/fr_registration_driver_detailss.dart';
@@ -86,6 +88,7 @@ class FranchiesHomePage extends StatelessWidget {
       'My Commission Report',
       'My Payout Report',
       'My TDS Report',
+      'Contact US'
 
       // 'service 7',
       // 'service 8',
@@ -106,6 +109,7 @@ class FranchiesHomePage extends StatelessWidget {
       '',
       '',
 
+      '',
       '',
       '',
       '',
@@ -150,6 +154,7 @@ class FranchiesHomePage extends StatelessWidget {
       'lib/assets/icons/frcommission.png',
       'lib/assets/icons/frpayout.png',
       'lib/assets/icons/frtds.png',
+      'lib/assets/icons/contact44.png',
 
       // 'service 7',
       // 'service 8',
@@ -3264,6 +3269,11 @@ class FranchiesHomePage extends StatelessWidget {
                                       Get.to(() => FranchiseCommissionReport());
                                     } else if (index == 15) {
                                       Get.to(() => FranchisePayoutReport());
+                                    } else if (index == 16) {
+                                      Get.to(() => FranchiseTdsHistoryReport());
+                                    } else if (index == 17) {
+                                      //Get.back();
+                                      Get.to(() => SupportView());
                                     }
                                   },
                                   child: Container(

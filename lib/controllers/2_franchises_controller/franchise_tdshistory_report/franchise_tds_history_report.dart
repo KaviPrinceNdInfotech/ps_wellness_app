@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 //import 'package:intl/intl.dart';
 
-class FranchisePayoutReportController extends GetxController {
+class FranchiseTdsHistoryReportController extends GetxController {
   var selectedTime = TimeOfDay.now().obs;
   var selectedDate = DateTime.now().obs;
   var selectedDate2 = DateTime.now().obs;

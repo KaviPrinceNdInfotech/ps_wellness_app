@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/controllers/driver_controller/driver_controller_2.dart';
 import 'package:ps_welness/controllers/hospital2_controller/hospital2_sighup_controller.dart';
-import 'package:ps_welness/modules_view/sign_up_list/sign_up_list.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_home/driver_home_page.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
@@ -384,7 +384,7 @@ class Driver2Credentials extends StatelessWidget {
               RectangularButton(
                   text: 'SUBMIT',
                   press: () {
-                    Get.to(SignUpList());
+                    Get.to(DriverHomePage());
                     //_loginpasswordController.checkLoginpassword();
                   })
             ],

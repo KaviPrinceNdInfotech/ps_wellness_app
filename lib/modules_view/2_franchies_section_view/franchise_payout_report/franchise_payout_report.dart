@@ -30,12 +30,14 @@ class FranchisePayoutReport extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: MyTheme.ThemeColors,
+
       // appBar: AppBar(
       //   centerTitle: true,
       //   elevation: 0,
       //   title: Text('Appintment History'),
       //   backgroundColor: MyTheme.ThemeColors,
       // ),
+
       body: SingleChildScrollView(
         child: Column(
           //clipBehavior: Clip.none,
@@ -70,7 +72,7 @@ class FranchisePayoutReport extends StatelessWidget {
                     width: size.width * 0.02,
                   ),
                   Text(
-                    'Franchise Checkout Report',
+                    'Franchise Payout Report',
                     style: TextStyle(
                       color: MyTheme.blueww,
                       fontSize: size.width * 0.045,
