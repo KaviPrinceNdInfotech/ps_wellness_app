@@ -9,8 +9,8 @@ import 'bank_profile_components/head_text.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
 
-class UpdateBankDetail extends StatelessWidget {
-  UpdateBankDetail({Key? key}) : super(key: key);
+class UpdateDriverBankDetail extends StatelessWidget {
+  UpdateDriverBankDetail({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,8 +62,8 @@ class UpdateBankDetail extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    UpdateBankHeadText(),
-                    UpdateBankCredentials(),
+                    UpdateDriverrHeadText(),
+                    UpdateDriverBankCredentials(),
                     //HospitalSocial(),
                     //Spacer(),
                   ],

@@ -7,10 +7,14 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_appointment_history_view/driver_order_history.dart';
 import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/drawerpage.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_payment_history/driver_payment_history.dart';
 import 'package:ps_welness/modules_view/3_driver_section_view/driver_profile_page_view/profile_view.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_update_bank_details/bank_update_view.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
+import '../driver_payout_history/driver_payout_histories.dart';
 //import '../chemist_drawer_view/drawerpage.dart';
 //import 'drower_pages/supports/support_view.dart';
 //import '../lab_appointment_details/lab_appointment_details.dart';
@@ -238,21 +242,21 @@ class DriverHomePage extends StatelessWidget {
                                     if (index == 0) {
                                       Get.to(() => DriverProfilePage());
                                     } else if (index == 1) {
+                                      Get.to(() => UpdateDriverBankDetail());
                                       //Get.to(() => UpdateBankDetail());
                                       //Get.to(() => DoctorAddress());
                                       //Get.to(() => CatagaryDetails());
                                     } else if (index == 2) {
-                                      ///Get.to(() => ChemistOrderHistory());
-
+                                      Get.to(() => DriverOrderHistory());
                                     } else if (index == 3) {
-                                      //Get.to(() => ChemistPaymentHistory());
+                                      Get.to(() => DriverPaymentHistory());
 
                                       ///
                                       //Get.to(() => TheJwelleryStore());
 
                                       //Get.to(() => CarouselDemo());
                                     } else if (index == 4) {
-                                      //Get.to(() => ChemistPayoutHistory());
+                                      Get.to(() => DriverPayoutHistory());
                                       //Get.defaultDialog(
                                       //barrierDismissible: true,
 

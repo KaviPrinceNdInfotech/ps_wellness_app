@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class UpdateBankController extends GetxController {
-  final GlobalKey<FormState> updatebankformkey = GlobalKey<FormState>();
+class DriverBankController extends GetxController {
+  final GlobalKey<FormState> driverbankformkey = GlobalKey<FormState>();
 
   ///this is for State....................................
   Rx<String?> selectedCity = (null as String?).obs;
@@ -101,11 +101,11 @@ class UpdateBankController extends GetxController {
   }
 
   void checkBankDetail() {
-    final isValid = updatebankformkey.currentState!.validate();
+    final isValid = driverbankformkey.currentState!.validate();
     if (!isValid) {
       return;
     }
-    updatebankformkey.currentState!.save();
+    driverbankformkey.currentState!.save();
     //Get.to(() => HomePage());
   }
 }

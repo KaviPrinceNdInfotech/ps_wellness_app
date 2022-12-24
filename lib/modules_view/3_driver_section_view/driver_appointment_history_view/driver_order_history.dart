@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 
-import '../../../controllers/6_chemist_view_controllers/chemist_payout_history_controller/chemist_bank_details.dart';
+import '../../../controllers/3_driver_view_controllers/driver_order_history_controller.dart';
 
-class ChemistPayoutHistory extends StatelessWidget {
-  ChemistPayoutHistory({Key? key}) : super(key: key);
+//import '../../../controllers/10_lab_controller/lab_appointment_controller/nurse_appointment_controller.dart';
 
-  ChemistPayoutController _chemistPayoutController =
-      Get.put(ChemistPayoutController());
+class DriverOrderHistory extends StatelessWidget {
+  DriverOrderHistory({Key? key}) : super(key: key);
+
+  DriverOrderController _driverOrderController =
+      Get.put(DriverOrderController());
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +37,15 @@ class ChemistPayoutHistory extends StatelessWidget {
             clipBehavior: Clip.none,
             children: [
               Positioned(
-                top: -size.height * 0.041,
+                top: -size.height * 0.09,
                 //bottom: size.height * 0.64,
                 //left: -30,
-                right: -size.width * 0.124,
+                right: -size.width * 0.04,
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
-                    height: size.height * 0.22,
-                    width: size.width * 0.75,
+                    height: size.height * 0.3,
+                    width: size.width * 0.45,
                     decoration: BoxDecoration(
                         //color: Colors.,
                         borderRadius: BorderRadius.only(
@@ -50,7 +53,7 @@ class ChemistPayoutHistory extends StatelessWidget {
                         ),
                         image: DecorationImage(
                             image: AssetImage(
-                              'lib/assets/background_stack_png/paymhis4.png',
+                              'lib/assets/background_stack_png/driver002.png',
                             ),
                             fit: BoxFit.cover)),
                   ),
@@ -68,25 +71,17 @@ class ChemistPayoutHistory extends StatelessWidget {
                           onTap: () {
                             Get.back();
                           },
-                          child: Container(
-                            height: size.height * 0.03,
-                            width: size.width * 0.1,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white70,
-                            ),
-                            child: Icon(
-                              Icons.arrow_back_ios_outlined,
-                              size: size.height * 0.022,
-                              color: MyTheme.blueww,
-                            ),
+                          child: Icon(
+                            Icons.arrow_back_ios_outlined,
+                            size: size.height * 0.026,
+                            color: MyTheme.blueww,
                           ),
                         ),
                         SizedBox(
                           width: size.width * 0.03,
                         ),
                         Text(
-                          'Payout History',
+                          'Driver\'s Order History',
                           style: GoogleFonts.alatsi(
                               fontSize: size.height * 0.032,
                               fontWeight: FontWeight.w600,
@@ -95,87 +90,82 @@ class ChemistPayoutHistory extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Spacer(),
-                  Padding(
-                    padding: EdgeInsets.only(top: size.height * 0.01),
-                    child: Row(
-                      children: [
-                        Container(
-                          //height: size.height * 0.02,
-                          decoration: new BoxDecoration(
-                              borderRadius: new BorderRadius.all(
-                                  new Radius.circular(30.0)),
-                              color: Colors.white),
-                          width: size.width * 0.72,
-                          height: size.height * 0.06,
-                          margin: new EdgeInsets.fromLTRB(10, 20, 10, 20),
-                          padding: new EdgeInsets.fromLTRB(5, 8, 8, 8),
-                          child: Theme(
-                            data: Theme.of(context)
-                                .copyWith(splashColor: Colors.transparent),
-                            child: Obx(
-                              () => (_chemistPayoutController.isLoading.value)
-                                  ? Center(child: CircularProgressIndicator())
-                                  : TextField(
-                                      controller: _chemistPayoutController
-                                          .appointmentController,
-                                      onTap: () {
-                                        _chemistPayoutController.chooseDate();
-                                      },
-                                      autofocus: false,
-                                      style: TextStyle(
-                                          fontSize: 15.0,
-                                          color: MyTheme.blueww),
-                                      decoration: InputDecoration(
-                                        prefixIcon: Icon(Icons.search),
-                                        filled: true,
-                                        fillColor: Colors.white,
-                                        hintText: 'dd-mm-yyyy',
-                                        contentPadding: const EdgeInsets.only(
-                                            left: 10.0, bottom: 12.0, top: 0.0),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide:
-                                              BorderSide(color: Colors.white),
-                                          borderRadius:
-                                              BorderRadius.circular(25.7),
-                                        ),
-                                        enabledBorder: UnderlineInputBorder(
-                                          borderSide:
-                                              BorderSide(color: Colors.white),
-                                          borderRadius:
-                                              BorderRadius.circular(25.7),
-                                        ),
+                  Row(
+                    children: [
+                      Container(
+                        //height: size.height * 0.02,
+                        decoration: new BoxDecoration(
+                            borderRadius:
+                                new BorderRadius.all(new Radius.circular(30.0)),
+                            color: Colors.white),
+                        width: size.width * 0.72,
+                        height: size.height * 0.06,
+                        margin: new EdgeInsets.fromLTRB(10, 20, 10, 20),
+                        padding: new EdgeInsets.fromLTRB(5, 8, 8, 8),
+                        child: Theme(
+                          data: Theme.of(context)
+                              .copyWith(splashColor: Colors.transparent),
+                          child: Obx(
+                            () => (_driverOrderController.isLoading.value)
+                                ? Center(child: CircularProgressIndicator())
+                                : TextField(
+                                    controller: _driverOrderController
+                                        .appointmentController,
+                                    onTap: () {
+                                      _driverOrderController.chooseDate();
+                                    },
+                                    autofocus: false,
+                                    style: TextStyle(
+                                        fontSize: 15.0, color: MyTheme.blueww),
+                                    decoration: InputDecoration(
+                                      prefixIcon: Icon(Icons.search),
+                                      filled: true,
+                                      fillColor: Colors.white,
+                                      hintText: 'dd-mm-yyyy',
+                                      contentPadding: const EdgeInsets.only(
+                                          left: 10.0, bottom: 12.0, top: 0.0),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: Colors.white),
+                                        borderRadius:
+                                            BorderRadius.circular(25.7),
+                                      ),
+                                      enabledBorder: UnderlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: Colors.white),
+                                        borderRadius:
+                                            BorderRadius.circular(25.7),
                                       ),
                                     ),
-                            ),
+                                  ),
                           ),
                         ),
-                        Container(
-                          height: size.height * 0.06,
-                          width: size.width * 0.2,
-                          decoration: BoxDecoration(
-                            //color: MyTheme.blueww,
-                            gradient: MyTheme.gradient5,
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Center(
-                              child: Text(
-                            'Search',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: size.width * 0.035,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )),
+                      ),
+                      Container(
+                        height: size.height * 0.06,
+                        width: size.width * 0.2,
+                        decoration: BoxDecoration(
+                          //color: MyTheme.blueww,
+                          gradient: MyTheme.gradient8,
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                      ],
-                    ),
+                        child: Center(
+                            child: Text(
+                          'Search',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: size.width * 0.035,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: size.height * 0.01,
                   ),
                   SizedBox(
-                      height: size.height * 0.71,
+                      height: size.height * 0.77,
                       child: ListView.builder(
                           shrinkWrap: true,
                           itemCount: 5,
@@ -185,37 +175,31 @@ class ChemistPayoutHistory extends StatelessWidget {
                                   horizontal: size.width * 0.03,
                                   vertical: size.height * 0.0005),
                               child: Container(
-                                height: size.height * 0.13,
+                                height: size.height * 0.32,
                                 margin: EdgeInsets.symmetric(vertical: 30 / 5),
                                 decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          'https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'),
-                                      fit: BoxFit.fill),
-                                  //color: MyTheme.containercolor8,
                                   borderRadius: BorderRadius.circular(20),
-
-                                  // gradient: LinearGradient(
-                                  //     begin: Alignment.centerLeft,
-                                  //     end: Alignment.centerRight,
-                                  //     colors: [
-                                  //       lightPrimary,
-                                  //       darkPrimary,
-                                  //     ]),
+                                  gradient: LinearGradient(
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
+                                      colors: [
+                                        lightPrimary1,
+                                        darkPrimary,
+                                      ]),
                                   boxShadow: [
                                     BoxShadow(
                                       offset: Offset(-0, -0),
                                       spreadRadius: 0,
                                       blurRadius: 0,
-                                      color: Colors.yellow.shade300,
+                                      color: Colors.cyan.shade300,
 
                                       // color: darkShadow1,
                                     ),
                                     BoxShadow(
-                                      offset: Offset(3, 3),
+                                      offset: Offset(4, 4),
                                       spreadRadius: 0,
                                       blurRadius: 0,
-                                      color: Colors.grey.shade200,
+                                      color: Colors.cyan.shade300,
                                     ),
                                   ],
                                   // image: DecorationImage(
@@ -223,126 +207,205 @@ class ChemistPayoutHistory extends StatelessWidget {
                                   //         'https://images.unsplash.com/photo-1626624340240-aadc087844fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Ymx1ciUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'),
                                   //     fit: BoxFit.cover)
                                 ),
-                                child: Container(
-                                  height: size.height * 0.093,
-                                  width: double.infinity,
-                                  margin: EdgeInsets.symmetric(
-                                      vertical: size.width * 0.0 / 05),
-                                  decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                          begin: Alignment.centerLeft,
-                                          end: Alignment.centerRight,
-                                          colors: [
-                                            Color(0xffffffff),
-                                            Color(0xffF0FFF0)
-                                            //darkPrimary,
-                                          ]),
-                                      borderRadius: BorderRadius.circular(12),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          offset: Offset(-0, -0),
-                                          spreadRadius: 0,
-                                          blurRadius: 0,
-                                          color: Colors.green.shade200,
+                                child: Stack(
+                                  //clipBehavior: Clip.none,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: size.height * 0.01,
+                                          horizontal: size.width * 0.02),
+                                      child: Material(
+                                        elevation: 6,
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(10),
+                                          topLeft: Radius.circular(10),
                                         ),
-                                        BoxShadow(
-                                          offset: Offset(3, 3),
-                                          spreadRadius: 2,
-                                          blurRadius: 2,
-                                          color: Colors.green.shade200,
-                                        ),
-                                      ]),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                          height: size.height * 0.09,
-                                          width: size.width * 0.18,
-                                          padding: EdgeInsets.all(8),
-                                          child: Image.asset(
-                                            'lib/assets/icons/profile_chemiist.png',
-                                            // "lib/assets/image/icons8-hospital-64.png",
-                                          ),
+                                        child: Container(
+                                          //height: size.height * 0.3,
+                                          width: size.width * 0.35,
                                           decoration: BoxDecoration(
-                                              color: Colors.grey[300],
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              boxShadow: [
-                                                const BoxShadow(
-                                                  color: Color(0xFFBEBEBE),
-                                                  offset: Offset(5, 5),
-                                                  blurRadius: 10,
-                                                  spreadRadius: 1,
-                                                ),
-                                                const BoxShadow(
-                                                  color: Colors.white,
-                                                  offset: Offset(-5, -5),
-                                                  blurRadius: 10,
-                                                  spreadRadius: 1,
-                                                ),
-                                              ]),
+                                            borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(10),
+                                              topLeft: Radius.circular(10),
+                                            ),
+                                            //shape: BoxShape.rectangle,
+                                            //color: Colors.blueGrey,
+                                            //border: Border.all(color: Colors.red),
+                                            gradient: MyTheme.gradient5,
+                                          ),
                                         ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              'JK Agarwal',
-                                              style: GoogleFonts.roboto(
-                                                fontSize: size.width * 0.045,
-                                                fontWeight: FontWeight.w500,
-                                                color: MyTheme.blueww,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: size.height * 0.02,
-                                            ),
-                                            Text(
-                                              '02 nov, 2022',
-                                              style: GoogleFonts.roboto(
-                                                fontSize: size.width * 0.03,
-                                                fontWeight: FontWeight.w400,
-                                                color: Colors.grey,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              '₹ 500',
-                                              style: GoogleFonts.roboto(
-                                                fontSize: size.width * 0.05,
-                                                fontWeight: FontWeight.w700,
-                                                //color: Colors.red,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: size.height * 0.02,
-                                            ),
-                                            Text(
-                                              'Received',
-                                              style: GoogleFonts.roboto(
-                                                fontSize: size.width * 0.03,
-                                                fontWeight: FontWeight.w500,
-                                                color: Colors.green,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                      ),
                                     ),
-                                  ),
-                                  // child: child,
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Driver Name:',
+                                                style: GoogleFonts.poppins(
+                                                  color: MyTheme.blueww,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: size.width * 0.035,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Driver Mobile :',
+                                                style: GoogleFonts.poppins(
+                                                  color: MyTheme.blueww,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: size.width * 0.035,
+                                                ),
+                                              ),
+                                              Text(
+                                                'State :',
+                                                style: GoogleFonts.poppins(
+                                                  color: MyTheme.blueww,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: size.width * 0.035,
+                                                ),
+                                              ),
+                                              Text(
+                                                'City :',
+                                                style: GoogleFonts.poppins(
+                                                  color: MyTheme.blueww,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: size.width * 0.035,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Pin :',
+                                                style: GoogleFonts.poppins(
+                                                  color: MyTheme.blueww,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: size.width * 0.035,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Paid Amount:',
+                                                style: GoogleFonts.poppins(
+                                                  color: MyTheme.blueww,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: size.width * 0.035,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Driver Address:',
+                                                style: GoogleFonts.poppins(
+                                                  color: MyTheme.blueww,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: size.width * 0.035,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Status:',
+                                                style: GoogleFonts.poppins(
+                                                  color: MyTheme.blueww,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: size.width * 0.035,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Driver Record :',
+                                                style: GoogleFonts.poppins(
+                                                  color: MyTheme.blueww,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: size.width * 0.035,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Ram Kumar',
+                                                style: GoogleFonts.raleway(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize:
+                                                        size.width * 0.035),
+                                              ),
+                                              Text(
+                                                '988878854599',
+                                                style: GoogleFonts.raleway(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize:
+                                                        size.width * 0.035),
+                                              ),
+                                              Text(
+                                                'UP',
+                                                style: GoogleFonts.raleway(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize:
+                                                        size.width * 0.035),
+                                              ),
+                                              Text(
+                                                'Gorakhpur',
+                                                style: GoogleFonts.raleway(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize:
+                                                        size.width * 0.035),
+                                              ),
+                                              Text(
+                                                '784356',
+                                                style: GoogleFonts.raleway(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize:
+                                                        size.width * 0.035),
+                                              ),
+                                              Text(
+                                                '890',
+                                                style: GoogleFonts.raleway(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize:
+                                                        size.width * 0.035),
+                                              ),
+                                              Text(
+                                                'Noida, UP sector 16 metro',
+                                                style: GoogleFonts.raleway(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize:
+                                                        size.width * 0.035),
+                                              ),
+                                              Text(
+                                                'Paid',
+                                                style: GoogleFonts.raleway(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize:
+                                                        size.width * 0.035),
+                                              ),
+                                              Text(
+                                                'Yes',
+                                                style: GoogleFonts.raleway(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize:
+                                                        size.width * 0.035),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             );

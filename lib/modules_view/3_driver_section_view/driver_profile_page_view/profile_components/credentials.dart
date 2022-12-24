@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/modules_view/6_chemist_section_view/chemist_home/chemist_home_page.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_home/driver_home_page.dart';
 //import 'package:ps_welness/modules_view/home_page_view/home_page.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
@@ -495,7 +495,7 @@ class DriverProfileCredentials extends StatelessWidget {
             RectangularButton(
                 text: 'UPDATE',
                 press: () {
-                  Get.to(ChemistHomePage());
+                  Get.to(DriverHomePage());
                   //_loginpasswordController.checkLoginpassword();
                 })
           ],

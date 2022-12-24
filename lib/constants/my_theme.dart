@@ -112,6 +112,17 @@ class MyTheme {
     stops: [0.0, 0.25, 0.5, 0.70, 1],
   );
 
+  static SweepGradient sweepGradient2 = SweepGradient(
+    colors: [
+      Colors.indigo.shade300,
+      Colors.cyan.shade200,
+      Colors.yellow.shade200,
+      Colors.pink,
+      Colors.green.shade100,
+    ],
+    stops: [0.0, 0.25, 0.5, 0.70, 1],
+  );
+
   static RadialGradient radial1 = RadialGradient(
       colors: [Colors.green, Colors.blue, Colors.orange, Colors.pink],
       stops: [0.2, 0.5, 0.7, 1]);

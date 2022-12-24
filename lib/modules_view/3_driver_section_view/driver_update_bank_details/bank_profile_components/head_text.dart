@@ -4,8 +4,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 
-class UpdateBankHeadText extends StatelessWidget {
-  const UpdateBankHeadText({Key? key}) : super(key: key);
+class UpdateDriverrHeadText extends StatelessWidget {
+  const UpdateDriverrHeadText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class UpdateBankHeadText extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: appPadding,
+        horizontal: appPadding / 2,
         vertical: appPadding / 2,
       ),
       child: Column(
@@ -30,7 +30,7 @@ class UpdateBankHeadText extends StatelessWidget {
                 width: size.width * 0.03,
               ),
               Text(
-                'Update Bank Details',
+                'Update Driver\'s Bank Details',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: size.width * 0.05,
@@ -41,7 +41,7 @@ class UpdateBankHeadText extends StatelessWidget {
           ),
           SizedBox(height: size.height * 0.05),
           Text(
-            'Kumar Prince',
+            'Kumar Abhi',
             style: GoogleFonts.alatsi(
                 fontSize: 32,
                 fontWeight: FontWeight.w600,
@@ -51,7 +51,7 @@ class UpdateBankHeadText extends StatelessWidget {
             text: TextSpan(
               children: <TextSpan>[
                 TextSpan(
-                  text: 'Kavi@gmail.com',
+                  text: 'abhi@gmail.com',
                   style: GoogleFonts.poppins(
                     fontSize: 23,
                     color: Colors.black87,

@@ -5,13 +5,13 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 
-import '../../../controllers/6_chemist_view_controllers/chemist_payment_history_controller/chemist_payment_controller.dart';
+import '../../../controllers/3_driver_view_controllers/driver_payout_history_controller/driver_payout_details.dart';
 
-class ChemistPaymentHistory extends StatelessWidget {
-  ChemistPaymentHistory({Key? key}) : super(key: key);
+class DriverPayoutHistory extends StatelessWidget {
+  DriverPayoutHistory({Key? key}) : super(key: key);
 
-  ChemispaymentController _chemispaymentController =
-      Get.put(ChemispaymentController());
+  DriverPayoutController _driverPayoutController =
+      Get.put(DriverPayoutController());
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +34,15 @@ class ChemistPaymentHistory extends StatelessWidget {
             clipBehavior: Clip.none,
             children: [
               Positioned(
-                top: -size.height * 0.041,
+                top: -size.height * 0.037,
                 //bottom: size.height * 0.64,
                 //left: -30,
                 right: -size.width * 0.124,
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
-                    height: size.height * 0.26,
-                    width: size.width * 0.75,
+                    height: size.height * 0.22,
+                    width: size.width * 0.55,
                     decoration: BoxDecoration(
                         //color: Colors.,
                         borderRadius: BorderRadius.only(
@@ -50,7 +50,7 @@ class ChemistPaymentHistory extends StatelessWidget {
                         ),
                         image: DecorationImage(
                             image: AssetImage(
-                              'lib/assets/background_stack_png/paymhis3.png',
+                              'lib/assets/background_stack_png/paymhis2.png',
                             ),
                             fit: BoxFit.cover)),
                   ),
@@ -68,17 +68,25 @@ class ChemistPaymentHistory extends StatelessWidget {
                           onTap: () {
                             Get.back();
                           },
-                          child: Icon(
-                            Icons.arrow_back_ios_outlined,
-                            size: size.height * 0.026,
-                            color: MyTheme.blueww,
+                          child: Container(
+                            height: size.height * 0.03,
+                            width: size.width * 0.1,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white70,
+                            ),
+                            child: Icon(
+                              Icons.arrow_back_ios_outlined,
+                              size: size.height * 0.022,
+                              color: MyTheme.blueww,
+                            ),
                           ),
                         ),
                         SizedBox(
                           width: size.width * 0.03,
                         ),
                         Text(
-                          'Payment History',
+                          'Driver\'s Payout History',
                           style: GoogleFonts.alatsi(
                               fontSize: size.height * 0.032,
                               fontWeight: FontWeight.w600,
@@ -87,7 +95,7 @@ class ChemistPaymentHistory extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Spacer(),
+                  //Spacer(),
                   Padding(
                     padding: EdgeInsets.only(top: size.height * 0.01),
                     child: Row(
@@ -106,13 +114,13 @@ class ChemistPaymentHistory extends StatelessWidget {
                             data: Theme.of(context)
                                 .copyWith(splashColor: Colors.transparent),
                             child: Obx(
-                              () => (_chemispaymentController.isLoading.value)
+                              () => (_driverPayoutController.isLoading.value)
                                   ? Center(child: CircularProgressIndicator())
                                   : TextField(
-                                      controller: _chemispaymentController
+                                      controller: _driverPayoutController
                                           .appointmentController,
                                       onTap: () {
-                                        _chemispaymentController.chooseDate();
+                                        _driverPayoutController.chooseDate();
                                       },
                                       autofocus: false,
                                       style: TextStyle(
@@ -147,7 +155,7 @@ class ChemistPaymentHistory extends StatelessWidget {
                           width: size.width * 0.2,
                           decoration: BoxDecoration(
                             //color: MyTheme.blueww,
-                            gradient: MyTheme.sweepGradient1,
+                            gradient: MyTheme.gradient5,
                             borderRadius: BorderRadius.circular(30),
                           ),
                           child: Center(
@@ -167,232 +175,176 @@ class ChemistPaymentHistory extends StatelessWidget {
                     height: size.height * 0.01,
                   ),
                   SizedBox(
-                      height: size.height * 0.71,
+                      height: size.height * 0.76,
                       child: ListView.builder(
                           shrinkWrap: true,
                           itemCount: 5,
                           itemBuilder: (BuildContext context, int index) {
-                            return Stack(
-                              clipBehavior: Clip.none,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: size.width * 0.03,
-                                      vertical: size.height * 0.0005),
-                                  child: Container(
-                                    height: size.height * 0.25,
-                                    margin:
-                                        EdgeInsets.symmetric(vertical: 30 / 5),
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              'https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'),
-                                          fit: BoxFit.fill),
-                                      //color: MyTheme.containercolor8,
-                                      borderRadius: BorderRadius.circular(20),
+                            return Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: size.width * 0.03,
+                                  vertical: size.height * 0.0005),
+                              child: Container(
+                                height: size.height * 0.13,
+                                margin: EdgeInsets.symmetric(vertical: 30 / 5),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: NetworkImage(
+                                          'https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'),
+                                      fit: BoxFit.fill),
+                                  //color: MyTheme.containercolor8,
+                                  borderRadius: BorderRadius.circular(20),
 
-                                      // gradient: LinearGradient(
-                                      //     begin: Alignment.centerLeft,
-                                      //     end: Alignment.centerRight,
-                                      //     colors: [
-                                      //       lightPrimary,
-                                      //       darkPrimary,
-                                      //     ]),
+                                  // gradient: LinearGradient(
+                                  //     begin: Alignment.centerLeft,
+                                  //     end: Alignment.centerRight,
+                                  //     colors: [
+                                  //       lightPrimary,
+                                  //       darkPrimary,
+                                  //     ]),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(-0, -0),
+                                      spreadRadius: 0,
+                                      blurRadius: 0,
+                                      color: Colors.yellow.shade300,
+
+                                      // color: darkShadow1,
+                                    ),
+                                    BoxShadow(
+                                      offset: Offset(3, 3),
+                                      spreadRadius: 0,
+                                      blurRadius: 0,
+                                      color: Colors.grey.shade200,
+                                    ),
+                                  ],
+                                  // image: DecorationImage(
+                                  //     image: NetworkImage(
+                                  //         'https://images.unsplash.com/photo-1626624340240-aadc087844fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Ymx1ciUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'),
+                                  //     fit: BoxFit.cover)
+                                ),
+                                child: Container(
+                                  height: size.height * 0.093,
+                                  width: double.infinity,
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: size.width * 0.0 / 05),
+                                  decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                          begin: Alignment.centerLeft,
+                                          end: Alignment.centerRight,
+                                          colors: [
+                                            Color(0xffffffff),
+                                            Color(0xffF0FFF0)
+                                            //darkPrimary,
+                                          ]),
+                                      borderRadius: BorderRadius.circular(12),
                                       boxShadow: [
                                         BoxShadow(
                                           offset: Offset(-0, -0),
                                           spreadRadius: 0,
                                           blurRadius: 0,
-                                          color: Colors.yellow.shade300,
-
-                                          // color: darkShadow1,
+                                          color: Colors.green.shade200,
                                         ),
                                         BoxShadow(
                                           offset: Offset(3, 3),
-                                          spreadRadius: 0,
-                                          blurRadius: 0,
-                                          color: Colors.grey.shade300,
+                                          spreadRadius: 2,
+                                          blurRadius: 2,
+                                          color: Colors.green.shade200,
                                         ),
-                                      ],
-                                      // image: DecorationImage(
-                                      //     image: NetworkImage(
-                                      //         'https://images.unsplash.com/photo-1626624340240-aadc087844fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Ymx1ciUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'),
-                                      //     fit: BoxFit.cover)
-                                    ),
-                                    child: Stack(
-                                      //clipBehavior: Clip.none,
+                                      ]),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Positioned(
-                                          top: -70,
-                                          right: 260,
-                                          child: Container(
-                                            height: size.height * 0.2,
-                                            width: size.width * 0.4,
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              //color: Colors.blueGrey,
-                                              gradient: MyTheme.sweepGradient1,
-                                            ),
+                                        Container(
+                                          height: size.height * 0.09,
+                                          width: size.width * 0.18,
+                                          padding: EdgeInsets.all(8),
+                                          child: Image.asset(
+                                            'lib/assets/icons/user.png',
+                                            // "lib/assets/image/icons8-hospital-64.png",
                                           ),
+                                          decoration: BoxDecoration(
+                                              color: Colors.grey[300],
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              boxShadow: [
+                                                const BoxShadow(
+                                                  color: Color(0xFFBEBEBE),
+                                                  offset: Offset(5, 5),
+                                                  blurRadius: 10,
+                                                  spreadRadius: 1,
+                                                ),
+                                                const BoxShadow(
+                                                  color: Colors.white,
+                                                  offset: Offset(-5, -5),
+                                                  blurRadius: 10,
+                                                  spreadRadius: 1,
+                                                ),
+                                              ]),
                                         ),
-                                        Positioned(
-                                          bottom: -120,
-                                          left: 200,
-                                          child: Container(
-                                            height: size.height * 0.32,
-                                            width: size.width * 0.62,
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              //color: Colors.blueGrey,
-                                              gradient: MyTheme.sweepGradient1,
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'Ram Kumar',
+                                              style: GoogleFonts.roboto(
+                                                fontSize: size.width * 0.045,
+                                                fontWeight: FontWeight.w500,
+                                                color: MyTheme.blueww,
+                                              ),
                                             ),
-                                          ),
+                                            SizedBox(
+                                              height: size.height * 0.02,
+                                            ),
+                                            Text(
+                                              '03 Dec, 2022',
+                                              style: GoogleFonts.roboto(
+                                                fontSize: size.width * 0.03,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.grey,
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceAround,
-                                            children: [
-                                              Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceAround,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Name:',
-                                                    style: GoogleFonts.poppins(
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    'Bank :',
-                                                    style: GoogleFonts.poppins(
-                                                      // color: MyTheme.text1,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    'Paid Amount:',
-                                                    style: GoogleFonts.poppins(
-                                                      //color: MyTheme.text1,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    'Payment Id:',
-                                                    style: GoogleFonts.poppins(
-                                                      //color: MyTheme.text1,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    'Date:',
-                                                    style: GoogleFonts.poppins(
-                                                      //color: MyTheme.text1,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    'Time:',
-                                                    style: GoogleFonts.poppins(
-                                                      //color: MyTheme.text1,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                ],
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              '₹ 3000',
+                                              style: GoogleFonts.roboto(
+                                                fontSize: size.width * 0.05,
+                                                fontWeight: FontWeight.w700,
+                                                //color: Colors.red,
                                               ),
-                                              Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceAround,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'JK Agarwal',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                  Text(
-                                                    'SBI',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                  Text(
-                                                    '₹ 6000',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                  Text(
-                                                    '889gfgh33',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                  Text(
-                                                    '10 nov 2022',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                  Text(
-                                                    '10:07 am',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                ],
+                                            ),
+                                            SizedBox(
+                                              height: size.height * 0.02,
+                                            ),
+                                            Text(
+                                              'Received',
+                                              style: GoogleFonts.roboto(
+                                                fontSize: size.width * 0.03,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.green,
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
                                   ),
+                                  // child: child,
                                 ),
-                              ],
+                              ),
                             );
                           })),
                 ],

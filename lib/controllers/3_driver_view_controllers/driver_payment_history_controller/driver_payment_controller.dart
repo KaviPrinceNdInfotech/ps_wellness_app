@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 //import 'package:intl/intl.dart';
 
-class ChemistOrderController extends GetxController {
+class DriverpaymentController extends GetxController {
   var selectedTime = TimeOfDay.now().obs;
   var selectedDate = DateTime.now().obs;
   RxInt selectedIndex = 0.obs;
