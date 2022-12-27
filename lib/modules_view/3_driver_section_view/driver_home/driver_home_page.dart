@@ -7,6 +7,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/supports/support_view.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_appointment_details/driver_appointment_details.dart';
 import 'package:ps_welness/modules_view/3_driver_section_view/driver_appointment_history_view/driver_order_history.dart';
 import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/drawerpage.dart';
 import 'package:ps_welness/modules_view/3_driver_section_view/driver_payment_history/driver_payment_history.dart';
@@ -14,6 +16,7 @@ import 'package:ps_welness/modules_view/3_driver_section_view/driver_profile_pag
 import 'package:ps_welness/modules_view/3_driver_section_view/driver_update_bank_details/bank_update_view.dart';
 
 import '../../../controllers/1_user_view_controller/user_appointment_controller/user_appointment_controllers.dart';
+import '../air_ambulance_driver_appointment_details/air_ambulance_driver_appointment_details.dart';
 import '../driver_payout_history/driver_payout_histories.dart';
 //import '../chemist_drawer_view/drawerpage.dart';
 //import 'drower_pages/supports/support_view.dart';
@@ -41,6 +44,8 @@ class DriverHomePage extends StatelessWidget {
       'Booking History',
       'Payment History',
       'Payout history',
+      'Appointment Details',
+      'Air Ambulance',
       'Contact Us'
 
       // 'service 7',
@@ -48,6 +53,8 @@ class DriverHomePage extends StatelessWidget {
     ];
 
     final List<String> underprocess = [
+      '',
+      '',
       '',
       '',
       '',
@@ -73,6 +80,8 @@ class DriverHomePage extends StatelessWidget {
       'lib/assets/icons/drbookinghis.png',
       'lib/assets/icons/drhistory.png',
       'lib/assets/icons/drpayout.png',
+      'lib/assets/icons/calendar.png',
+      'lib/assets/background_stack_png/helicopter.png',
       'lib/assets/icons/contact1.png',
       // 'service 7',
       // 'service 8',
@@ -261,9 +270,13 @@ class DriverHomePage extends StatelessWidget {
                                       //barrierDismissible: true,
 
                                     } else if (index == 5) {
-                                      //Get.to(() => SupportView());
+                                      Get.to(() => DriverAppointmentDetails());
                                     } else if (index == 6) {
+                                      Get.to(() =>
+                                          DriverAirambulanceAppointmentDetails());
+                                      //Get.to(() => SupportView());
                                     } else if (index == 7) {
+                                      Get.to(() => SupportView());
                                       //Get.to(() => TermsMemberPage());
                                     }
                                   },

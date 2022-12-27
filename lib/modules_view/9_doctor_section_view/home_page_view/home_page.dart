@@ -60,12 +60,33 @@ class HomePage extends StatelessWidget {
       backgroundColor: MyTheme.ThemeColors,
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          'PS WELLNESS',
-          style: GoogleFonts.alatsi(
-            fontWeight: FontWeight.w500,
-            fontSize: 22,
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'lib/assets/background_stack_png/doctor234.png',
+              height: size.height * 0.03,
+              width: size.width * 0.06,
+            ),
+            SizedBox(
+              width: size.width * 0.03,
+            ),
+            Text(
+              'PS WELLNESS',
+              style: GoogleFonts.alatsi(
+                fontWeight: FontWeight.w500,
+                fontSize: 22,
+              ),
+            ),
+            Text(
+              'Doctors',
+              style: GoogleFonts.alatsi(
+                fontWeight: FontWeight.w500,
+                fontSize: 20,
+                color: Colors.purple,
+              ),
+            ),
+          ],
         ),
         elevation: 0,
         backgroundColor: MyTheme.ThemeColors,
