@@ -8,6 +8,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/lab/choose_lab/choose_lab.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/map_page_user/google_map_2.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/map_page_user/map_page_google_map.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/nursess/book_nurse_appointment1/nurse_booking_1.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/user_drawer.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
@@ -222,6 +224,9 @@ class UserHomePage extends StatelessWidget {
                                               //mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 InkWell(
+                                                  onTap: () {
+                                                    Get.to(() => MapUser());
+                                                  },
                                                   child:
                                                       NeumorphicTextFieldContainer(
                                                     child: Container(
@@ -312,6 +317,9 @@ class UserHomePage extends StatelessWidget {
                                                   ),
                                                 ),
                                                 InkWell(
+                                                  onTap: () {
+                                                    Get.to(() => MapUsers());
+                                                  },
                                                   child:
                                                       NeumorphicTextFieldContainer(
                                                     child: Container(
@@ -402,6 +410,9 @@ class UserHomePage extends StatelessWidget {
                                                   ),
                                                 ),
                                                 InkWell(
+                                                  onTap: () {
+                                                    Get.to(() => MapUser());
+                                                  },
                                                   child:
                                                       NeumorphicTextFieldContainer(
                                                     child: Container(
@@ -492,6 +503,9 @@ class UserHomePage extends StatelessWidget {
                                                   ),
                                                 ),
                                                 InkWell(
+                                                  onTap: () {
+                                                    Get.to(() => MapUser());
+                                                  },
                                                   child:
                                                       NeumorphicTextFieldContainer(
                                                     child: Container(
