@@ -6,6 +6,10 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/supports/support_view.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/driver_drower_pages/about_us/about_us.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/driver_drower_pages/complaint_page/complaint_page.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/driver_drower_pages/profile_driver_page_view/driver_profile.dart';
 import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
 
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
@@ -127,7 +131,7 @@ class DriverMainDrawer extends StatelessWidget {
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                //Get.to(() => NurseProfilePage());
+                Get.to(() => DriverProfilePage());
                 Get.offNamed('/NurseProfilePage');
               },
             ),
@@ -164,7 +168,7 @@ class DriverMainDrawer extends StatelessWidget {
             //     Get.offNamed('/PatientList');
             //   },
             // ),
-            ///
+            ///.......................
             // ListTile(
             //   // horizontalTitleGap: 10,
             //   leading: Icon(
@@ -226,7 +230,7 @@ class DriverMainDrawer extends StatelessWidget {
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                //Get.to(() => ComplaintPage());
+                Get.to(() => ComplaintPageDriver());
                 Get.offNamed('/ComplaintPage');
               },
             ),
@@ -259,7 +263,7 @@ class DriverMainDrawer extends StatelessWidget {
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                //Get.to(() => AboutUsView());
+                Get.to(() => AboutUsViewDriver());
                 Get.offNamed('/AboutUsView');
               },
             ),
@@ -292,7 +296,7 @@ class DriverMainDrawer extends StatelessWidget {
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                //Get.to(() => SupportView());
+                Get.to(() => SupportView());
                 Get.offNamed('/SupportView');
               },
             ),

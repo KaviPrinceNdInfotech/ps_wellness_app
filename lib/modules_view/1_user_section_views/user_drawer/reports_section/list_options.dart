@@ -1,7 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/reports_section/report_section_pages/doctors_report_page.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/reports_section/report_section_pages/health_checkup_report_page.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/reports_section/report_section_pages/lab_report_page.dart';
+
+//import 'package:ps_welness/lib/modules_view/1_user_section_views/user_drawer/reports_section/report_section_pages/health_checkup_report_page.dart';
 
 import '../../../../../constants/my_theme.dart';
 
@@ -96,164 +103,185 @@ class ReportLists extends StatelessWidget {
                             padding: EdgeInsets.symmetric(
                                 horizontal: size.height * 0.014,
                                 vertical: size.height * 0.0),
-                            child: Container(
-                                height: size.height * 0.04,
-                                width: double.infinity,
-                                margin: EdgeInsets.symmetric(vertical: 30 / 2),
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
-                                        colors: [
-                                          darkPrimary2,
-                                          lightPrimary,
-                                        ]),
-                                    borderRadius: BorderRadius.circular(12),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        offset: Offset(-0, -0),
-                                        spreadRadius: 1,
-                                        blurRadius: 0,
-                                        color: Colors.grey.shade300,
-                                      ),
-                                      BoxShadow(
-                                        offset: Offset(3, 3),
-                                        spreadRadius: 1,
-                                        blurRadius: 0,
-                                        color: Colors.grey.shade300,
-                                      ),
-                                    ]),
-                                child: Center(
-                                    child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: size.width * 0.03),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Icon(Icons.health_and_safety),
-                                      Text(
-                                        'Health Checkup Report',
-                                        style: TextStyle(
-                                          fontSize: size.height * 0.018,
-                                          fontWeight: FontWeight.bold,
+                            child: InkWell(
+                              onTap: () {
+                                Get.to(() => HealthCheckupPdf());
+
+                                //Get.to(()=>HealthCheckupPdf());
+                              },
+                              child: Container(
+                                  height: size.height * 0.04,
+                                  width: double.infinity,
+                                  margin:
+                                      EdgeInsets.symmetric(vertical: 30 / 2),
+                                  decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          colors: [
+                                            darkPrimary2,
+                                            lightPrimary,
+                                          ]),
+                                      borderRadius: BorderRadius.circular(12),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: Offset(-0, -0),
+                                          spreadRadius: 1,
+                                          blurRadius: 0,
+                                          color: Colors.grey.shade300,
                                         ),
-                                      ),
-                                      Icon(
-                                        Icons.arrow_forward_ios,
-                                        size: size.height * 0.02,
-                                      ),
-                                    ],
-                                  ),
-                                )))),
+                                        BoxShadow(
+                                          offset: Offset(3, 3),
+                                          spreadRadius: 1,
+                                          blurRadius: 0,
+                                          color: Colors.grey.shade300,
+                                        ),
+                                      ]),
+                                  child: Center(
+                                      child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: size.width * 0.03),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Icon(Icons.health_and_safety),
+                                        Text(
+                                          'Health Checkup Report',
+                                          style: TextStyle(
+                                            fontSize: size.height * 0.018,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward_ios,
+                                          size: size.height * 0.02,
+                                        ),
+                                      ],
+                                    ),
+                                  ))),
+                            )),
+
                         Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: size.height * 0.014,
                                 vertical: size.height * 0.0),
-                            child: Container(
-                                height: size.height * 0.04,
-                                width: double.infinity,
-                                margin: EdgeInsets.symmetric(vertical: 30 / 2),
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
-                                        colors: [
-                                          darkPrimary2,
-                                          lightPrimary,
-                                        ]),
-                                    borderRadius: BorderRadius.circular(12),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        offset: Offset(-0, -0),
-                                        spreadRadius: 1,
-                                        blurRadius: 0,
-                                        color: Colors.grey.shade300,
-                                      ),
-                                      BoxShadow(
-                                        offset: Offset(3, 3),
-                                        spreadRadius: 1,
-                                        blurRadius: 0,
-                                        color: Colors.grey.shade300,
-                                      ),
-                                    ]),
-                                child: Center(
-                                    child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: size.width * 0.03),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Icon(Icons.home_work),
-                                      Text(
-                                        'Lab Report',
-                                        style: TextStyle(
-                                          fontSize: size.height * 0.018,
-                                          fontWeight: FontWeight.bold,
+                            child: InkWell(
+                              onTap: () {
+                                Get.to(() => LabReportPdf());
+                              },
+                              child: Container(
+                                  height: size.height * 0.04,
+                                  width: double.infinity,
+                                  margin:
+                                      EdgeInsets.symmetric(vertical: 30 / 2),
+                                  decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          colors: [
+                                            darkPrimary2,
+                                            lightPrimary,
+                                          ]),
+                                      borderRadius: BorderRadius.circular(12),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: Offset(-0, -0),
+                                          spreadRadius: 1,
+                                          blurRadius: 0,
+                                          color: Colors.grey.shade300,
                                         ),
-                                      ),
-                                      Icon(
-                                        Icons.arrow_forward_ios,
-                                        size: size.height * 0.02,
-                                      ),
-                                    ],
-                                  ),
-                                )))),
+                                        BoxShadow(
+                                          offset: Offset(3, 3),
+                                          spreadRadius: 1,
+                                          blurRadius: 0,
+                                          color: Colors.grey.shade300,
+                                        ),
+                                      ]),
+                                  child: Center(
+                                      child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: size.width * 0.03),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Icon(Icons.home_work),
+                                        Text(
+                                          'Lab Report',
+                                          style: TextStyle(
+                                            fontSize: size.height * 0.018,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward_ios,
+                                          size: size.height * 0.02,
+                                        ),
+                                      ],
+                                    ),
+                                  ))),
+                            )),
                         Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: size.height * 0.014,
                                 vertical: size.height * 0.0),
-                            child: Container(
-                                height: size.height * 0.04,
-                                width: double.infinity,
-                                margin: EdgeInsets.symmetric(vertical: 30 / 2),
-                                decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
-                                        colors: [
-                                          darkPrimary2,
-                                          lightPrimary,
-                                        ]),
-                                    borderRadius: BorderRadius.circular(12),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        offset: Offset(-0, -0),
-                                        spreadRadius: 1,
-                                        blurRadius: 0,
-                                        color: Colors.grey.shade300,
-                                      ),
-                                      BoxShadow(
-                                        offset: Offset(3, 3),
-                                        spreadRadius: 1,
-                                        blurRadius: 0,
-                                        color: Colors.grey.shade300,
-                                      ),
-                                    ]),
-                                child: Center(
-                                    child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: size.width * 0.03),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Icon(Icons.medical_information),
-                                      Text(
-                                        'Doctors Report',
-                                        style: TextStyle(
-                                          fontSize: size.height * 0.018,
-                                          fontWeight: FontWeight.bold,
+                            child: InkWell(
+                              onTap: () {
+                                Get.to(() => DoctorsReportPdf());
+                              },
+                              child: Container(
+                                  height: size.height * 0.04,
+                                  width: double.infinity,
+                                  margin:
+                                      EdgeInsets.symmetric(vertical: 30 / 2),
+                                  decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          colors: [
+                                            darkPrimary2,
+                                            lightPrimary,
+                                          ]),
+                                      borderRadius: BorderRadius.circular(12),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: Offset(-0, -0),
+                                          spreadRadius: 1,
+                                          blurRadius: 0,
+                                          color: Colors.grey.shade300,
                                         ),
-                                      ),
-                                      Icon(
-                                        Icons.arrow_forward_ios,
-                                        size: size.height * 0.02,
-                                      ),
-                                    ],
-                                  ),
-                                )))),
+                                        BoxShadow(
+                                          offset: Offset(3, 3),
+                                          spreadRadius: 1,
+                                          blurRadius: 0,
+                                          color: Colors.grey.shade300,
+                                        ),
+                                      ]),
+                                  child: Center(
+                                      child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: size.width * 0.03),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Icon(Icons.medical_information),
+                                        Text(
+                                          'Doctors Report',
+                                          style: TextStyle(
+                                            fontSize: size.height * 0.018,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward_ios,
+                                          size: size.height * 0.02,
+                                        ),
+                                      ],
+                                    ),
+                                  ))),
+                            )),
                         // Padding(
                         //   padding: EdgeInsets.symmetric(
                         //       horizontal: size.width * 0.03,

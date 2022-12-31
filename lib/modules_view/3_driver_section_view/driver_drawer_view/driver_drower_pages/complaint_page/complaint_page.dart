@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/driver_drower_pages/complaint_page/driver_complaint_components/credentials.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/driver_drower_pages/complaint_page/driver_complaint_components/head_text.dart';
 
-import 'complaint_components/credentials.dart';
-import 'complaint_components/head_text.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_components/credentials.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_components/head_text.dart';
 
-class ComplaintPage extends StatelessWidget {
-  const ComplaintPage({Key? key}) : super(key: key);
+class ComplaintPageDriver extends StatelessWidget {
+  const ComplaintPageDriver({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class ComplaintPage extends StatelessWidget {
                           ),
                           image: DecorationImage(
                               image: AssetImage(
-                                'lib/assets/background_stack_png/useraccount.png',
+                                'lib/assets/background_stack_png/useraccount1.png',
                               ),
                               fit: BoxFit.cover)),
                     ),
@@ -59,8 +59,8 @@ class ComplaintPage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ComplaintHeadText(),
-                    ComplaintCredentials(),
+                    ComplaintDriverHeadText(),
+                    DriverComplaintCredentials(),
                     //HospitalSocial(),
                     //Spacer(),
                   ],

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
-import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/driver_drower_pages/profile_driver_page_view/profile_driver_components/credentials.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/driver_drower_pages/profile_driver_page_view/profile_driver_components/head_text.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
 
-class NurseProfilePage extends StatelessWidget {
-  const NurseProfilePage({Key? key}) : super(key: key);
+class DriverProfilePage extends StatelessWidget {
+  const DriverProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class NurseProfilePage extends StatelessWidget {
                     padding: const EdgeInsets.all(2.0),
                     child: Container(
                       height: size.height * 0.240,
-                      width: size.width * 0.50,
+                      width: size.width * 0.40,
                       decoration: BoxDecoration(
                           //color: Colors.,
                           borderRadius: BorderRadius.only(
@@ -49,7 +49,7 @@ class NurseProfilePage extends StatelessWidget {
                           ),
                           image: DecorationImage(
                               image: AssetImage(
-                                'lib/assets/user_assets/nurse_profile.png',
+                                'lib/assets/background_stack_png/driver001.png',
                               ),
                               fit: BoxFit.cover)),
                     ),
@@ -58,8 +58,8 @@ class NurseProfilePage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    NurseProfileHeadText(),
-                    NurseProfileCredentials(),
+                    DriverProfileHeadText(),
+                    DriverProfileCredentials(),
                     //HospitalSocial(),
                     //Spacer(),
                   ],

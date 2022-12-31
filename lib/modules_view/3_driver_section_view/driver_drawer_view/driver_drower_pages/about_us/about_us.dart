@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 
-class AboutUsView extends StatelessWidget {
-  const AboutUsView({Key? key}) : super(key: key);
+class AboutUsViewDriver extends StatelessWidget {
+  const AboutUsViewDriver({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class AboutUsView extends StatelessWidget {
         centerTitle: true,
         backgroundColor: MyTheme.ThemeColors,
         elevation: 0,
-        title: Text('About Us'),
+        title: Text('About Driver'),
         //leading: Icon(Icons.arrow_back_ios_outlined),
       ),
       body: SafeArea(
@@ -28,7 +28,7 @@ class AboutUsView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'About Us:',
+                    'About Driver:',
                     style: GoogleFonts.poppins(
                         color: MyTheme.blueww,
                         fontSize: size.width * 0.06,
@@ -38,7 +38,7 @@ class AboutUsView extends StatelessWidget {
                     height: size.height * 0.01,
                   ),
                   Text(
-                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                    'A Driver is a professional who drives clients around in an efficient, safe and timely manner. In addition to maintaining regular cleaning services for their vehicle as well as managing payments on time each week/monthly cycle goes by; drivers also plan routes based on road conditions.',
                     style: GoogleFonts.roboto(
                         color: MyTheme.blueww,
                         fontSize: size.width * 0.037,

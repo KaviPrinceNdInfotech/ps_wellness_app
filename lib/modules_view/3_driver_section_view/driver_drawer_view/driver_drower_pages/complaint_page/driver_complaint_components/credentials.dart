@@ -9,8 +9,8 @@ import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_home/nurse_ho
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
-class ComplaintCredentials extends StatelessWidget {
-  ComplaintCredentials({Key? key}) : super(key: key);
+class DriverComplaintCredentials extends StatelessWidget {
+  DriverComplaintCredentials({Key? key}) : super(key: key);
   // Hospital_1_Controller _hospital_1_controller =
   //     Get.put(Hospital_1_Controller());
 

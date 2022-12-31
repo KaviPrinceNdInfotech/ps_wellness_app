@@ -4,8 +4,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 
-class ComplaintHeadText extends StatelessWidget {
-  const ComplaintHeadText({Key? key}) : super(key: key);
+class DriverProfileHeadText extends StatelessWidget {
+  const DriverProfileHeadText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +30,10 @@ class ComplaintHeadText extends StatelessWidget {
                 width: size.width * 0.03,
               ),
               Text(
-                'Register Complain',
+                'Update Driver Profile',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: size.width * 0.05,
+                  fontSize: size.width * 0.04,
                   fontWeight: FontWeight.w700,
                 ),
               )
@@ -41,39 +41,36 @@ class ComplaintHeadText extends StatelessWidget {
           ),
           SizedBox(height: size.height * 0.05),
           Text(
-            '24*7 availability',
+            'Mr Ram Singh',
             style: GoogleFonts.alatsi(
-                fontSize: 30,
+                fontSize: 32,
                 fontWeight: FontWeight.w600,
                 color: Color(0xff023382)),
           ),
-          SizedBox(
-            height: size.height * 0.01,
+          RichText(
+            text: TextSpan(
+              children: <TextSpan>[
+                TextSpan(
+                  text: 'rm@gmail.com',
+                  style: GoogleFonts.poppins(
+                    fontSize: 23,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.w600,
+                    //color: Color(0xff023382)
+                  ),
+                ),
+                TextSpan(
+                  text: '',
+                  style: GoogleFonts.alatsi(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.deepPurple.shade500,
+                    //color: Color(0xff023382)
+                  ),
+                ),
+              ],
+            ),
           ),
-          // RichText(
-          //   text: TextSpan(
-          //     children: <TextSpan>[
-          //       TextSpan(
-          //         text: 'Please enter your complain.',
-          //         style: GoogleFonts.poppins(
-          //           fontSize: 23,
-          //           color: Colors.black87,
-          //           fontWeight: FontWeight.w600,
-          //           //color: Color(0xff023382)
-          //         ),
-          //       ),
-          //       TextSpan(
-          //         text: '',
-          //         style: GoogleFonts.alatsi(
-          //           fontSize: 20,
-          //           fontWeight: FontWeight.w600,
-          //           color: Colors.deepPurple.shade500,
-          //           //color: Color(0xff023382)
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // ),
           // Text(
           //   'Sign Up',
           //   style: TextStyle(

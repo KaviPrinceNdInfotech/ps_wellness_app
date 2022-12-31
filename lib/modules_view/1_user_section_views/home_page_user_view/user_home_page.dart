@@ -96,12 +96,46 @@ class UserHomePage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           centerTitle: true,
-          title: Text(
-            'PS WELLNESS',
-            style: GoogleFonts.alatsi(
-              fontWeight: FontWeight.w500,
-              fontSize: 22,
-            ),
+          title: Row(
+            children: [
+              Container(
+                  height: size.height * 0.045,
+                  width: size.width * 0.11,
+                  child: Image.asset(
+                      //'lib/assets/user_assets/12lab.png'
+                      'lib/assets/background_stack_png/users_patient.png')),
+              RichText(
+                text: TextSpan(
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'PS WELLNESS',
+                      style: GoogleFonts.poppins(
+                        fontSize: 23,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        //color: Color(0xff023382)
+                      ),
+                    ),
+                    TextSpan(
+                      text: ' USER',
+                      style: GoogleFonts.alatsi(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: MyTheme.containercolor5,
+                        //color: Color(0xff023382)
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // Text(
+              //   'PS WELLNESS',
+              //   style: GoogleFonts.alatsi(
+              //     fontWeight: FontWeight.w500,
+              //     fontSize: 22,
+              //   ),
+              // ),
+            ],
           ),
           elevation: 0,
           backgroundColor: Colors.transparent,
