@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/10_lab_section_view/lab_drawer_view/drower_pages/about_lab_us/about_us.dart';
+import 'package:ps_welness/modules_view/10_lab_section_view/lab_drawer_view/drower_pages/profile_details/profile_lab_detail_page.dart';
 import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
 
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
@@ -13,9 +15,8 @@ import 'package:ps_welness/modules_view/forget_password_view/forget_password_vie
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_view.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/supports/support_view.dart';
 
-import 'drower_pages/about_us/about_us.dart';
 import 'drower_pages/complaint_page/complaint_page.dart';
-import 'drower_pages/profile_page_view/nurse_profile.dart';
+import 'drower_pages/profile_page_view/lab_profile.dart';
 import 'drower_pages/supports/support_view.dart';
 
 class LabMainDrawer extends StatelessWidget {
@@ -54,14 +55,14 @@ class LabMainDrawer extends StatelessWidget {
                       height: size.height * 0.01,
                     ),
                     Text(
-                      'Aj Hospital',
+                      'Ram Singh',
                       style: GoogleFonts.roboto(
                           fontSize: size.height * 0.023,
                           fontWeight: FontWeight.w700,
                           color: MyTheme.blueww),
                     ),
                     Text(
-                      'Aj@gmail.com',
+                      'ram@gmail.com',
                       style: GoogleFonts.roboto(
                           fontSize: size.height * 0.020,
                           fontWeight: FontWeight.w700,
@@ -107,7 +108,7 @@ class LabMainDrawer extends StatelessWidget {
             ListTile(
               // horizontalTitleGap: 10,
               leading: Icon(
-                FontAwesomeIcons.person,
+                FontAwesomeIcons.edit,
                 color: MyTheme.blueww,
                 size: size.height * 0.021,
               ),
@@ -120,20 +121,20 @@ class LabMainDrawer extends StatelessWidget {
               dense: true,
               visualDensity: VisualDensity(horizontal: 0, vertical: -2),
               title: Text(
-                'Lab Profile',
+                'Update Lab Profile',
                 style: TextStyle(
                     fontSize: size.height * 0.017,
                     fontWeight: FontWeight.w600,
                     color: MyTheme.blueww),
               ),
-              tileColor: Get.currentRoute == '/NurseProfilePage'
+              tileColor: Get.currentRoute == '/LabProfilePage'
                   ? Colors.grey[300]
                   : Colors.transparent,
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                Get.to(() => NurseProfilePage());
-                Get.offNamed('/NurseProfilePage');
+                Get.to(() => LabProfilePage());
+                Get.offNamed('/LabProfilePage');
               },
             ),
 
@@ -169,7 +170,9 @@ class LabMainDrawer extends StatelessWidget {
             //     Get.offNamed('/PatientList');
             //   },
             // ),
+
             ///
+
             // ListTile(
             //   // horizontalTitleGap: 10,
             //   leading: Icon(
@@ -239,6 +242,40 @@ class LabMainDrawer extends StatelessWidget {
             ListTile(
               // horizontalTitleGap: 10,
               leading: Icon(
+                FontAwesomeIcons.person,
+                color: MyTheme.blueww,
+                size: size.height * 0.021,
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios_sharp,
+                color: MyTheme.blueww,
+                size: size.height * 0.02,
+              ),
+              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              dense: true,
+              visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+              title: Text(
+                'Lab Profile Detail',
+                style: TextStyle(
+                    fontSize: size.height * 0.017,
+                    fontWeight: FontWeight.w600,
+                    color: MyTheme.blueww),
+              ),
+              tileColor: Get.currentRoute == '/LapDetailProfile'
+                  ? Colors.grey[300]
+                  : Colors.transparent,
+              onTap: () {
+                print(Get.currentRoute);
+                Get.back();
+                //LapDetailProfile
+                Get.to(() => LapDetailProfile());
+                Get.offNamed('/LapDetailProfile');
+              },
+            ),
+
+            ListTile(
+              // horizontalTitleGap: 10,
+              leading: Icon(
                 Icons.account_box,
                 color: MyTheme.blueww,
                 size: size.height * 0.021,
@@ -264,7 +301,7 @@ class LabMainDrawer extends StatelessWidget {
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                Get.to(() => AboutUsView());
+                Get.to(() => AboutUsLabView());
                 Get.offNamed('/AboutUsView');
               },
             ),

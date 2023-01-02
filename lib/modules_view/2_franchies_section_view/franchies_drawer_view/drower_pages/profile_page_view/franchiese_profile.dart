@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
-import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
 
-class NurseProfilePage extends StatelessWidget {
-  const NurseProfilePage({Key? key}) : super(key: key);
+class FranchiessProfilePage extends StatelessWidget {
+  const FranchiessProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +36,12 @@ class NurseProfilePage extends StatelessWidget {
                   top: size.height * 0.014,
                   //bottom: size.height * 0.64,
                   //left: -30,
-                  right: -size.width * 0.006,
+                  right: size.width * 0.003,
                   child: Padding(
-                    padding: const EdgeInsets.all(2.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Container(
-                      height: size.height * 0.240,
-                      width: size.width * 0.50,
+                      height: size.height * 0.230,
+                      width: size.width * 0.40,
                       decoration: BoxDecoration(
                           //color: Colors.,
                           borderRadius: BorderRadius.only(
@@ -49,7 +49,7 @@ class NurseProfilePage extends StatelessWidget {
                           ),
                           image: DecorationImage(
                               image: AssetImage(
-                                'lib/assets/user_assets/nurse_profile.png',
+                                'lib/assets/background_stack_png/franchoies3.png',
                               ),
                               fit: BoxFit.cover)),
                     ),
@@ -58,8 +58,10 @@ class NurseProfilePage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    NurseProfileHeadText(),
-                    NurseProfileCredentials(),
+                    //FrancbhiesProfileeHeadText
+                    FrancbhiesProfileeHeadText(),
+                    FranchiesProfileCredentials(),
+                    //FranchiesProfileCredentials(),
                     //HospitalSocial(),
                     //Spacer(),
                   ],

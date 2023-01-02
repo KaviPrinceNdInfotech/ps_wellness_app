@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/9_doctor_section_view/drawer_view/drower_pages/profile_details_doctor/profile_doctor_detail_page.dart';
 
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_page.dart';
@@ -127,14 +128,14 @@ class MainDrawer extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     color: MyTheme.blueww),
               ),
-              tileColor: Get.currentRoute == '/DoctorProfilePage'
+              tileColor: Get.currentRoute == '/DoctorDetailProfile'
                   ? Colors.grey[300]
                   : Colors.transparent,
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                Get.to(() => DoctorProfilePage());
-                Get.offNamed('/DoctorProfilePage');
+                Get.to(() => DoctorDetailProfile());
+                Get.offNamed('/DoctorDetailProfile');
               },
             ),
 
@@ -201,6 +202,38 @@ class MainDrawer extends StatelessWidget {
                 Get.back();
                 Get.to(() => AddSkilsScreen());
                 Get.offNamed('/AddSkilsScreen');
+              },
+            ),
+            ListTile(
+              // horizontalTitleGap: 10,
+              leading: Icon(
+                FontAwesomeIcons.edit,
+                color: MyTheme.blueww,
+                size: size.height * 0.021,
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios_sharp,
+                color: MyTheme.blueww,
+                size: size.height * 0.02,
+              ),
+              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              dense: true,
+              visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+              title: Text(
+                'Update Profile',
+                style: TextStyle(
+                    fontSize: size.height * 0.017,
+                    fontWeight: FontWeight.w600,
+                    color: MyTheme.blueww),
+              ),
+              tileColor: Get.currentRoute == '/DoctorProfilePage'
+                  ? Colors.grey[300]
+                  : Colors.transparent,
+              onTap: () {
+                print(Get.currentRoute);
+                Get.back();
+                Get.to(() => DoctorProfilePage());
+                Get.offNamed('/DoctorProfilePage');
               },
             ),
 

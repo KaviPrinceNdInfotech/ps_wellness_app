@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
-import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
+import 'package:ps_welness/modules_view/10_lab_section_view/lab_drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
+import 'package:ps_welness/modules_view/10_lab_section_view/lab_drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/credentials.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_components/head_text.dart';
 
-class NurseProfilePage extends StatelessWidget {
-  const NurseProfilePage({Key? key}) : super(key: key);
+class LabProfilePage extends StatelessWidget {
+  const LabProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class NurseProfilePage extends StatelessWidget {
                           ),
                           image: DecorationImage(
                               image: AssetImage(
-                                'lib/assets/user_assets/nurse_profile.png',
+                                'lib/assets/background_stack_png/lab1.png',
                               ),
                               fit: BoxFit.cover)),
                     ),
@@ -58,8 +58,12 @@ class NurseProfilePage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    NurseProfileHeadText(),
-                    NurseProfileCredentials(),
+                    //LabbProfileHeadText,
+                    LabbProfileHeadText(),
+                    //LabProfileCredentials,
+                    LabProfileCredentials(),
+                    //LabCredentials()
+                    //NurseProfileCredentials(),
                     //HospitalSocial(),
                     //Spacer(),
                   ],

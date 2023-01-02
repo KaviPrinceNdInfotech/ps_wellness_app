@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 
-class AboutUsView extends StatelessWidget {
-  const AboutUsView({Key? key}) : super(key: key);
+class AboutUsLabView extends StatelessWidget {
+  const AboutUsLabView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class AboutUsView extends StatelessWidget {
         centerTitle: true,
         backgroundColor: MyTheme.ThemeColors,
         elevation: 0,
-        title: Text('About Us'),
+        title: Text('About Lab'),
         //leading: Icon(Icons.arrow_back_ios_outlined),
       ),
       body: SafeArea(
@@ -28,7 +28,7 @@ class AboutUsView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'About Us:',
+                    'About Lab:',
                     style: GoogleFonts.poppins(
                         color: MyTheme.blueww,
                         fontSize: size.width * 0.06,
@@ -38,7 +38,7 @@ class AboutUsView extends StatelessWidget {
                     height: size.height * 0.01,
                   ),
                   Text(
-                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                    'A laboratory technician performs mechanical, technical or diagnostic tests in a scientific setting. They often conduct scientific research under the supervision of senior technicians, pathologists or scientists. If you are more interested in the science and technology aspects of the medical field and less about direct patient care, you may want to know more about this career path. In this article, we discuss what a lab technician is, what duties they perform and what skills and qualifications they need to become successful in their career.',
                     style: GoogleFonts.roboto(
                         color: MyTheme.blueww,
                         fontSize: size.width * 0.037,

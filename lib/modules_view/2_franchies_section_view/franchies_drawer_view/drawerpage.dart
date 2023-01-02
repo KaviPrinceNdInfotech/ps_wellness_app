@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/about_franchies/about_franchies.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/profile_page_view/franchiese_profile.dart';
 import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
 
 import '../../10_lab_section_view/lab_drawer_view/drower_pages/complaint_page/complaint_page.dart';
@@ -119,14 +121,14 @@ class FranchiesisMainDrawer extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     color: MyTheme.blueww),
               ),
-              tileColor: Get.currentRoute == '/NurseProfilePage'
+              tileColor: Get.currentRoute == '/FranchiessProfilePage'
                   ? Colors.grey[300]
                   : Colors.transparent,
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                //Get.to(() => NurseProfilePage());
-                Get.offNamed('/NurseProfilePage');
+                Get.to(() => FranchiessProfilePage());
+                Get.offNamed('/FranchiessProfilePage');
               },
             ),
 
@@ -228,6 +230,7 @@ class FranchiesisMainDrawer extends StatelessWidget {
                 Get.offNamed('/ComplaintPage');
               },
             ),
+            //AboutFranchiseeView
 
             ListTile(
               // horizontalTitleGap: 10,
@@ -257,7 +260,7 @@ class FranchiesisMainDrawer extends StatelessWidget {
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                // Get.to(() => AboutUsView());
+                Get.to(() => AboutFranchiseeView());
                 Get.offNamed('/AboutUsView');
               },
             ),
@@ -362,154 +365,7 @@ class FranchiesisMainDrawer extends StatelessWidget {
             ),
 
             ///
-            // ListTile(
-            //   //horizontalTitleGap: 10,
-            //   leading: Icon(
-            //     Icons.person_rounded,
-            //     color: MyTheme.t1Iconcolor,
-            //     size: size.height * 0.025,
-            //   ),
-            //   trailing: Icon(
-            //     Icons.arrow_forward_ios_sharp,
-            //     color: MyTheme.t1Iconcolor,
-            //     size: size.height * 0.02,
-            //   ),
-            //   contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            //   dense: true,
-            //   visualDensity: VisualDensity(horizontal: 0, vertical: -2),
-            //   title: Text(
-            //     'Service 2',
-            //     style: TextStyle(
-            //         fontSize: size.height * 0.017, fontWeight: FontWeight.w600),
-            //   ),
-            //   tileColor:
-            //       Get.currentRoute == '/ProfilePage' ? Colors.grey[300] : null,
-            //   onTap: () {
-            //     print(Get.currentRoute);
-            //     Get.back();
-            //     // Get.to(() => ProfilePage());
-            //     Get.offNamed('/ProfilePage');
-            //   },
-            // ),
-            // ListTile(
-            //   // horizontalTitleGap: 10,
-            //   leading: Icon(
-            //     FontAwesomeIcons.umbrellaBeach,
-            //     color: MyTheme.t1Iconcolor,
-            //     size: size.height * 0.025,
-            //   ),
-            //   trailing: Icon(
-            //     Icons.arrow_forward_ios_sharp,
-            //     color: MyTheme.t1Iconcolor,
-            //     size: size.height * 0.02,
-            //   ),
-            //   contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            //   dense: true,
-            //   visualDensity: VisualDensity(horizontal: 0, vertical: -2),
-            //   title: Text(
-            //     'Service 3',
-            //     style: TextStyle(
-            //         fontSize: size.height * 0.017, fontWeight: FontWeight.w600),
-            //   ),
-            //   tileColor: Get.currentRoute == '/MyHolidayPage'
-            //       ? Colors.grey[300]
-            //       : null,
-            //   onTap: () {
-            //     print(Get.currentRoute);
-            //     Get.back();
-            //     // Get.to(() => MyHolidayPage());
-            //     Get.offNamed('/MyHolidayPage');
-            //   },
-            // ),
-            // ListTile(
-            //   // horizontalTitleGap: 10,
-            //   leading: Icon(
-            //     FontAwesomeIcons.hotel,
-            //     color: MyTheme.t1Iconcolor,
-            //     size: size.height * 0.025,
-            //   ),
-            //   trailing: Icon(
-            //     Icons.arrow_forward_ios_sharp,
-            //     color: MyTheme.t1Iconcolor,
-            //     size: size.height * 0.02,
-            //   ),
-            //   contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            //   dense: true,
-            //   visualDensity: VisualDensity(horizontal: 0, vertical: -2),
-            //   title: Text(
-            //     'Service 4',
-            //     style: TextStyle(
-            //         fontSize: size.height * 0.017, fontWeight: FontWeight.w600),
-            //   ),
-            //   tileColor: Get.currentRoute == '/AssociatePage'
-            //       ? Colors.grey[300]
-            //       : null,
-            //   onTap: () {
-            //     print(Get.currentRoute);
-            //     Get.back();
-            //     // Get.to(() => AssociatePage());
-            //     Get.offNamed('/AssociatePage');
-            //   },
-            // ),
-            // ListTile(
-            //   //horizontalTitleGap: 10,
-            //   leading: Icon(
-            //     FontAwesomeIcons.photoFilm,
-            //     color: MyTheme.t1Iconcolor,
-            //     size: size.height * 0.025,
-            //   ),
-            //   trailing: Icon(
-            //     Icons.arrow_forward_ios_sharp,
-            //     color: MyTheme.t1Iconcolor,
-            //     size: size.height * 0.02,
-            //   ),
-            //   contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            //   dense: true,
-            //   visualDensity: VisualDensity(horizontal: 0, vertical: -2),
-            //   title: Text(
-            //     'Service 5',
-            //     style: TextStyle(
-            //         fontSize: size.height * 0.017, fontWeight: FontWeight.w600),
-            //   ),
-            //   tileColor:
-            //       Get.currentRoute == '/Gallerys' ? Colors.grey[300] : null,
-            //   onTap: () {
-            //     print(Get.currentRoute);
-            //     Get.back();
-            //     //Get.to(() => Gallerys());
-            //     Get.offNamed('/Gallerys');
-            //   },
-            // ),
-            // ListTile(
-            //   //horizontalTitleGap: 10,
-            //   leading: Icon(
-            //     FontAwesomeIcons.clockRotateLeft,
-            //     color: MyTheme.t1Iconcolor,
-            //     size: size.height * 0.025,
-            //   ),
-            //   trailing: Icon(
-            //     Icons.arrow_forward_ios_sharp,
-            //     color: MyTheme.t1Iconcolor,
-            //     size: size.height * 0.02,
-            //   ),
-            //   contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            //   dense: true,
-            //   visualDensity: VisualDensity(horizontal: 0, vertical: -2),
-            //   title: Text(
-            //     'Service 6',
-            //     style: TextStyle(
-            //         fontSize: size.height * 0.017, fontWeight: FontWeight.w600),
-            //   ),
-            //   tileColor: Get.currentRoute == '/PaymentHistory'
-            //       ? Colors.grey[300]
-            //       : null,
-            //   onTap: () {
-            //     print(Get.currentRoute);
-            //     Get.back();
-            //     //Get.to(() => PaymentHistory());
-            //     Get.offNamed('/PaymentHistory');
-            //   },
-            // ),
+
             // ListTile(
             //   //horizontalTitleGap: 15,
             //   leading: Icon(
