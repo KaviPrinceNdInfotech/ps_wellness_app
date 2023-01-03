@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/6_chemist_section_view/chemist_drawer_view/drower_pages/chemist_profile_details/profile_chemist_detail_page.dart';
 import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
 
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
@@ -107,7 +108,7 @@ class ChemistMainDrawer extends StatelessWidget {
             ListTile(
               // horizontalTitleGap: 10,
               leading: Icon(
-                FontAwesomeIcons.person,
+                FontAwesomeIcons.edit,
                 color: MyTheme.blueww,
                 size: size.height * 0.021,
               ),
@@ -120,7 +121,7 @@ class ChemistMainDrawer extends StatelessWidget {
               dense: true,
               visualDensity: VisualDensity(horizontal: 0, vertical: -2),
               title: Text(
-                'Chemist Profile',
+                'Chemist Profile Update',
                 style: TextStyle(
                     fontSize: size.height * 0.017,
                     fontWeight: FontWeight.w600,
@@ -233,6 +234,40 @@ class ChemistMainDrawer extends StatelessWidget {
                 Get.back();
                 Get.to(() => ComplaintPage());
                 Get.offNamed('/ComplaintPage');
+              },
+            ),
+            //ChemistDetailProfile
+
+            ListTile(
+              // horizontalTitleGap: 10,
+              leading: Icon(
+                FontAwesomeIcons.person,
+                color: MyTheme.blueww,
+                size: size.height * 0.021,
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios_sharp,
+                color: MyTheme.blueww,
+                size: size.height * 0.02,
+              ),
+              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              dense: true,
+              visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+              title: Text(
+                'Chemist Profile Detail',
+                style: TextStyle(
+                    fontSize: size.height * 0.017,
+                    fontWeight: FontWeight.w600,
+                    color: MyTheme.blueww),
+              ),
+              tileColor: Get.currentRoute == '/ChemistDetailProfile'
+                  ? Colors.grey[300]
+                  : Colors.transparent,
+              onTap: () {
+                print(Get.currentRoute);
+                Get.back();
+                Get.to(() => ChemistDetailProfile());
+                Get.offNamed('/ChemistDetailProfile');
               },
             ),
 

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_drawer_view/drower_pages/rwa_profile_details/profile_rwa_detail_page.dart';
 import 'package:ps_welness/modules_view/5_rwa_section_view/rwa_profile_page_view/profile_view.dart';
 import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
 
@@ -103,11 +104,12 @@ class RwaMainDrawer extends StatelessWidget {
                 Get.offNamed('/AboutUs');
               },
             ),
+            //RwaDetailProfile
 
             ListTile(
               // horizontalTitleGap: 10,
               leading: Icon(
-                FontAwesomeIcons.person,
+                FontAwesomeIcons.edit,
                 color: MyTheme.blueww,
                 size: size.height * 0.021,
               ),
@@ -210,6 +212,7 @@ class RwaMainDrawer extends StatelessWidget {
                 color: MyTheme.blueww,
                 size: size.height * 0.021,
               ),
+
               trailing: Icon(
                 Icons.arrow_forward_ios_sharp,
                 color: MyTheme.blueww,
@@ -233,6 +236,39 @@ class RwaMainDrawer extends StatelessWidget {
                 Get.back();
                 Get.to(() => ComplaintPage());
                 Get.offNamed('/ComplaintPage');
+              },
+            ),
+
+            ListTile(
+              // horizontalTitleGap: 10,
+              leading: Icon(
+                FontAwesomeIcons.person,
+                color: MyTheme.blueww,
+                size: size.height * 0.021,
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios_sharp,
+                color: MyTheme.blueww,
+                size: size.height * 0.02,
+              ),
+              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              dense: true,
+              visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+              title: Text(
+                'RWA Profile detail',
+                style: TextStyle(
+                    fontSize: size.height * 0.017,
+                    fontWeight: FontWeight.w600,
+                    color: MyTheme.blueww),
+              ),
+              tileColor: Get.currentRoute == '/RwaDetailProfile'
+                  ? Colors.grey[300]
+                  : Colors.transparent,
+              onTap: () {
+                print(Get.currentRoute);
+                Get.back();
+                Get.to(() => RwaDetailProfile());
+                Get.offNamed('/RwaDetailProfile');
               },
             ),
 

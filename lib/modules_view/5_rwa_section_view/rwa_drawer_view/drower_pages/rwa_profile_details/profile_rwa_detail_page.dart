@@ -6,8 +6,8 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 
-class DoctorDetailProfile extends StatelessWidget {
-  const DoctorDetailProfile({Key? key}) : super(key: key);
+class RwaDetailProfile extends StatelessWidget {
+  const RwaDetailProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +38,8 @@ class DoctorDetailProfile extends StatelessWidget {
                   height: size.height * 0.1,
                 ),
                 PhysicalModel(
-                  color: Colors.cyan,
-                  shadowColor: Colors.cyan,
+                  color: Colors.yellow.shade300,
+                  shadowColor: Colors.cyan.shade700,
                   elevation: 10,
                   child: Padding(
                     padding: const EdgeInsets.all(6.0),
@@ -47,12 +47,15 @@ class DoctorDetailProfile extends StatelessWidget {
                       height: size.height * 0.4,
                       width: size.width * 0.8,
                       decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
+                          color: Colors.red.shade200,
                           image: DecorationImage(
                               image: NetworkImage(
-                                'https://images.unsplash.com/photo-1604116395843-94f7b28a8080?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
+                                'https://images.unsplash.com/photo-1594135356513-14291e55162a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1424&q=80'
+                                //'https://images.unsplash.com/photo-1623682687826-fe06bf64e6d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTV8blNwa29NdC1DeW98fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60'
+                                //'https://images.unsplash.com/photo-1543333995-a78aea2eee50?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fHBhdGllbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60'
+                                ,
                               ),
-                              fit: BoxFit.fill)),
+                              fit: BoxFit.cover)),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -75,7 +78,6 @@ class DoctorDetailProfile extends StatelessWidget {
                                 //     fontWeight: FontWeight.bold,
                                 //   ),
                                 // ),
-
                                 SizedBox(
                                   height: size.height * 0.01,
                                 ),
@@ -135,77 +137,77 @@ class DoctorDetailProfile extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Dr.Vinit Mishra',
+                                  'Kumar Singh',
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.018,
                                     fontWeight: FontWeight.w600,
-                                    color: MyTheme.blueww,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(
                                   height: size.height * 0.01,
                                 ),
                                 Text(
-                                  'vinit@gmail.com',
+                                  'kumar@gmail.com',
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.018,
                                     fontWeight: FontWeight.w600,
-                                    color: MyTheme.blueww,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(
                                   height: size.height * 0.01,
                                 ),
                                 Text(
-                                  '8909565733',
+                                  '9872344524',
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.018,
                                     fontWeight: FontWeight.w600,
-                                    color: MyTheme.blueww,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(
                                   height: size.height * 0.01,
                                 ),
                                 Text(
-                                  'Sector 12,D47',
+                                  'Sec 16,Ak7',
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.018,
                                     fontWeight: FontWeight.w600,
-                                    color: MyTheme.blueww,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(
                                   height: size.height * 0.01,
                                 ),
                                 Text(
-                                  'Noida',
+                                  'Patna',
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.018,
                                     fontWeight: FontWeight.w600,
-                                    color: MyTheme.blueww,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(
                                   height: size.height * 0.01,
                                 ),
                                 Text(
-                                  'UP',
+                                  'Bihar',
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.018,
                                     fontWeight: FontWeight.w600,
-                                    color: MyTheme.blueww,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(
                                   height: size.height * 0.01,
                                 ),
                                 Text(
-                                  '110096',
+                                  '811106',
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.018,
                                     fontWeight: FontWeight.w600,
-                                    color: MyTheme.blueww,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ],
@@ -219,6 +221,31 @@ class DoctorDetailProfile extends StatelessWidget {
               ],
             ),
             Positioned(
+              top: size.height * 0.14,
+              left: size.width * 0.35,
+              //right: size.width * 0.0,
+              child: PhysicalModel(
+                elevation: 14,
+                color: Colors.yellow.shade300,
+                shape: BoxShape.circle,
+                shadowColor: MyTheme.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Container(
+                    height: size.height * 0.15,
+                    width: size.width * 0.31,
+                    decoration: BoxDecoration(
+                        color: Colors.red,
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage(
+                          'lib/assets/image/ps_welness2.png',
+                        ))),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
               top: size.height * 0.012,
               left: size.width * 0.0,
               //right: size.width * 0.0,
@@ -229,7 +256,7 @@ class DoctorDetailProfile extends StatelessWidget {
                       Get.back();
                     },
                     child: Container(
-                      height: size.height * 0.04,
+                      height: size.height * 0.03,
                       width: size.width * 0.12,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -245,7 +272,7 @@ class DoctorDetailProfile extends StatelessWidget {
                     width: size.width * 0.02,
                   ),
                   Text(
-                    'Doctor\'s Profile Details',
+                    'Rwa Profile Details',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: size.height * 0.024,
@@ -253,29 +280,6 @@ class DoctorDetailProfile extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
-            ),
-            Positioned(
-              top: size.height * 0.08,
-              left: size.width * 0.0,
-              right: size.width * 0.0,
-              child: PhysicalModel(
-                color: MyTheme.ThemeColors,
-                shadowColor: MyTheme.ThemeColors,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: size.height * 0.16,
-                    width: size.width * 0.12,
-                    decoration: BoxDecoration(
-                        color: Colors.red,
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: AssetImage(
-                          'lib/assets/image/ps_welness2.png',
-                        ))),
-                  ),
-                ),
               ),
             ),
           ],

@@ -6,8 +6,8 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 
-class DoctorDetailProfile extends StatelessWidget {
-  const DoctorDetailProfile({Key? key}) : super(key: key);
+class LapDetailProfile extends StatelessWidget {
+  const LapDetailProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class DoctorDetailProfile extends StatelessWidget {
                           color: Colors.grey.shade200,
                           image: DecorationImage(
                               image: NetworkImage(
-                                'https://images.unsplash.com/photo-1604116395843-94f7b28a8080?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
+                                'https://images.unsplash.com/photo-1654633147734-19458b964f6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
                               ),
                               fit: BoxFit.fill)),
                       child: Row(
@@ -75,7 +75,6 @@ class DoctorDetailProfile extends StatelessWidget {
                                 //     fontWeight: FontWeight.bold,
                                 //   ),
                                 // ),
-
                                 SizedBox(
                                   height: size.height * 0.01,
                                 ),
@@ -135,7 +134,7 @@ class DoctorDetailProfile extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Dr.Vinit Mishra',
+                                  'Ram Singh',
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.018,
                                     fontWeight: FontWeight.w600,
@@ -146,7 +145,7 @@ class DoctorDetailProfile extends StatelessWidget {
                                   height: size.height * 0.01,
                                 ),
                                 Text(
-                                  'vinit@gmail.com',
+                                  'ramsingh@gmail.com',
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.018,
                                     fontWeight: FontWeight.w600,
@@ -157,7 +156,7 @@ class DoctorDetailProfile extends StatelessWidget {
                                   height: size.height * 0.01,
                                 ),
                                 Text(
-                                  '8909565733',
+                                  '9089776632',
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.018,
                                     fontWeight: FontWeight.w600,
@@ -168,7 +167,7 @@ class DoctorDetailProfile extends StatelessWidget {
                                   height: size.height * 0.01,
                                 ),
                                 Text(
-                                  'Sector 12,D47',
+                                  'Sector 2,C53',
                                   style: GoogleFonts.poppins(
                                     fontSize: size.height * 0.018,
                                     fontWeight: FontWeight.w600,
@@ -245,7 +244,7 @@ class DoctorDetailProfile extends StatelessWidget {
                     width: size.width * 0.02,
                   ),
                   Text(
-                    'Doctor\'s Profile Details',
+                    'Lab Profile Details',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: size.height * 0.024,

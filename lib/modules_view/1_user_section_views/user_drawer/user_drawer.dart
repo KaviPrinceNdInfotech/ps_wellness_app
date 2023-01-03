@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/home_page_user_view/user_home_page.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/drawer_pages_user/doctor_history/doctor_history_user.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/drawer_pages_user/user_profile_details/profile_user_detail_page.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/reports_section/report_section_list.dart'; //import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
 
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_page.dart';
@@ -78,6 +79,7 @@ class UserMainDrawer extends StatelessWidget {
                 color: MyTheme.ThemeColors,
               ),
             ),
+
             ListTile(
               // horizontalTitleGap: 10,
               leading: Icon(
@@ -143,11 +145,12 @@ class UserMainDrawer extends StatelessWidget {
                 Get.offNamed('/WolletUser');
               },
             ),
+            //UserDetailProfile
 
             ListTile(
               // horizontalTitleGap: 10,
               leading: Icon(
-                FontAwesomeIcons.person,
+                FontAwesomeIcons.edit,
                 color: MyTheme.blueww,
                 size: size.height * 0.021,
               ),
@@ -160,7 +163,7 @@ class UserMainDrawer extends StatelessWidget {
               dense: true,
               visualDensity: VisualDensity(horizontal: 0, vertical: -2),
               title: Text(
-                'Profile',
+                'Update Profile',
                 style: TextStyle(
                     fontSize: size.height * 0.016,
                     fontWeight: FontWeight.w600,
@@ -273,6 +276,40 @@ class UserMainDrawer extends StatelessWidget {
                 Get.back();
                 Get.to(() => LabHistoryUser());
                 Get.offNamed('/LabHistoryUser');
+              },
+            ),
+
+            ListTile(
+              // horizontalTitleGap: 10,
+              leading: Icon(
+                FontAwesomeIcons.person,
+                color: MyTheme.blueww,
+                size: size.height * 0.021,
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios_sharp,
+                color: MyTheme.blueww,
+                size: size.height * 0.02,
+              ),
+              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              dense: true,
+              visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+              title: Text(
+                'Profile Detail',
+                style: TextStyle(
+                    fontSize: size.height * 0.016,
+                    fontWeight: FontWeight.w600,
+                    color: MyTheme.blueww),
+              ),
+              tileColor: Get.currentRoute == '/ProfilePage'
+                  ? Colors.grey[300]
+                  : Colors.transparent,
+              onTap: () {
+                print(Get.currentRoute);
+                Get.back();
+                //UserDetailProfile
+                Get.to(() => UserDetailProfile());
+                Get.offNamed('/ProfilePage');
               },
             ),
 

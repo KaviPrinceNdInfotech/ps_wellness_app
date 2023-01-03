@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/4_nurse_section_view/nurse_drawer_view/drower_pages/nurse_profile_details/profile_nurse_detail_page.dart';
 
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_page.dart';
@@ -71,6 +72,7 @@ class NurseMainDrawer extends StatelessWidget {
                 ),
               ),
             ),
+
             ListTile(
               // horizontalTitleGap: 10,
               leading: Icon(
@@ -107,7 +109,7 @@ class NurseMainDrawer extends StatelessWidget {
             ListTile(
               // horizontalTitleGap: 10,
               leading: Icon(
-                FontAwesomeIcons.person,
+                FontAwesomeIcons.edit,
                 color: MyTheme.blueww,
                 size: size.height * 0.021,
               ),
@@ -120,7 +122,7 @@ class NurseMainDrawer extends StatelessWidget {
               dense: true,
               visualDensity: VisualDensity(horizontal: 0, vertical: -2),
               title: Text(
-                'Profile',
+                'Edit Profile',
                 style: TextStyle(
                     fontSize: size.height * 0.017,
                     fontWeight: FontWeight.w600,
@@ -202,6 +204,7 @@ class NurseMainDrawer extends StatelessWidget {
             //     Get.offNamed('/AddSkilsScreen');
             //   },
             // ),
+            ///NurseDetailProfile
 
             ListTile(
               // horizontalTitleGap: 10,
@@ -233,6 +236,39 @@ class NurseMainDrawer extends StatelessWidget {
                 Get.back();
                 Get.to(() => ComplaintPage());
                 Get.offNamed('/ComplaintPage');
+              },
+            ),
+
+            ListTile(
+              // horizontalTitleGap: 10,
+              leading: Icon(
+                FontAwesomeIcons.person,
+                color: MyTheme.blueww,
+                size: size.height * 0.021,
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios_sharp,
+                color: MyTheme.blueww,
+                size: size.height * 0.02,
+              ),
+              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              dense: true,
+              visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+              title: Text(
+                'Profile',
+                style: TextStyle(
+                    fontSize: size.height * 0.017,
+                    fontWeight: FontWeight.w600,
+                    color: MyTheme.blueww),
+              ),
+              tileColor: Get.currentRoute == '/NurseDetailProfile'
+                  ? Colors.grey[300]
+                  : Colors.transparent,
+              onTap: () {
+                print(Get.currentRoute);
+                Get.back();
+                Get.to(() => NurseDetailProfile());
+                Get.offNamed('/NurseDetailProfile');
               },
             ),
 

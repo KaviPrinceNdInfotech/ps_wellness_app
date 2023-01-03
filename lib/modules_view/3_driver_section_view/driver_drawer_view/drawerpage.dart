@@ -9,6 +9,7 @@ import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/supports/support_view.dart';
 import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/driver_drower_pages/about_us/about_us.dart';
 import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/driver_drower_pages/complaint_page/complaint_page.dart';
+import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/driver_drower_pages/driver_profile_details/profile_driver_detail_page.dart';
 import 'package:ps_welness/modules_view/3_driver_section_view/driver_drawer_view/driver_drower_pages/profile_driver_page_view/driver_profile.dart';
 import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
 
@@ -106,7 +107,7 @@ class DriverMainDrawer extends StatelessWidget {
             ListTile(
               // horizontalTitleGap: 10,
               leading: Icon(
-                FontAwesomeIcons.person,
+                FontAwesomeIcons.edit,
                 color: MyTheme.blueww,
                 size: size.height * 0.021,
               ),
@@ -119,7 +120,7 @@ class DriverMainDrawer extends StatelessWidget {
               dense: true,
               visualDensity: VisualDensity(horizontal: 0, vertical: -2),
               title: Text(
-                'Driver Profile',
+                'Update Profile',
                 style: TextStyle(
                     fontSize: size.height * 0.017,
                     fontWeight: FontWeight.w600,
@@ -265,6 +266,39 @@ class DriverMainDrawer extends StatelessWidget {
                 Get.back();
                 Get.to(() => AboutUsViewDriver());
                 Get.offNamed('/AboutUsView');
+              },
+            ),
+
+            ListTile(
+              // horizontalTitleGap: 10,
+              leading: Icon(
+                Icons.person,
+                color: MyTheme.blueww,
+                size: size.height * 0.021,
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios_sharp,
+                color: MyTheme.blueww,
+                size: size.height * 0.02,
+              ),
+              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              dense: true,
+              visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+              title: Text(
+                'Diver Profile Details',
+                style: TextStyle(
+                    fontSize: size.height * 0.017,
+                    fontWeight: FontWeight.w600,
+                    color: MyTheme.blueww),
+              ),
+              tileColor: Get.currentRoute == '/ComplaintPage'
+                  ? Colors.grey[300]
+                  : Colors.transparent,
+              onTap: () {
+                print(Get.currentRoute);
+                Get.back();
+                Get.to(() => DriverDetailProfile());
+                Get.offNamed('/ComplaintPage');
               },
             ),
 
