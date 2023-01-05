@@ -111,7 +111,7 @@ class LabListPage extends StatelessWidget {
               ],
             ),
             SizedBox(
-                height: size.height * 0.73,
+                height: size.height * 0.78,
                 child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: 5,
@@ -121,7 +121,7 @@ class LabListPage extends StatelessWidget {
                             horizontal: size.width * 0.03,
                             vertical: size.height * 0.0005),
                         child: Container(
-                          height: size.height * 0.2,
+                          height: size.height * 0.22,
                           margin: EdgeInsets.symmetric(vertical: 30 / 6),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -165,7 +165,7 @@ class LabListPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 SizedBox(
-                                  height: size.height * 0.145,
+                                  height: size.height * 0.183,
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
                                         horizontal: size.width * 0.02,
@@ -233,6 +233,14 @@ class LabListPage extends StatelessWidget {
                                                 fontSize: size.width * 0.033,
                                               ),
                                             ),
+                                            Text(
+                                              'Fees:',
+                                              style: GoogleFonts.poppins(
+                                                color: MyTheme.blueww,
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: size.width * 0.033,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                         Column(
@@ -281,6 +289,14 @@ class LabListPage extends StatelessWidget {
                                                 fontSize: size.width * 0.033,
                                               ),
                                             ),
+                                            Text(
+                                              'Rs.700',
+                                              style: GoogleFonts.roboto(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w800,
+                                                fontSize: size.width * 0.033,
+                                              ),
+                                            ),
                                             // Align(
                                             //     alignment: Alignment.centerRight,
                                             //     child:
@@ -291,6 +307,7 @@ class LabListPage extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+
                                 //Spacer(),
                                 Row(
                                   children: [

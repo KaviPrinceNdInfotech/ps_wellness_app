@@ -29,6 +29,8 @@ import 'drawer_pages_user/walet_user/wallet_user.dart';
 class UserMainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ///use media query to provide the main.......
+
     Size size = MediaQuery.of(context).size;
 
     return SafeArea(
@@ -379,7 +381,7 @@ class UserMainDrawer extends StatelessWidget {
               },
             ),
 
-            ///add skils............
+            ///add skils............ with backend
 
             // ListTile(
             //   // horizontalTitleGap: 10,

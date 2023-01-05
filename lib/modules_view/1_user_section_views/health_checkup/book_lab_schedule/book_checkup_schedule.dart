@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/health_checkup/health_checkup_appointment_checkout/health_checkup_appointment_checkout.dart';
 
-import '../../home_page_user_view/user_home_page.dart';
 import 'book_lab_components/credentials.dart';
 
-class LabSchedulePage extends StatelessWidget {
-  LabSchedulePage({Key? key, this.bevel = 2.0}) : super(key: key);
+class CheckupSchedulePage extends StatelessWidget {
+  CheckupSchedulePage({Key? key, this.bevel = 2.0}) : super(key: key);
   final double bevel;
 
   @override
@@ -50,7 +50,7 @@ class LabSchedulePage extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          height: size.height * 0.23,
+                          height: size.height * 0.217,
                           child: Image(
                             image: AssetImage(
                                 'lib/assets/background_stack_png/n4.png'),
@@ -77,7 +77,7 @@ class LabSchedulePage extends StatelessWidget {
                       height: size.height * 0.007,
                     ),
                     Text(
-                      'Since 1998',
+                      'Since 2006',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: size.height * 0.016,
@@ -105,7 +105,7 @@ class LabSchedulePage extends StatelessWidget {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          'Prince lab',
+                          'SRK Checkup',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: size.height * 0.025,
@@ -127,13 +127,15 @@ class LabSchedulePage extends StatelessWidget {
                           ),
                         ),
                       ),
+
                       SizedBox(
                         height: size.height * 0.009,
                       ),
+
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          'Address: Noida sector 2 bloc C53 201301',
+                          'Address: Noida sector 12 bloc AK47 776660',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: size.height * 0.015,
@@ -141,6 +143,7 @@ class LabSchedulePage extends StatelessWidget {
                           ),
                         ),
                       ),
+
                       SizedBox(
                         height: size.height * 0.01,
                       ),
@@ -305,7 +308,7 @@ class LabSchedulePage extends StatelessWidget {
                             vertical: size.height * 0.06),
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(() => UserHomePage());
+                            Get.to(() => HealthCheckupAppointmentCheckout());
                           },
                           style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
@@ -334,7 +337,8 @@ class LabSchedulePage extends StatelessWidget {
                             ),
                             child: InkWell(
                               onTap: () {
-                                Get.to(() => UserHomePage());
+                                Get.to(
+                                    () => HealthCheckupAppointmentCheckout());
                               },
                               child: Container(
                                 padding: const EdgeInsets.symmetric(

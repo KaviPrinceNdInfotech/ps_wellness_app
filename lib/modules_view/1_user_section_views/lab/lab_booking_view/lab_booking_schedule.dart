@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/controllers/rozar_pay_controller/rozar_pay_controller.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/lab/lab_appointment_checkout/lab_appointment_checkout.dart';
 
 import '../../health_checkup/book_lab_schedule/book_lab_components/credentials.dart';
 import '../../home_page_user_view/user_home_page.dart';
@@ -10,6 +12,7 @@ import '../../home_page_user_view/user_home_page.dart';
 class LabSchedule1Page extends StatelessWidget {
   LabSchedule1Page({Key? key, this.bevel = 2.0}) : super(key: key);
   final double bevel;
+  final RozarPayController _rozarPayController = Get.put(RozarPayController());
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +53,8 @@ class LabSchedule1Page extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          height: size.height * 0.23,
+                          height: size.height * 0.2,
+                          width: size.width * 0.5,
                           child: Image(
                             image: AssetImage(
                                 'lib/assets/background_stack_png/lab_equi1.png'),
@@ -334,7 +338,10 @@ class LabSchedule1Page extends StatelessWidget {
                             ),
                             child: InkWell(
                               onTap: () {
-                                Get.to(() => UserHomePage());
+                                //_rozarPayController.openCheckout();
+                                //print('okokokopayment');
+
+                                Get.to(() => LabAppointmentCheckout());
                               },
                               child: Container(
                                 padding: const EdgeInsets.symmetric(
@@ -410,6 +417,9 @@ class LabSchedule1Page extends StatelessWidget {
                         //     ),
                         //   ),
                         // ),
+                      ),
+                      SizedBox(
+                        height: size.height * 0.00,
                       ),
                     ],
                   ),

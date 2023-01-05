@@ -402,12 +402,17 @@ class SignUpList extends StatelessWidget {
                                             ),
                                           ]),
                                     ),
-                                    Text(
-                                      productname[index],
-                                      style: GoogleFonts.roboto(
-                                        fontSize: size.width * 0.04,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.red,
+                                    SizedBox(
+                                      width: size.width * 0.53,
+                                      child: Center(
+                                        child: Text(
+                                          productname[index],
+                                          style: GoogleFonts.roboto(
+                                            fontSize: size.width * 0.035,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.red,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                     Material(

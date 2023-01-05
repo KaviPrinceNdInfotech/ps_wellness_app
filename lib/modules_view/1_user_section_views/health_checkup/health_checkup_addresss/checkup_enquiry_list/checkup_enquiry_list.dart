@@ -4,10 +4,10 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
-import 'package:ps_welness/modules_view/1_user_section_views/health_checkup/book_lab_schedule/book_lab_schedule.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/health_checkup/book_lab_schedule/book_checkup_schedule.dart';
 
-class LabEnquiryList extends StatelessWidget {
-  const LabEnquiryList({Key? key}) : super(key: key);
+class HealthChkpEnquiryList extends StatelessWidget {
+  const HealthChkpEnquiryList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class LabEnquiryList extends StatelessWidget {
                     width: size.width * 0.03,
                   ),
                   Text(
-                    'Search Lab',
+                    'Search Checkup Center',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: size.height * 0.02),
@@ -65,7 +65,7 @@ class LabEnquiryList extends StatelessWidget {
                         prefixIcon: Icon(Icons.search),
                         filled: true,
                         fillColor: Colors.white,
-                        hintText: 'Search medicine..',
+                        hintText: 'Search Checkup Center',
                         contentPadding: const EdgeInsets.only(
                             left: 10.0, bottom: 12.0, top: 0.0),
                         focusedBorder: OutlineInputBorder(
@@ -84,7 +84,7 @@ class LabEnquiryList extends StatelessWidget {
                           new BorderRadius.all(new Radius.circular(30.0)),
                       color: Colors.white),
                   width: size.width * 0.93,
-                  height: size.height * 0.06,
+                  height: size.height * 0.064,
                   margin: new EdgeInsets.fromLTRB(15, 20, 10, 20),
                   padding: new EdgeInsets.fromLTRB(8, 8, 8, 8),
                 ),
@@ -108,7 +108,7 @@ class LabEnquiryList extends StatelessWidget {
               ],
             ),
             SizedBox(
-                height: size.height * 0.73,
+                height: size.height * 0.78,
                 child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: 5,
@@ -118,7 +118,7 @@ class LabEnquiryList extends StatelessWidget {
                             horizontal: size.width * 0.03,
                             vertical: size.height * 0.0005),
                         child: Container(
-                          height: size.height * 0.2,
+                          height: size.height * 0.22,
                           margin: EdgeInsets.symmetric(vertical: 30 / 6),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -162,7 +162,7 @@ class LabEnquiryList extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 SizedBox(
-                                  height: size.height * 0.145,
+                                  height: size.height * 0.17,
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
@@ -178,7 +178,7 @@ class LabEnquiryList extends StatelessWidget {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Lab Name:',
+                                            'Checkup Center Name:',
                                             style: GoogleFonts.poppins(
                                               color: MyTheme.blueww,
                                               fontWeight: FontWeight.w600,
@@ -217,6 +217,14 @@ class LabEnquiryList extends StatelessWidget {
                                               fontSize: size.width * 0.033,
                                             ),
                                           ),
+                                          Text(
+                                            'Fees:',
+                                            style: GoogleFonts.poppins(
+                                              color: MyTheme.blueww,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: size.width * 0.033,
+                                            ),
+                                          ),
                                         ],
                                       ),
                                       Column(
@@ -226,7 +234,7 @@ class LabEnquiryList extends StatelessWidget {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Prince Lab',
+                                            'SKY Checkup Center',
                                             style: GoogleFonts.roboto(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w800,
@@ -234,7 +242,7 @@ class LabEnquiryList extends StatelessWidget {
                                             ),
                                           ),
                                           Text(
-                                            'Noida sector2 c53',
+                                            'Noida sector12,AK47',
                                             style: GoogleFonts.roboto(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w800,
@@ -242,7 +250,7 @@ class LabEnquiryList extends StatelessWidget {
                                             ),
                                           ),
                                           Text(
-                                            '8977665431',
+                                            '7877665430',
                                             style: GoogleFonts.roboto(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w800,
@@ -250,7 +258,7 @@ class LabEnquiryList extends StatelessWidget {
                                             ),
                                           ),
                                           Text(
-                                            '10 am to 6 pm',
+                                            '11 am to 6 pm',
                                             style: GoogleFonts.roboto(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w800,
@@ -258,7 +266,15 @@ class LabEnquiryList extends StatelessWidget {
                                             ),
                                           ),
                                           Text(
-                                            'Mon - Sat',
+                                            'Mon - Sun',
+                                            style: GoogleFonts.roboto(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w800,
+                                              fontSize: size.width * 0.033,
+                                            ),
+                                          ),
+                                          Text(
+                                            'Rs. 300',
                                             style: GoogleFonts.roboto(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w800,
@@ -275,25 +291,25 @@ class LabEnquiryList extends StatelessWidget {
                                   ),
                                 ),
                                 //Spacer(),
+
                                 Align(
                                     alignment: Alignment.centerRight,
                                     child: PhysicalModel(
                                       elevation: 15,
-                                      color: Colors.grey,
+                                      color: Colors.red,
                                       borderRadius: BorderRadius.only(
                                         bottomRight: Radius.circular(10),
                                         topLeft: Radius.circular(10),
                                       ),
                                       child: InkWell(
                                         onTap: () {
-                                          Get.to(() => LabSchedulePage());
+                                          Get.to(() => CheckupSchedulePage());
                                         },
                                         child: Container(
                                             height: size.height * 0.036,
                                             width: size.width * 0.25,
                                             decoration: BoxDecoration(
-                                                color:
-                                                    MyTheme.loginPageBoxColor,
+                                                color: Colors.red.shade200,
                                                 borderRadius: BorderRadius.only(
                                                   bottomRight:
                                                       Radius.circular(10),

@@ -34,8 +34,8 @@ class NurseBoooking1 extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(2.0),
                     child: Container(
-                      height: size.height * 0.280,
-                      width: size.width * 0.60,
+                      height: size.height * 0.270,
+                      width: size.width * 0.50,
                       decoration: BoxDecoration(
                           //color: Colors.,
                           borderRadius: BorderRadius.only(
@@ -54,6 +54,7 @@ class NurseBoooking1 extends StatelessWidget {
                   children: [
                     Nursebooking1HeadText(),
                     Nursebooking1Credentials(),
+
                     //HospitalSocial(),
                     //Spacer(),
                   ],

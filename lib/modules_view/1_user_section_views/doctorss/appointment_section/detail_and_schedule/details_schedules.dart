@@ -49,7 +49,8 @@ class DetailsSchedulePage extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          height: size.height * 0.23,
+                          height: size.height * 0.21,
+                          width: size.width * 0.24,
                           child: Image(
                             image: AssetImage(
                                 'lib/assets/background_stack_png/doc02.png'),
@@ -299,7 +300,7 @@ class DetailsSchedulePage extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: size.height * 0.001,
+              bottom: size.height * 0.02,
               left: size.width * 0.0,
               right: size.width * 0.00,
               child: Padding(

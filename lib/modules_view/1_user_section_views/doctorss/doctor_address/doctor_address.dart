@@ -36,7 +36,7 @@ class DoctorAddress extends StatelessWidget {
                     padding: const EdgeInsets.all(2.0),
                     child: Container(
                       height: size.height * 0.300,
-                      width: size.width * 0.60,
+                      width: size.width * 0.50,
                       decoration: BoxDecoration(
                           //color: Colors.,
                           borderRadius: BorderRadius.only(

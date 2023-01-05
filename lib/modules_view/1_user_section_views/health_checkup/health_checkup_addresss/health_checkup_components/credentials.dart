@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:ps_welness/modules_view/1_user_section_views/health_checkup/health_checkup_addresss/lab_enquiry_list/lab_enquiry_list.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/health_checkup/checkup_catagary/choose_catagary.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
@@ -186,7 +186,7 @@ class HealthCheckupCredentials extends StatelessWidget {
             RectangularButton(
                 text: 'See list',
                 press: () {
-                  Get.to(LabEnquiryList());
+                  Get.to(CheckupCatagaryDetails());
                   //_loginpasswordController.checkLoginpassword();
                 })
           ],

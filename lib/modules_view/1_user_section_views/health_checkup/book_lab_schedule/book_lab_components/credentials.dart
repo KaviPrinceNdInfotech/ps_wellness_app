@@ -366,10 +366,6 @@ class LabScheduleCredentials extends StatelessWidget {
                   //   ),
                   // ),
 
-                  SizedBox(
-                    height: size.height * 0.0,
-                  ),
-
                   ///todo:selected time ending...
                   //
                   // NeumorphicTextFieldContainer(

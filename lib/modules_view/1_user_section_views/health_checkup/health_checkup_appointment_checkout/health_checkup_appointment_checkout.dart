@@ -6,9 +6,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/controllers/rozar_pay_controller/rozar_pay_controller.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/home_page_user_view/user_home_page.dart';
 
-class AppointmentCheckout extends StatelessWidget {
-  AppointmentCheckout({Key? key}) : super(key: key);
+class HealthCheckupAppointmentCheckout extends StatelessWidget {
+  HealthCheckupAppointmentCheckout({Key? key}) : super(key: key);
   final RozarPayController _rozarPayController = Get.put(RozarPayController());
 
   @override
@@ -59,7 +60,6 @@ class AppointmentCheckout extends StatelessWidget {
                     SizedBox(
                       height: size.height * 0.04,
                     ),
-
                     // SizedBox(
                     //   height: size.height * 0.05,
                     // ),
@@ -84,7 +84,7 @@ class AppointmentCheckout extends StatelessWidget {
                               width: size.width * 0.06,
                             ),
                             Text(
-                              'Book  Doctor\'s  Appoinmtment',
+                              'Health Checkup\'s  Appoinmtment',
                               style: GoogleFonts.lato(
                                 fontSize: size.width * 0.05,
                                 color: MyTheme.blueww,
@@ -137,19 +137,22 @@ class AppointmentCheckout extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         SizedBox(
-                          width: size.width * 0.24,
+                          width: size.width * 0.27,
+                          height: size.height * 0.2,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Image.asset(
                                 //catimage[index], height: size.height * 0.08,
                                 //productimage[index],
-                                "lib/assets/icons/doctor1.png",
-                                height: size.height * 0.12,
+                                "lib/assets/background_stack_png/checkup_report.png",
+                                height: size.height * 0.143,
                               ),
-                              Spacer(),
+
+                              ///
+                              //Spacer(),
                               Text(
-                                'Fees: ₹ 500',
+                                'Fees: ₹ 600',
                                 //doctorcatagary[index],
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
@@ -160,8 +163,8 @@ class AppointmentCheckout extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(
-                                height: size.height * 0.02,
-                              ),
+                                  //height: size.height * 0.01,
+                                  ),
                             ],
                           ),
                         ),
@@ -178,7 +181,7 @@ class AppointmentCheckout extends StatelessWidget {
                                 height: size.height * 0.022,
                               ),
                               Text(
-                                'Dr. Kumar Prince',
+                                'Rs Health checkup center',
                                 //doctorcatagary[index],
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
@@ -189,7 +192,7 @@ class AppointmentCheckout extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                'Cardiologist',
+                                'All Checkup Available',
                                 //doctorcatagary[index],
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
@@ -200,7 +203,7 @@ class AppointmentCheckout extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                'Experenced: 2 yr',
+                                'Since: 2010',
                                 //doctorcatagary[index],
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
@@ -309,7 +312,7 @@ class AppointmentCheckout extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Nov 26, 2022',
+                                  'Jan 06, 2023',
                                   //doctorcatagary[index],
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
@@ -321,7 +324,7 @@ class AppointmentCheckout extends StatelessWidget {
                                 ),
 
                                 Text(
-                                  '15:30',
+                                  '12:30',
                                   //doctorcatagary[index],
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
@@ -407,7 +410,7 @@ class AppointmentCheckout extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  'Session Fees for 30 minutes.',
+                                  'Session Fees for full checkup.',
                                   //doctorcatagary[index],
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
@@ -445,7 +448,7 @@ class AppointmentCheckout extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '₹ 500',
+                                  '₹ 600',
                                   //doctorcatagary[index],
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
@@ -467,7 +470,7 @@ class AppointmentCheckout extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  '₹ 500',
+                                  '₹ 600',
                                   //doctorcatagary[index],
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
@@ -513,6 +516,42 @@ class AppointmentCheckout extends StatelessWidget {
                     child: Center(
                       child: Text(
                         'PAY  NOW',
+                        //doctorcatagary[index],
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w600,
+                          color: MyTheme.blueww,
+                          fontSize: size.height * 0.022,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: size.height * 0.03,
+              ),
+              PhysicalModel(
+                color: Colors.transparent,
+                elevation: 3,
+                borderRadius: BorderRadius.circular(20),
+                child: InkWell(
+                  onTap: () {
+                    //_rozarPayController.openCheckout();
+                    print('okokokopayment');
+                    Get.to(() => UserHomePage());
+                  },
+                  child: Container(
+                    height: size.height * 0.055,
+                    width: size.width * 0.9,
+                    decoration: BoxDecoration(
+                      color: MyTheme.containercolor1,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'PAY  LATER',
                         //doctorcatagary[index],
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
