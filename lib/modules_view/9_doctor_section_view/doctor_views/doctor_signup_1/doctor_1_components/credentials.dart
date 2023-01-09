@@ -17,7 +17,6 @@ import '../../doctor_sigup_part2/doctor_signup_part2.dart';
 
 class Doctor1Credentials extends StatelessWidget {
   Doctor1Credentials({Key? key}) : super(key: key);
-
   Doctor_1_Controller _doctor_1_controller = Get.put(Doctor_1_Controller());
 
   // LoginpasswordController _loginpasswordController =
@@ -38,9 +37,9 @@ class Doctor1Credentials extends StatelessWidget {
             NeumorphicTextFieldContainer(
               child: TextFormField(
                 autofillHints: [AutofillHints.name],
-                controller: _doctor_1_controller.nameController,
+                controller: _doctor_1_controller.doctorNameController,
                 onSaved: (value) {
-                  _doctor_1_controller.name = value!;
+                  _doctor_1_controller.DoctorName = value!;
                 },
                 validator: (value) {
                   return _doctor_1_controller.validName(value!);
@@ -48,7 +47,7 @@ class Doctor1Credentials extends StatelessWidget {
                 cursorColor: Colors.black,
                 obscureText: false,
                 decoration: InputDecoration(
-                  hintText: 'Name',
+                  hintText: 'Doctor Name',
                   helperStyle: TextStyle(
                     color: black.withOpacity(0.7),
                     fontSize: 18,
@@ -70,9 +69,9 @@ class Doctor1Credentials extends StatelessWidget {
             NeumorphicTextFieldContainer(
               child: TextFormField(
                 autofillHints: [AutofillHints.email],
-                controller: _doctor_1_controller.emailController,
+                controller: _doctor_1_controller.emailIdController,
                 onSaved: (value) {
-                  _doctor_1_controller.email = value!;
+                  _doctor_1_controller.EmailId = value!;
                 },
                 validator: (value) {
                   return _doctor_1_controller.validEmail(value!);
@@ -80,7 +79,7 @@ class Doctor1Credentials extends StatelessWidget {
                 cursorColor: Colors.black,
                 obscureText: false,
                 decoration: InputDecoration(
-                  hintText: 'Email',
+                  hintText: 'Email ID',
                   helperStyle: TextStyle(
                     color: black.withOpacity(0.7),
                     fontSize: 18,
@@ -103,7 +102,7 @@ class Doctor1Credentials extends StatelessWidget {
               child: TextFormField(
                 controller: _doctor_1_controller.passwordController,
                 onSaved: (value) {
-                  _doctor_1_controller.password = value!;
+                  _doctor_1_controller.Password = value!;
                 },
                 validator: (value) {
                   return _doctor_1_controller.validPassword(value!);
@@ -132,9 +131,9 @@ class Doctor1Credentials extends StatelessWidget {
             ///Todo: confirm password...........
             NeumorphicTextFieldContainer(
               child: TextFormField(
-                controller: _doctor_1_controller.confirmpasswordController,
+                controller: _doctor_1_controller.confirmPasswordController,
                 onSaved: (value) {
-                  _doctor_1_controller.confirmpassword = value!;
+                  _doctor_1_controller.ConfirmPassword = value!;
                 },
                 validator: (value) {
                   return _doctor_1_controller.validConfirmPassword(value!);
@@ -167,9 +166,9 @@ class Doctor1Credentials extends StatelessWidget {
             NeumorphicTextFieldContainer(
               child: TextFormField(
                 autofillHints: [AutofillHints.telephoneNumber],
-                controller: _doctor_1_controller.mobileController,
+                controller: _doctor_1_controller.mobileNumberController,
                 onSaved: (value) {
-                  _doctor_1_controller.mobile = value!;
+                  _doctor_1_controller.MobileNumber = value!;
                 },
                 validator: (value) {
                   return _doctor_1_controller.validPhone(value!);

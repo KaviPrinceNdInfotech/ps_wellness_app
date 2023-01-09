@@ -16,6 +16,7 @@ class Social extends StatelessWidget {
         // ),
 
         ///
+
         // Padding(
         //   padding: EdgeInsets.symmetric(horizontal: appPadding),
         //   child: Row(
@@ -30,6 +31,7 @@ class Social extends StatelessWidget {
         //     ],
         //   ),
         // ),
+
         SizedBox(
           height: appPadding * 0.01,
         ),
@@ -42,6 +44,8 @@ class Social extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) {
                   return SignUpList();
+                  //UserSignup1();
+
                   //SignUpScreen();
                 },
               ),

@@ -157,7 +157,12 @@ class SignUpList extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               if (index == 0) {
+                                //UserSignup1
+                                //SignInScreen
+                                //MyDropDownPage
                                 Get.to(() => UserSignup1());
+
+                                //Get.to(() => UserSignup1());
                               } else if (index == 1) {
                                 Get.to(() => FranchiesSignup1());
                               } else if (index == 2) {

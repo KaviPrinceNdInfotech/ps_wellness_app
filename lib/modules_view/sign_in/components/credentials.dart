@@ -5,8 +5,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/controllers/login_email/login_email_controller.dart';
+import 'package:ps_welness/modules_view/circular_loader/circular_loaders.dart';
 import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
-import 'package:ps_welness/modules_view/sign_up_list/sign_up_list.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
@@ -40,13 +40,13 @@ class Credentials extends StatelessWidget {
                 cursorColor: Colors.black,
                 obscureText: false,
                 decoration: InputDecoration(
-                  hintText: 'Email',
+                  hintText: 'User ID',
                   helperStyle: TextStyle(
                     color: black.withOpacity(0.7),
                     fontSize: 18,
                   ),
                   prefixIcon: Icon(
-                    Icons.email,
+                    Icons.account_circle,
                     color: black.withOpacity(0.7),
                     size: 20,
                   ),
@@ -110,10 +110,13 @@ class Credentials extends StatelessWidget {
                 ),
               ),
             ),
+
             RectangularButton(
                 text: 'Sign In',
                 press: () {
-                  Get.to(SignUpList());
+                  CallLoader.loader();
+                  _loginpasswordController.checkLoginpassword();
+                  //Get.to(SignUpList());
                   //_loginpasswordController.checkLoginpassword();
                 })
           ],

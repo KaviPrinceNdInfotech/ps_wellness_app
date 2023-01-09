@@ -170,6 +170,7 @@ class OnboardingPage extends StatelessWidget {
                         elevation: 0,
                         onPressed: () {
                           Get.to(() => SignInScreen());
+                          //SignUpList());
                         },
                         child: Text(
                           'SKIP',

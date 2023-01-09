@@ -3,17 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
-import 'package:ps_welness/controllers/doctor_controllers/doctor_controller_2.dart';
+import 'package:ps_welness/controllers/doctor_controllers/doctor_controller1.dart';
+import 'package:ps_welness/modules_view/circular_loader/circular_loaders.dart';
 //import 'package:ps_welness/modules_view/home_page_view/home_page.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
 
-import '../../../home_page_view/home_page.dart';
-
 class Doctor2Credentials extends StatelessWidget {
   Doctor2Credentials({Key? key}) : super(key: key);
 
-  Doctor_2_Controller _doctor_2_controller = Get.put(Doctor_2_Controller());
+  Doctor_1_Controller _doctor_1_controller = Get.find();
 
   var items = [
     'Item 1',
@@ -33,7 +32,7 @@ class Doctor2Credentials extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Form(
-        key: _doctor_2_controller.doctor2formkey,
+        key: _doctor_1_controller.doctor1formkey,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         child: Padding(
           padding: EdgeInsets.all(30),
@@ -48,12 +47,12 @@ class Doctor2Credentials extends StatelessWidget {
               NeumorphicTextFieldContainer(
                 child: TextFormField(
                   autofillHints: [AutofillHints.telephoneNumber],
-                  controller: _doctor_2_controller.mobileController,
+                  controller: _doctor_1_controller.mobileNumberController,
                   onSaved: (value) {
-                    _doctor_2_controller.mobile = value!;
+                    _doctor_1_controller.MobileNumber = value!;
                   },
                   validator: (value) {
-                    return _doctor_2_controller.validPhone(value!);
+                    return _doctor_1_controller.validPhone(value!);
                   },
                   cursorColor: Colors.black,
                   obscureText: false,
@@ -81,12 +80,12 @@ class Doctor2Credentials extends StatelessWidget {
               NeumorphicTextFieldContainer(
                 child: TextFormField(
                   autofillHints: [AutofillHints.name],
-                  controller: _doctor_2_controller.clinicnameController,
+                  controller: _doctor_1_controller.clinicNameController,
                   onSaved: (value) {
-                    _doctor_2_controller.clinic_name = value!;
+                    _doctor_1_controller.ClinicName = value!;
                   },
                   validator: (value) {
-                    return _doctor_2_controller.validClinicname(value!);
+                    return _doctor_1_controller.validName(value!);
                   },
                   cursorColor: Colors.black,
                   obscureText: false,
@@ -116,7 +115,7 @@ class Doctor2Credentials extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
                   child: Obx(
                     () => DropdownButtonFormField(
-                        value: _doctor_2_controller.selectedState.value,
+                        value: _doctor_1_controller.selectedState.value,
                         decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.real_estate_agent,
@@ -139,7 +138,7 @@ class Doctor2Credentials extends StatelessWidget {
                           );
                         }).toList(),
                         onChanged: (String? newValue) {
-                          _doctor_2_controller.selectedState.value = newValue!;
+                          _doctor_1_controller.selectedState.value = newValue!;
                           // _hospital_2_controller.states.value =
                           //     newValue! as List<String>;
                           // _hospital_2_controller.selectedCity.value = null;
@@ -163,7 +162,7 @@ class Doctor2Credentials extends StatelessWidget {
                   child: Obx(
                     () => DropdownButtonFormField(
                         //icon: Icon(Icons.location_city),
-                        value: _doctor_2_controller.selectedCity.value,
+                        value: _doctor_1_controller.selectedCity.value,
                         decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.location_city,
@@ -186,7 +185,7 @@ class Doctor2Credentials extends StatelessWidget {
                           );
                         }).toList(),
                         onChanged: (String? newValue) {
-                          _doctor_2_controller.selectedCity.value = newValue!;
+                          _doctor_1_controller.selectedCity.value = newValue!;
                           // _hospital_2_controller.states.value =
                           //     newValue! as List<String>;
                           // _hospital_2_controller.selectedCity.value = null;
@@ -262,7 +261,9 @@ class Doctor2Credentials extends StatelessWidget {
               RectangularButton(
                   text: 'SUBMIT',
                   press: () {
-                    Get.to(HomePage());
+                    CallLoader.loader();
+                    _doctor_1_controller.checkDoctor1();
+                    // Get.to(HomePage());
                     //_loginpasswordController.checkLoginpassword();
                   })
             ],
