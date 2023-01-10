@@ -136,9 +136,7 @@ class _MapUserState extends State<MapUser> {
                           });
 
                       if (place != null) {
-                        setState(() {
-                          location = place.description.toString();
-                        });
+                        location = place.description.toString();
 
                         //form google_maps_webservice package
                         final plist = GoogleMapsPlaces(
@@ -154,6 +152,12 @@ class _MapUserState extends State<MapUser> {
                         final lat = geometry.location.lat;
                         final lang = geometry.location.lng;
                         var newlatlang = LatLng(lat, lang);
+
+                        ///Todo:abhi bhau.....10 jan 2023...................................................
+                        _kGooglemarkerfirst = _kGooglemarkerfirst.copyWith(
+                            positionParam: newlatlang);
+
+                        setState(() {});
 
                         //move map camera to selected place with animation
                         mapController?.animateCamera(
@@ -203,9 +207,7 @@ class _MapUserState extends State<MapUser> {
                           });
 
                       if (place != null) {
-                        setState(() {
-                          location2 = place.description.toString();
-                        });
+                        location2 = place.description.toString();
 
                         //form google_maps_webservice package
                         final plist = GoogleMapsPlaces(
@@ -221,6 +223,12 @@ class _MapUserState extends State<MapUser> {
                         final lat = geometry.location.lat;
                         final lang = geometry.location.lng;
                         var newlatlang = LatLng(lat, lang);
+
+                        ///Todo:abhi bhau.....10 jan 2023...................................................
+                        _kGooglemarkersecond = _kGooglemarkersecond.copyWith(
+                            positionParam: newlatlang);
+
+                        setState(() {});
 
                         //move map camera to selected place with animation
                         mapController2?.animateCamera(
@@ -430,14 +438,14 @@ class _MapUserState extends State<MapUser> {
     setState(() {});
   }
 
-  static final Marker _kGooglemarkerfirst = Marker(
+  static Marker _kGooglemarkerfirst = Marker(
     markerId: MarkerId("_kpGoogle1"),
     infoWindow: InfoWindow(title: 'Noida'),
     icon: BitmapDescriptor.defaultMarker,
     position: LatLng(28.583, 77.3132),
   );
 
-  static final Marker _kGooglemarkersecond = Marker(
+  static Marker _kGooglemarkersecond = Marker(
     markerId: MarkerId("_kpGoogle2"),
     infoWindow: InfoWindow(title: 'Delhi'),
     icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),

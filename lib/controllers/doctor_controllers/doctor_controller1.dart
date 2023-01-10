@@ -108,7 +108,9 @@ class Doctor_1_Controller extends GetxController {
   //     clinicNameController,department_IdController,specialist_IdController,feeController,passwordController,confirmPasswordController,
   //     licenceBase64Controller,licenceImageNameController,licenceImageController,startTimeController,endTimeController,
   //     slotTimingController,startTime2Controller,endTime2Controller,slotTiming2Controller
+
   ///
+
   // pinCodeController,
   //     nameController,
   //     emailController,
@@ -216,6 +218,7 @@ class Doctor_1_Controller extends GetxController {
     // slotTiming2Controller.dispose();
 
     ///
+
     // pinCodeController.dispose();
     // nameController.dispose();
     // emailController.dispose();
