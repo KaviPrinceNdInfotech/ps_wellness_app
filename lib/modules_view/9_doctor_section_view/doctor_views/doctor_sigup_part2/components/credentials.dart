@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/controllers/doctor_controllers/doctor_controller1.dart';
+import 'package:ps_welness/modules_view/9_doctor_section_view/home_page_view/home_page.dart';
 import 'package:ps_welness/modules_view/circular_loader/circular_loaders.dart';
 //import 'package:ps_welness/modules_view/home_page_view/home_page.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
@@ -263,7 +264,7 @@ class Doctor2Credentials extends StatelessWidget {
                   press: () {
                     CallLoader.loader();
                     _doctor_1_controller.checkDoctor1();
-                    // Get.to(HomePage());
+                    Get.to(HomePage());
                     //_loginpasswordController.checkLoginpassword();
                   })
             ],

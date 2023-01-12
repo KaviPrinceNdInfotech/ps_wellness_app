@@ -1,11 +1,15 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_google_places_hoc081098/flutter_google_places_hoc081098.dart';
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_api_headers/google_api_headers.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart';
+import 'package:location/location.dart';
 import 'package:ps_welness/controllers/map_controllers/map_controller.dart';
 
 const LatLng currentLocation = LatLng(28.583, 77.3132);
@@ -26,6 +30,95 @@ var items = [
 ];
 
 class _MapUserState extends State<MapUser> {
+  ///11 jan 2023.......edited
+  final Completer<GoogleMapController> _controller = Completer();
+  // on below line we are specifying our camera position
+  static final CameraPosition _kGoogle = const CameraPosition(
+    target: LatLng(37.42796133580664, -122.885749655962),
+    zoom: 14.4746,
+  );
+  List<Marker> _marker = [];
+  List<LatLng> polyLineCoordinates = [];
+  LocationData? currentLocation;
+
+  static const LatLng sourceLocation = LatLng(37.33500926, -122.03272188);
+  static const LatLng destination = LatLng(37.33429383, -122.06600055);
+
+  BitmapDescriptor sourceIcon = BitmapDescriptor.defaultMarker;
+  BitmapDescriptor destinationIcon = BitmapDescriptor.defaultMarker;
+  BitmapDescriptor currentLocationIcon = BitmapDescriptor.defaultMarker;
+
+  void setCustomMarkerIcon() {
+    BitmapDescriptor.fromAssetImage(
+            ImageConfiguration.empty, 'lib/assets/icons/rwa.png')
+        .then(
+      (icon) => sourceIcon = icon,
+    );
+    BitmapDescriptor.fromAssetImage(
+            ImageConfiguration.empty, 'lib/assets/icons/user.png')
+        .then(
+      (icon) => destinationIcon = icon,
+    );
+    BitmapDescriptor.fromAssetImage(
+            ImageConfiguration.empty, 'lib/assets/icons/frpayout.png')
+        .then(
+      (icon) => currentLocationIcon = icon,
+    );
+  }
+
+  // void getCurrentLocation() async {
+  //   Location location = Location().toString();
+  //   location.getLocation().then((location) {
+  //     currentLocation = location;
+  //     setState(() {});
+  //   });
+  //   GoogleMapController googleMapController = await _controller.future;
+  //
+  //   location.onLocationChanged.listen((newLoc) {
+  //     currentLocation = newLoc;
+  //     googleMapController.animateCamera(
+  //       CameraUpdate.newCameraPosition(
+  //         CameraPosition(
+  //           target: LatLng(
+  //             newLoc.latitude!,
+  //             newLoc.longitude!,
+  //           ),
+  //         ),
+  //       ),
+  //     );
+  //     setState(() {});
+  //   });
+  // }
+
+  void getPolyPoints() async {
+    PolylinePoints polylinePoints = PolylinePoints();
+    PolylineResult polylineResult =
+        await polylinePoints.getRouteBetweenCoordinates(
+      'AIzaSyBrbWFXlOYpaq51wteSyFS2UjdMPOWBlQw',
+      PointLatLng(
+        sourceLocation.latitude,
+        sourceLocation.longitude,
+      ),
+      PointLatLng(
+        destination.latitude,
+        destination.longitude,
+      ),
+    );
+    if (polylineResult.points.isNotEmpty) {
+      polylineResult.points.forEach((point) {
+        polyLineCoordinates.add(
+          LatLng(
+            point.latitude,
+            point.longitude,
+          ),
+        );
+      });
+      setState(() {});
+    }
+  }
+
+  ///11 jan..........
+
   String googleApikey = "AIzaSyBrbWFXlOYpaq51wteSyFS2UjdMPOWBlQw";
   GoogleMapController? mapController;
   GoogleMapController? mapController2; //contrller for Google map
@@ -65,6 +158,9 @@ class _MapUserState extends State<MapUser> {
 
   @override
   void initState() {
+    // TODO: implement initState
+    super.initState();
+    _marker.addAll(_list);
     // _ksGooglemarkerfirst(LatLng(latitude, longitude))
     //_setMarker(LatLng(latitude, longitude))
   }
@@ -152,17 +248,20 @@ class _MapUserState extends State<MapUser> {
                         final lat = geometry.location.lat;
                         final lang = geometry.location.lng;
                         var newlatlang = LatLng(lat, lang);
+                        var newpoint =
 
-                        ///Todo:abhi bhau.....10 jan 2023...................................................
-                        _kGooglemarkerfirst = _kGooglemarkerfirst.copyWith(
-                            positionParam: newlatlang);
+                            ///Todo:abhi bhau.....10 jan 2023...................................................
+                            _kGooglemarkerfirst = _kGooglemarkerfirst.copyWith(
+                                positionParam: newlatlang);
+                        // _kpolyline =
+                        //     _kpolyline.copyWith(pointsParam: polygonLatLng);
 
                         setState(() {});
 
                         //move map camera to selected place with animation
                         mapController?.animateCamera(
                             CameraUpdate.newCameraPosition(
-                                CameraPosition(target: newlatlang, zoom: 17)));
+                                CameraPosition(target: newlatlang, zoom: 14)));
                       }
                     },
                     child: Padding(
@@ -227,13 +326,15 @@ class _MapUserState extends State<MapUser> {
                         ///Todo:abhi bhau.....10 jan 2023...................................................
                         _kGooglemarkersecond = _kGooglemarkersecond.copyWith(
                             positionParam: newlatlang);
+                        // _kpolyline =
+                        //     _kpolyline.copyWith(pointsParam: polygonLatLng);
 
                         setState(() {});
 
                         //move map camera to selected place with animation
                         mapController2?.animateCamera(
                             CameraUpdate.newCameraPosition(
-                                CameraPosition(target: newlatlang, zoom: 17)));
+                                CameraPosition(target: newlatlang, zoom: 14)));
                       }
                     },
                     child: Padding(
@@ -438,6 +539,21 @@ class _MapUserState extends State<MapUser> {
     setState(() {});
   }
 
+  final List<Marker> _list = const [
+    Marker(
+        markerId: MarkerId('1'),
+        position: LatLng(20.42796133580664, 75.885749655962),
+        infoWindow: InfoWindow(
+          title: 'My Position',
+        )),
+    Marker(
+        markerId: MarkerId('2'),
+        position: LatLng(25.42796133580664, 80.885749655962),
+        infoWindow: InfoWindow(
+          title: 'Location 1',
+        )),
+  ];
+
   static Marker _kGooglemarkerfirst = Marker(
     markerId: MarkerId("_kpGoogle1"),
     infoWindow: InfoWindow(title: 'Noida'),
@@ -452,11 +568,12 @@ class _MapUserState extends State<MapUser> {
     position: LatLng(28.5930, 77.3052),
   );
 
-  static final Polyline _kpolyline = Polyline(
+  static Polyline _kpolyline = Polyline(
     polylineId: PolylineId("_kpolyline"),
     points: [
       LatLng(28.583, 77.3132),
       LatLng(28.5930, 77.3052),
+
       // LatLng(28.573, 77.3132),
       // LatLng(29.0788, 76.0856),
     ],

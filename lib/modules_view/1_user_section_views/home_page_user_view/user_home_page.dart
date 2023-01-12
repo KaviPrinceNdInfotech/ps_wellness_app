@@ -7,6 +7,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/google_map/new_map/new_g_map.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/lab/choose_lab/choose_lab.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/map_page_user/google_map_2.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/map_page_user/map_page_google_map.dart';
@@ -259,9 +260,9 @@ class UserHomePage extends StatelessWidget {
                                               children: [
                                                 InkWell(
                                                   onTap: () {
-                                                    Get.to(() =>
-                                                        //OrderTrackingPage());
-                                                        MapUser());
+                                                    Get.to(() => MapView());
+                                                    //OrderTrackingPage());
+                                                    // MapUser());
                                                   },
                                                   child:
                                                       NeumorphicTextFieldContainer(

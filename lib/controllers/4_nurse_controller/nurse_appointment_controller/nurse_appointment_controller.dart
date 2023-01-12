@@ -14,9 +14,24 @@ class NurseAppointmentController extends GetxController {
 
   var appointment = ''.obs;
 
+  // NurseAppointment? appointmentdetail;
+  //
+  // //all catagary list .........
+  //
+  // void nurseappointmentApi() async {
+  //   isLoading(true);
+  //   appointmentdetail = await ApiProvider.NurseappointmentApi();
+  //   if (appointmentdetail != null
+  //       //getcatagartlist!.result!.isNotEmpty
+  //       ) {
+  //     isLoading(false);
+  //   }
+  // }
+
   @override
   void onInit() {
     super.onInit();
+    //nurseappointmentApi();
     appointmentController = TextEditingController();
     appointmentController.text = "DD-MM-YYYY";
   }
@@ -30,6 +45,13 @@ class NurseAppointmentController extends GetxController {
   void onClose() {
     //TextEditingController.dispose();
   }
+
+  @override
+  void dispose() {
+    Get.delete<NurseAppointmentController>();
+    super.dispose();
+  }
+
   chooseDate() async {
     DateTime? newpickedDate = await showDatePicker(
       context: Get.context!,

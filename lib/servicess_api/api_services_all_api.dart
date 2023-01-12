@@ -3,6 +3,9 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
+import 'package:ps_welness/model/4_nurse_all_models/nurse_appointment.dart';
+import 'package:ps_welness/model/9_doctors_model/doctor_profile_model.dart';
+import 'package:ps_welness/model/franchies_models/franchies_specialist.dart';
 
 class ApiProvider {
   static var baseUrl = 'http://pswellness.in/';
@@ -18,7 +21,81 @@ class ApiProvider {
   static String Message = "";
 
   ///TODO: here we have to add different api in this page...........
-  //
+  /// TODO: from here user 1 section...........
+  //login user api ps welness api 1..................................
+
+  static LoginEmailApi(
+    var Username,
+    var Password,
+  ) async {
+    var url = baseUrl + 'api/SignupApi/Login';
+
+    var body = {
+      "Username": Username,
+      "Password": Password,
+    };
+    print(body);
+    http.Response r = await http.post(
+      Uri.parse(url), body: body,
+      //headers: headers
+    );
+    print(r.body);
+    if (r.statusCode == 200) {
+      var prefs = GetStorage();
+      //saved id..........
+      prefs.write("Id".toString(), json.decode(r.body)['Id']);
+      Id = prefs.read("Id").toString();
+      print('&&&&&&&&&&&&&&&&&&&&&&:${Id}');
+
+      // //saved token.........
+      // prefs.write("token".toString(), json.decode(r.body)['token']);
+      // token = prefs.read("token").toString();
+      // print(token);
+      return r;
+    } else if (r.statusCode == 401) {
+      Get.snackbar('message', r.body);
+    } else {
+      Get.snackbar('Error', r.body);
+      return r;
+    }
+  }
+
+  ///Todo: from here franchies 2 section.................
+  ///
+  static FranchiesSpealistApi() async {
+    var url = baseUrl + 'api/CommonApi/GetSpecialist?depId=87';
+    try {
+      http.Response r = await http.get(Uri.parse(url));
+      print(r.body.toString());
+      if (r.statusCode == 200) {
+        SpealistFranchies? catagarylist = spealistFranchiesFromJson(r.body);
+        return catagarylist;
+      }
+    } catch (error) {
+      return;
+    }
+  }
+
+  ///Todo: from here nurse 3 section.................
+  ///
+  static NurseappointmentApi() async {
+    var url = baseUrl +
+        'api/NurseAPI/NurseAppointmentRequests?NurseTypeId=2&NurseId=56';
+    try {
+      http.Response r = await http.get(Uri.parse(url));
+      print(r.body.toString());
+      if (r.statusCode == 200) {
+        List<NurseAppointment?>? nurseeAppointment =
+            nurseAppointmentFromJson(r.body);
+        return nurseeAppointment;
+      }
+    } catch (error) {
+      return;
+    }
+  }
+
+  ///Todo: from here doctor 9 section.................
+  ///
   //sign up  Api doctor Api 1........................................................
   static signDoctorUpApi(
     var PinCode,
@@ -108,43 +185,18 @@ class ApiProvider {
     }
   }
 
-  ///
-
-  //login user api ps welness api 1..................................
-
-  static LoginEmailApi(
-    var Username,
-    var Password,
-  ) async {
-    var url = baseUrl + 'api/SignupApi/Login';
-
-    var body = {
-      "Username": Username,
-      "Password": Password,
-    };
-    print(body);
-    http.Response r = await http.post(
-      Uri.parse(url), body: body,
-      //headers: headers
-    );
-    print(r.body);
-    if (r.statusCode == 200) {
-      var prefs = GetStorage();
-      //saved id..........
-      prefs.write("Id".toString(), json.decode(r.body)['Id']);
-      Id = prefs.read("Id").toString();
-      print('&&&&&&&&&&&&&&&&&&&&&&:${Id}');
-
-      // //saved token.........
-      // prefs.write("token".toString(), json.decode(r.body)['token']);
-      // token = prefs.read("token").toString();
-      // print(token);
-      return r;
-    } else if (r.statusCode == 401) {
-      Get.snackbar('message', r.body);
-    } else {
-      Get.snackbar('Error', r.body);
-      return r;
+  //doctor profile  api 2..........................
+  static DoctorProfileApi() async {
+    var url = baseUrl + 'api/DoctorApi/DoctorProfile?DoctorId=151';
+    try {
+      http.Response r = await http.get(Uri.parse(url));
+      print(r.body.toString());
+      if (r.statusCode == 200) {
+        DoctorProfile? doctorProfile = doctorProfileFromJson(r.body);
+        return doctorProfile;
+      }
+    } catch (error) {
+      return;
     }
   }
 }

@@ -1,9 +1,18 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:ps_welness/widgets/controller_bindingss.dart';
 
 import 'modules_view/splash_screen/splash_screen.dart';
 
 void main() {
+  ///todo: changes for map 11 jan 2023........
+  if (defaultTargetPlatform == TargetPlatform.android) {
+    AndroidGoogleMapsFlutter.useAndroidViewSurface = true;
+  }
+
+  ///..........
   runApp(const MyApp());
 }
 
@@ -14,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: ControllerBinding(),
       debugShowCheckedModeBanner: false,
 
       // getPages: [
