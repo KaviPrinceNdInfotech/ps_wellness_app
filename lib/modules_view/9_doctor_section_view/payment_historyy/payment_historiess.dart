@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/controllers/9_doctor_controllers/doctor_payment_controller/doctor_payment_detail_controller.dart';
 
 import '../../../controllers/appointment_history_controller/appointment_history_controllers.dart';
 
@@ -13,6 +14,9 @@ class PaymentHistory extends StatelessWidget {
 
   AppointmentController _appointmentController =
       Get.put(AppointmentController());
+
+  DoctorPaymentViewControllers _paymentViewControllers =
+      Get.put(DoctorPaymentViewControllers());
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,16 @@ class PaymentHistory extends StatelessWidget {
       //   title: Text('Appintment History'),
       //   backgroundColor: MyTheme.ThemeColors,
       // ),
-      body: Column(
+      body:
+          // Obx(
+          //   () => (_paymentViewControllers.isLoading.value)
+          //       ? Center(child: CircularProgressIndicator())
+          //       : _paymentViewControllers.viewPaymenthistory != null
+          //           ? Center(
+          //               child: Text('No Data'),
+          //             )
+          //           :
+          Column(
         //clipBehavior: Clip.none,
         children: [
           SizedBox(
@@ -137,7 +150,10 @@ class PaymentHistory extends StatelessWidget {
               height: size.height * 0.75,
               child: ListView.builder(
                   shrinkWrap: true,
-                  itemCount: 7,
+                  itemCount: 3,
+                  // _paymentViewControllers
+                  //     .viewPaymenthistory!.lenght
+                  //     .toString(),
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
                       padding: EdgeInsets.symmetric(
@@ -240,42 +256,42 @@ class PaymentHistory extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Kishor Kumar',
+                                    'Vivek Kumar',
                                     style: GoogleFonts.raleway(
                                         color: Colors.red.shade300,
                                         fontWeight: FontWeight.w700,
                                         fontSize: size.width * 0.035),
                                   ),
                                   Text(
-                                    '₹ 1000',
+                                    '₹ 5700',
                                     style: GoogleFonts.raleway(
                                         color: Colors.red.shade300,
                                         fontWeight: FontWeight.w700,
                                         fontSize: size.width * 0.035),
                                   ),
                                   Text(
-                                    'wqw45555',
+                                    '87855ip5',
                                     style: GoogleFonts.raleway(
                                         color: Colors.red.shade300,
                                         fontWeight: FontWeight.w700,
                                         fontSize: size.width * 0.035),
                                   ),
                                   Text(
-                                    'Sector 12, C 59 Noida',
+                                    'Delhi ,Palam',
                                     style: GoogleFonts.raleway(
                                         color: Colors.red.shade300,
                                         fontWeight: FontWeight.w700,
                                         fontSize: size.width * 0.035),
                                   ),
                                   Text(
-                                    'Nov 12,22',
+                                    'Jan,2',
                                     style: GoogleFonts.raleway(
                                         color: Colors.red.shade300,
                                         fontWeight: FontWeight.w700,
                                         fontSize: size.width * 0.035),
                                   ),
                                   Text(
-                                    '08:00 pm',
+                                    '06:00 pm',
                                     style: GoogleFonts.raleway(
                                         color: Colors.red.shade300,
                                         fontWeight: FontWeight.w700,

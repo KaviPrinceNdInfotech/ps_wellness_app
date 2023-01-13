@@ -5,7 +5,10 @@ import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:ps_welness/model/4_nurse_all_models/nurse_appointment.dart';
 import 'package:ps_welness/model/9_doctors_model/doctor_profile_model.dart';
+import 'package:ps_welness/model/9_doctors_model/view_patient_report_model.dart';
 import 'package:ps_welness/model/franchies_models/franchies_specialist.dart';
+
+import '../model/9_doctors_model/doctor_payment_history.dart';
 
 class ApiProvider {
   static var baseUrl = 'http://pswellness.in/';
@@ -194,6 +197,40 @@ class ApiProvider {
       if (r.statusCode == 200) {
         DoctorProfile? doctorProfile = doctorProfileFromJson(r.body);
         return doctorProfile;
+      }
+    } catch (error) {
+      return;
+    }
+  }
+
+  //view_patient_list api 3.........
+
+  static ViewPatientReportsApi() async {
+    var url =
+        baseUrl + 'api/DoctorApi/PatientReports?DoctorId=151&PatientId=77';
+    try {
+      http.Response r = await http.get(Uri.parse(url));
+      print(r.body.toString());
+      if (r.statusCode == 200) {
+        ViewPatientReport? viewPatientReport =
+            viewPatientReportFromJson(r.body);
+        return viewPatientReport;
+      }
+    } catch (error) {
+      return;
+    }
+  }
+
+  //view_payment_history.............
+
+  static ViewPaymentHistoryApi() async {
+    var url = baseUrl + 'api/DoctorApi/paymentHistory?id=151&Date=2023-01-10&=';
+    try {
+      http.Response r = await http.get(Uri.parse(url));
+      print(r.body.toString());
+      if (r.statusCode == 200) {
+        var viewpaymentreport = paymentHistoryFromJson(r.body);
+        return viewpaymentreport;
       }
     } catch (error) {
       return;

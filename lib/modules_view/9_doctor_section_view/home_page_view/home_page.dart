@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/modules_view/9_doctor_section_view/view_patient_report/view_patient_report.dart';
 
 import '../../../controllers/appointment_history_controller/appointment_history_controllers.dart';
 import '../appointment_history_view/appointment_history_view.dart';
@@ -311,6 +312,7 @@ class HomePage extends StatelessWidget {
 
                                     //Get.to(() => CarouselDemo());
                                   } else if (index == 4) {
+                                    Get.to(() => ViewPatientReport());
                                     //Get.defaultDialog(
                                     //barrierDismissible: true,
 

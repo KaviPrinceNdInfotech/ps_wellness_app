@@ -27,10 +27,6 @@ var items = [
 
 class _MapViewState extends State<MapView> {
   CameraPosition _initialLocation = CameraPosition(target: LatLng(0.0, 0.0));
-  late GoogleMapController mapController;
-
-  late Position _currentPosition;
-  String _currentAddress = '';
 
   final startAddressController = TextEditingController();
   final destinationAddressController = TextEditingController();
@@ -51,6 +47,11 @@ class _MapViewState extends State<MapView> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   MapController _mapControllers = Get.put(MapController());
+
+  late GoogleMapController mapController;
+
+  late Position _currentPosition;
+  String _currentAddress = '';
 
   Widget _textField({
     required TextEditingController controller,
@@ -316,8 +317,8 @@ class _MapViewState extends State<MapView> {
 
   @override
   void initState() {
-    super.initState();
     _getCurrentLocation();
+    super.initState();
   }
 
   @override
@@ -667,7 +668,7 @@ class _MapViewState extends State<MapView> {
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.red,
+                              primary: Colors.red.shade400,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
