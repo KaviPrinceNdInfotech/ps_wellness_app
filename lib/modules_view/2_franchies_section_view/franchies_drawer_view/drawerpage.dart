@@ -7,6 +7,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/about_franchies/about_franchies.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/profile_details_franchies/profile_franchies_detail_page.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/profile_page_view/franchiese_profile.dart';
 import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
 
@@ -102,6 +103,39 @@ class FranchiesisMainDrawer extends StatelessWidget {
             ListTile(
               // horizontalTitleGap: 10,
               leading: Icon(
+                FontAwesomeIcons.edit,
+                color: MyTheme.blueww,
+                size: size.height * 0.021,
+              ),
+              trailing: Icon(
+                Icons.arrow_forward_ios_sharp,
+                color: MyTheme.blueww,
+                size: size.height * 0.02,
+              ),
+              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              dense: true,
+              visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+              title: Text(
+                'Franchises edit Profile',
+                style: TextStyle(
+                    fontSize: size.height * 0.017,
+                    fontWeight: FontWeight.w600,
+                    color: MyTheme.blueww),
+              ),
+              tileColor: Get.currentRoute == '/FranchiessProfilePage'
+                  ? Colors.grey[300]
+                  : Colors.transparent,
+              onTap: () {
+                print(Get.currentRoute);
+                Get.back();
+                Get.to(() => FranchiessProfilePage());
+                Get.offNamed('/FranchiessProfilePage');
+              },
+            ),
+
+            ListTile(
+              // horizontalTitleGap: 10,
+              leading: Icon(
                 FontAwesomeIcons.person,
                 color: MyTheme.blueww,
                 size: size.height * 0.021,
@@ -127,7 +161,7 @@ class FranchiesisMainDrawer extends StatelessWidget {
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                Get.to(() => FranchiessProfilePage());
+                Get.to(() => FranchiesDetailProfile());
                 Get.offNamed('/FranchiessProfilePage');
               },
             ),

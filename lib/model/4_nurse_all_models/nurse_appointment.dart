@@ -5,13 +5,13 @@
 import 'dart:convert';
 
 List<NurseAppointment?>? nurseAppointmentFromJson(String str) =>
-    json.decode(str) == null
+    json.decode(str) != null
         ? []
         : List<NurseAppointment?>.from(
             json.decode(str)!.map((x) => NurseAppointment.fromJson(x)));
 
 String nurseAppointmentToJson(List<NurseAppointment?>? data) => json.encode(
-    data == null ? [] : List<dynamic>.from(data!.map((x) => x!.toJson())));
+    data == null ? [] : List<dynamic>.from(data.map((x) => x!.toJson())));
 
 class NurseAppointment {
   NurseAppointment({

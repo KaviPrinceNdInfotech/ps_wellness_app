@@ -110,7 +110,7 @@ class ViewPatientReport extends StatelessWidget {
                                           ),
                                         ),
                                         Text(
-                                          'PatietEmail',
+                                          'PatientEmail',
                                           style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             fontSize: size.height * 0.02,

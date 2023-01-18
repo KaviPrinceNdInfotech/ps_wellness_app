@@ -23,7 +23,8 @@ class NurseAppointmentDetailController extends GetxController {
   void nurseappointmentApi() async {
     isLoading(true);
     appointmentdetail = await ApiProvider.NurseappointmentApi();
-    if (appointmentdetail != null
+    if (appointmentdetail == null
+        //appointmentdetail != null
         //getcatagartlist!.result!.isNotEmpty
         ) {
       isLoading(false);
@@ -59,7 +60,6 @@ class NurseAppointmentDetailController extends GetxController {
       cancelText: 'Close',
       confirmText: 'Confirm',
       errorFormatText: 'Enter valid date',
-
       errorInvalidText: 'Enter valid date range',
       fieldLabelText: 'DOB',
       //fieldHintText: 'Month/Date/Year',
