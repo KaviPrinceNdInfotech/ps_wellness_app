@@ -4,7 +4,9 @@ import 'package:ps_welness/modules_view/1_user_section_views/lab/choose_lab/lab_
 import 'package:ps_welness/modules_view/1_user_section_views/lab/choose_lab/lab_components/head_text.dart';
 
 class ChooseLab extends StatelessWidget {
-  const ChooseLab({Key? key}) : super(key: key);
+  ChooseLab({Key? key}) : super(key: key);
+
+  //LabListController _labListController = Get.put(LabListController());
 
   @override
   Widget build(BuildContext context) {

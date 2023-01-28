@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:ps_welness/model/4_nurse_all_models/nurse_appointment.dart';
+import 'package:ps_welness/model/4_nurse_all_models/nurse_appointment_details_list.dart';
 import 'package:ps_welness/servicess_api/api_services_all_api.dart';
 //import 'package:intl/intl.dart';
 
@@ -16,14 +16,14 @@ class NurseAppointmentDetailController extends GetxController {
 
   var appointment = ''.obs;
 
-  NurseAppointment? appointmentdetail;
+  NurseAppointmentDetail? nurseappointmentdetail;
 
   //all catagary list .........
 
   void nurseappointmentApi() async {
     isLoading(true);
-    appointmentdetail = await ApiProvider.NurseappointmentApi();
-    if (appointmentdetail == null
+    nurseappointmentdetail = await ApiProvider.NurseappointmentApi();
+    if (nurseappointmentdetail == null
         //appointmentdetail != null
         //getcatagartlist!.result!.isNotEmpty
         ) {

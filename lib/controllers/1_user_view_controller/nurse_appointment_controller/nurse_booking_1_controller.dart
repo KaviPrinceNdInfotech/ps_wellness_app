@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:ps_welness/model/1_user_model/nurse_appointment_models/nurse_type_model.dart';
+import 'package:ps_welness/servicess_api/api_services_all_api.dart';
 
 class NurseBooking1Controller extends GetxController {
   final GlobalKey<FormState> NurseBookingformkey = GlobalKey<FormState>();
+  RxBool isLoading = true.obs;
 
   var selectedTime = TimeOfDay.now().obs;
   var selectedDate = DateTime.now().obs;
   RxInt selectedIndex = 0.obs;
   var newpickedDate = DateTime.now().obs;
-  RxBool isLoading = false.obs;
+  //RxBool isLoading = false.obs;
 
   late TextEditingController appointmentController1;
   late TextEditingController appointmentController2;
@@ -18,6 +21,7 @@ class NurseBooking1Controller extends GetxController {
 
   ///this is for State....................................
   Rx<String?> selectedCity = (null as String?).obs;
+  final selectednurse = "".obs;
   RxList<String> cities = <String>[].obs;
 
   var selectedServicee = ''.obs;
@@ -51,6 +55,20 @@ class NurseBooking1Controller extends GetxController {
   Rx<String?> selectedState = (null as String?).obs;
   RxList<String> states = <String>[].obs;
 
+  NurseList? nurseListUser;
+
+  void labListApi() async {
+    isLoading(true);
+    nurseListUser = await ApiProvider.NurseTypeApi();
+    print('Prince lab list');
+    print(nurseListUser);
+    if (nurseListUser != null) {
+      //Get.to(() => TotalPrice());
+      isLoading(false);
+      //Get.to(()=>Container());
+    }
+  }
+
   late TextEditingController nameController,
       emailController,
       passwordController,
@@ -71,6 +89,7 @@ class NurseBooking1Controller extends GetxController {
   void onInit() {
     states.refresh();
     super.onInit();
+    labListApi();
     nameController = TextEditingController();
     emailController = TextEditingController();
     passwordController = TextEditingController();

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:ps_welness/model/1_user_model/health_checkup_list/health_checkup_list.dart';
+import 'package:ps_welness/servicess_api/api_services_all_api.dart';
 
 class LabHistoryController extends GetxController {
   final GlobalKey<FormState> labHistoryformkey = GlobalKey<FormState>();
@@ -9,7 +11,7 @@ class LabHistoryController extends GetxController {
   var selectedDate = DateTime.now().obs;
   RxInt selectedIndex = 0.obs;
   var newpickedDate = DateTime.now().obs;
-  RxBool isLoading = false.obs;
+  //RxBool isLoading = false.obs;
 
   late TextEditingController appointmentController1;
   late TextEditingController appointmentController2;
@@ -26,6 +28,22 @@ class LabHistoryController extends GetxController {
   var selectedhours = ''.obs;
 
   var selectedshift = ''.obs;
+
+  RxBool isLoading = true.obs;
+
+  HealthCheckupList? healthCheckupList;
+
+  void labListApi() async {
+    isLoading(true);
+    healthCheckupList = await ApiProvider.LabListDrowerApi();
+    print('Prince lab list');
+    print(healthCheckupList);
+    if (healthCheckupList?.viewMoreHealth != null) {
+      //Get.to(() => TotalPrice());
+      isLoading(false);
+      //Get.to(()=>Container());
+    }
+  }
 
   //radio.........
 
@@ -55,6 +73,7 @@ class LabHistoryController extends GetxController {
   void onInit() {
     states.refresh();
     super.onInit();
+    labListApi();
 
     appointmentController1 = TextEditingController();
     appointmentController1.text = "DD-MM-YYYY";
@@ -69,7 +88,16 @@ class LabHistoryController extends GetxController {
   }
 
   @override
-  void onClose() {}
+  void onClose() {
+    healthCheckupList = null;
+    super.onClose();
+  }
+
+  @override
+  void dispose() {
+    healthCheckupList = null;
+    super.dispose();
+  }
 
   chooseDate() async {
     DateTime? newpickedDate = await showDatePicker(

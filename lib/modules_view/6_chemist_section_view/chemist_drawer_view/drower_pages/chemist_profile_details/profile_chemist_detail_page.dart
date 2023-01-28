@@ -21,6 +21,7 @@ class ChemistDetailProfile extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: MyTheme.white,
+
       // appBar: AppBar(
       //   elevation: 0,
       //   backgroundColor: MyTheme.ThemeColors,
@@ -29,6 +30,7 @@ class ChemistDetailProfile extends StatelessWidget {
       //   ),
       //   centerTitle: true,
       // ),
+
       body: Obx(
         () => (_doctorProfileControllers.isLoading.value)
             ? Center(child: CircularProgressIndicator())

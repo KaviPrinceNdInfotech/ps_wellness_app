@@ -22,7 +22,7 @@ class Nursebooking1Credentials extends StatelessWidget {
   // User_1_Controller _user_1_controller = Get.put(User_1_Controller());
 
   var items = [
-    'Item 1',
+    'Technician',
     'Item 2',
     'Item 3',
     'Item 4',
@@ -46,6 +46,47 @@ class Nursebooking1Credentials extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              NeumorphicTextFieldContainer(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
+                  child: Obx(
+                    () => DropdownButtonFormField(
+                        //icon: Icon(Icons.location_city),
+                        value: _nurseBooking1Controller.selectednurse.value,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.account_circle,
+                            color: Colors.black,
+                          ),
+                          enabledBorder: InputBorder.none,
+                          border: InputBorder.none,
+                        ),
+                        hint: Text('Selected Nurse'),
+                        items: items.map((String items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Text(
+                              items,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: size.height * 0.015,
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          _nurseBooking1Controller.selectednurse.value =
+                              newValue!;
+                          // _hospital_2_controller.states.value =
+                          //     newValue! as List<String>;
+                          // _hospital_2_controller.selectedCity.value = null;
+                          // _hospital_2_controller.cities.clear();
+                          // _hospital_2_controller.cities
+                          //     .addAll(stateCityMap[newvalue]!);
+                        }),
+                  ),
+                ),
+              ),
               Text(
                 'Nurse Type',
                 style: TextStyle(

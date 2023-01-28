@@ -9,10 +9,8 @@ import '../../../controllers/4_nurse_controller/nurse_appointment_history_contro
 
 class NursePaymentHistory extends StatelessWidget {
   NursePaymentHistory({Key? key}) : super(key: key);
-
   NursepaymentController _nursepaymentController =
       Get.put(NursepaymentController());
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -165,7 +163,7 @@ class NursePaymentHistory extends StatelessWidget {
                       height: size.height * 0.71,
                       child: ListView.builder(
                           shrinkWrap: true,
-                          itemCount: 5,
+                          itemCount: 1,
                           itemBuilder: (BuildContext context, int index) {
                             return Stack(
                               clipBehavior: Clip.none,
@@ -189,6 +187,7 @@ class NursePaymentHistory extends StatelessWidget {
                                       //       lightPrimary,
                                       //       darkPrimary,
                                       //     ]),
+
                                       boxShadow: [
                                         BoxShadow(
                                           offset: Offset(-0, -0),
@@ -322,60 +321,54 @@ class NursePaymentHistory extends StatelessWidget {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    'Rahul Mishra',
+                                                    'Jk Kumar',
                                                     style: GoogleFonts.raleway(
                                                         color: MyTheme.blueww,
-
                                                         fontWeight:
                                                             FontWeight.w700,
                                                         fontSize:
                                                             size.width * 0.035),
                                                   ),
                                                   Text(
-                                                    '0977889999',
+                                                    '0667546794',
                                                     style: GoogleFonts.raleway(
                                                         color: MyTheme.blueww,
-
                                                         fontWeight:
                                                             FontWeight.w700,
                                                         fontSize:
                                                             size.width * 0.035),
                                                   ),
                                                   Text(
-                                                    '₹ 6000',
+                                                    '₹ 4000',
                                                     style: GoogleFonts.raleway(
                                                         color: MyTheme.blueww,
-
                                                         fontWeight:
                                                             FontWeight.w700,
                                                         fontSize:
                                                             size.width * 0.035),
                                                   ),
                                                   Text(
-                                                    '33njkn99',
+                                                    '87897jjjk',
                                                     style: GoogleFonts.raleway(
                                                         color: MyTheme.blueww,
-
                                                         fontWeight:
                                                             FontWeight.w700,
                                                         fontSize:
                                                             size.width * 0.035),
                                                   ),
                                                   Text(
-                                                    '22 nov 2022',
+                                                    '29 Jan 2023',
                                                     style: GoogleFonts.raleway(
                                                         color: MyTheme.blueww,
-
                                                         fontWeight:
                                                             FontWeight.w700,
                                                         fontSize:
                                                             size.width * 0.035),
                                                   ),
                                                   Text(
-                                                    '8:00 am',
+                                                    '9:00 am',
                                                     style: GoogleFonts.raleway(
                                                         color: MyTheme.blueww,
-
                                                         fontWeight:
                                                             FontWeight.w700,
                                                         fontSize:

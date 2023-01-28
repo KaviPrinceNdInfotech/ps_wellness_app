@@ -3,10 +3,13 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/controllers/9_doctor_controllers/patient_list_controller.dart';
 //import 'package:ps_welness/modules_view/doctor_appointment_details/doctors_lists/doctor_list_appointment.dart';
 
 class AppointmentDetails extends StatelessWidget {
   AppointmentDetails({Key? key}) : super(key: key);
+  PatientListController _patientListController =
+      Get.put(PatientListController());
 
   final List<String> doctorcatagary = [
     'Cardiologist',
@@ -24,6 +27,11 @@ class AppointmentDetails extends StatelessWidget {
     'Neurologist',
     'Veterinarian',
     'Cardiothoracic',
+  ];
+
+  final List<String> name = [
+    'Raman',
+    'Sohan',
   ];
 
   final List<String> catimage = [
@@ -60,7 +68,12 @@ class AppointmentDetails extends StatelessWidget {
           ])),
       child: Scaffold(
         backgroundColor: Colors.grey.shade100,
-        body: Column(
+        body:
+            // Obx(
+            //   () => (_patientListController.isLoading.value)
+            //       ? Center(child: CircularProgressIndicator())
+            //       :
+            Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Material(
@@ -150,10 +163,19 @@ class AppointmentDetails extends StatelessWidget {
                 ),
               ),
             ),
+            // Obx(
+            //    () => (_patientListController.isLoading.value)
+            //        ? Center(child: CircularProgressIndicator())
+            //        : _patientListController.patientList != null
+            //            ?
+            //    Center(
+            //                child: Text('No List'),
+            //              )
+            //            :
             SizedBox(
               height: size.height * 0.74,
               child: ListView.builder(
-                  itemCount: 7,
+                  itemCount: name.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
                       padding: EdgeInsets.symmetric(
@@ -198,7 +220,12 @@ class AppointmentDetails extends StatelessWidget {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Text(
-                                      'Kumar Prince',
+                                      // _patientListController
+                                      //     .patientList!
+                                      //     .patientName
+                                      //     .toString(),
+                                      //'Kumar Shivam',
+                                      name[index],
                                       style: TextStyle(
                                         fontSize: size.height * 0.02,
                                         fontWeight: FontWeight.w800,
@@ -206,7 +233,7 @@ class AppointmentDetails extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      'Sugar Patient',
+                                      'Heart Patient',
                                       style: TextStyle(
                                         fontSize: size.height * 0.016,
                                         fontWeight: FontWeight.w500,
@@ -215,7 +242,7 @@ class AppointmentDetails extends StatelessWidget {
                                     ),
                                     //Spacer(),
                                     Text(
-                                      'Noida Sector 2 C53 110096 UP',
+                                      'Noida Sector 12 110096 UP',
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
@@ -234,7 +261,7 @@ class AppointmentDetails extends StatelessWidget {
                                 children: [
                                   Icon(Icons.calendar_today),
                                   Text(
-                                    '02 Dec 2022',
+                                    '04 Dec 2022',
                                     style: TextStyle(
                                       fontSize: size.height * 0.016,
                                       fontWeight: FontWeight.w600,
@@ -242,7 +269,7 @@ class AppointmentDetails extends StatelessWidget {
                                   ),
                                   //Spacer(),
                                   Text(
-                                    '11 am',
+                                    '12 am',
                                     style: TextStyle(
                                       fontSize: size.height * 0.017,
                                       fontWeight: FontWeight.w600,

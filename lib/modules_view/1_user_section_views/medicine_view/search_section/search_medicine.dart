@@ -5,12 +5,14 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/controllers/1_user_view_controller/lab_controller/lab_list_controller.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/medicine_view/medicine_cart_section/medicine_cart_sections.dart';
 
 import '../../../../controllers/1_user_view_controller/nurse_history_controller/nurse_history.dart';
 
 class SearchMedicine extends StatelessWidget {
   SearchMedicine({Key? key}) : super(key: key);
+  LabListController _labListController = Get.put(LabListController());
 
   NurseHistoryController _nurseHistoryController =
       Get.put(NurseHistoryController());
@@ -56,7 +58,7 @@ class SearchMedicine extends StatelessWidget {
                     data: Theme.of(context)
                         .copyWith(splashColor: Colors.transparent),
                     child: Obx(
-                      () => (_nurseHistoryController.isLoading.value)
+                      () => (_labListController.isLoading.value)
                           ? Center(child: CircularProgressIndicator())
                           : TextField(
                               // controller: _nurseHistoryController
@@ -118,7 +120,7 @@ class SearchMedicine extends StatelessWidget {
                 height: size.height * 0.73,
                 child: ListView.builder(
                     shrinkWrap: true,
-                    itemCount: 3,
+                    itemCount: 1,
                     itemBuilder: (BuildContext context, int index) {
                       return Padding(
                         padding: EdgeInsets.symmetric(
@@ -228,7 +230,7 @@ class SearchMedicine extends StatelessWidget {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'DOLO 650',
+                                            'Flexion',
                                             style: GoogleFonts.roboto(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w800,
@@ -236,7 +238,7 @@ class SearchMedicine extends StatelessWidget {
                                             ),
                                           ),
                                           Text(
-                                            'Cipla',
+                                            'Bharat Biotech',
                                             style: GoogleFonts.roboto(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w800,
@@ -244,7 +246,7 @@ class SearchMedicine extends StatelessWidget {
                                             ),
                                           ),
                                           Text(
-                                            'Tablet',
+                                            'Capsule',
                                             style: GoogleFonts.roboto(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w800,
@@ -252,7 +254,7 @@ class SearchMedicine extends StatelessWidget {
                                             ),
                                           ),
                                           Text(
-                                            'jbhjkbjk',
+                                            'It is good medicine',
                                             style: GoogleFonts.roboto(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w800,

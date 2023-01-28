@@ -4,11 +4,10 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/controllers/complaint_controller/complaint_controller.dart';
+import 'package:ps_welness/modules_view/circular_loader/circular_loaders.dart';
 //import 'package:ps_welness/modules_view/home_page_view/home_page.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
-
-import '../../../../home_page_view/home_page.dart';
 
 class ComplaintCredentials extends StatelessWidget {
   ComplaintCredentials({Key? key}) : super(key: key);
@@ -18,11 +17,11 @@ class ComplaintCredentials extends StatelessWidget {
   ComplaintController _complaintController = Get.put(ComplaintController());
 
   var items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
+    'Nurse',
+    'Doctor',
+    'Medicine',
+    'Lab',
+    'Driver',
   ];
 
   get newvalue => null!;
@@ -162,7 +161,10 @@ class ComplaintCredentials extends StatelessWidget {
             RectangularButton(
                 text: 'SUBMIT',
                 press: () {
-                  Get.to(HomePage());
+                  CallLoader.loader();
+                  _complaintController.checkUser3();
+                  //_loginpasswordController.checkLoginpassword();
+                  //Get.to(HomePage());
                   //_loginpasswordController.checkLoginpassword();
                 })
           ],

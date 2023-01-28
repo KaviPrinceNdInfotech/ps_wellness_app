@@ -437,11 +437,11 @@ class Rwa3Credentials extends StatelessWidget {
   User_1_Controller _user_1_controller = Get.put(User_1_Controller());
 
   var items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
+    'UP',
+    'Noida',
+    'Bihar',
+    'Patna',
+    'MP',
   ];
 
   get newvalue => null!;
@@ -556,35 +556,35 @@ class Rwa3Credentials extends StatelessWidget {
             ),
 
             ///Todo: confirm password...........
-            NeumorphicTextFieldContainer(
-              child: TextFormField(
-                controller: _user_1_controller.confirmpasswordController,
-                onSaved: (value) {
-                  _user_1_controller.confirmpassword = value!;
-                },
-                validator: (value) {
-                  return _user_1_controller.validConfirmPassword(value!);
-                },
-                cursorColor: Colors.black,
-                obscureText: false,
-                decoration: InputDecoration(
-                  hintText: 'Confirm Password',
-                  helperStyle: TextStyle(
-                    color: black.withOpacity(0.7),
-                    fontSize: 18,
-                  ),
-                  prefixIcon: Icon(
-                    Icons.phonelink_lock,
-                    color: black.withOpacity(0.7),
-                    size: 20,
-                  ),
-                  border: InputBorder.none,
-                ),
-                keyboardType: TextInputType.visiblePassword,
-                //obscureText: true,
-                //controller: _loginpasswordController.mobileController,
-              ),
-            ),
+            // NeumorphicTextFieldContainer(
+            //   child: TextFormField(
+            //     controller: _user_1_controller.confirmpasswordController,
+            //     onSaved: (value) {
+            //       _user_1_controller.confirmpassword = value!;
+            //     },
+            //     validator: (value) {
+            //       return _user_1_controller.validConfirmPassword(value!);
+            //     },
+            //     cursorColor: Colors.black,
+            //     obscureText: false,
+            //     decoration: InputDecoration(
+            //       hintText: 'Confirm Password',
+            //       helperStyle: TextStyle(
+            //         color: black.withOpacity(0.7),
+            //         fontSize: 18,
+            //       ),
+            //       prefixIcon: Icon(
+            //         Icons.phonelink_lock,
+            //         color: black.withOpacity(0.7),
+            //         size: 20,
+            //       ),
+            //       border: InputBorder.none,
+            //     ),
+            //     keyboardType: TextInputType.visiblePassword,
+            //     //obscureText: true,
+            //     //controller: _loginpasswordController.mobileController,
+            //   ),
+            // ),
             SizedBox(
               height: size.height * 0.02,
             ),
@@ -664,40 +664,40 @@ class Rwa3Credentials extends StatelessWidget {
             NeumorphicTextFieldContainer(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
-                child: Obx(
-                  () => DropdownButtonFormField(
-                      value: _user_1_controller.selectedState.value,
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.real_estate_agent,
-                          color: Colors.black,
-                        ),
-                        enabledBorder: InputBorder.none,
-                        border: InputBorder.none,
-                      ),
-                      hint: Text('Select State'),
-                      items: items.map((String items) {
-                        return DropdownMenuItem(
-                          value: items,
-                          child: Text(
-                            items,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.height * 0.015,
-                            ),
-                          ),
-                        );
-                      }).toList(),
-                      onChanged: (String? newValue) {
-                        _user_1_controller.selectedState.value = newValue!;
-                        // _hospital_2_controller.states.value =
-                        //     newValue! as List<String>;
-                        // _hospital_2_controller.selectedCity.value = null;
-                        // _hospital_2_controller.cities.clear();
-                        // _hospital_2_controller.cities
-                        //     .addAll(stateCityMap[newvalue]!);
-                      }),
-                ),
+                // child: Obx(
+                //   () => DropdownButtonFormField(
+                //       value: _user_1_controller.selectedState.value,
+                //       decoration: InputDecoration(
+                //         prefixIcon: Icon(
+                //           Icons.real_estate_agent,
+                //           color: Colors.black,
+                //         ),
+                //         enabledBorder: InputBorder.none,
+                //         border: InputBorder.none,
+                //       ),
+                //       hint: Text('Select State'),
+                //       items: items.map((String items) {
+                //         return DropdownMenuItem(
+                //           value: items,
+                //           child: Text(
+                //             items,
+                //             style: TextStyle(
+                //               fontWeight: FontWeight.w600,
+                //               fontSize: size.height * 0.015,
+                //             ),
+                //           ),
+                //         );
+                //       }).toList(),
+                //       onChanged: (String? newValue) {
+                //         _user_1_controller.selectedState.value = newValue!;
+                //         // _hospital_2_controller.states.value =
+                //         //     newValue! as List<String>;
+                //         // _hospital_2_controller.selectedCity.value = null;
+                //         // _hospital_2_controller.cities.clear();
+                //         // _hospital_2_controller.cities
+                //         //     .addAll(stateCityMap[newvalue]!);
+                //       }),
+                // ),
               ),
             ),
 
@@ -710,41 +710,41 @@ class Rwa3Credentials extends StatelessWidget {
             NeumorphicTextFieldContainer(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
-                child: Obx(
-                  () => DropdownButtonFormField(
-                      //icon: Icon(Icons.location_city),
-                      value: _user_1_controller.selectedCity.value,
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.location_city,
-                          color: Colors.black,
-                        ),
-                        enabledBorder: InputBorder.none,
-                        border: InputBorder.none,
-                      ),
-                      hint: Text('Selected City'),
-                      items: items.map((String items) {
-                        return DropdownMenuItem(
-                          value: items,
-                          child: Text(
-                            items,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: size.height * 0.015,
-                            ),
-                          ),
-                        );
-                      }).toList(),
-                      onChanged: (String? newValue) {
-                        _user_1_controller.selectedCity.value = newValue!;
-                        // _hospital_2_controller.states.value =
-                        //     newValue! as List<String>;
-                        // _hospital_2_controller.selectedCity.value = null;
-                        // _hospital_2_controller.cities.clear();
-                        // _hospital_2_controller.cities
-                        //     .addAll(stateCityMap[newvalue]!);
-                      }),
-                ),
+                // child: Obx(
+                //   () => DropdownButtonFormField(
+                //       //icon: Icon(Icons.location_city),
+                //       value: _user_1_controller.selectedCity.value,
+                //       decoration: InputDecoration(
+                //         prefixIcon: Icon(
+                //           Icons.location_city,
+                //           color: Colors.black,
+                //         ),
+                //         enabledBorder: InputBorder.none,
+                //         border: InputBorder.none,
+                //       ),
+                //       hint: Text('Selected City'),
+                //       items: items.map((String items) {
+                //         return DropdownMenuItem(
+                //           value: items,
+                //           child: Text(
+                //             items,
+                //             style: TextStyle(
+                //               fontWeight: FontWeight.w600,
+                //               fontSize: size.height * 0.015,
+                //             ),
+                //           ),
+                //         );
+                //       }).toList(),
+                //       onChanged: (String? newValue) {
+                //         _user_1_controller.selectedCity.value = newValue!;
+                //         // _hospital_2_controller.states.value =
+                //         //     newValue! as List<String>;
+                //         // _hospital_2_controller.selectedCity.value = null;
+                //         // _hospital_2_controller.cities.clear();
+                //         // _hospital_2_controller.cities
+                //         //     .addAll(stateCityMap[newvalue]!);
+                //       }),
+                // ),
               ),
             ),
 
