@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/model/1_user_model/city_model/city_modelss.dart';
+import 'package:ps_welness/model/1_user_model/states_model/state_modells.dart';
+import 'package:ps_welness/model/1_user_model/test_name_model/test_name_modells.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/lab/lab_catagary/choose_catagary.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
@@ -67,7 +70,7 @@ class LabCredentials extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
                   child: Obx(
-                    () => DropdownButtonFormField(
+                    () => DropdownButtonFormField<StateModel>(
                         value: _chooseLabController.selectedState.value,
                         decoration: InputDecoration(
                           prefixIcon: Icon(
@@ -78,11 +81,12 @@ class LabCredentials extends StatelessWidget {
                           border: InputBorder.none,
                         ),
                         hint: Text('Select State'),
-                        items: items.map((String items) {
+                        items:
+                            _chooseLabController.states.map((StateModel state) {
                           return DropdownMenuItem(
-                            value: items,
+                            value: state,
                             child: Text(
-                              items,
+                              state.stateName,
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: size.height * 0.015,
@@ -90,8 +94,9 @@ class LabCredentials extends StatelessWidget {
                             ),
                           );
                         }).toList(),
-                        onChanged: (String? newValue) {
+                        onChanged: (StateModel? newValue) {
                           _chooseLabController.selectedState.value = newValue!;
+                          _chooseLabController.selectedCity.value = null;
                           // _hospital_2_controller.states.value =
                           //     newValue! as List<String>;
                           // _hospital_2_controller.selectedCity.value = null;
@@ -122,7 +127,7 @@ class LabCredentials extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
                   child: Obx(
-                    () => DropdownButtonFormField(
+                    () => DropdownButtonFormField<City>(
                         //icon: Icon(Icons.location_city),
                         value: _chooseLabController.selectedCity.value,
                         decoration: InputDecoration(
@@ -134,11 +139,11 @@ class LabCredentials extends StatelessWidget {
                           border: InputBorder.none,
                         ),
                         hint: Text('Selected City'),
-                        items: items.map((String items) {
+                        items: _chooseLabController.cities.map((City city) {
                           return DropdownMenuItem(
-                            value: items,
+                            value: city,
                             child: Text(
-                              items,
+                              city.cityName,
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: size.height * 0.015,
@@ -146,7 +151,10 @@ class LabCredentials extends StatelessWidget {
                             ),
                           );
                         }).toList(),
-                        onChanged: (String? newValue) {
+                        onTap: () {
+                          _chooseLabController.refresh();
+                        },
+                        onChanged: (City? newValue) {
                           _chooseLabController.selectedCity.value = newValue!;
                           // _hospital_2_controller.states.value =
                           //     newValue! as List<String>;
@@ -180,7 +188,7 @@ class LabCredentials extends StatelessWidget {
                     () => DropdownButtonFormField(
                         // menuMaxHeight: size.height * 0.06,
                         //icon: Icon(Icons.location_city),
-                        value: _chooseLabController.selectedCity2.value,
+                        value: _chooseLabController.selectedTest.value,
                         decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.text_snippet_outlined,
@@ -190,20 +198,22 @@ class LabCredentials extends StatelessWidget {
                           border: InputBorder.none,
                         ),
                         hint: Text('Selected Test'),
-                        items: items.map((String items) {
+                        items: _chooseLabController.tests.map((TestModel test) {
                           return DropdownMenuItem(
-                            value: items,
+                            value: test,
                             child: Text(
-                              items,
+                              test.testName,
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                fontSize: size.height * 0.015,
+                                fontSize: size.height * 0.013,
                               ),
                             ),
                           );
                         }).toList(),
-                        onChanged: (String? newValue) {
-                          _chooseLabController.selectedCity2.value = newValue!;
+                        onChanged: (TestModel? newValue) {
+                          _chooseLabController.selectedTest.value = newValue!;
+                          //_chooseLabController.selectedTest.value= null;
+                          //_chooseLabController.selectedCity2.value = newValue!;
                           // _hospital_2_controller.states.value =
                           //     newValue! as List<String>;
                           // _hospital_2_controller.selectedCity.value = null;

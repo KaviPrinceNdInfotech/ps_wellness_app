@@ -7,17 +7,12 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/home_page_user_view/user_home_page.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/drawer_pages_user/complaint_page_user/complaint_page.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/drawer_pages_user/doctor_history/doctor_history_user.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/drawer_pages_user/user_profile_details/profile_user_detail_page.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/user_drawer/reports_section/report_section_list.dart'; //import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
 
-//import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_page.dart';
-//import 'package:ps_welness/modules_view/drawer_view/drower_pages/profile_page_view/profile_view.dart';
-//import 'package:ps_welness/modules_view/drawer_view/drower_pages/supports/support_view.dart';
-//import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
-
 import '../../9_doctor_section_view/drawer_view/drower_pages/about_us/about_us.dart';
-import '../../9_doctor_section_view/drawer_view/drower_pages/complaint_page/complaint_page.dart';
 import '../../9_doctor_section_view/drawer_view/drower_pages/supports/support_view.dart';
 import '../../forget_password_view/forget_password_view.dart';
 import 'drawer_pages_user/lab_appointment_history/lab_history.dart';
@@ -438,14 +433,14 @@ class UserMainDrawer extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     color: MyTheme.blueww),
               ),
-              tileColor: Get.currentRoute == '/ComplaintPage'
+              tileColor: Get.currentRoute == '/ComplaintPageUser'
                   ? Colors.grey[300]
                   : Colors.transparent,
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                Get.to(() => ComplaintPage());
-                Get.offNamed('/ComplaintPage');
+                Get.to(() => ComplaintPageUser());
+                Get.offNamed('/ComplaintPageUser');
               },
             ),
 

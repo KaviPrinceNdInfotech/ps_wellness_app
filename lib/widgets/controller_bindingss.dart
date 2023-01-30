@@ -9,6 +9,7 @@ import 'package:ps_welness/controllers/4_nurse_controller/nurse_appointment_deta
 import 'package:ps_welness/controllers/9_doctor_controllers/doctor_payment_controller/doctor_payment_detail_controller.dart';
 import 'package:ps_welness/controllers/9_doctor_controllers/doctor_profile_controller.dart';
 import 'package:ps_welness/controllers/9_doctor_controllers/patient_report_view_controller.dart';
+import 'package:ps_welness/controllers/doctor_controllers/doctor_complain_controller/doctor_complain_controllers.dart';
 
 import '../controllers/9_doctor_controllers/doctor_drawer_controllers/doctor_profile_controller.dart';
 import '../controllers/user_controller/user_controller_1.dart';
@@ -35,6 +36,7 @@ class ControllerBinding extends Bindings {
     Get.put(LabHistoryController());
     Get.put(LabHistoryController());
     Get.put(User_1_Controller());
+    Get.put(DoctorComplaintController());
 
     //Get.put(CatagaryByIdController());
   }

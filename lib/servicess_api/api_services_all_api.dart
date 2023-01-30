@@ -8,6 +8,7 @@ import 'package:ps_welness/model/1_user_model/health_chekup_list_views/health_ch
 import 'package:ps_welness/model/1_user_model/lab_list_models.dart';
 import 'package:ps_welness/model/1_user_model/nurse_appointment_models/nurse_type_model.dart';
 import 'package:ps_welness/model/1_user_model/states_model/state_modells.dart';
+import 'package:ps_welness/model/1_user_model/test_name_model/test_name_modells.dart';
 import 'package:ps_welness/model/4_nurse_all_models/nurse_appointment_details_list.dart';
 import 'package:ps_welness/model/9_doctors_model/doctor_profile_model.dart';
 import 'package:ps_welness/model/9_doctors_model/view_patient_report_model.dart';
@@ -21,14 +22,14 @@ class ApiProvider {
   //'http://pswellness.in/';
   static String token = '';
   static String Token = '';
-  static String catid = '';
-  static String productid = '';
-  static String orderid = '';
+  //static String catid = '';
+  //static String productid = '';
+  //static String orderid = '';
   static String Id = ''.toString();
-  static String prodid = '';
-  static String cartlistid = '';
-  static String addressid = '';
-  static String Message = "";
+  //static String prodid = '';
+  //static String cartlistid = '';
+  //static String addressid = '';
+  //static String Message = "";
 
   ///TODO: here we have to add different api in this page...........
   /// TODO: from here user 1 section...........
@@ -109,10 +110,10 @@ class ApiProvider {
       Id = prefs.read("Id").toString();
       print('&&&&&&&&&&&&&&&&&&&&&&:${Id}');
 
-      // //saved token.........
-      // prefs.write("token".toString(), json.decode(r.body)['token']);
-      // token = prefs.read("token").toString();
-      // print(token);
+      //saved token.........
+      prefs.write("token".toString(), json.decode(r.body)['token']);
+      token = prefs.read("token").toString();
+      print(token);
       return r;
     } else if (r.statusCode == 401) {
       Get.snackbar('message', r.body);
@@ -166,6 +167,23 @@ class ApiProvider {
     } else {
       Get.snackbar('Error', r.body);
       return r;
+    }
+  }
+
+  ///lab test name Api get ...........................
+  static Future<List<TestModel>> getTestNameApi() async {
+    var url = "http://test.pswellness.in/api/CommonApi/TestList";
+    try {
+      http.Response r = await http.get(Uri.parse(url));
+      print(r.body.toString());
+      if (r.statusCode == 200) {
+        var testnameData = testNameModelFromJson(r.body);
+        return testnameData.tests;
+      } else {
+        return [];
+      }
+    } catch (error) {
+      return [];
     }
   }
 
@@ -323,6 +341,52 @@ class ApiProvider {
       }
     } catch (error) {
       return;
+    }
+  }
+
+  //complain_register doctor api................
+
+  static doctorComplainApi(
+    var Login_Id,
+    var Subjects,
+    var Complaints,
+    var IsDeleted,
+    var IsResolved,
+    var Others,
+  ) async {
+    var url = baseUrl + 'api/ComplaintApi/DoctorComplaint';
+
+    var body = {
+      "Login_Id": Login_Id,
+      "Subjects": Subjects,
+      "Complaints": Complaints,
+      "IsDeleted": IsDeleted,
+      "IsResolved": IsResolved,
+      "Others": Others,
+    };
+    print(body);
+    http.Response r = await http.post(
+      Uri.parse(url), body: body,
+      //headers: headers
+    );
+    print(r.body);
+    if (r.statusCode == 200) {
+      var prefs = GetStorage();
+      //saved id..........
+      // prefs.write("Id".toString(), json.decode(r.body)['Id']);
+      // Id = prefs.read("Id").toString();
+      // print('&&&&&&&&&&&&&&&&&&&&&&:${Id}');
+      ///
+      // //saved token.........
+      // prefs.write("token".toString(), json.decode(r.body)['token']);
+      // token = prefs.read("token").toString();
+      // print(token);
+      return r;
+    } else if (r.statusCode == 401) {
+      Get.snackbar('message', r.body);
+    } else {
+      Get.snackbar('Error', r.body);
+      return r;
     }
   }
 

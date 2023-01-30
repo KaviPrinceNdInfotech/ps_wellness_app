@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/controllers/9_doctor_controllers/doctor_profile_controller.dart';
 import 'package:ps_welness/modules_view/9_doctor_section_view/drawer_view/drower_pages/profile_details_doctor/profile_doctor_detail_page.dart';
 
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/about_us/about_us.dart';
@@ -21,6 +22,8 @@ import 'drower_pages/skils_view/add_skils/add_skils_todo.dart';
 import 'drower_pages/supports/support_view.dart';
 
 class MainDrawer extends StatelessWidget {
+  DoctorProfileControllers _doctorProfileControllers =
+      Get.put(DoctorProfileControllers());
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -53,14 +56,19 @@ class MainDrawer extends StatelessWidget {
                       height: size.height * 0.01,
                     ),
                     Text(
-                      'Dr.Vineet Mishra',
+                      _doctorProfileControllers.doctorProfile!.doctorName
+                          .toString(),
+                      //'Dr.Vineet Mishra',
                       style: GoogleFonts.roboto(
                           fontSize: size.height * 0.023,
                           fontWeight: FontWeight.w700,
                           color: MyTheme.blueww),
                     ),
                     Text(
-                      'mishravineet@gmail.com',
+                      _doctorProfileControllers.doctorProfile!.emailId
+                          .toString()
+                      //'mishravineet@gmail.com'
+                      ,
                       style: GoogleFonts.roboto(
                           fontSize: size.height * 0.020,
                           fontWeight: FontWeight.w700,
@@ -204,6 +212,7 @@ class MainDrawer extends StatelessWidget {
                 Get.offNamed('/AddSkilsScreen');
               },
             ),
+
             ListTile(
               // horizontalTitleGap: 10,
               leading: Icon(
@@ -259,14 +268,14 @@ class MainDrawer extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     color: MyTheme.blueww),
               ),
-              tileColor: Get.currentRoute == '/ComplaintPage'
+              tileColor: Get.currentRoute == '/ComplaintPageDoctor'
                   ? Colors.grey[300]
                   : Colors.transparent,
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                Get.to(() => ComplaintPage());
-                Get.offNamed('/ComplaintPage');
+                Get.to(() => ComplaintPageDoctor());
+                Get.offNamed('/ComplaintPageDoctor');
               },
             ),
 

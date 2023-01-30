@@ -6,8 +6,8 @@ import 'complaint_components/head_text.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_components/credentials.dart';
 //import 'package:ps_welness/modules_view/drawer_view/drower_pages/complaint_page/complaint_components/head_text.dart';
 
-class ComplaintPage extends StatelessWidget {
-  const ComplaintPage({Key? key}) : super(key: key);
+class ComplaintPageDoctor extends StatelessWidget {
+  const ComplaintPageDoctor({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

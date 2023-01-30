@@ -7,11 +7,11 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/about_franchies/about_franchies.dart';
+import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/complaint_page/complaint_page.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/profile_details_franchies/profile_franchies_detail_page.dart';
 import 'package:ps_welness/modules_view/2_franchies_section_view/franchies_drawer_view/drower_pages/profile_page_view/franchiese_profile.dart';
 import 'package:ps_welness/modules_view/forget_password_view/forget_password_view.dart';
 
-import '../../10_lab_section_view/lab_drawer_view/drower_pages/complaint_page/complaint_page.dart';
 import 'drower_pages/supports/support_view.dart';
 
 class FranchiesisMainDrawer extends StatelessWidget {
@@ -254,14 +254,14 @@ class FranchiesisMainDrawer extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     color: MyTheme.blueww),
               ),
-              tileColor: Get.currentRoute == '/ComplaintPage'
+              tileColor: Get.currentRoute == '/ComplaintPageFranchies'
                   ? Colors.grey[300]
                   : Colors.transparent,
               onTap: () {
                 print(Get.currentRoute);
                 Get.back();
-                Get.to(() => ComplaintPage());
-                Get.offNamed('/ComplaintPage');
+                Get.to(() => ComplaintPageFranchies());
+                Get.offNamed('/ComplaintPageFranchies');
               },
             ),
             //AboutFranchiseeView
