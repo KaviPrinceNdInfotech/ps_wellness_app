@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:ps_welness/constants/my_theme.dart';
+import 'package:ps_welness/model/1_user_model/city_model/city_modelss.dart';
+import 'package:ps_welness/model/1_user_model/states_model/state_modells.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/doctorss/appointment_section/catagary/choose_catagary.dart';
 import 'package:ps_welness/widgets/widgets/neumorphic_text_field_container.dart';
 import 'package:ps_welness/widgets/widgets/rectangular_button.dart';
@@ -41,19 +44,30 @@ class DoctorAddressCredentials extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ///Todo: state............................
             SizedBox(
               height: size.height * 0.02,
             ),
 
-            ///
+            ///Todo: state............................
+            SizedBox(
+              height: size.height * 0.01,
+            ),
+
+            Text(
+              'Choose State',
+              style: TextStyle(
+                fontSize: size.height * 0.016,
+                fontWeight: FontWeight.bold,
+                color: MyTheme.blueww,
+              ),
+            ),
+
             NeumorphicTextFieldContainer(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
                 child: Obx(
-                  () => DropdownButtonFormField(
-                      value:
-                          _doctor_appointment_1_controller.selectedState.value,
+                      () => DropdownButtonFormField<StateModel>(
+                      value: _doctor_appointment_1_controller.selectedState.value,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.real_estate_agent,
@@ -63,11 +77,12 @@ class DoctorAddressCredentials extends StatelessWidget {
                         border: InputBorder.none,
                       ),
                       hint: Text('Select State'),
-                      items: items.map((String items) {
+                      items:
+                      _doctor_appointment_1_controller.states.map((StateModel state) {
                         return DropdownMenuItem(
-                          value: items,
+                          value: state,
                           child: Text(
-                            items,
+                            state.stateName,
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: size.height * 0.015,
@@ -75,9 +90,9 @@ class DoctorAddressCredentials extends StatelessWidget {
                           ),
                         );
                       }).toList(),
-                      onChanged: (String? newValue) {
-                        _doctor_appointment_1_controller.selectedState.value =
-                            newValue!;
+                      onChanged: (StateModel? newValue) {
+                        _doctor_appointment_1_controller.selectedState.value = newValue!;
+                        _doctor_appointment_1_controller.selectedCity.value = null;
                         // _hospital_2_controller.states.value =
                         //     newValue! as List<String>;
                         // _hospital_2_controller.selectedCity.value = null;
@@ -95,14 +110,22 @@ class DoctorAddressCredentials extends StatelessWidget {
               height: size.height * 0.02,
             ),
 
+            Text(
+              'Choose City',
+              style: TextStyle(
+                fontSize: size.height * 0.016,
+                fontWeight: FontWeight.bold,
+                color: MyTheme.blueww,
+              ),
+            ),
+
             NeumorphicTextFieldContainer(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
                 child: Obx(
-                  () => DropdownButtonFormField(
-                      //icon: Icon(Icons.location_city),
-                      value:
-                          _doctor_appointment_1_controller.selectedCity.value,
+                      () => DropdownButtonFormField<City>(
+                    //icon: Icon(Icons.location_city),
+                      value: _doctor_appointment_1_controller.selectedCity.value,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.location_city,
@@ -112,11 +135,11 @@ class DoctorAddressCredentials extends StatelessWidget {
                         border: InputBorder.none,
                       ),
                       hint: Text('Selected City'),
-                      items: items.map((String items) {
+                      items: _doctor_appointment_1_controller.cities.map((City city) {
                         return DropdownMenuItem(
-                          value: items,
+                          value: city,
                           child: Text(
-                            items,
+                            city.cityName,
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: size.height * 0.015,
@@ -124,9 +147,11 @@ class DoctorAddressCredentials extends StatelessWidget {
                           ),
                         );
                       }).toList(),
-                      onChanged: (String? newValue) {
-                        _doctor_appointment_1_controller.selectedCity.value =
-                            newValue!;
+                      onTap: () {
+                        _doctor_appointment_1_controller.refresh();
+                      },
+                      onChanged: (City? newValue) {
+                        _doctor_appointment_1_controller.selectedCity.value = newValue!;
                         // _hospital_2_controller.states.value =
                         //     newValue! as List<String>;
                         // _hospital_2_controller.selectedCity.value = null;
@@ -137,29 +162,6 @@ class DoctorAddressCredentials extends StatelessWidget {
                 ),
               ),
             ),
-
-            // child: DropdownButton(
-            //     value: _hospital_2_controller.selectedState.value,
-            //     menuMaxHeight: size.height * 0.3,
-            //     items: items.map((String items) {
-            //       return DropdownMenuItem(
-            //         value: items,
-            //         child: Text(items),
-            //       );
-            //     }).toList(),
-            //     // _hospital_2_controller.states.map((String value) {
-            //     //   return DropdownMenuItem(
-            //     //     value: value,
-            //     //
-            //     //   )
-            //     onChanged: (String? newValue) {
-            //       _hospital_2_controller.states.value =
-            //           newValue! as List<String>;
-            //       _hospital_2_controller.selectedCity.value = null;
-            //       _hospital_2_controller.cities.clear();
-            //       _hospital_2_controller.cities
-            //           .addAll(stateCityMap[newvalue]!);
-            //     })),
             SizedBox(
               height: size.height * 0.02,
             ),
@@ -168,6 +170,7 @@ class DoctorAddressCredentials extends StatelessWidget {
               height: size.height * 0.018,
               //appPadding / 2,
             ),
+
             SizedBox(
               height: size.height * 0.00,
               //appPadding / 2,
@@ -185,7 +188,8 @@ class DoctorAddressCredentials extends StatelessWidget {
             //       ),
             //     ),
             //   ),
-            // ),
+            // ),...............for..................
+
             RectangularButton(
                 text: 'Select category',
                 press: () {

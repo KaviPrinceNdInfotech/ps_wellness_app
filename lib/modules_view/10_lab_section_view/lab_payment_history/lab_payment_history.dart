@@ -160,232 +160,249 @@ class LabPaymentHistory extends StatelessWidget {
                   SizedBox(
                     height: size.height * 0.01,
                   ),
-                  SizedBox(
-                      height: size.height * 0.71,
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: 5,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Stack(
-                              clipBehavior: Clip.none,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: size.width * 0.03,
-                                      vertical: size.height * 0.0005),
-                                  child: Container(
-                                    height: size.height * 0.25,
-                                    margin:
-                                        EdgeInsets.symmetric(vertical: 30 / 5),
-                                    decoration: BoxDecoration(
-                                      color: MyTheme.containercolor8,
-                                      borderRadius: BorderRadius.circular(20),
+                  Obx(
+                      () => (_labpaymentController.isLoading.value)
+                      ? Center(child:  CircularProgressIndicator(),)
+                      :_labpaymentController.nurseappointmentdetail?.result == null
+                      ?Center(
+                        child: Text('No List'),
+                      )
+                    : SizedBox(
+                        height: size.height * 0.76,
+                        child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: _labpaymentController.nurseappointmentdetail?.result?.length,
+                            //5,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: size.width * 0.03,
+                                        vertical: size.height * 0.0005),
+                                    child: Container(
+                                      height: size.height * 0.25,
+                                      margin:
+                                          EdgeInsets.symmetric(vertical: 30 / 5),
+                                      decoration: BoxDecoration(
+                                        color: MyTheme.containercolor8,
+                                        borderRadius: BorderRadius.circular(20),
 
-                                      // gradient: LinearGradient(
-                                      //     begin: Alignment.centerLeft,
-                                      //     end: Alignment.centerRight,
-                                      //     colors: [
-                                      //       lightPrimary,
-                                      //       darkPrimary,
-                                      //     ]),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          offset: Offset(-0, -0),
-                                          spreadRadius: 0,
-                                          blurRadius: 0,
-                                          color: Colors.yellow.shade300,
+                                        // gradient: LinearGradient(
+                                        //     begin: Alignment.centerLeft,
+                                        //     end: Alignment.centerRight,
+                                        //     colors: [
+                                        //       lightPrimary,
+                                        //       darkPrimary,
+                                        //     ]),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            offset: Offset(-0, -0),
+                                            spreadRadius: 0,
+                                            blurRadius: 0,
+                                            color: Colors.yellow.shade300,
 
-                                          // color: darkShadow1,
-                                        ),
-                                        BoxShadow(
-                                          offset: Offset(3, 3),
-                                          spreadRadius: 0,
-                                          blurRadius: 0,
-                                          color: Colors.yellow.shade300,
-                                        ),
-                                      ],
-                                      // image: DecorationImage(
-                                      //     image: NetworkImage(
-                                      //         'https://images.unsplash.com/photo-1626624340240-aadc087844fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Ymx1ciUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'),
-                                      //     fit: BoxFit.cover)
-                                    ),
-                                    child: Stack(
-                                      //clipBehavior: Clip.none,
-                                      children: [
-                                        Positioned(
-                                          top: -70,
-                                          right: 260,
-                                          child: Container(
-                                            height: size.height * 0.2,
-                                            width: size.width * 0.4,
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              //color: Colors.blueGrey,
-                                              gradient: MyTheme.gradient8,
+                                            // color: darkShadow1,
+                                          ),
+                                          BoxShadow(
+                                            offset: Offset(3, 3),
+                                            spreadRadius: 0,
+                                            blurRadius: 0,
+                                            color: Colors.yellow.shade300,
+                                          ),
+                                        ],
+                                        // image: DecorationImage(
+                                        //     image: NetworkImage(
+                                        //         'https://images.unsplash.com/photo-1626624340240-aadc087844fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Ymx1ciUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'),
+                                        //     fit: BoxFit.cover)
+                                      ),
+                                      child: Stack(
+                                        //clipBehavior: Clip.none,
+                                        children: [
+                                          Positioned(
+                                            top: -70,
+                                            right: 260,
+                                            child: Container(
+                                              height: size.height * 0.2,
+                                              width: size.width * 0.4,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                //color: Colors.blueGrey,
+                                                gradient: MyTheme.gradient8,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        Positioned(
-                                          bottom: -120,
-                                          left: 200,
-                                          child: Container(
-                                            height: size.height * 0.32,
-                                            width: size.width * 0.62,
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              //color: Colors.blueGrey,
-                                              gradient: MyTheme.gradient81,
+                                          Positioned(
+                                            bottom: -120,
+                                            left: 200,
+                                            child: Container(
+                                              height: size.height * 0.32,
+                                              width: size.width * 0.62,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                //color: Colors.blueGrey,
+                                                gradient: MyTheme.gradient81,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceAround,
-                                            children: [
-                                              Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceAround,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Patient Name:',
-                                                    style: GoogleFonts.poppins(
-                                                      color: MyTheme.text1,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    'Patient Mobile :',
-                                                    style: GoogleFonts.poppins(
-                                                      color: MyTheme.text1,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    'Paid Amount:',
-                                                    style: GoogleFonts.poppins(
-                                                      color: MyTheme.text1,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    'Payment Id:',
-                                                    style: GoogleFonts.poppins(
-                                                      color: MyTheme.text1,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    'Date:',
-                                                    style: GoogleFonts.poppins(
-                                                      color: MyTheme.text1,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    'Time:',
-                                                    style: GoogleFonts.poppins(
-                                                      color: MyTheme.text1,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize:
-                                                          size.width * 0.035,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceAround,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Rahul Mishra',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: [
+                                                Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceAround,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Patient Name:',
+                                                      style: GoogleFonts.poppins(
+                                                        color: MyTheme.text1,
                                                         fontWeight:
-                                                            FontWeight.w700,
+                                                            FontWeight.w600,
                                                         fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                  Text(
-                                                    '0977889999',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
+                                                            size.width * 0.035,
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      'Patient Mobile :',
+                                                      style: GoogleFonts.poppins(
+                                                        color: MyTheme.text1,
                                                         fontWeight:
-                                                            FontWeight.w700,
+                                                            FontWeight.w600,
                                                         fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                  Text(
-                                                    '₹ 6000',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
+                                                            size.width * 0.035,
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      'Paid Amount:',
+                                                      style: GoogleFonts.poppins(
+                                                        color: MyTheme.text1,
                                                         fontWeight:
-                                                            FontWeight.w700,
+                                                            FontWeight.w600,
                                                         fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                  Text(
-                                                    '33njkn99',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
+                                                            size.width * 0.035,
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      'Payment Date:',
+                                                      style: GoogleFonts.poppins(
+                                                        color: MyTheme.text1,
                                                         fontWeight:
-                                                            FontWeight.w700,
+                                                            FontWeight.w600,
                                                         fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                  Text(
-                                                    '22 nov 2022',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
+                                                            size.width * 0.035,
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      'Date:',
+                                                      style: GoogleFonts.poppins(
+                                                        color: MyTheme.text1,
                                                         fontWeight:
-                                                            FontWeight.w700,
+                                                            FontWeight.w600,
                                                         fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                  Text(
-                                                    '8:00 am',
-                                                    style: GoogleFonts.raleway(
-                                                        color: MyTheme.blueww,
+                                                            size.width * 0.035,
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      'Time:',
+                                                      style: GoogleFonts.poppins(
+                                                        color: MyTheme.text1,
                                                         fontWeight:
-                                                            FontWeight.w700,
+                                                            FontWeight.w600,
                                                         fontSize:
-                                                            size.width * 0.035),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
+                                                            size.width * 0.035,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceAround,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      _labpaymentController.nurseappointmentdetail!.result![index].patientName.toString(),
+                                                      //'Rahul Mishra',
+                                                      style: GoogleFonts.raleway(
+                                                          color: MyTheme.blueww,
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          fontSize:
+                                                              size.width * 0.035),
+                                                    ),
+                                                    Text(
+                                                      _labpaymentController.nurseappointmentdetail!.result![index].contactNumber.toString(),
+
+                                                      //'0977889999',
+                                                      style: GoogleFonts.raleway(
+                                                          color: MyTheme.blueww,
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          fontSize:
+                                                              size.width * 0.035),
+                                                    ),
+                                                    Text(
+                                                      '₹ ${ _labpaymentController.nurseappointmentdetail!.result![index].totalFee.toString() }',
+                                                         // '//6000',
+                                                      style: GoogleFonts.raleway(
+                                                          color: MyTheme.blueww,
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          fontSize:
+                                                              size.width * 0.035),
+                                                    ),
+                                                    Text(
+                                                      _labpaymentController.nurseappointmentdetail!.result![index].serviceDate.toString(),
+
+                                                      //'33njkn99',
+                                                      style: GoogleFonts.raleway(
+                                                          color: MyTheme.blueww,
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          fontSize:
+                                                              size.width * 0.035),
+                                                    ),
+                                                    Text(
+                                                      _labpaymentController.nurseappointmentdetail!.result![index].paymentDate.toString(),
+                                                      //'22 nov 2022',
+                                                      style: GoogleFonts.raleway(
+                                                          color: MyTheme.blueww,
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          fontSize:
+                                                              size.width * 0.035),
+                                                    ),
+                                                    Text(
+                                                      _labpaymentController.nurseappointmentdetail!.result![index].rDate.toString(),
+                                                      //'8:00 am',
+                                                      style: GoogleFonts.raleway(
+                                                          color: MyTheme.blueww,
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          fontSize:
+                                                              size.width * 0.035),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
-                            );
-                          })),
+                                ],
+                              );
+                            })),
+                  ),
                 ],
               ),
 

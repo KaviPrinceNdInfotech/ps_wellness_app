@@ -6,13 +6,19 @@ import 'package:http/http.dart' as http;
 import 'package:ps_welness/model/1_user_model/health_checkup_list/health_checkup_list.dart';
 import 'package:ps_welness/model/1_user_model/health_chekup_list_views/health_checkup_list_views.dart';
 import 'package:ps_welness/model/1_user_model/lab_list_models.dart';
+import 'package:ps_welness/model/1_user_model/medicine_cart_list_model/medicine_cart_list_models.dart';
+import 'package:ps_welness/model/1_user_model/medicine_list_model/medicine_list_models.dart';
 import 'package:ps_welness/model/1_user_model/nurse_appointment_models/nurse_type_model.dart';
+import 'package:ps_welness/model/1_user_model/nurse_location_model/nurse_location_models.dart';
+import 'package:ps_welness/model/1_user_model/nurse_type_model/nurse_type_model.dart';
 import 'package:ps_welness/model/1_user_model/states_model/state_modells.dart';
 import 'package:ps_welness/model/1_user_model/test_name_model/test_name_modells.dart';
 import 'package:ps_welness/model/4_nurse_all_models/nurse_appointment_details_list.dart';
 import 'package:ps_welness/model/9_doctors_model/doctor_profile_model.dart';
 import 'package:ps_welness/model/9_doctors_model/view_patient_report_model.dart';
 import 'package:ps_welness/model/franchies_models/franchies_specialist.dart';
+import 'package:ps_welness/modules_view/circular_loader/circular_loaders.dart';
+//import 'package:ps_welness/modules_view/1_user_section_views/nursess/nurse_type_model/nurse_type_model.dart';
 
 import '../model/1_user_model/city_model/city_modelss.dart';
 import '../model/9_doctors_model/doctor_payment_history.dart';
@@ -26,7 +32,7 @@ class ApiProvider {
   //static String productid = '';
   //static String orderid = '';
   static String Id = ''.toString();
-  //static String prodid = '';
+  static String MedicineId = ''.toString();
   //static String cartlistid = '';
   //static String addressid = '';
   //static String Message = "";
@@ -122,10 +128,64 @@ class ApiProvider {
       return r;
     }
   }
+
+  //user signup..............
+
+  //login user api ps welness api 1..................................
+
+  static NurseselectionformApi(
+      var ServiceType,
+      var ServiceTime,
+      var NurseTypeId,
+      var PatientId,
+      var Mobile,
+      var ServiceDate,
+      var StartDate,
+      var EndDate,
+      var LocationId,
+      ) async {
+    var url = baseUrl + 'api/ApiTest/BookAppointment';
+
+    var body = {
+      "ServiceType": ServiceType,
+      "ServiceTime": ServiceTime,
+      "NurseType_Id": NurseTypeId,
+      "PatientId": PatientId,
+      "Mobile": Mobile,
+      "ServiceDate": ServiceDate,
+      "StartDate": StartDate,
+      "EndDate": EndDate,
+      "LocationId": LocationId,
+    };
+    print(body);
+    http.Response r = await http.post(
+      Uri.parse(url), body: body,
+      //headers: headers
+    );
+    print(r.body);
+    if (r.statusCode == 200) {
+      var prefs = GetStorage();
+      //saved id..........
+       prefs.write("Id".toString(), json.decode(r.body)['Id']);
+       Id = prefs.read("Id").toString();
+      print('&&&&&&&&&&&&&&&&&&&&&&:${Id}');
+      ///
+      // //saved token.........
+      // prefs.write("token".toString(), json.decode(r.body)['token']);
+      // token = prefs.read("token").toString();
+      // print(token);
+      return r;
+    } else if (r.statusCode == 401) {
+      Get.snackbar('message', r.body);
+    } else {
+      Get.snackbar('Error', r.body);
+      return r;
+    }
+  }
   //complain_register user api................
 
   static UserComplainApi(
-    var Login_Id,
+    var LoginId,
     var Subjects,
     var Complaints,
     var IsDeleted,
@@ -136,7 +196,7 @@ class ApiProvider {
     var url = baseUrl + 'api/ComplaintApi/PatientComplaint';
 
     var body = {
-      "Login_Id": Login_Id,
+      "Login_Id": LoginId,
       "Subjects": Subjects,
       "Complaints": Complaints,
       "IsDeleted": IsDeleted,
@@ -187,8 +247,9 @@ class ApiProvider {
     }
   }
 
+
+
   ///Todo: from here franchies 2 section.................
-  ///
   static FranchiesSpealistApi() async {
     var url = baseUrl + 'api/CommonApi/GetSpecialist?depId=87';
     try {
@@ -248,13 +309,13 @@ class ApiProvider {
     var PhoneNumber,
     var MobileNumber,
     var EmailId,
-    var StateMaster_Id,
-    var CityMaster_Id,
+    var StateMasterId,
+    var CityMasterId,
     var Location,
     var LicenceNumber,
     var ClinicName,
-    var Department_Id,
-    var Specialist_Id,
+    var DepartmentId,
+    var SpecialistId,
     var Fee,
     var Password,
     var ConfirmPassword,
@@ -283,13 +344,13 @@ class ApiProvider {
         "PhoneNumber": PhoneNumber,
         "MobileNumber": MobileNumber,
         "EmailId": EmailId,
-        "StateMaster_Id": StateMaster_Id,
-        "CityMaster_Id": CityMaster_Id,
+        "StateMaster_Id": StateMasterId,
+        "CityMaster_Id": CityMasterId,
         "Location": Location,
         "LicenceNumber": LicenceNumber,
         "ClinicName": ClinicName,
-        "Department_Id": Department_Id,
-        "Specialist_Id": Specialist_Id,
+        "Department_Id": DepartmentId,
+        "Specialist_Id": SpecialistId,
         "Fee": Fee,
         "Password": Password,
         "ConfirmPassword": ConfirmPassword,
@@ -347,7 +408,7 @@ class ApiProvider {
   //complain_register doctor api................
 
   static doctorComplainApi(
-    var Login_Id,
+    var LoginId,
     var Subjects,
     var Complaints,
     var IsDeleted,
@@ -357,7 +418,7 @@ class ApiProvider {
     var url = baseUrl + 'api/ComplaintApi/DoctorComplaint';
 
     var body = {
-      "Login_Id": Login_Id,
+      "Login_Id": LoginId,
       "Subjects": Subjects,
       "Complaints": Complaints,
       "IsDeleted": IsDeleted,
@@ -455,6 +516,77 @@ class ApiProvider {
     }
   }
 
+///todo:add to cart......................................................add to cart...
+  static AddToCartMedicineApi( var PatientId,MedicineId,Quantity) async {
+    var url = baseUrl + 'api/PatientMedicine/AddMedicineToCart';
+    var prefs = GetStorage();
+    //saved id..........
+    final PatientId = prefs.read("Id").toString();
+    print('&&&&&&&&&&&&&&&&&&&&&&okoko:${Id}');
+    final MedicineId = prefs.read("MedicineId").toString();
+    print('&&&&&&&&&&&&&&&&&&&&&&okoko:${MedicineId}');
+
+    // token = prefs.read("token").toString();
+    // print('&&&&&&&&&&&&&&&&&&&&&&okok:${token}');
+
+    var body = {
+      "PatientId": PatientId,
+      "MedicineId": MedicineId,
+      "Quantity":Quantity,
+
+    };
+    final headers = {"Authorization": "Bearer $token"};
+
+    print(body);
+    http.Response r =
+    await http.post(Uri.parse(url), body: body, headers: headers);
+    print(url);
+    print(r.body);
+    print(r.statusCode);
+
+    if (r.statusCode == 200) {
+      CallLoader.hideLoader();
+      Get.snackbar('Sucess', 'Added cart Sucessfully');
+      return r;
+    } else {
+      CallLoader.hideLoader();
+      Get.snackbar('Error', "${r.body}");
+      return r;
+    }
+  }
+
+  /// user medicinrcart_list_api..........................
+  static MedicinecartlistApi() async {
+    var url =
+        "http://test.pswellness.in/api/PatientMedicine/MedicineCart?patientId=137";
+    try {
+      http.Response r = await http.get(Uri.parse(url));
+      print(r.body.toString());
+      if (r.statusCode == 200) {
+        var MedicineCartListModel = medicineCartListModelFromJson(r.body);
+        return MedicineCartListModel;
+      }
+    } catch (error) {
+      return;
+    }
+  }
+  //
+  /// user medicine_list_api..........................
+  static MedicinelistApi() async {
+    var url =
+        "http://test.pswellness.in/api/PatientMedicine/GetMedicines";
+    try {
+      http.Response r = await http.get(Uri.parse(url));
+      print(r.body.toString());
+      if (r.statusCode == 200) {
+        var MedicineList = medicineListFromJson(r.body);
+        return MedicineList;
+      }
+    } catch (error) {
+      return;
+    }
+  }
+
   ///lab_list_2...........................
   static LabListDrowerApi() async {
     var url =
@@ -505,7 +637,7 @@ class ApiProvider {
     }
   }
 
-  ///get_cities_api......
+  ///get_cities_api...........
 
   static Future<List<City>> getCitiesApi(String stateID) async {
     var url =
@@ -516,6 +648,41 @@ class ApiProvider {
       if (r.statusCode == 200) {
         var citiesData = cityModelFromJson(r.body);
         return citiesData.cities;
+      } else {
+        return [];
+      }
+    } catch (error) {
+      return [];
+    }
+  }
+
+
+  ///nurse Api get...........................
+  static Future<List<NurseModels>> getnursetypeApi() async {
+    var url = "http://pswellness.in/api/CommonApi/NurseList";
+    try {
+      http.Response r = await http.get(Uri.parse(url));
+      print(r.body.toString());
+      if (r.statusCode == 200) {
+        var nursetypeData = getNurseTypeModelFromJson(r.body);
+        return nursetypeData.nurse;
+      } else {
+        return [];
+      }
+    } catch (error) {
+      return [];
+    }
+  }
+
+  ///nurse location Api get.........................................................
+  static Future<List<NurseLocationModel>> getnurselocationtApi() async {
+    var url = "http://pswellness.in/api/CommonApi/GetLocation";
+    try {
+      http.Response r = await http.get(Uri.parse(url));
+      print(r.body.toString());
+      if (r.statusCode == 200) {
+        var nurselocationData = getNurseLocationModelFromJson(r.body);
+        return nurselocationData.location;
       } else {
         return [];
       }

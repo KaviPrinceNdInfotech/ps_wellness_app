@@ -5,7 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ps_welness/constants/constants/constants.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/controllers/1_user_view_controller/health_checkup_controllersss/health_checkup_listsss.dart';
-import 'package:ps_welness/modules_view/1_user_section_views/health_checkup/book_lab_schedule/book_checkup_schedule.dart';
+
+import '../../book__schealthcheckup_shedule/book_checkup_schedule.dart';
+//import 'package:ps_welness/modules_view/1_user_section_views/health_checkup/book_lab_schedule/book_checkup_schedule.dart';
 
 class HealthChkpEnquiryList extends StatelessWidget {
   HealthChkpEnquiryList({Key? key}) : super(key: key);

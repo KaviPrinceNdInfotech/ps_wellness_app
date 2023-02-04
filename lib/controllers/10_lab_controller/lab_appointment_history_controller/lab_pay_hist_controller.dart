@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:ps_welness/model/4_nurse_all_models/nurse_appointment_details_list.dart';
+import 'package:ps_welness/servicess_api/api_services_all_api.dart';
 //import 'package:intl/intl.dart';
 
 class LabpaymentController extends GetxController {
@@ -8,7 +10,25 @@ class LabpaymentController extends GetxController {
   var selectedDate = DateTime.now().obs;
   RxInt selectedIndex = 0.obs;
   var newpickedDate = DateTime.now().obs;
-  RxBool isLoading = false.obs;
+  RxBool isLoading = true.obs;
+
+  //RxBool isLoading = true.obs;
+
+  NurseAppointmentDetail? nurseappointmentdetail;
+
+  //all catagary list .........
+
+  void nursehistoryApi() async {
+    isLoading(true);
+    nurseappointmentdetail = await ApiProvider.NurseappointmentApi();
+    if (
+    nurseappointmentdetail?.result != null
+    //appointmentdetail != null
+    //getcatagartlist!.result!.isNotEmpty
+    ) {
+      isLoading(false);
+    }
+  }
 
   late TextEditingController appointmentController;
 
@@ -17,6 +37,7 @@ class LabpaymentController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    nursehistoryApi();
     appointmentController = TextEditingController();
     appointmentController.text = "DD-MM-YYYY";
   }
@@ -28,6 +49,8 @@ class LabpaymentController extends GetxController {
 
   @override
   void onClose() {
+
+    super.onClose();
     //TextEditingController.dispose();
   }
   chooseDate() async {

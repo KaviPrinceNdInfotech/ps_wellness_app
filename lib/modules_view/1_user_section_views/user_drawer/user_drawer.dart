@@ -35,6 +35,9 @@ class UserMainDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
+              decoration: BoxDecoration(
+                color: MyTheme.ThemeColors,
+              ),
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 1.70),
                 child: Column(
@@ -71,9 +74,6 @@ class UserMainDrawer extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              decoration: BoxDecoration(
-                color: MyTheme.ThemeColors,
               ),
             ),
 

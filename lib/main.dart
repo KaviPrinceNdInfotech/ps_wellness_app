@@ -1,10 +1,29 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:ps_welness/controllers/1_user_view_controller/nurse_appointment_controller/nurse_booking_1_controller.dart';
 import 'package:ps_welness/widgets/controller_bindingss.dart';
 
 import 'modules_view/splash_screen/splash_screen.dart';
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    // Get.lazyPut(() => AllProductModel());
+    //Get.lazyPut(() => GiftcardModel());
+    Get.lazyPut(() => NurseBooking1Controller());
+
+
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
 
 void main() {
   ///todo: changes for map 11 jan 2023........

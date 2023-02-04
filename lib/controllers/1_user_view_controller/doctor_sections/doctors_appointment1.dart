@@ -1,16 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ps_welness/model/1_user_model/city_model/city_modelss.dart';
+import 'package:ps_welness/model/1_user_model/states_model/state_modells.dart';
+import 'package:ps_welness/servicess_api/api_services_all_api.dart';
+
+import '../../../model/1_user_model/test_name_model/test_name_modells.dart';
 
 class Doctor_appointment_1_Controller extends GetxController {
   final GlobalKey<FormState> doctorappointment1key = GlobalKey<FormState>();
 
   ///this is for State....................................
-  Rx<String?> selectedCity = (null as String?).obs;
-  RxList<String> cities = <String>[].obs;
+  Rx<City?> selectedCity = (null as City?).obs;
+  RxList<City> cities = <City>[].obs;
 
   //this is for City.................................
-  Rx<String?> selectedState = (null as String?).obs;
-  RxList<String> states = <String>[].obs;
+  Rx<StateModel?> selectedState = (null as StateModel?).obs;
+  List<StateModel> states = <StateModel>[].obs;
+
+  //this is for City.................................
+  Rx<TestModel?> selectedTest = (null as TestModel?).obs;
+  List<TestModel> tests = <TestModel>[].obs;
+
+  // Rx<String?> selectedTest = (null as String?).obs;
+  // RxList<String> cities2 = <String>[].obs;
+
+  ///lab test api class.................
+  void getTestNameApi() async {
+    tests = await ApiProvider.getTestNameApi();
+    print('Prince lab test  list');
+    print(tests);
+  }
+
+  ///get state api.........
+
+  void getStateLabApi() async {
+    states = await ApiProvider.getSatesApi();
+    print('Prince state  list');
+    print(states);
+  }
+
+  ///get cities api...........
+  void getCityByStateIDLab(String stateID) async {
+    cities.clear();
+    final localList = await ApiProvider.getCitiesApi(stateID);
+    cities.addAll(localList);
+    print("Prince cities of $stateID");
+    print(cities);
+  }
 
   // late TextEditingController nameController,
   //     emailController,
@@ -30,8 +66,16 @@ class Doctor_appointment_1_Controller extends GetxController {
 
   @override
   void onInit() {
-    states.refresh();
+    //states.refresh();
     super.onInit();
+    getStateLabApi();
+    selectedState.listen((p0) {
+      if (p0 != null) {
+        getCityByStateIDLab("${p0.id}");
+      }
+    });
+    getTestNameApi();
+  }
     // nameController = TextEditingController();
     // emailController = TextEditingController();
     // passwordController = TextEditingController();
@@ -39,7 +83,7 @@ class Doctor_appointment_1_Controller extends GetxController {
     // mobileController = TextEditingController();
     // addressController = TextEditingController();
     // pinController = TextEditingController();
-  }
+
 
   @override
   void onReady() {
@@ -131,7 +175,7 @@ class Doctor_appointment_1_Controller extends GetxController {
   //   return null;
   // }
 
-  void check1() {
+  void doctorcheck1() {
     final isValid = doctorappointment1key.currentState!.validate();
     if (!isValid) {
       return;

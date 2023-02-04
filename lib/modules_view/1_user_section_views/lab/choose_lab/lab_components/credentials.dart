@@ -183,7 +183,7 @@ class LabCredentials extends StatelessWidget {
 
               NeumorphicTextFieldContainer(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.01),
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.00),
                   child: Obx(
                     () => DropdownButtonFormField(
                         // menuMaxHeight: size.height * 0.06,

@@ -191,7 +191,7 @@ class NurseeAppointmentDetail extends StatelessWidget {
                                         .isLoading.value)
                                     ? Center(child: CircularProgressIndicator())
                                     : _nurseappointmentdetailController
-                                                .nurseappointmentdetail !=
+                                                ?.nurseappointmentdetail !=
                                             null
                                         //.getcatagartlist!.result!.isEmpty
                                         ? Center(

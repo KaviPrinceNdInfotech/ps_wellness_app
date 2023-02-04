@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ps_welness/constants/my_theme.dart';
 import 'package:ps_welness/controllers/rozar_pay_controller/rozar_pay_controller.dart';
+import 'package:ps_welness/modules_view/1_user_section_views/health_checkup/book__schealthcheckup_shedule/book_lab_components/credentials.dart';
 import 'package:ps_welness/modules_view/1_user_section_views/lab/lab_appointment_checkout/lab_appointment_checkout.dart';
 
-import '../../health_checkup/book_lab_schedule/book_lab_components/credentials.dart';
 import '../../home_page_user_view/user_home_page.dart';
 
 class LabSchedule1Page extends StatelessWidget {

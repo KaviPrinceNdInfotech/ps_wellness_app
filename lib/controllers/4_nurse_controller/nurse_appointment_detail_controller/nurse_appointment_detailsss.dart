@@ -23,7 +23,7 @@ class NurseAppointmentDetailController extends GetxController {
   void nurseappointmentApi() async {
     isLoading(true);
     nurseappointmentdetail = await ApiProvider.NurseappointmentApi();
-    if (nurseappointmentdetail == null
+    if (nurseappointmentdetail?.result != null
         //appointmentdetail != null
         //getcatagartlist!.result!.isNotEmpty
         ) {

@@ -1,43 +1,60 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:ps_welness/model/1_user_model/health_chekup_list_views/health_checkup_list_views.dart';
+import 'package:ps_welness/model/4_nurse_all_models/nurse_appointment_details_list.dart';
 import 'package:ps_welness/servicess_api/api_services_all_api.dart';
-//import 'package:intl/intl.dart';
 
-class LabAppointmentDetailController extends GetxController {
+class NurseBookingHistoryController extends GetxController {
+  final GlobalKey<FormState> NurseHistoryformkey = GlobalKey<FormState>();
+  var appointment = ''.obs;
+  RxBool isLoading = true.obs;
+
+  NurseAppointmentDetail? nurseappointmentdetail;
+
+  //all catagary list .........
+
+  void nursebookinghistoryApi() async {
+    isLoading(true);
+    nurseappointmentdetail = await ApiProvider.NurseappointmentApi();
+    if (
+    nurseappointmentdetail?.result != null
+    //appointmentdetail != null
+    //getcatagartlist!.result!.isNotEmpty
+    ) {
+      isLoading(false);
+    }
+  }
+
   var selectedTime = TimeOfDay.now().obs;
   var selectedDate = DateTime.now().obs;
   RxInt selectedIndex = 0.obs;
   var newpickedDate = DateTime.now().obs;
   //RxBool isLoading = false.obs;
 
-  RxBool isLoading = true.obs;
+  late TextEditingController appointmentController1;
 
-  HealthCheckupListss? healthCheckupListss;
 
-  void labappointmentListApi() async {
-    isLoading(true);
-    healthCheckupListss = await ApiProvider.LabHistoryApi();
-    print('Prince lab list');
-    print(healthCheckupListss);
-    if (healthCheckupListss != null) {
-      //Get.to(() => TotalPrice());
-      isLoading(false);
-      //Get.to(()=>Container());
-    }
-  }
 
-  late TextEditingController appointmentController;
+  ///this is for State....................................
 
-  var appointment = ''.obs;
+
+  //radio.........
+
+
+
+  //this is for City.................................
+  Rx<String?> selectedState = (null as String?).obs;
+  RxList<String> states = <String>[].obs;
 
   @override
   void onInit() {
+    states.refresh();
     super.onInit();
-    labappointmentListApi();
-    appointmentController = TextEditingController();
-    appointmentController.text = "DD-MM-YYYY";
+    nursebookinghistoryApi();
+
+    appointmentController1 = TextEditingController();
+    appointmentController1.text = "DD-MM-YYYY";
+
   }
 
   @override
@@ -46,17 +63,7 @@ class LabAppointmentDetailController extends GetxController {
   }
 
   @override
-  void onClose() {
-    healthCheckupListss = null;
-    super.onClose();
-
-    //TextEditingController.dispose();
-  }
-  @override
-  void dispose() {
-    healthCheckupListss = null;
-    super.dispose();
-  }
+  void onClose() {}
 
   chooseDate() async {
     DateTime? newpickedDate = await showDatePicker(
@@ -78,10 +85,10 @@ class LabAppointmentDetailController extends GetxController {
     );
     if (newpickedDate != null) {
       selectedDate.value = newpickedDate;
-      appointmentController
+      appointmentController1
         ..text = DateFormat.yMMMd().format(selectedDate.value).toString()
         ..selection = TextSelection.fromPosition(TextPosition(
-            offset: appointmentController.text.length,
+            offset: appointmentController1.text.length,
             affinity: TextAffinity.upstream));
     }
     // if (pickedDate != null && pickedDate != selectedDate) {
@@ -91,11 +98,12 @@ class LabAppointmentDetailController extends GetxController {
     // }
   }
 
-//bool disableDate(DateTime day) {
-//   if ((day.isAfter(DateTime.now().subtract(Duration(days: 4))) &&
-//       day.isBefore(DateTime.now().add(Duration(days: 30))))) {
-//     return true;
-//   }
-//   return false;
-// }
+  void checkUser1() {
+    final isValid = NurseHistoryformkey.currentState!.validate();
+    if (!isValid) {
+      return;
+    }
+    NurseHistoryformkey.currentState!.save();
+    //Get.to(() => HomePage());
+  }
 }
